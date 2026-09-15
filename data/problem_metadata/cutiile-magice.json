@@ -1,0 +1,21 @@
+{
+  "id": "cutiile-magice",
+  "statement": "N cutii sunt asezate in sir. Bila porneste din cutia N. Daca se afla in cutia X, urmatoarea pozitie este aleasa uniform dintre cutiile 1, 2, ..., X. Procesul se repeta K pasi. Trebuie calculata valoarea asteptata a pozitiei finale.",
+  "input_format": "Se citesc doua numere naturale N si K.",
+  "constraints": [
+    "1 <= N <= 50",
+    "0 <= K <= 10",
+    "Timp: 1s pentru C++ si Java"
+  ],
+  "output_format": "Se afiseaza valoarea asteptata. Eroarea absoluta maxima permisa este 10^-6.",
+  "samples": [
+    {
+      "input": "10 0",
+      "output": "10.000000000000000"
+    },
+    {
+      "input": "6 1",
+      "output": "3.500000000000000"
+    }
+  ]
+}

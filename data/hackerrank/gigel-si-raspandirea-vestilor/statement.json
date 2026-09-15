@@ -1,0 +1,22 @@
+{
+  "id": "gigel-si-raspandirea-vestilor",
+  "statement": "Gigel este dirigintele unei clase cu N elevi. Intre elevi exista M relatii de prietenie, considerate simetrice. Seful clasei, elevul cu id-ul 1, afla vestea la momentul 0. La fiecare moment, elevii care cunosc vestea o transmit prietenilor. Trebuie determinat momentul dupa care toti elevii afla vestea.",
+  "input_format": "Pe prima linie se citesc N si M. Urmeaza M linii, fiecare cu doua numere x si y, reprezentand o prietenie intre elevii x si y.",
+  "constraints": [
+    "1 <= N <= 100000",
+    "1 <= M <= 200000",
+    "Toti elevii sunt conectati direct sau indirect cu elevul 1",
+    "Timp: C++ 2s, Java 4s"
+  ],
+  "output_format": "Se afiseaza momentul dupa care toti elevii afla vestea.",
+  "samples": [
+    {
+      "input": "4 4\n1 2\n1 3\n2 3\n3 4",
+      "output": "2"
+    },
+    {
+      "input": "6 7\n1 2\n1 3\n2 4\n3 4\n3 5\n4 6\n5 6",
+      "output": "3"
+    }
+  ]
+}

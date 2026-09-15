@@ -1,0 +1,7 @@
+﻿problem,cpp_files_analyzed,files_with_unused_code,unused_findings,timeouts,errors,redundantAssignment,redundantInitialization,unreachableCode,unreadVariable,unusedFunction,unusedPrivateFunction,unusedStructMember,unusedVariable
+cutiile-magice,146,18,23,0,0,0,0,0,9,4,0,0,10
+gigel-si-raspandirea-vestilor,460,79,131,0,0,4,0,0,78,23,1,11,14
+gigel-si-sosetele,599,124,261,0,0,0,0,7,184,14,0,2,54
+gigel-si-telefonul,296,39,52,0,0,3,0,0,36,8,0,0,5
+matei-si-diamantele,366,54,127,0,0,10,2,0,71,12,1,4,27
+organizare-mafiota,66,12,20,0,0,0,0,0,13,1,1,0,5

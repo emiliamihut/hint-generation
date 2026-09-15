@@ -1,0 +1,7 @@
+submission_id,user_id,attempt_number,score,result,language,file,cluster,centroid_similarity,selection_role
+1333787279,user_0016,1,50.0,Accepted,cpp,1333787279.cpp,0,0.9858730435371399,prototype
+1344629085,user_0044,1,50.0,Accepted,cpp,1344629085.cpp,0,0.8295390009880066,diverse
+1314236741,user_0003,2,50.0,Accepted,java,1314236741.java,1,0.9875191450119019,prototype
+1323374677,user_0026,2,50.0,Accepted,java,1323374677.java,1,0.9394521713256836,diverse
+1314168969,user_0047,1,50.0,Accepted,java,1314168969.java,2,1.0014309883117676,prototype
+1314222956,user_0053,7,50.0,Accepted,java,1314222956.java,2,1.0014309883117676,diverse

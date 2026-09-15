@@ -1,0 +1,4620 @@
+====================================================================================================
+SUBMISSION_ID: 1314234684
+USER_ID: user_0224
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner myScanner = new MyScanner();
+        int n = 0, m = 0;
+        n = myScanner.nextInt();
+        m = myScanner.nextInt();
+        int[][] v = new int[n + 1][m + 1];
+        for(int i = 1; i <= n ; i++) {
+            for(int j = 1; j <= m ; j++) {
+                v[i][j] = 0;
+            }   
+        }
+        
+        int a, b;
+        for(int i = 1; i <= n ; i++) {
+            a = myScanner.nextInt();
+            b = myScanner.nextInt();
+            v[a][b] = 1;
+        }
+        
+        int timp = 0, nrCun = 1, aflat = 0;
+        int[] cunosc = new int[n + 1];
+        cunosc[1] = 1;
+        for(int i = 1; i <= n && nrCun < n; i++) {
+            aflat = 0;
+            for(int j = 1; j <= m ; j++) {
+                if (v[i][j] == 1 && cunosc[i] == 1) {
+                    aflat = 1;
+                    cunosc[j] = 1;
+                    nrCun++;
+                }
+            }
+            if(aflat == 1)
+                timp++;
+        }
+        System.out.println(timp);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314234746
+USER_ID: user_0343
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+#define Nmax 50000
+
+int n, m;
+vector<int> adj[Nmax];
+
+void read_graf() {
+    cin >> n >> m;
+    for (int i = 1, x, y; i <= m; i++) {
+        cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+}
+
+void get_result() {
+
+    int current_node;
+    vector<int> check(n+1);
+    int i, t = 0;
+
+
+    for (i = 1; i <= n; i++) {
+        if (check[i] == 0) {
+            t++;
+            current_node = i;
+            check[i] = 1;
+            for (int j : adj[current_node]) {
+
+                if (check[j] == 0) {
+                    check[j] = 1;
+                }
+            }
+        }
+    }
+
+    cout << t << endl;
+
+}
+
+int main() {
+
+    read_graf();
+    get_result();
+
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314234773
+USER_ID: user_0143
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class Elev{
+    
+    int id;
+    ArrayList<Elev> prieteni = new ArrayList<Elev>();
+    int visited;
+    
+    public Elev(int id){
+        this.id = id;
+        this.prieteni = new ArrayList<Elev>();
+        this.visited = 0;
+    }
+    
+    public void addFriend(Elev prieten){
+        this.prieteni.add(prieten);
+    }
+    
+    public int isVisited(){
+        return this.visited;
+    }
+    
+    public void setVisited(){
+        
+        this.visited = 1;
+        
+        for(Elev e : prieteni)
+        {
+            if(e.isVisited() == 0)
+                e.visited = 1;
+        }
+        
+    }
+    
+    
+}
+
+public class Solution {
+    
+    
+
+    public static void main(String[] args) {
+        
+        
+        MyScanner sc = new MyScanner();
+        
+        int n = sc.nextInt();
+        ArrayList<Elev> elevi = new ArrayList<Elev>();
+        
+        for(int i = 0; i < n; i++)
+        {
+            elevi.add(new Elev(i));
+        }
+        int p = sc.nextInt();
+        
+        int first, second;
+        
+        for(int i = 0; i < p; i++)
+        {
+            first = sc.nextInt() - 1;
+            second =  sc.nextInt() - 1;
+            elevi.get(first).addFriend(elevi.get(second));
+        }
+        
+        int t = 0;
+        
+        for(int i = 0; i < n; i++){
+            if(elevi.get(i).isVisited() == 0)
+            {
+                elevi.get(i).setVisited();
+                t ++;
+            }            
+        }
+        
+        System.out.println(t);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314234895
+USER_ID: user_0224
+SCORE: 5.0
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner myScanner = new MyScanner();
+        int n = 0, m = 0;
+        n = myScanner.nextInt();
+        m = myScanner.nextInt();
+        int[][] v = new int[n + 1][n + 1];
+        for(int i = 1; i <= n ; i++) {
+            for(int j = 1; j <= n ; j++) {
+                v[i][j] = 0;
+            }   
+        }
+        
+        int a, b;
+        for(int i = 1; i <= m ; i++) {
+            a = myScanner.nextInt();
+            b = myScanner.nextInt();
+            v[a][b] = 1;
+        }
+        
+        int timp = 0, nrCun = 1, aflat = 0;
+        int[] cunosc = new int[n + 1];
+        for(int i = 1 ; i <= n ;i++ ) cunosc[i] = 0;
+        cunosc[1] = 1;
+        for(int i = 1; i < n && nrCun < n; i++) {
+            aflat = 0;
+            for(int j = 1; j <= n ; j++) {
+                if (v[i][j] == 1 && cunosc[i] == 1) {
+                    aflat = 1;
+                    cunosc[j] = 1;
+                    nrCun++;
+                }
+            }
+            if(aflat == 1)
+                timp++;
+        }
+        System.out.println(timp);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235050
+USER_ID: user_0081
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int students = 0;
+    int relationships = 0;
+    int counter = 1;
+    int parent, child;
+    
+    cin >> students >> relationships;
+    
+    vector<int> level[students];
+    vector<int> childs;
+    childs.push_back(1);
+    level[0].swap(childs);
+    childs.clear();
+    
+    while (cin >> parent >> child) {
+        for (int i = 0; i < students; i ++) {
+            if ((find(level[i].begin(), level[i].end(), parent) != level[i].end()) != (find(level[i].begin(), level[i].end(), child) != level[i].end())) {
+                if (find(level[i].begin(), level[i].end(), parent) != level[i].end()) {
+                    level[i + 1].push_back(child);
+                    break;
+                }
+            }
+        }
+    }
+    
+    for (int i = 0; i < students; i ++) {
+        if (level[i].size() == 0) {
+            cout << i - 1 << endl;
+            break;
+        }
+    }
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235242
+USER_ID: user_0031
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class NewClass {
+    int x, y;
+    public NewClass(int x, int y){
+        this.x = x;
+        this.y = y;
+               
+    }
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        ArrayList<Integer> adj[] = new ArrayList[1000005];
+
+        int n = sc.nextInt();
+                int m = sc.nextInt();
+
+                for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                                        
+                    adj[x].add(y);
+                                      
+                }
+       
+    
+        int k = 0, ok = 0, f = 0;
+        int[] visited = new int[n + 1];
+        for(int i = 1; i <= m; i++){
+            if(ok == 0){
+                k++;
+                for(int j = 1; j <= adj[i].size(); j++)
+                    visited[j] = 1;
+                for(int a = 1; a <= n; a++){
+                    if(visited[a] == 1)
+                        f++;
+                    if( f == n)
+                        ok = 1;
+                }
+        }
+        }
+        System.out.println(k);
+        
+}
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235444
+USER_ID: user_0208
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws Exception{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        @SuppressWarnings("unchecked")
+        ArrayList<Integer> adj[] = new ArrayList[n+1];
+        for(int i=1;i<=n;i++)
+            adj[i] = new ArrayList<>();
+        for(int i=0;i<m;i++){
+            st = new StringTokenizer(br.readLine());
+            adj[Integer.parseInt(st.nextToken())].add(Integer.parseInt(st.nextToken()));
+        }
+        
+        int level = 0;
+        for(int i=1;i<=n;i++)
+            if(adj[i].size()==1)
+                level++;
+        System.out.println(level);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235474
+USER_ID: user_0187
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+
+    public class Solution {
+        int n;
+        int m;
+        ArrayList<Integer> adj[];
+
+        Solution(int n, int m){
+            this.n = n;
+            this.m = m;
+            adj = new ArrayList[n];
+            for (int i = 0; i<n; i++){
+                adj[i] = new ArrayList<>();
+            }
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        public int BFS(int source, int[] visited){
+            int t = 0;
+            ArrayList<Integer> q = new ArrayList<>();
+            visited[source] = 1;
+            q.add(source);
+
+            while(!q.isEmpty()){
+                source = q.remove(0);
+                t++;
+                ArrayList<Integer> neighbours = adj[source];
+                for (int i = 0; i < neighbours.size(); i++){
+                    int node = neighbours.get(i);
+                    if(visited[node] == 0){
+                        visited[node] = 1;
+                        q.add(node);
+                    }
+                }
+            }
+            return t;
+        }
+
+        public static void main(String args[]) throws Exception {
+           MyScanner sc = new MyScanner();
+           Solution r = new Solution(sc.nextInt(), sc.nextInt());
+           int []visited = new int[r.n];
+           for (int i = 0; i < r.n; i++){
+                int j = sc.nextInt();
+                int k = sc.nextInt();
+                visited[i] = 0;
+               r.adj[j-1].add(k);
+           }
+           int t = r.BFS(1, visited);
+           System.out.println(t);
+        }
+    }
+
+
+
+    
+    class MyScanner {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public MyScanner() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+
+====================================================================================================
+SUBMISSION_ID: 1314235764
+USER_ID: user_0031
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class NewClass {
+    int x, y;
+    public NewClass(int x, int y){
+        this.x = x;
+        this.y = y;
+               
+    }
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        ArrayList<Integer> adj[] = new ArrayList[1000005];
+
+        int n = sc.nextInt();
+                int m = sc.nextInt();
+
+                for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                                        
+                    adj[x].add(y);
+                                      
+                }
+       
+    
+        int k = 0, ok = 0, f = 0;
+        int[] visited = new int[n + 1];
+        for(int i = 1; i <= n; i++)
+            for(int j = 1; j < adj[i].size(); i++)
+              
+                if(i + 1 <= n )
+                  if(adj[i + 1].size() >= adj[i].size()){
+                if(adj[i].get(j) == adj[i + 1].get(j))
+                   adj[i + 1].set(j, -1);
+                }
+        for(int i = 1; i <= m; i++){
+            if(ok == 0){
+                k++;
+                for(int j = 1; j <= adj[i].size(); j++)
+                    visited[j] = 1;
+                for(int a = 1; a <= n; a++){
+                    if(visited[a] == 1)
+                        f++;
+                    
+                    if( f == n){
+                        ok = 1;
+                    }
+                }
+        }
+        }
+        System.out.println(k);
+        
+}
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235846
+USER_ID: user_0199
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        ArrayList<Integer> adj[] = new ArrayList[n+1];
+
+        for (int i = 1; i <= n; i++){
+            adj[i] = new ArrayList<>();
+        }
+
+        for(int i = 1; i <= m; i++) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            adj[x].add(y);
+            adj[y].add(x);
+
+        }
+        int source = 1;
+        int d[] = new int[n + 1];
+        for (int i = 0; i <= n; i++)
+            d[i] = 0;
+
+        String viz[] = new String[n +1];
+
+
+        for (int i = 1; i <= n; i++){
+            viz[i] = "alb";
+        }
+        d[source] = 0;
+        viz[source] = "gri";
+        Queue<Integer> q = new LinkedList<>();
+        q.add(source);
+        int nr = 0;
+        int p = q.peek();    
+        while(!q.isEmpty()) {
+            int node = q.poll();
+            for(int newNode : adj[node]) {
+                if(viz[newNode].equals("alb")) {
+                    d[newNode]++;
+                    for (int x : adj[newNode]){
+                        if (viz[x].equals("alb")){
+                            d[x]++;
+                        }
+                    }
+                    viz[newNode] ="gri";
+                    q.add(newNode);
+                   
+                }
+            }
+        
+        }
+        int max = -1;
+        for (int i = 1 ; i <= n ; i++){
+            if (d[i] >= max){
+                max = d[i];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235909
+USER_ID: user_0343
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+#define Nmax 100000
+
+int n, m;
+vector<int> adj[Nmax];
+
+void read_graf() {
+    cin >> n >> m;
+    for (int i = 1, x, y; i <= m; i++) {
+        cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+}
+
+int informare(vector<int> v, int &ok, vector<int> &check) {
+
+    for (int i : v) {
+        if (check[i] == 0) {
+            check[i] = 1;
+            ok = 1;
+        }
+    }
+
+    return ok;
+}
+
+void get_result() {
+
+    vector<int> check(n+1);
+    int i, t = 0, ok;
+
+    for (i = 1; i <= n; i++) {
+
+        ok = 0;
+        informare(adj[i], ok, check);
+
+        if (ok == 1) {
+            t++;
+            ok = 0;
+            for (int j : adj[i]) {
+                informare(adj[j], ok, check);
+            }
+
+            if (ok == 1) {
+                t++;
+            }
+        }
+    }      
+
+    cout << t << endl;
+
+}
+
+int main() {
+
+    read_graf();
+    get_result();
+
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235923
+USER_ID: user_0224
+SCORE: 5.0
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner myScanner = new MyScanner();
+        int n = 0, m = 0;
+        n = myScanner.nextInt();
+        m = myScanner.nextInt();
+        int[][] v = new int[n + 1][n + 1];
+        for(int i = 1; i <= n ; i++) {
+            for(int j = 1; j <= n ; j++) {
+                v[i][j] = 0;
+            }   
+        }
+        
+        int a, b;
+        for(int i = 1; i <= m ; i++) {
+            a = myScanner.nextInt();
+            b = myScanner.nextInt();
+            v[a][b] = 1;
+        }
+        
+        int timp = 0, nrCun = 1, aflat = 0;
+        int[] cunosc = new int[n + 1];
+        for(int i = 1 ; i <= n ;i++ ) cunosc[i] = 0;
+        cunosc[1] = 1;
+        int[][] tur = new int[n + 1][n + 1];
+        tur[1][1] = 1;
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        for(int i = 1; i < n && nrCun < n; i++) {
+            aflat = 0;
+            for(int j = 1; j <= n; j++) {
+                if (v[i][j] == 1 && cunosc[i] == 1) {
+                    aflat = 1;
+                    v[i][j] = 0;
+                    cunosc[j] = 1;
+                    nrCun++;
+                }
+            }
+            if(aflat == 1)
+                timp++;
+        }
+        
+        System.out.println(timp);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236026
+USER_ID: user_0056
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner ms = new MyScanner();
+        int n = ms.nextInt();
+        int m = ms.nextInt();
+        ArrayList<Integer> arr[] = new ArrayList[m+1];
+        for (int i = 1; i <= m; i++)
+             arr[i] = new ArrayList<>();
+        
+        for(int i = 1; i<= m; i++){
+            int t = ms.nextInt();
+            int p = ms.nextInt();
+            arr[t].add(p);
+            arr[p].add(t);
+        }
+        int count = 0;
+        int[] visited = new int[n+2];
+        for(int i = 1; i<= n; i++){
+            visited[i]= 0;
+        }
+      
+        Vector<Integer> next = new Vector<>();
+        for(int i = 1; i<= n; i++){
+            next.add(i);
+        }
+        int i =1;
+        int c =1;
+       while(i <= n){
+            if(visited[i] ==0){
+                visited[i] =1;
+                c++;
+            }
+           
+           if(!next.isEmpty() && c != n)
+                next.removeElement(i);
+           
+               
+            for(Integer it : arr[i]){
+                visited[it]=1;
+                c++;
+                next.removeElement(it);   
+            }
+            count ++;
+            if(!next.isEmpty()){
+                i = next.get(0);
+            }else 
+                break;
+        }
+        System.out.println(count);
+       
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236164
+USER_ID: user_0185
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    
+    
+    
+    
+
+
+
+    public static void main(String[] args) {
+        
+        MyScanner scanner = new MyScanner();
+        int N, M;
+        N = scanner.nextInt();
+        M = scanner.nextInt();
+        LinkedList<Integer> adj[];
+        adj = new LinkedList[N + 1];
+        
+        for (int i=1; i <= N; i++) {
+            adj[i] = new LinkedList();
+        }
+        
+        int v, w;
+        for (int i = 1; i <= M; i++) {
+            v = scanner.nextInt();
+            w = scanner.nextInt();
+            
+            
+            adj[v].add(w);
+            
+        }
+        
+        
+        boolean visited[] = new boolean[N + 1];
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        int source = 1;
+        visited[source] = true;
+        queue.add(source);
+        
+        int count = 0;
+        while (queue.size() != 0) {
+            source = queue.poll();
+            
+            Iterator<Integer> i = adj[source].listIterator();
+                        
+            if (i.hasNext() && !visited[i.next()]) {
+                count ++;
+            }
+            
+            while (i.hasNext()) 
+            { 
+                int n = i.next(); 
+                if (!visited[n]) 
+                { 
+                    
+                    visited[n] = true; 
+                    queue.add(n); 
+                } 
+            }
+            
+        }
+        System.out.println(count);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236412
+USER_ID: user_0394
+SCORE: 5.0
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+      static int d=0;
+      static class Edge {
+            public int node;
+            public int cost;
+
+            Edge(int _node, int _cost) {
+                node = _node;
+                cost = _cost;
+            }
+        }
+    
+        static public void DFS(int v, ArrayList<Boolean> visited, Stack<Integer> stack, ArrayList<Integer> adj) {
+            visited.set(v, true);
+            System.out.println(v);
+            Iterator<Integer> i = adj.iterator();
+            while (i.hasNext()) {
+                int u = i.next();
+                if (!visited.get(u)) {
+                    
+                    DFS(u, visited, stack, adj);
+                }
+            }
+            stack.push(new Integer(v));
+        
+        }
+    public static void main(String[] args) {
+        
+        MyScanner myscanner = new MyScanner();
+        int n = myscanner.nextInt();
+        int m = myscanner.nextInt();
+        
+        @SuppressWarnings("unchecked")
+        ArrayList<Integer> adj[] = new ArrayList[100001];
+         for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y, w;
+                    x = myscanner.nextInt();
+                    y = myscanner.nextInt();
+                    adj[x].add(y);
+                    
+                }
+        int dist = 0;
+        int source = 1;
+         boolean vis[] = new boolean[n + 1];
+            for (int i = 0; i <= n; i++) vis[i] = false;
+            Queue<Integer> queue = new LinkedList<>();
+            queue.add(source);
+            vis[source] = true;
+            while (!queue.isEmpty()) {
+                int u = queue.poll();
+                
+                int i;
+                
+                int check = 1;
+                for (i = 0; i < adj[u].size(); i++) {
+                    int v = adj[u].get(i);
+                    if (vis[v] == false) {
+                        
+                        vis[v] = true;
+                        queue.add(v);
+                        check = 0;
+                    }
+                }
+                if(check == 0){
+                    dist++;
+                }
+                
+
+            }
+        System.out.println(dist);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236535
+USER_ID: user_0224
+SCORE: 5.0
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner myScanner = new MyScanner();
+        int n = 0, m = 0;
+        n = myScanner.nextInt();
+        m = myScanner.nextInt();
+        int[][] v = new int[n + 1][n + 1];
+        for(int i = 1; i <= n ; i++) {
+            for(int j = 1; j <= n ; j++) {
+                v[i][j] = 0;
+            }   
+        }
+        int a, b;
+        for(int i = 1; i <= m ; i++) {
+            a = myScanner.nextInt();
+            b = myScanner.nextInt();
+            v[a][b] = 1;
+        }
+        
+        int timp = 0, nrCun = 1, aflat = 0;
+        int[] cunosc = new int[n + 1];
+        for(int i = 1 ; i <= n ;i++ ) cunosc[i] = 0;
+        cunosc[1] = 1;
+        int[][] tur = new int[n + 1][n + 1];
+        int[] facut = new int[n + 1];
+        tur[1][1] = 1;
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        for(int i = 1; i <= n && nrCun < n; i++) {
+            aflat = 0;
+            for(int j = 1; j <= n; j++) {
+                if (v[i][j] == 1 && cunosc[i] == 1) {
+                    aflat = 1;
+                    v[i][j] = 0;
+                    cunosc[j] = 1;
+                    nrCun++;
+                }
+            }
+            if(aflat == 1)
+                timp++;
+        }
+        System.out.println(timp);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236554
+USER_ID: user_0264
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] matrix = new int[n + 1][n + 1];
+        int i2, j2, i, j, count = 0;
+        boolean[] visited = new boolean[n + 1];
+        
+        for(boolean x : visited) {
+            x = false;
+        }
+        
+        visited[1] = true;
+        
+        for(i = 1; i <= m; i++) {
+            i2 = sc.nextInt();
+            j2 = sc.nextInt();
+            matrix[i2][j2] = 1;
+        }
+        
+        boolean OK = true;
+        
+        for(i = 1; i <= n && OK == true; i++) {
+            if(visited[i] == true) {
+                continue;
+            }
+            for(j = 1; j <= n; j++) {
+                if(matrix[i][j] == 1) {
+                    visited[j] = true;
+                }
+            }
+            count++;
+            OK = false;
+            for(boolean x : visited) {
+                if(x == false) {
+                    OK = true;
+                    break;
+                }
+            }
+        }
+        
+        
+        
+        System.out.println(count);
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236900
+USER_ID: user_0004
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static class Task {
+
+        int n;
+        int m;
+        int source;
+
+        public class Edge {
+            public int node;
+            public int cost;
+
+            Edge(int _node, int _cost) {
+                node = _node;
+                cost = _cost;
+            }
+        }
+
+        @SuppressWarnings("unchecked")
+        ArrayList<Edge> adj[] = new ArrayList[100005];
+
+        private void readInput() {
+
+            MyScanner sc = new MyScanner();
+            n = sc.nextInt();
+            m = sc.nextInt();
+
+            for (int i = 1; i <= n; i++) {
+                adj[i] = new ArrayList<>();
+            }
+            for (int i = 1; i <= m; i++) {
+                int x, y, w;
+                x = sc.nextInt();
+                y = sc.nextInt();
+                w = 1;
+                adj[x].add(new Edge(y, w));
+            }
+
+        }
+
+        private void getResult() {
+            ArrayList<Integer> d = new ArrayList<>();
+            for (int i = 0; i <= n; i++)
+                d.add(0);
+
+            Integer dist[] = new Integer[n+1];
+            int p[] = new int[n+1];
+            for (int i = 0; i <= n; i++) {
+                d.add(0);
+                dist[i] = Integer.MAX_VALUE/2;
+                p[i]=-1;
+            }
+            dist[1] = 0;
+            for(int i =  1; i <= n-2; i++) {
+                boolean flag = false;
+                for(int u = 1; u <=n; u++) {
+                    for(int j = 0; j < adj[u].size(); j++) {
+                        Edge edge = adj[u].get(j);
+                        int v = edge.node;
+                        if(dist[v] > dist[u] + edge.cost) {
+                            dist[v] = dist[u] + edge.cost;
+                            p[v] = u;
+                            flag = true;
+                        }
+                        if (flag == true) {
+                            break;
+                        }
+                    }
+                }
+            }
+            for(int u = 1; u <=n; u++) {
+                for(int j = 0; j < adj[u].size(); j++) {
+                    Edge edge = adj[u].get(j);
+                    int v = edge.node;
+                    if(dist[v] > dist[u] + edge.cost) {
+                        System.out.println(dist[n]);
+                    }
+                }
+            }
+            System.out.println(dist[n]);
+        }
+
+        public void solve() {
+            readInput();
+            getResult();
+        }
+    }
+
+    public static void main(String args[]) throws Exception {
+        
+        new Task().solve();
+    }
+}
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237032
+USER_ID: user_0056
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner ms = new MyScanner();
+        int n = ms.nextInt();
+        int m = ms.nextInt();
+        ArrayList<Integer> arr[] = new ArrayList[m+1];
+        for (int i = 1; i <= m; i++)
+             arr[i] = new ArrayList<>();
+        
+        for(int i = 1; i<= m; i++){
+            int t = ms.nextInt();
+            int p = ms.nextInt();
+            arr[t].add(p);
+            arr[p].add(t);
+        }
+        int count = 0;
+        int[] visited = new int[n+2];
+        for(int i = 1; i<= n; i++){
+            visited[i]= 0;
+        }
+      
+        Vector<Integer> next = new Vector<>();
+        for(int i = 1; i<= n; i++){
+            next.add(i);
+        }
+        int i =1;
+        int c =1;
+       while(i <= n){
+            if(visited[i] ==0){
+                visited[i] =1;
+                c++;
+            }
+           
+           if(!next.isEmpty() && c != n)
+                next.removeElement(i);
+           
+               
+            for(Integer it : arr[i]){
+                visited[it]=1;
+                c++;
+                next.removeElement(it);   
+            }
+            count ++;
+            if(!next.isEmpty()){
+                if(i < next.get(0))
+                    i = next.get(0);
+            }else 
+                break;
+        }
+        System.out.println(count);
+       
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237057
+USER_ID: user_0081
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int students = 0;
+    int relationships = 0;
+    int counter = 1;
+    int parent, child;
+    
+    cin >> students >> relationships;
+    
+    vector<int> parents;
+    vector<int> childs;
+    parents.push_back(1);
+    
+    for (int i = 0; i < relationships; i ++) {
+        cin >> parent >> child;
+        
+        if (find(parents.begin(), parents.end(), parent) != parents.end() && find(childs.begin(), childs.end(), child) == childs.end() && find(parents.begin(), parents.end(), child) == parents.end()) {
+            childs.push_back(child);
+        } else if (find(parents.begin(), parents.end(), parent) == parents.end() && find(childs.begin(), childs.end(), parent) != childs.end()) {
+            counter ++;
+                
+            parents.clear();
+                
+            for (int i = 0; i < childs.size(); i ++) {
+                parents.push_back(childs[i]);
+            }
+            
+            childs.clear();
+        }
+    }
+    
+    cout << counter;
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237059
+USER_ID: user_0056
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner ms = new MyScanner();
+        int n = ms.nextInt();
+        int m = ms.nextInt();
+        ArrayList<Integer> arr[] = new ArrayList[m+1];
+        for (int i = 1; i <= m; i++)
+             arr[i] = new ArrayList<>();
+        
+        for(int i = 1; i<= m; i++){
+            int t = ms.nextInt();
+            int p = ms.nextInt();
+            arr[t].add(p);
+            arr[p].add(t);
+        }
+        int count = 0;
+        int[] visited = new int[n+2];
+        for(int i = 1; i<= n; i++){
+            visited[i]= 0;
+        }
+      
+        Vector<Integer> next = new Vector<>();
+        for(int i = 1; i<= n; i++){
+            next.add(i);
+        }
+        int i =1;
+        int c =1;
+       while(i <= n){
+            if(visited[i] ==0){
+                visited[i] =1;
+                c++;
+            }
+           
+           if(!next.isEmpty() && c != n)
+                next.removeElement(i);
+           
+               
+            for(Integer it : arr[i]){
+                visited[it]=1;
+                c++;
+                next.removeElement(it);   
+            }
+            count ++;
+            if(!next.isEmpty()){
+                if(i < next.get(0))
+                    i = next.get(0);
+                else 
+                    i++;
+            }else 
+                break;
+        }
+        System.out.println(count);
+       
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237163
+USER_ID: user_0056
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner ms = new MyScanner();
+        int n = ms.nextInt();
+        int m = ms.nextInt();
+        ArrayList<Integer> arr[] = new ArrayList[m+1];
+        for (int i = 1; i <= m; i++)
+             arr[i] = new ArrayList<>();
+        
+        for(int i = 1; i<= m; i++){
+            int t = ms.nextInt();
+            int p = ms.nextInt();
+            arr[t].add(p);
+            arr[p].add(t);
+        }
+        int count = 0;
+        int[] visited = new int[n+2];
+        for(int i = 1; i<= n; i++){
+            visited[i]= 0;
+        }
+      
+        Vector<Integer> next = new Vector<>();
+        for(int i = 1; i<= n; i++){
+            next.add(i);
+        }
+        int i =1;
+        int c =1;
+       while(i <= n){
+            if(visited[i] ==0){
+                visited[i] =1;
+                c++;
+            }
+           
+           if(!next.isEmpty() && c != n)
+                next.removeElement(i);
+           else 
+                break;
+               
+            for(Integer it : arr[i]){
+                visited[it]=1;
+                c++;
+                next.removeElement(it);   
+            }
+            count ++;
+            if(!next.isEmpty()){
+                if(i < next.get(0))
+                    i = next.get(0);
+            }else 
+                break;
+        }
+        System.out.println(count);
+       
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237179
+USER_ID: user_0081
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int students = 0;
+    int relationships = 0;
+    int counter = 1;
+    int parent, child;
+    
+    cin >> students >> relationships;
+    
+    vector<int> parents;
+    vector<int> childs;
+    parents.push_back(1);
+    
+    for (int i = 0; i < relationships; i ++) {
+        cin >> parent >> child;
+        
+        if (find(parents.begin(), parents.end(), parent) != parents.end() && find(childs.begin(), childs.end(), child) == childs.end() && find(parents.begin(), parents.end(), child) == parents.end() && find(childs.begin(), childs.end(), parent) == childs.end()) {
+            childs.push_back(child);
+        } else if (find(parents.begin(), parents.end(), parent) == parents.end() && find(childs.begin(), childs.end(), parent) != childs.end() && find(childs.begin(), childs.end(), child) == childs.end() && find(parents.begin(), parents.end(), child) == parents.end()) {
+            
+            counter ++;
+                
+            parents.clear();
+                
+            for (int i = 0; i < childs.size(); i ++) {
+                
+                parents.push_back(childs[i]);
+            }
+            
+            
+            childs.clear();
+        }
+    }
+    
+    cout << counter;
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237236
+USER_ID: user_0148
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    public static final int NMAX = 100005;
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int []visited = new int[n+1];
+        int t = 0;
+        for (int i = 1; i <= n; i++){
+            visited[i] = 0;
+        }
+        ArrayList<Integer> adj[] = new ArrayList[NMAX];
+            for (int i = 1; i <= n; i++){
+                    adj[i] = new ArrayList<>();
+            }
+            for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                    adj[x].add(y);
+                    adj[y].add(x);
+            }
+        for (int i = 1; i <= n; i++){
+            if (visited[i] == 0){
+                for (int j : adj[i]){
+                 if (visited[j] == 0){
+                        visited[j] = 1;
+                        t += 1;
+                 }
+                }
+                visited[i] = 1;
+            }
+        }
+        System.out.println(t);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237254
+USER_ID: user_0031
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner1 {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner1() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class NewClass1 {
+    int x, y;
+    public NewClass1(int x, int y){
+        this.x = x;
+        this.y = y;
+               
+    }
+    public static void main(String[] args) {
+        
+        MyScanner1 sc = new MyScanner1();
+        ArrayList<Integer> adj[] = new ArrayList[1000005];
+         ArrayList<Integer> adjt[] = new ArrayList[1000005];
+
+        int n = sc.nextInt();
+                int m = sc.nextInt();
+
+                for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                                        adjt[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                                        
+                    adj[x].add(y);
+                                        adjt[y].add(x);
+                                }
+        Vector<Integer> a = new Vector<>();
+       
+        int k = 0, ok = 0;
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        a.add(1);
+        int r = 0;
+        for(int i = 1; i <=n; i++){
+            
+            if(ok == 0){
+           ;
+
+
+           
+            for(int j = 0; j < adj[i].size(); j++){
+             
+                if(a.contains(adj[i].get(j)) && r == 0)
+                    r = 1;
+                else{
+                    
+                    a.add(adj[i].get(j));
+                }
+            } 
+             
+            if(a.size() == n)
+                ok = 1;
+            if(r == 1){
+                k--;
+                r = 0;
+            }else k++;   
+            }
+        }
+      
+
+        int k1 = 0;
+        r = 0;
+        a.removeAllElements();
+        a.add(1);
+         for(int i = 1; i <=n; i++){
+            
+            if(ok == 0){
+           ;
+
+
+           if(r == 1){
+                k1--;
+                r = 0;
+            }else k++;
+            for(int j = 0; j < adjt[i].size(); j++)
+                if(a.contains(adjt[i].get(j)) && r == 0)
+                    r = 1;
+                else{
+                    
+                    a.add(adjt[i].get(j));
+                }
+                    
+            
+            if(a.size() == n)
+                ok = 1;
+            }
+        }
+       
+
+        System.out.println(k + 1);
+      
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237290
+USER_ID: user_0449
+SCORE: 5.0
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    static int maxim = 0;
+
+    public static void main(String[] args) {
+        MyScanner reader = new MyScanner();
+        int n = reader.nextInt();
+        int m = reader.nextInt();
+        int count = 1;
+        ArrayList<Integer> adj[] = new ArrayList[100005];
+        for (int i = 1; i <= n; i++) {
+            adj[i] = new ArrayList<>();
+        }
+        for (int i = 1; i <= m; i++) {
+            int x, y;
+            x = reader.nextInt();
+            y = reader.nextInt();
+            adj[x].add(y);
+        }
+
+        int visited[] = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            visited[i] = 0;
+        }
+
+        for (int i = 1; i <= n; i++) {
+
+            for (Integer v : adj[i]) {
+                if (visited[v] == 0) {
+                    visited[v] = visited[i] + 1;
+                }
+            }
+
+        }
+        for(int i = 0 ;i<visited.length;i++){
+            if(visited[i] > maxim){
+            maxim = visited[i];}
+        }
+        System.out.println(maxim);
+    }
+
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237386
+USER_ID: user_0031
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class NewClass {
+    int x, y;
+    public NewClass(int x, int y){
+        this.x = x;
+        this.y = y;
+               
+    }
+    public static void main(String[] args) {
+         MyScanner sc = new MyScanner();
+        ArrayList<Integer> adj[] = new ArrayList[1000005];
+
+        int n = sc.nextInt();
+                int m = sc.nextInt();
+
+                for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                                        
+                    adj[x].add(y);
+                                      
+                }
+       
+    
+        int k = 0, ok = 0, f = 0;
+        int[] visited = new int[n + 1];
+        for(int i = 1; i <= n; i++)
+            for(int j = 0; j < adj[i].size(); i++)
+              
+                if(i + 1 <= n ){
+                   
+                    
+                  if(adj[i + 1].size() >= adj[i].size()){
+                    
+                    if(adj[i + 1].get(j) != null && adj[i].get(j) != null)
+                    if(adj[i].get(j) == adj[i + 1].get(j)){
+                       adj[i + 1].remove(j);
+                        
+                    }
+                  }
+                }
+    
+        for(int i = 1; i <= m; i++){
+            if(ok == 0){
+                k++;
+                for(int j = 0; j <= adj[i].size(); j++)
+                    visited[j] = 1;
+                for(int a = 1; a <= n; a++){
+                    if(visited[a] == 1)
+                        f++;
+                    if( f == n)
+                        ok = 1;
+                }
+        }
+        }
+        System.out.println(k);
+        
+}
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237500
+USER_ID: user_0019
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+  BufferedReader br;
+  StringTokenizer st;
+
+  public MyScanner() {
+    br = new BufferedReader(new InputStreamReader(System.in));
+  }
+
+  String next() {
+    while (st == null || !st.hasMoreElements()) {
+      try {
+        st = new StringTokenizer(br.readLine());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+    return st.nextToken();
+  }
+
+  int nextInt() {
+    return Integer.parseInt(next());
+  }
+
+  long nextLong() {
+    return Long.parseLong(next());
+  }
+
+  double nextDouble() {
+    return Double.parseDouble(next());
+  }
+
+  String nextLine(){
+    String str = "";
+    try {
+      str = br.readLine();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return str;
+  }
+}
+
+public class Solution {
+  static class Solve {
+    public static final int NMAX = 50005;
+
+    int n;
+    int m;
+    int source = 1;
+
+    public class Edge {
+      public int node;
+      public int cost;
+
+      Edge(int _node, int _cost) {
+        node = _node;
+        cost = _cost;
+      }
+    }
+
+    @SuppressWarnings("unchecked")
+    ArrayList<Edge> adj[] = new ArrayList[NMAX];
+
+    int result;
+    public void readInput() {
+      MyScanner sc = new MyScanner();
+      n = sc.nextInt();
+      m = sc.nextInt();
+
+      for (int i = 1; i <= n; i++) {
+        adj[i] = new ArrayList<>();
+      }
+
+      for (int i = 1; i <= m; i++) {
+        int x, y;
+        x = sc.nextInt();
+        y = sc.nextInt();
+        adj[x].add(new Edge(y, 1));
+      }
+    }
+
+    public void DFS(boolean [] visited, int s) {
+      visited[s] = true;
+      for(int i = 1; i <= adj[s].size(); i++) {
+        Edge cur = adj[s].get(i-1);
+        if (!visited[cur.node]) {
+          visited[cur.node] = true;
+        }
+      }
+    }
+
+    public void getResult() {
+      boolean visited[] = new boolean[n+1];
+      for (int i = 0; i <= n; i++) {
+        visited[i] = false;
+      }
+      for (int j = 1; j <= n; j++) {
+        if (!visited[j]) {
+          result++;
+          DFS(visited, j);
+        }
+      }
+
+    }
+    public void s() {
+      readInput();
+      getResult();
+      System.out.println(result);
+    }
+  }
+
+  public static void main(String[] args) {
+    new Solve().s();
+  }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237573
+USER_ID: user_0343
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <queue>
+using namespace std;
+
+#define Nmax 100000
+
+int n, m;
+vector<int> adj[Nmax];
+
+void read_graf() {
+    cin >> n >> m;
+    for (int i = 1, x, y; i <= m; i++) {
+        cin >> x >> y;
+        adj[x].push_back(y);
+    }
+}
+
+int informare(vector<int> v, int &ok, vector<int> &check, int &t) {
+    int p = 0;
+    for (int i : v) {
+        if (check[i] == 0) {
+            check[i] = 1;
+            ok = 1;
+        } else {
+            p = 1;
+        }
+    }
+
+    if (p == 1 && ok == 1) {
+        t--;
+    }
+
+    return ok;
+}
+
+void get_result() {
+
+    int current_node;
+    queue<int> q;
+    vector<int> check(n+1);
+    int i, t = 0, ok;
+
+    q.push(1);
+    check[1] = 1;
+
+    while(!q.empty()) {
+        
+        current_node = q.front();
+        q.pop();
+        ok = 0;
+
+        for (int j : adj[current_node]) {
+            if (check[j] == 0) {
+                q.push(j);
+            }
+        }
+
+        informare(adj[current_node], ok, check, t);
+
+        if (ok == 1) t++;
+    }
+        
+
+    cout << t << endl;
+
+}
+
+int main() {
+
+    read_graf();
+    get_result();
+
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237779
+USER_ID: user_0004
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static class Task {
+
+        int n;
+        int m;
+        int x;
+        int source;
+
+        public class Edge {
+            public int node;
+            public int cost;
+
+            Edge(int _node, int _cost) {
+                node = _node;
+                cost = _cost;
+            }
+        }
+
+        @SuppressWarnings("unchecked")
+        ArrayList<Edge> adj[] = new ArrayList[100005];
+
+        private void readInput() {
+
+            MyScanner sc = new MyScanner();
+            n = sc.nextInt();
+            m = sc.nextInt();
+
+            for (int i = 1; i <= n; i++) {
+                adj[i] = new ArrayList<>();
+            }
+            int counter = 0;
+            for (int i = 1; i <= m; i++) {
+                int x, y, w;
+                x = sc.nextInt();
+                y = sc.nextInt();
+                w = 1;
+                adj[x].add(new Edge(y, w));
+                counter++;
+            }
+            x = counter;
+
+        }
+
+        private void getResult() {
+            ArrayList<Integer> d = new ArrayList<>();
+            for (int i = 0; i <= n; i++)
+                d.add(0);
+
+            Integer dist[] = new Integer[n+1];
+            int p[] = new int[n+1];
+            for (int i = 0; i <= n; i++) {
+                d.add(0);
+                dist[i] = Integer.MAX_VALUE/2;
+                p[i]=-1;
+            }
+            dist[1] = 0;
+            for(int i =  1; i <= n-2; i++) {
+                boolean flag = false;
+                for(int u = 1; u <=n; u++) {
+                    for(int j = 0; j < adj[u].size(); j++) {
+                        Edge edge = adj[u].get(j);
+                        int v = edge.node;
+                        if(dist[v] > dist[u] + edge.cost) {
+                            dist[v] = dist[u] + edge.cost;
+                            p[v] = u;
+                            flag = true;
+                        }
+                        if (flag == true) {
+                            break;
+                        }
+                    }
+                }
+            }
+            for(int u = 1; u <=n; u++) {
+                for(int j = 0; j < adj[u].size(); j++) {
+                    Edge edge = adj[u].get(j);
+                    int v = edge.node;
+                    if(dist[v] > dist[u] + edge.cost) {
+                        System.out.println(dist[n]);
+                    }
+                }
+            }
+
+            System.out.println(dist[n]);
+        }
+
+        public void solve() {
+            readInput();
+            getResult();
+        }
+    }
+
+    public static void main(String args[]) throws Exception {
+        
+        new Task().solve();
+    }
+}
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237799
+USER_ID: user_0081
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int students = 0;
+    int relationships = 0;
+    int counter = 1;
+    int parent, child;
+    
+    cin >> students >> relationships;
+    
+    vector<int> parents;
+    vector<int> childs;
+    parents.push_back(1);
+    
+    while (cin >> parent >> child) {
+        if (find(parents.begin(), parents.end(), parent) != parents.end() &&
+            find(childs.begin(), childs.end(), child) == childs.end() &&
+            find(parents.begin(), parents.end(), child) == parents.end() &&
+            find(childs.begin(), childs.end(), parent) == childs.end()) {
+            
+            childs.push_back(child);
+        } else if (find(parents.begin(), parents.end(), parent) == parents.end() &&
+                   find(childs.begin(), childs.end(), parent) != childs.end() &&
+                   find(childs.begin(), childs.end(), child) == childs.end() &&
+                   find(parents.begin(), parents.end(), child) == parents.end()) {
+            
+            counter ++;
+            
+            parents.clear();       
+            parents.swap(childs);
+            childs.clear();
+            
+        }
+    }
+    
+    cout << counter;
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237823
+USER_ID: user_0248
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.StringTokenizer;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    static class Task {
+        int N;
+        int M;
+        int NMAX = 200000;
+
+        public class Edge {
+            int node1;
+            int node2;
+        }
+
+        ArrayList<Edge> adj = new ArrayList<Edge>();
+
+        public void readInput() {
+            MyScanner sc = new MyScanner();
+            N = sc.nextInt();
+            M = sc.nextInt();
+
+            for (int i = 1; i <= M; i++) {
+                int node1 = sc.nextInt();
+                int node2 = sc.nextInt();
+                Edge edge = new Edge();
+                edge.node1 = node1;
+                edge.node2 = node2;
+                adj.add(edge);
+            }
+        }
+
+        public int getResult() {
+            int[] timp = new int[N + 1];
+            Arrays.fill(timp, 0);
+            timp[1] = 0;
+            int index = 0;
+            
+            for (int i = 0; i < M; i++) {
+                if (adj.get(i).node1 == 1) {
+                    timp[adj.get(i).node2] = timp[1] + 1;
+                    index = timp[adj.get(i).node2];
+                } else if (timp[adj.get(i).node1] != 0 && timp[adj.get(i).node2] != 0) {
+                    continue;
+                } else if (timp[adj.get(i).node1] != 0 && timp[adj.get(i).node2] == 0) {
+                    timp[adj.get(i).node2] = timp[adj.get(i).node1] + 1;
+                    index = timp[adj.get(i).node2];
+                } else {
+                    timp[adj.get(i).node1] = index++;
+                }
+            }
+            
+
+            return timp[N];
+        }
+
+        public void solve() {
+            readInput();
+            System.out.println(getResult());
+        }
+    }
+
+    public static void main(String[] args) {
+        
+
+
+
+
+        new Task().solve();
+
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314255019
+USER_ID: user_0264
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    static int BFS(int s, ArrayList<Integer> adj[], boolean[] visited) { 
+        visited[s] = true; 
+        int count = 0;
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        
+        queue.add(s); 
+        while (queue.size() != 0) { 
+            s = queue.poll(); 
+            
+            Iterator<Integer> i = adj[s].listIterator(); 
+            while (i.hasNext()) { 
+                int n = i.next();
+                count++;
+                if (!visited[n]) { 
+                    visited[n] = true; 
+                    queue.add(n); 
+                } 
+            } 
+        } 
+        return count;
+    } 
+  
+
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int i;
+        int x, y;
+        boolean[] visited = new boolean[n + 1];
+        ArrayList<Integer> adj[] = new ArrayList[1000];
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        
+        for(i = 1; i <= n; i++) {
+            adj[i] = new ArrayList();
+        }
+        for(i = 0; i < m; i++) {
+            x = sc.nextInt();
+            y = sc.nextInt();
+            adj[x].add(y);
+            adj[y].add(x);            
+        }
+        System.out.println( BFS(1, adj, visited)/n);
+        
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1322777673
+USER_ID: user_0198
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int v[100001], n, m, x, y;
+    int tmax = 0;
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++) {
+      v[i] = 0;    
+    }
+    
+    for (int i = 0; i < m; i++) {
+        cin >> x >> y;
+        if (v[y] == 0) {
+            v[y] = v[x] + 1;    
+        } else {
+            if (v[x] + 1 < v[y]) {
+              v[y] = v[x] + 1;
+            }
+        }
+        if (v[y] > tmax) {
+            tmax = v[y];
+        }
+    }
+    cout << tmax;
+       
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1322778548
+USER_ID: user_0198
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct Conexiuni {
+    int elev;
+    int prieten;
+    
+    Conexiuni(int elev, int prieten) {
+        this->elev = elev;
+        this->prieten = prieten;
+    }
+};
+
+bool comparator(Conexiuni a, Conexiuni b) {
+    if (a.elev == b.elev) {
+        return a.prieten < b.prieten;
+    } else {
+        return a.elev < b.elev;
+    }
+}
+
+int main() {
+    int v[100001], n, m, x, y;
+    vector<Conexiuni> c;
+    int tmax = 0;
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++) {
+      v[i] = 0;    
+    }
+    
+    for (int i = 0; i < m; i++) {
+        cin >> x >> y;
+        c.push_back(Conexiuni(x, y));
+    }
+    
+    sort(c.begin(), c.end(), comparator);
+    
+    for (int i = 0; i < m; i++) {
+        x = c[i].elev;
+        y = c[i].prieten;
+        
+        if (v[y] == 0) {
+            v[y] = v[x] + 1;    
+        } else {
+            if (v[x] + 1 < v[y]) {
+              v[y] = v[x] + 1;
+            }
+        }
+        if (v[y] > tmax) {
+            tmax = v[y];
+        }
+    }
+    cout << tmax;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323433091
+USER_ID: user_0067
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+map<int, vector<int>> adj;
+int contor = 0;
+bitset<100005> used;
+queue<int> q;
+void bfs(int node){
+    used[node] = 1;
+    q.push(node);
+    while(!q.empty()){
+        int x = q.front();
+        q.pop();
+        for(auto n : adj[x]){
+        if(!used[n]){
+            used[n] = 1;
+            q.push(n);
+        }
+    }
+        contor++;
+}
+    
+    contor++;
+}
+int main() {
+    
+    int n, m;
+    cin >> n >> m;
+    for(int i = 0; i < m; i++){
+        int a, b;
+        cin >> a >> b;
+        adj.insert(make_pair(a, b));
+        adj.insert(make_pair(b, a));
+    }
+    bfs(1);
+    cout << contor;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323452201
+USER_ID: user_0173
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+        import java.util.*;
+        import java.text.*;
+        import java.math.*;
+        import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        MyScanner s = new MyScanner();
+        int n = s.nextInt();
+        int m = s.nextInt();
+        int i;
+        int[] resultat = new int[n + 1];
+        for(i = 2; i <= n; i++)
+            resultat[i] = 100000;
+        for(i = 1; i <= m; i++){
+            int elev1 = s.nextInt();
+            int elev2 = s.nextInt();
+            if(resultat[elev1] == 100000)
+                resultat[elev1] = elev1;
+            if(resultat[elev2] > resultat[elev1] + 1)
+                resultat[elev2] = resultat[elev1] + 1;
+        }
+        int meh = Integer.MIN_VALUE;
+        for(i = 1; i <= n; i++){
+            if(resultat[i] > meh)
+                meh = resultat[i];
+        }
+        System.out.print(meh);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323455308
+USER_ID: user_0059
+SCORE: 5.0
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+#define kNMAx 50005
+
+int N, M;
+vector<int> adj[kNMAx];
+
+int main() {
+    
+    cin >> N >> M;
+    for (int i = 0; i < M; ++i) {
+        int aux1, aux2;
+        cin >> aux1 >> aux2;
+        adj[aux1].push_back(aux2);
+    }
+    
+    vector<bool> visited(N + 1, 0);
+    int time = 0;
+    
+    int src = 1;
+    visited[src] = true;
+    queue<int> q;
+    
+    q.push(src);
+    bool vis = false;
+    while (!q.empty()) {
+       int node = q.front();
+       q.pop();
+       vis = false;
+       for (long unsigned int i = 0; i < adj[node].size(); ++i) {
+           int neigh = adj[node][i];
+           if (!visited[neigh]) {
+               visited[neigh] = true;
+               q.push(neigh);
+               vis = true;
+           }
+       }
+       if (vis) {
+         time++;
+        }
+    }
+    std :: cout << time;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332202152
+USER_ID: user_0113
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class Sorter implements Comparator<Student> {
+    public int compare(Student stud1, Student stud2) {
+        if (stud1.getStudentId() < stud2.getStudentId()) {
+            return -1;
+        } else if (stud1.getStudentId() > stud2.getStudentId()) {
+            return 1;
+        } else if (stud1.getFriendId() < stud1.getFriendId()) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+}
+
+class Student {
+    private Integer studentId;
+    private Integer friendId;
+    
+    public Student(final Integer studentId, final Integer friendId) {
+        this.studentId = studentId;
+        this.friendId = friendId;
+    }
+    
+    public Integer getStudentId() {
+        return studentId;
+    }
+    
+    public Integer getFriendId() {
+        return friendId;
+    }
+}
+
+class Gigel {
+    private Integer numberOfStudents;
+    private Integer numberOfRelationships;
+    List<Student> studentsList = new ArrayList<>();
+    int[] announcedStudents; 
+    int[] hasAnnounced;
+    
+    public Gigel() {}
+    
+    public Integer getNumberOfStudents() {
+        return numberOfStudents;
+    }
+    
+    public Integer getNumberOfRelationships() {
+        return numberOfRelationships;
+    }
+    
+    public List<Student> getStudentsList() {
+        return studentsList;
+    }
+    
+    public int[] getAnnouncedStudents() {
+        return announcedStudents;
+    }
+    
+    public int[] getHasAnnounced() {
+        return hasAnnounced;
+    }
+    
+    public void readProblemData() {
+        MyScanner myScanner = new MyScanner();
+        this.numberOfStudents = myScanner.nextInt();
+        this.numberOfRelationships = myScanner.nextInt();
+        
+        announcedStudents = new int[numberOfStudents + 1];
+        announcedStudents[1] = 1;
+        hasAnnounced = new int[numberOfStudents + 1];
+        
+        for (int i = 0; i < numberOfRelationships; i++) {
+            studentsList.add(new Student(myScanner.nextInt(), myScanner.nextInt()));
+        }
+    }
+    
+    public void sortStudents() {
+        Collections.sort(studentsList, new Sorter());
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Gigel gigel = new Gigel();
+        gigel.readProblemData();
+        gigel.sortStudents();
+        
+        Integer numberOfStudents = gigel.getNumberOfStudents();
+        Integer numberOfRelationships = gigel.getNumberOfRelationships();
+        List<Student> studentsList = gigel.getStudentsList();
+        int[] announcedStudents = gigel.getAnnouncedStudents();
+        int[] hasAnnounced = gigel.getHasAnnounced();
+        
+        
+        
+        
+        
+        Integer time = 0;
+        
+        for (int i = 0; i < numberOfRelationships; i++) {
+            Student currentStudent = studentsList.get(i);
+            Integer studentId = currentStudent.getStudentId();
+            Integer friendId = currentStudent.getFriendId();
+            
+            if (announcedStudents[friendId] != 1) {
+                if (hasAnnounced[studentId] == 0) {
+                    
+                    hasAnnounced[studentId] = 1;
+                    time += 1;
+                }
+                
+                announcedStudents[friendId] = 1;
+            } else {
+                hasAnnounced[studentId] = 1;
+            }
+        }
+        
+        System.out.println(time);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332423496
+USER_ID: user_0044
+SCORE: 5.0
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+       
+    int n, m;
+    vector < pair <int, int> > v;
+    cin >> n >> m;
+    for(int i = 0; i < m; i++) {
+        int e1, e2;
+        cin >> e1 >> e2;
+        v.emplace_back(e1, e2);
+    }
+    int t = 1;
+    vector <int> last(n + 1);
+    vector <int> last_new(n + 1);
+    for(int i = 2; i <= n; i++) {
+        last[i] = 0;
+        last_new[i] = 0;
+    }
+    last[1] = 1;
+    last_new[1] = 1;
+    for(int i = 0 ; i < m; i++) {
+        if(last[v[i].first] == 1) {
+            last_new[v[i].second] = 1;
+        } else {
+            if(last_new[v[i].first] == 1) {
+                for(int j = 2; j <= n; j++) {
+                    if(last_new[j] == 1) {
+                        last[j] = 1;
+                    }
+                }
+            }
+            if(last[v[i].first] == 1) {
+                t++;
+            }
+        }
+    }
+    cout << t;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332671101
+USER_ID: user_0066
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct Prietenie{
+    int x;
+    int y;
+
+    Prietenie(int _x,int _y):
+        x(_x),y(_y){}
+};
+
+int main(){
+    int N,M;
+    int x,y;
+
+    cin >> N >> M;
+
+    vector<Prietenie> v;
+    vector<int> map(N + 1,0);
+    vector<int> map_2(N + 1,0);
+
+    v.push_back(Prietenie(-1,-1));
+    for(int i = 0; i < M; i++){
+        cin >> x >> y;
+        v.push_back(Prietenie(x,y));
+    }
+
+    int t = 0;
+    
+    for(int i = 1; i <= M; i++){
+        
+        
+        if(map[v[i].y] == 0 && map_2[v[i].x] == 0){
+            map[v[i].y] = 1;
+            t++;
+        }
+
+        if(map[v[i].y] == 0 && map_2[v[i].x] == 1){
+            map[v[i].y] = 1;
+        }
+        map_2[v[i].x] = 1;
+    }
+
+    cout << t <<endl;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332671446
+USER_ID: user_0066
+SCORE: 5.0
+LANGUAGE: cpp
+====================================================================================================
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct Prietenie{
+    int x;
+    int y;
+
+    Prietenie(int _x,int _y):
+        x(_x),y(_y){}
+};
+
+int main(){
+    int N,M;
+    int x,y;
+
+    cin >> N >> M;
+
+    vector<Prietenie> v;
+    vector<int> map(N + 1,0);
+    vector<int> map_2(N + 1,0);
+
+    v.push_back(Prietenie(-1,-1));
+    for(int i = 0; i < M; i++){
+        cin >> x >> y;
+        v.push_back(Prietenie(x,y));
+    }
+
+    int t = 0;
+    int j = 0;
+    
+    for(int i = 1; i <= M;){
+         
+        
+
+        for(j = i; v[j].x == v[i].x; j++){
+            if(map[v[j].y] == 0){
+                map[v[j].y] = 1;
+            }
+        }
+        t++;
+
+        i += j;
+
+        
+    }
+
+    cout << t <<endl;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344591257
+USER_ID: user_0093
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct prieten{
+    int x;
+    int y;
+}prieteni[1001];
+
+int viz[1001];
+
+int apartine (int vect[1001], int len,int nr){
+    for(int i = 0; i < len; i++){
+        if(nr == vect[i])
+            return true;
+    }
+    return false;
+}
+
+int main() {
+    int n, m;
+    int i, j, cur, k = 1, ok = 0;
+    int t = 1;
+    cin>>n>>m;
+    for(i = 0; i < m; i++){
+        cin>>prieteni[i].x>>prieteni[i].y;
+    }
+    viz[0] = 1;
+    for(i = 0; i < n; i++){
+        ok = 0;
+        cur = prieteni[i].x;
+        for(j = i; j < m; j++){
+            if(cur == prieteni[j].x)
+               if((!apartine(viz, k, prieteni[j].x)) && (!apartine(viz, k, prieteni[j].y))){
+                viz[k++] = prieteni[j].y;
+                ok = 1;
+            }
+        }
+        if(ok == 1){
+            t++;
+            ok = 0;
+        }
+    }
+    cout<<t;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344600466
+USER_ID: user_0072
+SCORE: 2.5
+LANGUAGE: c
+====================================================================================================
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    
+    int N, M;
+    scanf("%d%d", &N, &M);
+    int vis[N+1];
+    int nr[2*M+1];
+    for(int i=1;i<=N; i++)
+        vis[i]=0;
+    int a, b;
+    int t;
+    scanf("%d%d", &a, &b);
+    vis[a]=1;
+    vis[b]=1;
+    t=1;
+    int pa=a;
+    for(int i=2;i<=M;i++){
+        scanf("%d%d", &a, &b);
+        
+        if(vis[a]==1 && vis[b]==0 && pa!=a){
+            vis[b]=1;
+            t++;
+        }
+        else if(vis[a]==1 && vis[b]==0 && pa==a){
+            vis[b]=1;
+        }
+        
+        pa=a;
+    }
+    t=t+2;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    printf("%d", t);
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344629074
+USER_ID: user_0036
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, m;
+    cin>>n>>m;
+    int a,b;
+    vector<int>time(n+1, 0);
+    for(int i = 0; i < m; i++){
+        cin>>a>>b;
+        if(time[b] != time[a] || a == 1)
+        time[b] = time[a] + 1;
+    }
+    
+    cout<<*max_element(time.begin(), time.end());
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344629136
+USER_ID: user_0036
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, m;
+    cin>>n>>m;
+    int a,b;
+    vector<int>time(n+1, 0);
+    vector<int>parent(n+1);
+    for(int i = 0; i < m; i++){
+        cin>>a>>b;
+        if(parent[b] != parent[a] || a == 1) {
+            time[b] = time[a] + 1;
+            parent[b] = a;
+        }
+    }
+    
+    cout<<*max_element(time.begin(), time.end());
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344636729
+USER_ID: user_0089
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+   cout << 3;   
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344636952
+USER_ID: user_0135
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <map>
+#include <list>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+#define MAX 200005
+
+
+vector<int> adj[MAX];
+map<int, bool> visited;
+int n, m, i, res = 0;
+
+
+void read_input() {
+        cin >> n >> m;
+        for (int i = 1, x, y; i <= m; i++) {
+            cin >> x >> y; 
+            adj[x].push_back(y);
+        }
+}
+
+void DFS(int v)
+{
+    visited[v] = true;
+ 
+    for (i = 1; i <= n; ++i){
+        if(!visited[i]) {
+            for(int j = 0; j < (int)adj[i].size(); j++) {
+                visited[adj[i][j]] = true;
+            }
+            res++;
+        }
+    }
+}
+
+int main() {
+
+
+    read_input();
+    DFS(1);
+    cout << res << endl;
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1378096682
+USER_ID: user_0287
+SCORE: 2.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n,m;
+        n = sc.nextInt();
+        m = sc.nextInt();
+        int[][] x = new int[n + 1][n + 1];
+        
+        boolean[] visited = new boolean[n + 1];
+     
+        for (int i = 0; i < m; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+            x[u][v] = 1;
+            x[v][u] = 1;
+            
+        }
+        sc.close();
+        int time = 0;
+        for (int i = 1; i <= n; i++) {
+            if (!visited[i]) {
+                time++;
+                visited[i] = true;
+                for (int j = 1; j <= n; j++) {
+                    if (x[i][j] == 1) {
+                        visited[j] = true;
+                    }
+                }
+            } else {
+                continue;
+            }
+        }
+        System.out.print(time);
+    
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1378148743
+USER_ID: user_0291
+SCORE: 5.0
+LANGUAGE: cpp
+====================================================================================================
+
+#include<iostream>
+#include<fstream>
+#include<vector>
+
+using namespace std;
+
+int main() {
+    int n, m, x, y;
+
+    cin >> n >> m;
+    
+    vector<vector<pair<int, int>>> adj(n + 1);
+    vector<int> niv(n + 1, -1);
+    niv[1] = 0;
+
+    for (int i = 0; i < m; i++) {
+        cin >> x >> y;
+        adj[x].push_back({y, niv[x] + 1});
+        if (niv[y] == -1)
+            niv[y] = niv[x] + 1;
+    }
+
+    int Max = -1;
+
+    for (int i = 1; i <= n; i++) {
+        Max = max(Max, niv[i]);
+        for (auto neigh : adj[i])
+           Max = max(Max, neigh.second);
+    }
+
+    cout << Max << endl;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1391827043
+USER_ID: user_0388
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+       
+    
+    int N,M;
+    cin>>N>>M;
+    vector<vector<int>> v(N+1, vector<int>());
+    for(int i = 1; i <= N; i++) {
+        int a, b;
+        cin>>a>>b;
+        v[a].push_back(b);
+        v[b].push_back(a);
+    }
+    
+    queue<int> q;
+    vector<int> viz(N+1, 0);
+    int src = 1, t = 0;
+    q.push(src);
+    viz[src] = 1;
+    
+    while (!q.empty()) {
+        
+        int has_neigh = 0;
+        for(auto &neigh : v[src]) {
+            if(viz[neigh] == 0) {
+                has_neigh = 1;
+                viz[neigh] = 1;
+                
+                q.push(neigh);
+            }
+        }
+        if(has_neigh && src != 1) t++;
+        q.pop();
+        src = q.front();
+        
+    }
+    
+    cout<<t;
+    
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1408435665
+USER_ID: user_0411
+SCORE: 2.5
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    
+    int n, m;
+    cin>>n>>m;
+    vector<pair<int, int>> a(m+1);
+    vector<vector<int>> b(n+1, vector<int>(n+1, 0));
+    for(int i = 0; i < m; i++) {
+        int ok = 1;
+        int oka = 1, okb = 1;
+        cin>>a[i].first>>a[i].second;
+        for(int j = 1; j <= n; j++) {
+            if(b[j][a[i].first] != 0) {
+                oka = 0;
+            }
+            if(b[j][a[i].second] != 0) {
+                okb = 0;
+            }
+            if(oka == 0 && okb == 0) {
+                ok = 0;
+                break;
+            }
+        }
+        if(ok == 1) {
+            b[a[i].first][a[i].second] = 1;
+        }
+    }
+    int nr = 0;
+    for(int i = 1; i <= n; i++) {
+        int ok = 0;
+        for(int j = 1; j <= n; j++) {
+            if(b[i][j] != 0) {
+                ok = 1;
+                break;
+            }
+        }
+        if(ok == 1) {
+            nr++;
+        }
+    }
+    cout<<nr-1;
+    return 0;
+}
+

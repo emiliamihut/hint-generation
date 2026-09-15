@@ -1,0 +1,9 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1323455841,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-telefonul\1323455841.cpp: In function 'int main()':
+data\clean_solutions\submissions\gigel-si-telefonul\1323455841.cpp:20:26: error: 'INT32_MAX' was not declared in this scope
+   20 |             dp[i][cap] = INT32_MAX;
+      |                          ^~~~~~~~~
+data\clean_solutions\submissions\gigel-si-telefonul\1323455841.cpp:3:1: note: 'INT32_MAX' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+    2 | #include <vector>
+  +++ |+#include <cstdint>
+    3 |"

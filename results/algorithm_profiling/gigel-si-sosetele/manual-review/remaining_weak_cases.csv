@@ -1,0 +1,62 @@
+submission_id,user_id,attempt_number,score,language,result,algorithm,label_type,extraction_source,model,reasoning_effort
+1314237221,user_0010,1,1.04,java,Wrong Answer,DIRECT_NESTED_LOOP_MATCHING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1314236512,user_0018,2,46.88,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323072265,user_0042,1,2.08,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236349,user_0072,2,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236267,user_0083,11,2.08,cpp,Wrong Answer,SORT_ADJACENT_PAIRING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1323451075,user_0092,2,4.17,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236385,user_0116,2,2.08,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237196,user_0117,7,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237403,user_0117,9,50.0,java,Accepted,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236122,user_0131,2,12.5,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236607,user_0164,11,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323446183,user_0172,27,47.92,cpp,Wrong Answer,SORT_ADJACENT_PAIRING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1332398242,user_0190,4,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1332398499,user_0190,6,12.5,java,Wrong Answer,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1323432453,user_0208,1,2.08,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323432755,user_0208,5,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237496,user_0214,15,11.46,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391926940,user_0222,3,3.13,cpp,Abort Called,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391927314,user_0222,6,3.13,cpp,Segmentation Fault,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391927371,user_0222,8,2.08,cpp,Segmentation Fault,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391927653,user_0222,10,3.13,cpp,Abort Called,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237838,user_0229,4,12.5,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1361905924,user_0246,1,2.08,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314235723,user_0285,3,50.0,java,Accepted,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237294,user_0305,6,3.13,java,Terminated due ...,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1378120206,user_0334,1,1.04,c,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1378120230,user_0334,3,1.04,c,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1378120278,user_0334,5,2.08,c,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237475,user_0010,2,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323425285,user_0017,1,46.88,cpp,Wrong Answer,SORT_ADJACENT_PAIRING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1314237379,user_0030,1,29.17,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236572,user_0051,3,11.46,java,Terminated due ...,UNKNOWN,gpt-oss-high,no-decision,openai/gpt-oss-20b,high
+1314237077,user_0072,3,3.13,java,Terminated due ...,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323451207,user_0092,3,12.5,cpp,Wrong Answer,SORT_ADJACENT_PAIRING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1344697950,user_0096,2,2.08,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237220,user_0117,8,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237234,user_0141,1,2.08,java,Runtime Error,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323072718,user_0159,1,50.0,cpp,Accepted,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1314236651,user_0164,12,3.13,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323446057,user_0172,25,46.88,cpp,Wrong Answer,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,gpt-oss-high,analysis-explicit,openai/gpt-oss-20b,high
+1332392159,user_0190,1,46.88,java,Wrong Answer,DIRECT_NESTED_LOOP_MATCHING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1332398341,user_0190,5,12.5,java,Wrong Answer,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,gpt-oss-high,analysis-explicit,openai/gpt-oss-20b,high
+1332398740,user_0190,8,12.5,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314235905,user_0206,1,2.08,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237072,user_0213,1,2.08,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236678,user_0214,6,50.0,java,Accepted,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237413,user_0219,4,12.5,cpp,Wrong Answer,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1391926624,user_0222,1,3.13,cpp,Segmentation Fault,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391927106,user_0222,5,3.13,cpp,Abort Called,UNKNOWN,gpt-oss-high,no-decision,openai/gpt-oss-20b,high
+1391927276,user_0222,7,3.13,cpp,Segmentation Fault,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391927542,user_0222,9,3.13,cpp,Abort Called,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391927824,user_0222,11,3.13,cpp,Abort Called,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314235852,user_0243,1,1.04,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1361688993,user_0273,1,2.08,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236899,user_0292,1,17.71,java,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1378159516,user_0293,1,12.5,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236229,user_0296,1,1.04,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1391900242,user_0317,1,2.08,cpp,Abort Called,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1378120217,user_0334,2,1.04,c,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1378120263,user_0334,4,2.08,c,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1378120284,user_0334,6,2.08,c,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high

@@ -1,0 +1,923 @@
+====================================================================================================
+SUBMISSION_ID: 1314235723
+USER_ID: user_0285
+SCORE: 50.0
+LANGUAGE: java
+MODEL_LABEL: UNKNOWN
+EXTRACTION_SOURCE: final
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int N = sc.nextInt();
+        String dr = sc.nextLine();
+        String st = sc.nextLine();
+        
+        StringBuilder sdr = new StringBuilder(dr);
+        StringBuilder sst = new StringBuilder(st);
+        int[] countD = new int[27];
+        int[] countL = new int[27];
+        int remainingD = N;
+        int remainingL = N;
+        
+        for (int i = 0; i < N; i++){
+            if (sdr.charAt(i) == '*'){
+                countD[26]++;
+            }else {
+                countD[sdr.charAt(i) - 'a']++;
+            }
+            
+            if (sst.charAt(i) == '*'){
+                countL[26]++;
+            }else {
+                countL[sst.charAt(i) - 'a']++;
+            }
+            
+        }
+        int nrPerechi = 0;
+        for (int i = 0; i < 26; i++) {
+            nrPerechi+= Math.min(countL[i], countD[i]);
+        }
+        
+        nrPerechi+= Math.max(countL[26], countD[26]);
+        
+        int remaining = N-nrPerechi;
+        
+        nrPerechi += Math.min(Math.min(countL[26],countD[26]),remaining);
+        
+        System.out.println(Math.min(nrPerechi,N));
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236678
+USER_ID: user_0214
+SCORE: 50.0
+LANGUAGE: java
+MODEL_LABEL: UNKNOWN
+EXTRACTION_SOURCE: final
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static int N;
+    public static char[] left; 
+    public static char[] right;
+    
+    public static void readInput() {
+        MyScanner cin = new MyScanner();
+        N = cin.nextInt();
+        left = cin.nextLine().toCharArray();
+        right = cin.nextLine().toCharArray();
+    }
+    
+    public static int sort_and_count() {
+        Arrays.sort(left);
+        Arrays.sort(right);
+        int universalMatchingLeft = 0;
+        int universalMatchingRight = 0;
+        int index = 0;
+        
+        while(index < left.length && left[index] == '*') {
+            universalMatchingLeft++;
+            index++;
+        }
+        index = 0;
+        while(index < right.length && right[index] == '*') {
+            universalMatchingRight++;
+            index++;
+        }
+        
+        int indexLeft = 0;
+        int indexRight = 0;
+        int pairs = 0;
+        
+
+
+
+
+
+
+
+
+        while(indexLeft < left.length && indexRight < right.length) {
+            if(left[indexLeft] == '*' && right[indexRight] == '*') {
+                indexLeft++;
+                indexRight++;
+                continue;
+            }
+            if(left[indexLeft] == '*') {
+                indexLeft++;
+                continue;
+            }
+            
+            if(right[indexRight] == '*') {
+                indexRight++;
+                continue;
+            }
+            
+            if(left[indexLeft] == right[indexRight]) {
+                pairs++;
+                indexLeft++;
+                indexRight++;
+            } else {
+                if(left[indexLeft] > right[indexRight]) {
+                    if(universalMatchingLeft > 0) {
+                        pairs++;
+                        universalMatchingLeft--;
+                        indexRight++;
+                    } else {
+                        indexRight++;
+                    }
+                } else {
+                    if(universalMatchingRight > 0) {
+                        pairs++;
+                        universalMatchingRight--;
+                        indexLeft++;
+                    } else {
+                        indexLeft++;
+                    }
+                }
+            }
+        }
+        
+        int remainingLeftSocks = left.length - indexLeft;
+        int remainingRightSocks = right.length - indexRight;
+        int newPairsLeft = Integer.min(remainingLeftSocks, universalMatchingRight);
+        int newPairsRight = Integer.min(remainingRightSocks, universalMatchingLeft);
+        pairs += (newPairsLeft + newPairsRight);
+        universalMatchingLeft -= newPairsRight;
+        universalMatchingRight -= newPairsLeft;
+        if(universalMatchingLeft > 0 && universalMatchingRight > 0){
+            pairs = pairs + Integer.min(universalMatchingLeft, universalMatchingRight);
+        }
+        return pairs;
+    }
+    
+    public static void main(String[] args) {
+        
+        readInput();
+        System.out.print(sort_and_count());
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237403
+USER_ID: user_0117
+SCORE: 50.0
+LANGUAGE: java
+MODEL_LABEL: UNKNOWN
+EXTRACTION_SOURCE: final
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner s = new MyScanner();
+        int n = s.nextInt(), i, j, max = 0, l_unused = 0, r_unused = 0;
+        Character l[] = new Character[n];
+        Character r[] = new Character[n];
+        String buffer1 = s.nextLine();
+        String buffer2 = s.nextLine();
+
+        for(i = 0; i < n; i++) {
+            l[i] = buffer1.charAt(i);
+            r[i] = buffer2.charAt(i);
+        }
+
+        Arrays.sort(l, Collections.reverseOrder());
+        Arrays.sort(r, Collections.reverseOrder());
+
+        i = 0;
+        j = 0;
+        while(i < n && j < n) {
+            if(l[i] == '*') {
+                if(r_unused != 0)
+                    r_unused--;
+                else
+                    j++;
+
+                max++;
+                i++;
+                continue;
+            }
+
+            if(r[j] == '*') {
+                if(l_unused != 0)
+                    l_unused--;
+                else
+                    i++;
+
+                max++;
+                j++;
+                continue;
+            }
+
+            if (l[i] == r[j]) {
+                max++;
+                i++;
+                j++;
+            } else if (l[i] < r[j]) {
+                r_unused++;
+                j++;
+            } else {
+                l_unused++;
+                i++;
+            }
+        }
+
+        while(i < n) {
+            if(l[i] == '*' && r_unused != 0)
+                max++;
+            i++;
+        }
+
+        while(j < n) {
+            if(r[j] == '*' && l_unused != 0)
+                max++;
+            j++;
+        }
+
+        System.out.println(max);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323072718
+USER_ID: user_0159
+SCORE: 50.0
+LANGUAGE: cpp
+MODEL_LABEL: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING
+EXTRACTION_SOURCE: analysis-last-label
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Task {
+ public:
+    void solve() {
+        read_input();
+        print_output(get_result());
+    }
+
+ private:
+    int n, k;
+    vector<int> left;
+    vector<int> right;
+
+    void read_input() {
+        cin >> n;
+        left.resize(27, 0);
+        right.resize(27, 0);
+        char type;
+        for(int i = 0; i < n; i++) {
+            cin >> type;
+            if(type - 'a' < 0) {
+                left[26]++;
+            } else {
+                left[type - 'a']++;
+            }
+        }
+        for(int i = 0; i < n; i++) {
+            cin >> type;
+            if(type - 'a' < 0) {
+                right[26]++;
+            } else {
+                right[type - 'a']++;
+            }
+        }
+    }
+
+    int get_result() {
+        int result = 0;
+        int size = 26;
+        for(int i = 0; i <= size; i++) {
+            int fashion = 0;
+            if (left[i] > right[i]) {
+                result += right[i];
+                fashion = min((left[i] - right[i]), right[size]);
+                right[size] -= fashion;
+                result += fashion;
+            } else {
+                if (left[i] < right[i]) {
+                    result += left[i];
+                    fashion = min((right[i] - left[i]), left[size]);
+                    left[size] -= fashion;
+                    result += fashion;
+                } else {
+                    result += left[i];
+                }
+            }
+        }
+        return result;
+    }
+
+    void print_output(int result) {
+        cout << result;
+    }
+};
+
+
+int main() {
+    
+    
+    Task *task = new Task();
+    task->solve();
+    delete task;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323446183
+USER_ID: user_0172
+SCORE: 47.92
+LANGUAGE: cpp
+MODEL_LABEL: SORT_ADJACENT_PAIRING
+EXTRACTION_SOURCE: analysis-last-label
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+      
+    int N;
+    string stang, drept;
+    cin >> N;
+    cin >> stang;
+    cin >> drept;
+    
+    sort(stang.begin(), stang.end());
+    sort(drept.begin(), drept.end());
+    int p = 0, s = 0, d = 0;
+    
+    int i = 0;
+    int j = 0;
+    while (stang[i] == '*') {
+        s++;
+        i++;
+    }
+    
+    while(drept[j] == '*') {
+        d++;
+        j++;
+    }
+    if (i == N || j == N) {
+        p = max(s, d);
+    } else {
+    while (i < N && j < N) {
+        if (stang[i] == drept[j]) {
+            p++;
+            i++;
+            j++;
+        } else if (stang[i] < drept[j]) {
+            i++;
+        } else if (stang[i] > drept[j]) {
+            j++;
+        }
+        
+    }
+    p = p + s + d;
+    }
+    
+    cout << p;
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236512
+USER_ID: user_0018
+SCORE: 46.88
+LANGUAGE: cpp
+MODEL_LABEL: UNKNOWN
+EXTRACTION_SOURCE: final
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <queue>
+using namespace std;
+
+int count_stars(string s) {
+    int nr = 0;
+    for (int i = 0; i < (signed) s.size(); i++)
+        if (s[i] == '*')
+            nr++;
+    return nr;
+}
+
+int main() {
+    int n, nr_perechi = 0;
+    string s1, s2;
+
+    cin >> n >> s1 >> s2;
+    
+    int stelute_1 = count_stars(s1);
+    int stelute_2 = count_stars(s2);
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+
+    
+    s1.erase(0, stelute_1);
+    s2.erase(0, stelute_2);
+
+    queue <char> myqueue;
+    queue<char> unwanted;
+
+    for (int i = 0; i < n - stelute_1; i++)
+        myqueue.push(s1[i]);
+
+    while(!myqueue.empty() && !s2.empty()) {
+        char aux = myqueue.front();
+
+        if (aux == s2[0]) {
+            nr_perechi++;
+            myqueue.pop();
+            s2.erase(0, 1);
+        } else if (aux < s2[0]) {
+            unwanted.push(aux);
+            myqueue.pop();
+        } else if (stelute_1) {
+            nr_perechi++;
+            stelute_1--;
+            s2.erase(0, 1);
+        } else {
+            s2.erase(0, 1);
+        }
+    }
+
+    while (!unwanted.empty()) {
+        if (stelute_2) {
+            nr_perechi++;
+            stelute_2--;
+        }
+        unwanted.pop();
+    }
+
+    printf("%d\n", nr_perechi);
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323425285
+USER_ID: user_0017
+SCORE: 46.88
+LANGUAGE: cpp
+MODEL_LABEL: SORT_ADJACENT_PAIRING
+EXTRACTION_SOURCE: analysis-last-label
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+#define NMAX 20010
+
+int main() {
+    
+    int n;
+    cin >> n;
+    string s1, s2;
+    cin >> s1 >> s2;
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+    
+    int nr = 0;
+    int index1 = 0, index2 = 0;
+    
+    while (s1[index1] == '*') {
+        ++nr;
+        ++index1;
+    }
+    while (s2[index2] == '*') {
+        ++nr;
+        ++index2;
+    }
+    
+    while (index1 < s1.length() && index2 < s2.length()) {
+        if (s1[index1] == s2[index2]) {
+            ++nr;
+            ++index1;
+            ++index2;
+        } else if (s1[index1] > s2[index2]) {
+            ++index2;
+        } else if (s1[index1] < s2[index2]) {
+            ++index1;
+        }
+    }
+        
+    cout << nr << "\n";
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323446057
+USER_ID: user_0172
+SCORE: 46.88
+LANGUAGE: cpp
+MODEL_LABEL: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA
+EXTRACTION_SOURCE: analysis-explicit
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+      
+    int N;
+    string stang, drept;
+    cin >> N;
+    cin >> stang;
+    cin >> drept;
+    
+    sort(stang.begin(), stang.end());
+    sort(drept.begin(), drept.end());
+    int p = 0, s = 0, d = 0;
+    
+    int i = 0;
+    int j = 0;
+    while (stang[i] == '*') {
+        s++;
+        i++;
+    }
+    
+    while(drept[j] == '*') {
+        d++;
+        j++;
+    }
+    
+
+
+
+    
+
+
+
+ 
+    
+    while (i < N && j < N) {
+        if (stang[i] == drept[j]) {
+            p++;
+            i++;
+            j++;
+        } else if (stang[i] < drept[j]) {
+            i++;
+        } else if (stang[i] > drept[j]) {
+            j++;
+        }
+        
+        
+    }
+    p = p + s + d;
+    cout << p;
+
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332392159
+USER_ID: user_0190
+SCORE: 46.88
+LANGUAGE: java
+MODEL_LABEL: DIRECT_NESTED_LOOP_MATCHING
+EXTRACTION_SOURCE: analysis-last-label
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner scan = new MyScanner();
+        int N = scan.nextInt();
+        
+        String l = scan.nextLine();
+        String r = scan.nextLine();
+        
+        char left[] = l.toCharArray();
+        char right[] = r.toCharArray();
+        
+        Arrays.sort(left);
+        Arrays.sort(right);
+          
+        int stel_l = 0;
+        int stel_r = 0;
+        
+        int off1 = 0, off2 = 0;
+        int res = 0;
+        
+        for (int i = 0; i < N + Math.min(off1, off2); i++){
+            if (left[i - off1] == right[i - off2]){
+                res++;
+            } else if (left[i - off1] > right[i - off2]){
+                off1 ++;
+            } else {
+                off2 ++;
+            }            
+        }
+        
+        for (int i = 0 ; i < N; i++){
+             if (left[i] == '*'){
+                stel_l++;
+            }
+            if (right[i] == '*'){
+                stel_r ++;
+            }
+        }
+        
+        System.out.println(res + Math.max(stel_l, stel_r));
+        
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237379
+USER_ID: user_0030
+SCORE: 29.17
+LANGUAGE: cpp
+MODEL_LABEL: UNKNOWN
+EXTRACTION_SOURCE: final
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+using namespace std;
+
+int main()
+{
+    
+    int n;
+    char c;
+    cin >> n;
+    unordered_map<int, char> s1;
+    unordered_map<char, int> s2;
+    int any1 = 0, any2 = 0, pairs = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> c;
+        if (c == '*')
+        {
+            any1++;
+            continue;
+        }
+
+        s1[i] = c;
+    }
+
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> c;
+        if (c == '*')
+        {
+            any2++;
+            continue;
+        }
+        s2[c] = i;
+        
+    }
+
+    for (int i = 1; i <= n; i++)
+    {
+        auto it1 = s1.find(i);
+        if (it1 != s1.end())
+        {
+            auto it2 = s2.find(it1->second);
+            if (it2 != s2.end())
+                pairs++;
+            else
+            {
+                if (any2 > 0)
+                {
+                    any2--;
+                    pairs++;
+                }
+            }
+        }
+    }
+
+    pairs += any1;
+
+    cout << pairs;
+    return 0;
+}
+

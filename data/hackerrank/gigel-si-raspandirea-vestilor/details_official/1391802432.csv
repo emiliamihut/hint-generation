@@ -1,0 +1,38 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1391802432,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:8:15: error: 'uint32_t' was not declared in this scope
+    8 | vector<vector<uint32_t>> f;
+      |               ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:6:1: note: 'uint32_t' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+    5 | #include <algorithm>
+  +++ |+#include <cstdint>
+    6 | using namespace std;
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:8:15: error: template argument 1 is invalid
+    8 | vector<vector<uint32_t>> f;
+      |               ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:8:15: error: template argument 2 is invalid
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:8:23: error: template argument 1 is invalid
+    8 | vector<vector<uint32_t>> f;
+      |                       ^~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:8:23: error: template argument 2 is invalid
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:9:8: error: 'uint32_t' was not declared in this scope
+    9 | vector<uint32_t> visited;
+      |        ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:9:8: note: 'uint32_t' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:9:16: error: template argument 1 is invalid
+    9 | vector<uint32_t> visited;
+      |                ^
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:9:16: error: template argument 2 is invalid
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:10:8: error: 'uint32_t' was not declared in this scope
+   10 | vector<uint32_t> timestamps;
+      |        ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:10:8: note: 'uint32_t' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:10:16: error: template argument 1 is invalid
+   10 | vector<uint32_t> timestamps;
+      |                ^
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:10:16: error: template argument 2 is invalid
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp: In function 'int main()':
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:13:5: error: 'uint32_t' was not declared in this scope
+   13 |     uint32_t n, m;
+      |     ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1391802432.cpp:13:5: note: 'uint32_t' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+data\clean_solutions\submissions\gigel-si-raspan"

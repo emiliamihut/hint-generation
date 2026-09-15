@@ -1,0 +1,102 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+matei-si-diamantele,1314237213,0,0,0,passed,,6.0,passed,0.165398,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,1,1,1,passed,,6.0,passed,0.132533,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"-1
+","-1
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,2,2,2,passed,,6.0,passed,0.135183,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,3,3,3,passed,,6.0,passed,0.144368,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7
+","7
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,4,4,4,passed,,6.0,passed,0.125258,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8
+","8
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,5,5,5,passed,,6.0,passed,0.456128,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2234134
+","2234134
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,6,6,6,passed,,6.0,passed,0.327102,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"6325896
+","6325896
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,7,7,7,failed,,6.0,runtime_error,0.412764,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"6354964
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index 970 out of bounds for length 970
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,8,8,8,passed,,6.0,passed,0.402052,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8316606
+","8316606
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,9,9,9,passed,,6.0,passed,0.347561,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8165086
+","8165086
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,10,10,10,passed,,6.0,passed,0.271846,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"4978705
+","4978705
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,11,11,11,passed,,6.0,passed,0.314128,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1220162
+","1220162
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,12,12,12,failed,,6.0,runtime_error,0.386106,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"7934215
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -25 out of bounds for length 785
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,13,13,13,failed,,6.0,runtime_error,0.318943,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"7194070
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index 573 out of bounds for length 573
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,14,14,14,failed,,6.0,runtime_error,0.331644,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"7341084
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index 553 out of bounds for length 553
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,15,15,15,passed,,6.0,passed,0.381484,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5423248
+","5423248
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,16,16,16,passed,,6.0,passed,0.331523,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"4031457
+","4031457
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,17,17,17,passed,,6.0,passed,0.368844,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"9162920
+","9162920
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,18,18,18,failed,,6.0,runtime_error,0.276816,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5081662
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -32 out of bounds for length 642
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,19,19,19,passed,,6.0,passed,0.355892,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"9625807
+","9625807
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,20,20,20,passed,,6.0,passed,0.378060,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3901790
+","3901790
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,21,21,21,passed,,6.0,passed,0.326895,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3030246
+","3030246
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,22,22,22,passed,,6.0,passed,0.282089,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7929798
+","7929798
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,23,23,23,failed,,6.0,runtime_error,0.340427,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"4997422
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -18 out of bounds for length 968
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,24,24,24,passed,,6.0,passed,0.251490,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1758779
+","1758779
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,25,25,25,failed,,6.0,runtime_error,0.244274,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1482237
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -686941112 out of bounds for length 642
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,26,26,26,failed,,6.0,runtime_error,0.300617,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5456432
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -386958278 out of bounds for length 827
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,27,27,27,failed,,6.0,runtime_error,0.237512,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5598715
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -124095361 out of bounds for length 447
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,28,28,28,failed,,6.0,runtime_error,0.291799,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5892050
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -857180848 out of bounds for length 895
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv
+matei-si-diamantele,1314237213,29,29,29,failed,,6.0,runtime_error,0.262524,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5649521
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index -794541489 out of bounds for length 470
+	at Solution.main(Solution.java:68)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237213.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237213.csv

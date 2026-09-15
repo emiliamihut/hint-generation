@@ -1,0 +1,6 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1333805007,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1333805007.cpp: In function 'int main()':
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1333805007.cpp:23:30: error: 'INT32_MIN' was not declared in this scope; did you mean 'INT_MIN'?
+   23 |     fill(d.begin(), d.end(), INT32_MIN);
+      |                              ^~~~~~~~~
+      |                              INT_MIN"

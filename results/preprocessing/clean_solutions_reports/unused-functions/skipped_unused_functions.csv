@@ -1,0 +1,4 @@
+﻿problem,language,submission_id,source_file,issue_id,reported_line,function_name,start_line,end_line,status,reason
+gigel-si-raspandirea-vestilor,cpp,1314234604,gigel-si-raspandirea-vestilor/1314234604.cpp,unusedPrivateFunction,92,,,,skipped,declaration_without_body
+matei-si-diamantele,cpp,1323416777,matei-si-diamantele/1323416777.cpp,unusedPrivateFunction,49,,,,skipped,declaration_without_body
+organizare-mafiota,cpp,1323431344,organizare-mafiota/1323431344.cpp,unusedPrivateFunction,127,,,,skipped,declaration_without_body

@@ -1,0 +1,5 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1323447420,2.08,Terminated due ...,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-sosetele\1323447420.java:49: error: class Sosete is public, should be declared in a file named Sosete.java
+public class Sosete {
+       ^
+1 error"

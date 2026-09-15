@@ -1,0 +1,5 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1378158178,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1378158178.java:3: error: class comp_conexe is public, should be declared in a file named comp_conexe.java
+public class comp_conexe {
+       ^
+1 error"

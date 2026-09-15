@@ -1,0 +1,10 @@
+﻿dataset,metric,value
+HackerRank,problems,6
+HackerRank,raw_scraped_submissions,4738
+HackerRank,cleaned_deduplicated_submissions,3223
+HackerRank,test_execution_logs,61618
+Infoarena,problems,66
+Infoarena,indexed_active_submissions,124716
+Infoarena,full_submission_metadata_records,160130
+Infoarena,test_level_outcome_files,217313
+Combined,problems,72

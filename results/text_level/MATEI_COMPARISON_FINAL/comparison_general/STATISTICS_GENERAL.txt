@@ -1,0 +1,61 @@
+MATEI - GENERAL TAXONOMY - CODE VS TEXT
+
+TOTAL: 625
+SAME: 564
+DIFFERENT: 61
+AGREEMENT: 90.24%
+
+CODE DISTRIBUTION:
+ 319 | GEOMETRIC_SCAN
+ 145 | BFS_RADIUS
+  72 | GREEDY_NEIGHBOR_WALK
+  59 | DFS_RADIUS
+  12 | DP_RADIUS
+  12 | UNKNOWN
+   6 | SORTED_MANHATTAN
+
+TEXT DISTRIBUTION:
+ 295 | GEOMETRIC_SCAN
+ 151 | BFS_RADIUS
+  85 | DFS_RADIUS
+  68 | GREEDY_NEIGHBOR_WALK
+  12 | SORTED_MANHATTAN
+   8 | UNKNOWN
+   6 | DP_RADIUS
+
+MOST COMMON DIFFERENCES:
+  12 | GEOMETRIC_SCAN               -> DFS_RADIUS
+   8 | GREEDY_NEIGHBOR_WALK         -> GEOMETRIC_SCAN
+   7 | UNKNOWN                      -> DFS_RADIUS
+   6 | GEOMETRIC_SCAN               -> GREEDY_NEIGHBOR_WALK
+   6 | GEOMETRIC_SCAN               -> SORTED_MANHATTAN
+   6 | GEOMETRIC_SCAN               -> UNKNOWN
+   3 | DP_RADIUS                    -> DFS_RADIUS
+   3 | GEOMETRIC_SCAN               -> BFS_RADIUS
+   3 | GREEDY_NEIGHBOR_WALK         -> DFS_RADIUS
+   3 | DP_RADIUS                    -> BFS_RADIUS
+   1 | UNKNOWN                      -> GEOMETRIC_SCAN
+   1 | UNKNOWN                      -> GREEDY_NEIGHBOR_WALK
+   1 | UNKNOWN                      -> BFS_RADIUS
+   1 | BFS_RADIUS                   -> DFS_RADIUS
+
+SCORE DISTRIBUTION - DIFFERENT CASES:
+score=     50 |   7 submissions |  11.48%
+score=  41.07 |   3 submissions |   4.92%
+score=  35.71 |   1 submissions |   1.64%
+score=  30.36 |   1 submissions |   1.64%
+score=  23.21 |   1 submissions |   1.64%
+score=  19.64 |   1 submissions |   1.64%
+score=  17.86 |   1 submissions |   1.64%
+score=  16.07 |   1 submissions |   1.64%
+score=  14.29 |   8 submissions |  13.11%
+score=   12.5 |   6 submissions |   9.84%
+score=   8.93 |   6 submissions |   9.84%
+score=   5.36 |   5 submissions |   8.20%
+score=   3.57 |   7 submissions |  11.48%
+score=   1.79 |  13 submissions |  21.31%
+
+CODE NON-UNKNOWN ONLY:
+TOTAL: 613
+SAME: 562
+AGREEMENT: 91.68%

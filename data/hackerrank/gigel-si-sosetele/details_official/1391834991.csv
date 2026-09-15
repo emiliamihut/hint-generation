@@ -1,0 +1,54 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1391834991,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp: In function 'int main()':
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:11:15: error: 'uint32_t' was not declared in this scope
+   11 |     map<char, uint32_t> m1, m2;
+      |               ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:7:1: note: 'uint32_t' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+    6 | #include <map>
+  +++ |+#include <cstdint>
+    7 | using namespace std;
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:11:23: error: template argument 2 is invalid
+   11 |     map<char, uint32_t> m1, m2;
+      |                       ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:11:23: error: template argument 4 is invalid
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:14:11: error: invalid types 'int[char]' for array subscript
+   14 |         m1[c] = 0;
+      |           ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:15:11: error: invalid types 'int[char]' for array subscript
+   15 |         m2[c] = 0;
+      |           ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:18:7: error: invalid types 'int[char]' for array subscript
+   18 |     m1['*'] = 0;
+      |       ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:19:7: error: invalid types 'int[char]' for array subscript
+   19 |     m2['*'] = 0;
+      |       ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:21:13: error: expected ';' before 'n'
+   21 |     uint32_t n, n1, n2;
+      |             ^~
+      |             ;
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:22:18: error: 'n' was not declared in this scope
+   22 |     scanf(""%u"", &n);
+      |                  ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:23:5: error: 'n1' was not declared in this scope; did you mean 'm1'?
+   23 |     n1 = n;
+      |     ^~
+      |     m1
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:24:5: error: 'n2' was not declared in this scope; did you mean 'm2'?
+   24 |     n2 = n;
+      |     ^~
+      |     m2
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:27:18: error: expected ';' before 'i'
+   27 |     for (uint32_t i = 0; i < n; i++) {
+      |                  ^~
+      |                  ;
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:27:26: error: 'i' was not declared in this scope
+   27 |     for (uint32_t i = 0; i < n; i++) {
+      |                          ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:29:11: error: invalid types 'int[char]' for array subscript
+   29 |         m1[c]++;
+      |           ^
+data\clean_solutions\submissions\gigel-si-sosetele\1391834991.cpp:33:18: error: expected ';' before 'i'
+   33 |     for (uint32_t i = 0; i < n; i++) {
+      |                  ^~
+      |   "

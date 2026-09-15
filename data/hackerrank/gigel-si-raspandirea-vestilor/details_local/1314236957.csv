@@ -1,0 +1,72 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+gigel-si-raspandirea-vestilor,1314236957,0,0,0,passed,,4.0,passed,0.149429,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,2,"2
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,1,1,1,passed,,4.0,passed,0.148348,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,3,"3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,2,2,2,passed,,4.0,passed,0.230896,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,3,"3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,3,3,3,passed,,4.0,passed,0.228815,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,4,"4
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,4,4,4,passed,,4.0,passed,0.124723,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,8,"8
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,5,5,5,passed,,4.0,passed,0.175598,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,5,"5
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,6,6,6,passed,,4.0,passed,0.256621,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,131,"131
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,7,7,7,passed,,4.0,passed,0.158326,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,10,"10
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,8,8,8,passed,,4.0,passed,0.214944,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,6,"6
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,9,9,9,passed,,4.0,passed,0.457733,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,15,"15
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,10,10,10,passed,,4.0,passed,1.297218,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,16,"16
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,11,11,11,passed,,4.0,passed,1.239719,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,7,"7
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,12,12,12,failed,,4.0,runtime_error,0.769984,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"10
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:74)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,13,13,13,failed,,4.0,runtime_error,2.089872,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"13
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:74)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,14,14,14,failed,,4.0,runtime_error,0.562518,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"70
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:74)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,15,15,15,failed,,4.0,runtime_error,0.302953,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,"#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 322961408 bytes. Error detail: G1 virtual space
+# An error report file with more information is saved as:
+# D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\work\gigel-si-raspandirea-vestilor\1314236957\hs_err_pid21136.log
+","11
+","OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00000000cfe00000, 322961408, 0) failed; error='The paging file is too small for this operation to complete' (DOS error/errno=1455)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,16,16,16,failed,,4.0,runtime_error,1.378046,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,"#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes. Error detail: G1 virtual space
+# An error report file with more information is saved as:
+# D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\work\gigel-si-raspandirea-vestilor\1314236957\hs_err_pid22344.log
+","294
+","OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00000000c0000000, 266338304, 0) failed; error='The paging file is too small for this operation to complete' (DOS error/errno=1455)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,17,17,17,failed,,4.0,runtime_error,1.805064,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,"#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes. Error detail: AllocateHeap
+# An error report file with more information is saved as:
+# D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\work\gigel-si-raspandirea-vestilor\1314236957\hs_err_pid25844.log
+","38
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,18,18,18,failed,,4.0,runtime_error,3.343484,6,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"47
+","Error: Failed to load C:\Program Files\Java\jdk-25\bin\server\jvm.dll
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,19,19,19,failed,,4.0,timeout,8.542557,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,"Error occurred during initialization of VM
+Could not reserve enough space in CodeHeap 'profiled nmethods' (2496K)
+","17
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,20,20,20,failed,,4.0,timeout,6.232545,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"14
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv
+gigel-si-raspandirea-vestilor,1314236957,21,21,21,failed,,4.0,runtime_error,2.051816,6,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"83
+","Error: Failed to load C:\Program Files\Java\jdk-25\bin\server\jvm.dll
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1314236957.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1314236957.csv

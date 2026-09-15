@@ -1,0 +1,9 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1323430686,2.78,Wrong Answer,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\cutiile-magice\1323430686.cpp: In function 'void bkt(std::vector<int>&, std::vector<int>&, int, int)':
+data\clean_solutions\submissions\cutiile-magice\1323430686.cpp:14:10: error: 'uint' was not declared in this scope; did you mean 'rint'?
+   14 |     for (uint i = 0; i <= current.size() - 1; ++i) {
+      |          ^~~~
+      |          rint
+data\clean_solutions\submissions\cutiile-magice\1323430686.cpp:14:22: error: 'i' was not declared in this scope
+   14 |     for (uint i = 0; i <= current.size() - 1; ++i) {
+      |                      ^"

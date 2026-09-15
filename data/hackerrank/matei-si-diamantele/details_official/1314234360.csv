@@ -1,0 +1,6 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314234360,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\matei-si-diamantele\1314234360.cpp: In function 'int main()':
+data\clean_solutions\submissions\matei-si-diamantele\1314234360.cpp:12:15: error: 'INT32_MIN' was not declared in this scope; did you mean 'INT_MIN'?
+   12 |     int max = INT32_MIN;
+      |               ^~~~~~~~~
+      |               INT_MIN"

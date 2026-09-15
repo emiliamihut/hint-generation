@@ -1,0 +1,22 @@
+{
+  "source_dataset": "data\\analysis_dataset_deduplicated",
+  "output_dataset": "data\\analysis_dataset_no_comments",
+  "source_files": {
+    "processed": 3223,
+    "modified": 2233,
+    "line_comments_removed": 6550,
+    "block_comments_removed": 1890
+  },
+  "jplag_files": {
+    "processed": 3197,
+    "modified": 2216,
+    "line_comments_removed": 6508,
+    "block_comments_removed": 1884
+  },
+  "json_files": {
+    "processed": 6,
+    "modified": 6,
+    "line_comments_removed": 6550,
+    "block_comments_removed": 1890
+  }
+}

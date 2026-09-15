@@ -1,0 +1,22 @@
+{
+  "id": "gigel-si-telefonul",
+  "statement": "Gigel trebuie sa treaca prin N intersectii pana la scoala. Telefonul are capacitate maxima X si pierde o unitate de baterie intre doua intersectii consecutive. In intersectia i, o unitate de energie costa v[i]. Gigel porneste cu bateria descarcata. Trebuie calculat costul minim pentru a ajunge la scoala.",
+  "input_format": "Pe prima linie se citesc N si X. Pe urmatoarea linie se citesc N valori v[i], costurile unei unitati de energie.",
+  "constraints": [
+    "1 <= N <= 500",
+    "1 <= X <= 500",
+    "1 <= v[i] <= 1000000",
+    "Timp: C++ 2s, Java 4s"
+  ],
+  "output_format": "Se afiseaza costul minim necesar.",
+  "samples": [
+    {
+      "input": "4 6\n1 2 3 4",
+      "output": "4"
+    },
+    {
+      "input": "4 4\n2 1 4 3",
+      "output": "5"
+    }
+  ]
+}

@@ -1,0 +1,1549 @@
+====================================================================================================
+REVIEW_INDEX: 1/19
+SUBMISSION_ID: 1314236523
+USER_ID: user_0158
+SCORE: 50.0
+LANGUAGE: java
+====================================================================================================
+
+import javafx.geometry.Pos;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner sc = new MyScanner();
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int P = sc.nextInt();
+        int L = sc.nextInt();
+        int C = sc.nextInt();
+
+        int[][] matrix = new int[N+1][M+1];
+        ArrayList<Position> matrixPositions = new ArrayList<>();
+
+        for (int i = 1; i < N + 1; i++) {
+            for (int j = 1; j < M + 1; j++) {
+                matrix[i][j] = sc.nextInt();
+                matrixPositions.add(new Position(i, j, matrix[i][j], Math.abs(L-i) + Math.abs(C-j)));
+            }
+        }
+
+        Collections.sort(matrixPositions);
+
+        int finalValue = 0;
+        int i = 0;
+
+        
+
+
+
+        if ( P >= matrixPositions.get(0).manhattanD) {
+            System.out.println(matrixPositions.get(0).value);
+        } else {
+            while (P < matrixPositions.get(i).manhattanD) {
+                i++;
+                finalValue = matrixPositions.get(i).value;
+            }
+            System.out.println(finalValue);
+        }
+    }
+
+    public static class Position implements Comparable<Position> {
+        int line;
+        int col;
+        int value;
+        int manhattanD;
+
+        public Position(int line, int col, int value, int manhattanD) {
+            this.line = line;
+            this.col = col;
+            this.value = value;
+            this.manhattanD = manhattanD;
+        }
+        public int compareTo(Position pos) {
+            return pos.value - this.value;
+        }
+    }
+}
+
+====================================================================================================
+REVIEW_INDEX: 2/19
+SUBMISSION_ID: 1314237177
+USER_ID: user_0028
+SCORE: 50.0
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int calcDistance(pair<int,int> start, pair<int, int> dest){
+    int xDif = abs(start.first - dest.first);
+    int yDif = abs(start.second - dest.second);
+    return xDif+yDif;
+}
+
+int main() {
+
+    int n,m,x,y,p;
+    
+    cin>>n>>m>>p>>x>>y;
+    pair<int,int> pos(x,y);
+    vector<pair<pair<int,int>,int>> matrixLin;
+    
+    for(int i = 1; i< n+1; i++)
+        for(int j =1,a ; j < m+1; j++){
+            cin>>a;       
+            pair<int,int> pos(i,j);
+            
+            pair<pair<int,int>,int> elem(pos,a);
+            matrixLin.push_back(elem);
+        }
+    sort(matrixLin.begin(), matrixLin.end(),
+          [](const pair<pair<int,int>,int> &e1, const pair<pair<int,int>,int> &e2) {
+    return e1.second > e2.second;
+          });
+    int i=0;
+    while(p <calcDistance(matrixLin[i].first,pos)){
+
+        i++;
+    }
+    int max;
+    max = matrixLin[i].second;
+    cout<<max;
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 3/19
+SUBMISSION_ID: 1344697187
+USER_ID: user_0161
+SCORE: 39.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    int matrix[n][m];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    int diff = p;
+    int till = 1;
+    int max = -1000000000;
+    l--;
+    c--;
+    while(diff != 0) {
+        for (int i = 0; i <= diff; i++) {
+            if (l - diff + i < 0 || c - i < 0) {
+                continue;
+            }
+            
+            if (max < matrix[l - diff + i][c - i]) {
+                max = matrix[l - diff + i][c - i];
+            }
+        }
+        for (int i = 1; i <= diff; i++) {
+            if (l - diff + i < 0 || c + i >= m) {
+                continue;
+            }
+            
+            if (max < matrix[l - diff + i][c + i]) {
+                max = matrix[l - diff + i][c + i];
+            }
+        }
+        for (int i = 0; i < diff; i++) {
+            if (l + diff + i >= n || c - i < 0) {
+                continue;
+            }
+            
+            if (max < matrix[l + diff - i][c - i]) {
+                max = matrix[l + diff - i][c - i];
+            }
+        }
+        for (int i = 1; i < diff; i++) {
+            if (l + diff - i >= n || c - 1 >= m) {
+                continue;
+            }
+            
+            if (max < matrix[l + diff - i][c + i]) {
+                max = matrix[l + diff - i][c + i];
+            }
+        }
+        diff--;
+    }
+    if (matrix[l][c] > max) {
+        max = matrix[l][c];
+    }
+    cout << max;
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 4/19
+SUBMISSION_ID: 1391933787
+USER_ID: user_0271
+SCORE: 39.29
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int [][] v = new int[n+1][m+1];
+        int moves = sc.nextInt();
+        int l = sc.nextInt();
+        int c = sc.nextInt();
+        
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++)
+                v[i][j] = sc.nextInt();
+        }
+        int [] max_p = new int[moves + 1];
+        
+        for (int p = 0; p <= moves; p++) {
+            for (int i = 1; i <= p; i++) {
+                int j = p - i;
+                if (l + i > 0 && l + i <= n && c + j > 0 && c + j <= m)
+                    max_p[p] = Math.max(max_p[p], v[l+i][c+j]);
+                if (l - i > 0 && l - i <= n && c + j > 0 && c + j <= m)
+                    max_p[p] = Math.max(max_p[p], v[l-i][c+j]);
+                if (l + i > 0 && l + i <= n && c - j > 0 && c - j <= m)
+                    max_p[p] = Math.max(max_p[p], v[l+i][c - j]);
+                if (l - i > 0 && l - i <= n && c - j > 0 && c - j <= m)
+                    max_p[p] = Math.max(max_p[p], v[l-i][c-j]); 
+            }
+        }
+        
+        int loc_max = -1000000000;
+        for (int i = 0; i <= moves; i++) {
+            if(max_p[i] > loc_max)
+                loc_max = max_p[i];
+        }
+        
+        System.out.println(loc_max);
+    }
+}
+
+====================================================================================================
+REVIEW_INDEX: 5/19
+SUBMISSION_ID: 1323401607
+USER_ID: user_0108
+SCORE: 19.64
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int n, m, p, l, c;
+std::vector<std::vector<int>> matrix;
+
+void back(std::vector<std::pair<int,int>>& sol, int& max, std::vector<std::pair<int, int>>& moves,
+         std::vector<std::vector<int>>& dont_visit) {
+    if (sol.size() == p + 1) {
+        return;
+    }
+    for (int i = 0; i < moves.size(); i++) {
+        int new_line = sol.back().first + moves[i].first;
+        int new_col = sol.back().second + moves[i].second;
+        
+        if ((new_line >= 0 && new_line < n) && (new_col >= 0 && new_col < m) && dont_visit[new_line][new_col] == 0) {
+            sol.push_back({new_line, new_col});
+            if (max < matrix[new_line][new_col]) {
+                max = matrix[new_line][new_col];
+            } else {
+                dont_visit[new_line][new_col] = 1;
+            }
+            back(sol, max, moves, dont_visit);
+            sol.pop_back();
+        }
+    }
+}
+
+void read_input() {
+    std::cin >> n >> m >> p >> l >> c;
+    for (int i = 0; i < n; i++) {
+      matrix.push_back(std::vector<int>());
+        for (int j = 0; j < m; j++) {
+          int x;
+          std::cin >> x;
+          matrix[i].push_back(x);
+        }
+    }
+}
+
+int main() {
+    
+    std::vector<std::pair<int,int>> sol;
+    std::vector<std::pair<int, int>> moves = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    read_input();
+    std::vector<std::vector<int>> dont_visit(n, std::vector<int>(m, 0));
+    
+    sol.push_back({l - 1, c -1});
+    int max = matrix[l - 1][c - 1];
+    dont_visit[l - 1][c - 1] = 1;
+
+    back(sol, max, moves, dont_visit);
+    
+    std::cout << max;
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 6/19
+SUBMISSION_ID: 1314235577
+USER_ID: user_0182
+SCORE: 16.07
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        
+        
+        int n, m, l, c;
+        long p;
+        MyScanner scanner = new MyScanner();
+        n = scanner.nextInt();
+        m = scanner.nextInt();
+        p = scanner.nextLong();
+        l = scanner.nextInt();
+        c = scanner.nextInt();
+
+        long array[][] = new long[n+1][m+1];
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= m; j++) {
+                array[i][j] = scanner.nextLong();
+            }
+        }
+
+        if(p == 0) {
+            System.out.println(array[l][c]);
+            return;
+        }
+
+        long counter = p + 1 - l;
+        long max = array[l][c];
+        if(counter < 0) {
+            
+            counter = 0;
+            for(int i = l - (int)p; i <= l + (int)p; i++) {
+                
+                if(i > n) {
+                    break;
+                }
+                
+                for(int j = c - (int)counter; j <= c - (int)counter; j++) {
+                    if(j < 1) {
+                        continue;
+                    }
+                    
+                    if(j > m) {
+                        break;
+                    }
+                    if(array[i][j] > max) {
+                        max = array[i][j];
+                    }
+                }
+            }
+        } else {
+            
+            int limitI, limitJ;
+            if(l + p > n) {
+                limitI = n;
+            } else {
+                limitI = l + (int)p;
+            }
+            int j;
+            for(int i = 1; i <= limitI; i++) {
+                if(c < counter) {
+                    j = 1;
+                } else {
+                    j = c - (int)counter;
+                }
+                if(c + p > m) {
+                    limitJ = m;
+                } else {
+                    limitJ = c + (int)p;
+                }
+                for(; j <= limitJ; j++) {
+                    if(array[i][j] > max) {
+                        max = array[i][j];
+                    }
+                }
+            }
+        }
+
+        System.out.println(max);
+    }
+}
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+====================================================================================================
+REVIEW_INDEX: 7/19
+SUBMISSION_ID: 1361903196
+USER_ID: user_0227
+SCORE: 16.07
+LANGUAGE: cpp
+====================================================================================================
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+const int dx[] = {-1, 0, 1, 0};
+const int dy[] = {0, 1, 0, -1};
+
+int n, m, p, l, c;
+vector<vector<int>> grid;
+vector<vector<bool>> visited;
+
+bool valid(int x, int y) {
+    return x >= 0 && x < n && y >= 0 && y < m;
+}
+
+int dfs(int x, int y, int moves_left, int beauty) {
+    if (moves_left == 0) {
+        return beauty;
+    }
+    int max_beauty = beauty;
+    for (int i = 0; i < 4; i++) {
+        int nx = x + dx[i];
+        int ny = y + dy[i];
+        if (valid(nx, ny) && !visited[nx][ny]) {
+            visited[nx][ny] = true;
+            int new_beauty = grid[nx][ny];
+            max_beauty = max(max_beauty, dfs(nx, ny, moves_left - 1, new_beauty));
+            visited[nx][ny] = false;
+        }
+    }
+    return max_beauty;
+}
+
+int main() {
+    cin >> n >> m >> p >> l >> c;
+    grid.resize(n, vector<int>(m));
+    visited.resize(n, vector<bool>(m, false));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+    visited[l-1][c-1] = true;
+    int max_beauty = dfs(l-1, c-1, p, grid[l-1][c-1]);
+    cout << max_beauty << endl;
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 8/19
+SUBMISSION_ID: 1378034785
+USER_ID: user_0222
+SCORE: 16.07
+LANGUAGE: cpp
+====================================================================================================
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int N, M, P, L, C;
+
+vector<vector<int>> beauty;
+vector<vector<bool>> visited;
+
+#define INF 1e9
+
+int Max = -INF;
+
+
+int dr[] = {-1, 1, 0, 0};
+int dc[] = {0, 0, -1, 1};
+
+void back(int r, int c, int moves) {
+    Max = max(Max, beauty[r][c]);
+
+    if (moves == P) return;
+
+    
+    for (int i = 0; i < 4; ++i) {
+        int nr = r + dr[i];
+        int nc = c + dc[i];
+        
+        if (nr >= 0 && nr < N && nc >= 0 && nc < M && !visited[nr][nc]) {
+            visited[nr][nc] = true;
+            back(nr, nc, moves + 1);
+            visited[nr][nc] = false;
+        }
+    }
+}
+
+int main() {
+    cin >> N >> M >> P >> L >> C;
+    L--; 
+    C--;
+
+    beauty.resize(N, vector<int>(M));
+    visited.resize(N, vector<bool>(M, false));
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            cin >> beauty[i][j];
+        }
+    }
+
+    visited[L][C] = true;
+    back(L, C, 0);
+
+    cout << Max << endl;
+
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 9/19
+SUBMISSION_ID: 1314234951
+USER_ID: user_0153
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int getMax(int a[1001][1001], int x, int y, int p)
+{
+    if (p == 0)
+    {
+        return a[x][y];
+    }
+    else
+    {
+        return max(max(max(getMax(a, x - 1, y, p - 1), 
+                           getMax(a, x + 1, y, p - 1)), 
+                       max(getMax(a, x, y - 1, p - 1), 
+                           getMax(a, x, y + 1, p - 1))), 
+                   a[x][y]);
+    }
+}
+
+int main()
+{
+    int n, m, p, l, c;
+    int a[1001][1001];
+
+    scanf("%d %d %d %d %d", &n, &m, &p, &l, &c);
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= m; j++)
+        {
+            cin >> a[i][j];
+        }
+    }
+    cout << getMax(a, l, c, p) << '\n';
+
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 10/19
+SUBMISSION_ID: 1314237409
+USER_ID: user_0145
+SCORE: 14.29
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner scan = new MyScanner();
+        int pos = 0, aux = 0;
+
+        int N = scan.nextInt();
+        int M = scan.nextInt();
+        int P = scan.nextInt();
+        int L = scan.nextInt();
+        int C = scan.nextInt();
+
+        int[][] numbers = new int[N + 1][M + 1];
+
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= M; j++) {
+                numbers[i][j] = scan.nextInt();
+            }
+        }
+
+        int m = 0;
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= M; j++) {
+                pos = numbers[L][C]; 
+                aux = pos;
+                for (m = 1; m <= P; m++) {
+                    int diff = P - m;
+
+                    if (numbers[L - m][C] > aux) {
+                        aux = numbers[L - m][C];
+                    }
+                    if (numbers[L + m][C] > aux) {
+                        aux = numbers[L + m][C];
+                    }
+                    if (numbers[L][C - m] > aux) {
+                        aux = numbers[L][C - m];
+                    }
+                    if (numbers[L][C + m] > aux) {
+                        aux = numbers[L + m][C];
+                    }
+                    if (diff > 0) {
+                        if (numbers[L + m][C + diff] > aux) {
+                            aux = numbers[L + m][C + diff];
+                        }
+                        if (numbers[L - m][C + diff] > aux) {
+                            aux = numbers[L - m][C + diff];
+                        }
+                        if (numbers[L + m][C - diff] > aux) {
+                            aux = numbers[L + m][C - diff];
+                        }
+                        if (numbers[L - m][C - diff] > aux) {
+                            aux = numbers[L - m][C - diff];
+                        }
+                    }
+
+                
+
+                }
+                if (P == 0) {
+                    aux = pos;
+                }
+
+            }
+        }
+
+        System.out.println(aux);
+
+    }
+}
+
+====================================================================================================
+REVIEW_INDEX: 11/19
+SUBMISSION_ID: 1323401347
+USER_ID: user_0108
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int n, m, p, l, c;
+std::vector<std::vector<int>> matrix;
+
+void back(std::vector<std::pair<int,int>>& sol, int& max, std::vector<std::pair<int, int>>& moves) {
+    if (sol.size() == p + 1) {
+        return;
+    }
+    for (int i = 0; i < moves.size(); i++) {
+        int new_line = sol.back().first + moves[i].first;
+        int new_col = sol.back().second + moves[i].second;
+        
+        if ((new_line >= 0 && new_line < n) && (new_col >= 0 && new_col < m)) {
+            sol.push_back({new_line, new_col});
+            if (max < matrix[new_line][new_col]) {
+                max = matrix[new_line][new_col];
+            }
+            back(sol, max, moves);
+            sol.pop_back();
+        }
+    }
+}
+
+void read_input() {
+    std::cin >> n >> m >> p >> l >> c;
+    for (int i = 0; i < n; i++) {
+      matrix.push_back(std::vector<int>());
+        for (int j = 0; j < m; j++) {
+          int x;
+          std::cin >> x;
+          matrix[i].push_back(x);
+        }
+    }
+}
+
+int main() {
+    
+    std::vector<std::pair<int,int>> sol;
+    std::vector<std::pair<int, int>> moves = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    
+    read_input();
+    sol.push_back({l - 1, c -1});
+    int max = matrix[l - 1][c - 1];
+
+    back(sol, max, moves);
+    
+    std::cout << max;
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 12/19
+SUBMISSION_ID: 1332673197
+USER_ID: user_0068
+SCORE: 14.29
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int p = sc.nextInt();
+        int l = sc.nextInt();
+        int c = sc.nextInt();
+        int[][] v = new int[n+1][m+1];
+        int[][] dp = new int[n+1][m+1];
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= m; j++) {
+                v[i][j] = sc.nextInt();
+                dp[i][j] = 0;
+            }
+        }
+        int lim_max_stanga;
+        int lim_max_dreapta;
+        int lim_max_sus;
+        int lim_max_jos;
+        if(p == 0)
+            System.out.println(v[l][c]);
+        else {
+            int max = v[l][c];
+        
+            if(l-p < 0) {
+                lim_max_sus = 1;
+            }
+            else {
+                lim_max_sus = l-p+1;
+            }
+            if(l+p > n) {
+                lim_max_jos = n;
+            }
+            else {
+                lim_max_jos = l+p-1;
+            }
+            if(c+p > n) {
+                lim_max_dreapta = m;
+            }
+            else {
+                lim_max_dreapta = c+p-1;
+            }
+            if(c-p < 0) {
+                lim_max_stanga = 1;
+            }
+            else {
+                lim_max_stanga = c-p+1;
+            }
+            for(int i = lim_max_sus; i <= lim_max_jos; i++) {
+                for(int j = lim_max_stanga; j <= lim_max_dreapta; j++) {
+                    if(v[i][j] > max)
+                        max = v[i][j];
+                }
+            }
+            System.out.println(max);
+          
+        }
+        
+        
+    }
+}
+
+====================================================================================================
+REVIEW_INDEX: 13/19
+SUBMISSION_ID: 1344594910
+USER_ID: user_0155
+SCORE: 14.29
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner myScanner = new MyScanner();
+        int n = myScanner.nextInt();
+        int m = myScanner.nextInt();
+        int p = myScanner.nextInt();
+        int l = myScanner.nextInt();
+        int c = myScanner.nextInt();
+        int [][] matrix = new int[n + 1][m + 1];
+
+        for (int i = 1; i <= n; i++) {
+            for (int j  = 1; j <= m; j++) {
+                matrix[i][j] = myScanner.nextInt();
+            }
+        }
+
+        ArrayList<Integer> prices = new ArrayList<>();
+
+        int k = 1;
+        if (l - p > 0) {
+            k = l - p + 1;
+        }
+
+        int r = 1;
+        if (c - p > 0) {
+            r = c - p + 1;
+        }
+
+        if (p == 0) {
+            prices.add(matrix[l][c]);
+        }
+
+        for (int i = k; i <= l + p - 1 && i <= n; i++) {
+            for (int j = r; j <= c + p - 1 && j <= m; j++) {
+                prices.add(matrix[i][j]);
+            }
+        }
+
+        if (c + p <= m) {
+            prices.add(matrix[l][c + p]);
+        }
+
+        if (c - p > 0) {
+            prices.add(matrix[l][c - p]);
+        }
+
+        if (l + p <= n) {
+            prices.add(matrix[l + p][c]);
+        }
+
+        if (l - p > 0) {
+            prices.add(matrix[l - p][c]);
+        }
+
+
+
+
+
+        Collections.sort(prices);
+        System.out.println(prices.get(prices.size() - 1));
+
+
+    }
+}
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+====================================================================================================
+REVIEW_INDEX: 14/19
+SUBMISSION_ID: 1344668157
+USER_ID: user_0070
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <tuple>
+#include <climits>
+
+using namespace std;
+int N, M, P, L, C;
+vector<vector<int>> F;
+vector<tuple<int, int, int>> domain, solution;
+
+int line_moves[4] = {-1, 0, 1, 0};
+int col_moves[4] = {0, -1, 0, 1};
+
+void read_input() {
+    cin >> N >> M >> P >> L >> C;
+    F = vector<vector<int>>(N + 1, vector<int>(M + 1));
+    for(int i = 1;i <= N; i++) {
+        for(int j = 1; j <= M; j++) {
+            cin >> F[i][j];
+            domain.push_back(make_tuple(i, j, F[i][j]));
+        }
+    }
+}
+
+void back(int *max_frumix) {
+    tuple<int, int, int> x;
+    
+    if((int)solution.size() == P + 1) {
+        return;
+    }
+    if((int)solution.size() == 0) {
+        solution.push_back(make_tuple(L, C, F[L][C]));
+        *max_frumix = F[L][C];
+        back(max_frumix);
+        solution.pop_back();
+        return;
+    }
+    for(unsigned i = 0; i < 4; i++) {
+        int old_line = get<0>(solution.back());
+        int old_col = get<1>(solution.back());
+        
+        int new_line = old_line + line_moves[i];
+        int new_col = old_col + col_moves[i];
+        
+       
+        if(new_line <= N && new_col <= M) {
+         
+             int new_frumix = F[new_line][new_col];
+        
+        if(new_frumix > *max_frumix) {
+            *max_frumix = new_frumix;
+        }
+           
+            
+            solution.push_back(make_tuple(new_line, new_col, new_frumix));
+           back(max_frumix);
+            solution.pop_back();
+            
+        }
+    }
+    
+}
+int main() {
+       
+   
+    read_input();
+    int max_frumix = INT_MIN;
+    if(P == 0) {
+        cout << F[L][C];
+        return 0;
+    }
+    back(&max_frumix);
+    cout << max_frumix << endl;
+    
+}
+
+====================================================================================================
+REVIEW_INDEX: 15/19
+SUBMISSION_ID: 1378117387
+USER_ID: user_0217
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int backtracking(int n, int m, int steps, int curr_row, int curr_col, int max_val, vector<vector<int>> &matrix) {
+    if (steps == 0 && curr_row >= 0 && curr_row < n && curr_col >= 0 && curr_col < m) {
+        max_val = max(max_val, matrix[curr_row][curr_col]);
+        return max_val;
+    }
+
+    if (curr_row < 0 || curr_row >= n || curr_col < 0 || curr_col >= m)
+        return max_val;
+
+    max_val = max(max_val, matrix[curr_row][curr_col]);
+
+    
+    max_val = backtracking(n, m, steps - 1, curr_row - 1, curr_col, max_val, matrix);
+    
+    max_val = backtracking(n, m, steps - 1, curr_row + 1, curr_col, max_val, matrix);
+    
+    max_val = backtracking(n, m, steps - 1, curr_row, curr_col - 1, max_val, matrix);
+    
+    max_val = backtracking(n, m, steps - 1, curr_row, curr_col + 1, max_val, matrix);
+
+    return max_val;
+}
+
+int main() {
+    int n, m, steps, start_row, start_col;
+    cin >> n >> m >> steps >> start_row >> start_col;
+
+    vector<vector<int>> matrix(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++)
+            cin >> matrix[i][j];
+    }
+
+    
+    start_col--;
+    start_row--;
+
+    int max_val = matrix[start_row][start_col];
+    max_val = backtracking(n, m, steps, start_row, start_col, max_val, matrix);
+
+    cout << max_val << endl;
+    
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 16/19
+SUBMISSION_ID: 1378148490
+USER_ID: user_0219
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("test.in");
+
+int n, m, l, c, p, a[1010][1010];
+vector<pair<int, int>> mutari;
+
+void bkt(int k, int l, int c, int pl, int pc, vector<pair<int, int>> mutari, int &mx) {
+  int i;
+  for (i = 0; i < mutari.size(); i++) {
+    int x = l + mutari[i].first;
+    int y = c + mutari[i].second;
+   
+    if (!(x == pl && y == pc)){
+      
+      if (a[x][y] > mx){
+        mx = a[x][y];
+        
+      }
+      if (k < p) {
+        
+        bkt(k + 1, x, y, l, c, mutari, mx);
+      }
+    }
+
+  }
+}
+
+int main(){
+    int i, j;
+    int mx;
+    cin >> n >> m >> p >> l >> c;
+    for (i = 1; i <= n; i++){
+        for (j = 1; j <= m; j++){
+            cin >> a[i][j];
+        }
+    }
+
+    mx = a[l][c];
+    mutari.push_back({-1, 0});
+    mutari.push_back({1, 0});
+    mutari.push_back({0, 1});
+    mutari.push_back({0, -1});
+
+    
+    
+    
+
+    if(p > 0){
+    bkt(1, l, c, l, c, mutari, mx);
+    }
+    cout << mx << "\n";
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 17/19
+SUBMISSION_ID: 1378149143
+USER_ID: user_0219
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("test.in");
+
+int n, m, l, c, p, a[1010][1010];
+vector<pair<int, int>> mutari;
+
+int valid(int l, int c){
+    if (l > n || c > m){
+        return 0;
+    }
+    return 1;
+}
+void bkt(int k, int l, int c, int pl, int pc, vector<pair<int, int>> mutari, int &mx) {
+  int i;
+  for (i = 0; i < mutari.size(); i++) {
+    int x = l + mutari[i].first;
+    int y = c + mutari[i].second;
+   
+    if (!(x == pl && y == pc) && valid(x, y)){
+      
+      if (a[x][y] > mx){
+        mx = a[x][y];
+        
+      }
+      if (k < p) {
+        
+        bkt(k + 1, x, y, l, c, mutari, mx);
+      }
+    }
+
+  }
+}
+
+int main(){
+    int i, j;
+    int mx;
+    cin >> n >> m >> p >> l >> c;
+    for (i = 1; i <= n; i++){
+        for (j = 1; j <= m; j++){
+            cin >> a[i][j];
+        }
+    }
+
+    mx = a[l][c];
+    mutari.push_back({-1, 0});
+    mutari.push_back({1, 0});
+    mutari.push_back({0, 1});
+    mutari.push_back({0, -1});
+
+    
+    
+    
+
+    if(p > 0){
+    bkt(1, l, c, l, c, mutari, mx);
+    }
+    cout << mx << "\n";
+    return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 18/19
+SUBMISSION_ID: 1378159507
+USER_ID: user_0218
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int valMax = INT_MIN;
+
+int find_max(int n, int m, int p, int l, int c, vector<vector<int>> &map) {
+  if (p < 0 || l < 1 || l > n || c < 1 || c > m) return INT_MIN;
+
+  if (map[l][c] == valMax) return valMax;
+
+    int val1 = find_max(n, m, p - 1, l + 1, c, map);  
+  int val2 = find_max(n, m, p - 1, l, c - 1, map);    
+  int val3 = find_max(n, m, p - 1, l - 1, c, map);    
+  int val4 = find_max(n, m, p - 1, l, c + 1, map);    
+
+  return max({map[l][c], val1, val2, val3, val4});
+}
+
+int main() {
+  int n, m, p, l, c;
+
+  ifstream fin("date.in");
+
+  cin >> n >> m >> p >> l >> c;
+
+  vector<vector<int>> map(n + 1, vector<int>(m + 1, 0));
+
+  for (int i = 1; i <= n; i++)
+    for (int j = 1; j <= m; j++) {
+      int x;
+      cin >> x;
+      if (x > valMax) valMax = x;
+      map[i][j] = x;
+    }
+
+  if (p == 0) {
+    cout << map[l][c];
+    return 0;
+  }
+
+  cout << find_max(n, m, p, l, c, map);
+
+  return 0;
+}
+
+====================================================================================================
+REVIEW_INDEX: 19/19
+SUBMISSION_ID: 1378159510
+USER_ID: user_0218
+SCORE: 14.29
+LANGUAGE: cpp
+====================================================================================================
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int find_max(int n, int m, int p, int l, int c, vector<vector<int>> &map) {
+  if (p < 0 || l < 1 || l > n || c < 1 || c > m) return INT_MIN;
+
+  int val1 = find_max(n, m, p - 1, l + 1, c, map);  
+  int val2 = find_max(n, m, p - 1, l, c - 1, map);  
+  int val3 = find_max(n, m, p - 1, l - 1, c, map);  
+  int val4 = find_max(n, m, p - 1, l, c + 1, map);  
+
+  return max({map[l][c], val1, val2, val3, val4});
+}
+
+
+int main() {
+  int n, m, p, l, c;
+  int valMax = INT_MIN;
+  ifstream fin("date.in");
+
+  cin >> n >> m >> p >> l >> c;
+
+  vector<vector<int>> map(n + 1, vector<int>(m + 1, 0));
+
+  for (int i = 1; i <= n; i++)
+    for (int j = 1; j <= m; j++) {
+      int x;
+      cin >> x;
+      map[i][j] = x;
+    }
+
+  if (p == 0) {
+    cout << map[l][c];
+    return 0;
+  }
+
+  cout << find_max(n, m, p, l, c, map);
+
+  return 0;
+}
+

@@ -1,0 +1,4361 @@
+﻿submission_id,score,language,hackerrank_result,algorithm_for_sampling,score_group,source_file,source_code,input_condition,model,reasoning_effort,hint
+1323431388,37.5,java,Terminated due ...,BFS,high_partial,1323431388.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    public static final int NMAX = 100000;
+    public static final int MMAX = 200000;
+    int n;
+    int m;
+    ArrayList<Integer> adj[] = new ArrayList[NMAX];
+    public void read_input(){
+        MyScanner sc = new MyScanner();
+        n = sc.nextInt();
+        m = sc.nextInt();
+        for(int i = 1; i <= n; i++){
+            adj[i] = new ArrayList();
+        }
+        for(int i = 1; i <= m; i++){
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            adj[x].add(y);
+            adj[y].add(x);
+        }
+    }
+    public void solve(){
+        int[] vizitat = new int[n + 1];
+        for(int i = 1; i <= n; i++){
+            vizitat[i] = 0;
+        }
+        Queue<Integer> q = new LinkedList();
+        q.add(1);
+        int time = 0;
+        int currnr = 1;
+        while(q.isEmpty() == false){
+            int curr = q.poll();
+            vizitat[curr] = 1;
+            currnr--;
+            
+            for(Integer x:adj[curr]){
+                if(vizitat[x] == 0 && q.contains(x) == false){
+                    q.add(x);
+                }
+            }
+            if(currnr == 0){
+                time++;
+                currnr = q.size();
+            }
+        }
+        System.out.print(time - 1);
+    }
+    public static void main(String[] args) {
+        
+        Solution sol = new Solution();
+        sol.read_input();
+        sol.solve();
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many operations your algorithm performs on the largest input? How does that compare with the limits?
+1314236508,5,java,Wrong Answer,BFS,low,1314236508.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+
+public class Solution {
+
+    public static final int MAX = 100005; 
+
+    public static void main(String[] args) {
+        
+        MyScanner scanner = new MyScanner();
+        long n = scanner.nextLong();
+        long m = scanner.nextLong();
+
+        ArrayList<Integer> adj[] = new ArrayList[MAX];
+        
+        for(int i = 1; i <= n; i++) {
+            adj[i] = new ArrayList<>();
+        }
+
+        for (int i = 1; i <= m; i++) {
+            int x, y;
+            x = scanner.nextInt();
+            y = scanner.nextInt();
+            adj[x].add(y);
+            adj[y].add(x);
+        }
+
+        int distanceMAX = MAX;
+        int source = 1; 
+        
+        ArrayList<Integer> d = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            d.add(distanceMAX);
+        }
+        
+        d.set(source, 0);
+        d.set(0, 0);
+
+        
+        int[] parents = new int[(int)n + 1];
+        for  (int i = 0; i <= n; i++) {
+            parents[i] = -1;
+        }
+
+        
+        Boolean[] visited = new Boolean[(int)n + 1];
+        for (int i = 0; i <= n ; i++) {
+            visited[i] = false;
+        }
+        visited[source] = true;
+
+        
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>((int)n);
+
+        
+        queue.add(source);
+
+        while(!queue.isEmpty()) {
+            
+            int u = queue.remove();
+            visited[u] = true;
+
+            
+            for (int i = 0; i < adj[u].size(); i++) {
+                int v = adj[u].get(i);
+
+                
+                if (visited[v] == false && d.get(u) < d.get(v)) {
+
+                    
+                    if (queue.contains(v)) {
+                        queue.remove((Object)v);
+                    }
+
+                    
+                    d.set(v, d.get(u) + 1);
+                    
+                    parents[v] = u;
+
+                    
+                    queue.add(v);
+                }
+            }
+        }
+
+    
+        int max = 0;
+        for (int i = 1; i <= n; i++) {
+            if (d.get(i) > max && d.get(i) != distanceMAX) {
+                max = d.get(i);
+            }
+        }
+        System.out.println(max);
+    }
+
+}",statement_code_only,gpt-oss-20b,medium,Try a very small graph and trace the spread step by step. Does the time you compute for each student match what you expect?
+1314235726,25,c,Wrong Answer,BFS,medium,1314235726.c,"#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+
+
+
+
+
+
+
+
+typedef struct mystruct{
+    
+    int level;
+    int node;
+    
+}BFSArr;
+
+int main() {
+
+    int N = 0, M = 0;
+    int sefuClasei = 1;
+    
+    scanf(""%d%d"", &N, &M);
+    
+    int **adjmatrix = (int **) calloc(N + 1, sizeof(int *));
+    bool *visited = (bool *) calloc(N + 1, sizeof(bool));
+        
+    for(int i = 1; i <= N; i++)
+    {
+        adjmatrix[i] = (int *) calloc(N + 1, sizeof(int));
+        visited[i] = false;
+    }
+    
+    for (int i = 0; i < M; i++)
+    {
+        int node1, node2;
+        
+        scanf(""%d%d"", &node1, &node2);
+        
+        adjmatrix[node1][node2] = 1;
+        adjmatrix[node2][node1] = 1;
+         
+    }
+    
+    int index = 0;
+    int size = 1;
+    
+    for (int i = 1; i <= N; i++)
+        visited[i] = false;
+    
+    BFSArr *BFSArray = (BFSArr *) calloc(N + 1, sizeof(BFSArr));
+    BFSArray[index].node = sefuClasei;
+    BFSArray[index].level = 0;
+    visited[sefuClasei] = true;
+
+    int maxLevel = 0;
+    int Count = N;
+    Count --;
+    
+    while(Count != 0)
+    {
+        int ok = 0;
+        
+        for (int i = 1; i <= N; i++)
+        {
+            if (i != BFSArray[index].node && adjmatrix[BFSArray[index].node][i] == 1 && visited[i] == false)
+            {
+                Count --;
+                size ++;
+                visited[i] = true;
+                
+                BFSArray[size - 1].node = i;
+                BFSArray[size - 1].level = BFSArray[index].level + 1;
+                
+                if (BFSArray[size - 1]. level > maxLevel)
+                    maxLevel = BFSArray[size - 1].level;
+                
+            }
+        }
+        
+        
+        index ++;
+    }
+  
+    printf(""%d\n"", maxLevel);
+    
+    
+    for (int i = 1; i <= N; i++)
+        free(adjmatrix[i]);
+    
+    free(BFSArray);
+    free(adjmatrix);
+    free(visited);
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many operations or how much memory your approach uses as the number of students grows? How does that compare to the limits?
+1314237137,2.5,cpp,Wrong Answer,DFS,low,1314237137.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int DFS(vector<vector<int>> adj,vector<bool> &visited,int current,vector<int> &cicle)
+{
+    visited[current]=true;
+    cicle[0]++;
+   
+    for(auto a:adj[current])
+    {
+        if(visited[a]==false)
+            DFS(adj,visited,a,cicle);
+        
+    }
+   
+    return cicle[0]-1;
+}
+int main() {
+    
+    
+    int n,m;
+    int p,c;
+    
+    scanf(""%d %d"",&n,&m);
+    vector<vector<int>> adj(n+1, vector<int>(m,0));
+    for(int i=1;i<=m;i++)
+    { 
+        scanf(""%d %d"",&p,&c);
+        adj[p].push_back(c);
+    } 
+    vector<bool> visited(n+1,false);
+    vector<int> cicle(2,0);
+    visited[0]=true;
+  
+     printf(""%d"",DFS(adj,visited,1,cicle)-1);
+      
+           
+    
+    return 0;
+    
+    
+    
+    
+    
+}",statement_code_only,gpt-oss-20b,medium,Have you tried drawing a tiny graph and following the spread by hand for the first few time steps? What pattern do you notice?
+1378156865,27.5,java,Terminated due ...,DFS,medium,1378156865.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void dfs(List<Integer>[] graf,int start, int vizitati[],int nr)
+    {
+        if(vizitati[start]==0)
+        {
+            vizitati[start]=nr;
+            List<Integer> aux=graf[start];
+            for(int y:aux)
+            {
+                dfs(graf,y,vizitati,nr+1);
+            }
+        }
+        else {
+            if(nr<vizitati[start]) {
+                vizitati[start] = nr;
+                List<Integer> aux=graf[start];
+                for(int y:aux)
+                {
+                    dfs(graf,y,vizitati,nr+1);
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        
+        
+        Scanner scanner=new Scanner(System.in);
+        int n=scanner.nextInt();
+        int m=scanner.nextInt();
+
+        List<Integer> graf[]=new ArrayList[n+1];
+        for(int i =1;i<=n;i++)
+        {
+            graf[i]=new ArrayList<>();
+        }
+        for(int i=0;i<m;i++)
+        {
+            int x=scanner.nextInt();
+            int y=scanner.nextInt();
+            graf[x].add(y);
+            graf[y].add(x);
+        }
+
+        int[] vizitati =new int[n+1];
+        dfs(graf,1,vizitati,0);
+        int maxim=-1;
+        for(int i=1;i<=n;i++)
+        {
+            if(vizitati[i]>maxim  &&  vizitati[i]!=0)
+                maxim=vizitati[i];
+        }
+        System.out.println(maxim);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny graph where a student can be reached via two different paths of different lengths. Compare the time your program reports with the earliest possible time.
+1314236905,2.5,java,Wrong Answer,DIJKSTRA,low,1314236905.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+  BufferedReader br;
+  StringTokenizer st;
+
+  public MyScanner() {
+    br = new BufferedReader(new InputStreamReader(System.in));
+  }
+
+  String next() {
+    while (st == null || !st.hasMoreElements()) {
+      try {
+        st = new StringTokenizer(br.readLine());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+    return st.nextToken();
+  }
+
+  int nextInt() {
+    return Integer.parseInt(next());
+  }
+
+  long nextLong() {
+    return Long.parseLong(next());
+  }
+
+  double nextDouble() {
+    return Double.parseDouble(next());
+  }
+
+  String nextLine(){
+    String str = """";
+    try {
+      str = br.readLine();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return str;
+  }
+}
+
+public class Solution {
+  static class Solve {
+    public static final int NMAX = 50005;
+
+    int n;
+    int m;
+    int source;
+
+    public class Edge {
+      public int node;
+      public int cost;
+
+      Edge(int _node, int _cost) {
+        node = _node;
+        cost = _cost;
+      }
+    }
+
+    @SuppressWarnings(""unchecked"")
+    ArrayList<Edge> adj[] = new ArrayList[NMAX];
+
+    ArrayList<Edge> edges = new ArrayList<>();
+
+
+    public void readInput() {
+      MyScanner sc = new MyScanner();
+      n = sc.nextInt();
+      m = sc.nextInt();
+
+      for (int i = 1; i <= n; i++) {
+        adj[i] = new ArrayList<>();
+      }
+
+      int [] cost = new int[n + 1];
+      cost[0] = -1;
+      cost[1] = 0;
+      for (int i = 1; i <= m; i++) {
+        int x, y, w;
+        x = sc.nextInt();
+        y = sc.nextInt();
+        adj[x].add(new Edge(y, 1));
+      }
+    }
+
+    public ArrayList<Integer> getResult() {
+      int source = 1;
+      
+      boolean[] visited = new boolean[n + 1];
+      
+      ArrayList<Integer> d = new ArrayList<>(n + 1);
+
+      
+      PriorityQueue<Edge> queue = new PriorityQueue<>(new Comparator<Edge>() {
+        @Override
+        public int compare(Edge o1, Edge o2) {
+          if (o1.cost == o2.cost) {
+            return 0;
+          } else if (o1.cost > o2.cost) {
+            return 1;
+          } else return -1;
+        }
+      });
+
+      visited[0] = false;
+      d.add(0);
+      for (int i = 1; i <= n; i++) {
+        visited[i] = false;
+        if (i == source) {
+          queue.add(new Edge(source, 0));
+          d.add(source, 0);
+        } else {
+          d.add(i, Integer.MAX_VALUE/2);
+        }
+      }
+
+      while (!queue.isEmpty()) {
+        
+        Edge current = queue.poll();
+        visited[current.node] = true;
+        if (current.cost > d.get(current.node)) continue;
+        
+        for (int j = 1; j <= adj[current.node].size(); j++) {
+          
+          Edge neigh = adj[current.node].get(j - 1);
+
+          
+          if (!visited[neigh.node]) {
+            int dist = d.get(current.node) + neigh.cost;
+            if (dist < d.get(neigh.node)) {
+              d.set(neigh.node, dist);
+              
+              int node = neigh.node;
+              queue.add(new Edge(node, dist));
+            }
+          }
+        }
+      }
+      return d;
+    }
+    public void s() {
+      readInput();
+      ArrayList<Integer> res = getResult();
+      System.out.println(res.get(n));
+    }
+  }
+
+  public static void main(String[] args) {
+    new Solve().s();
+  }
+}",statement_code_only,gpt-oss-20b,medium,Have you tried a tiny graph and followed the spread by hand? What happens if a friendship is only recorded one way?
+1314236957,25,java,Runtime Error,DIJKSTRA,medium,1314236957.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class DijkstraNode implements Comparable<DijkstraNode> {
+    int node;
+    long time;
+
+    public DijkstraNode(int node, long time) {
+        this.node = node;
+        this.time = time;
+    }
+
+    public int compareTo(DijkstraNode node) {
+        if (this.time == node.time) {
+            return Long.compare(this.node, node.node);
+        }
+
+        return Long.compare(this.time, node.time);
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        long timeToAnnounce[][] = new long[n + 1][n + 1];
+        int source = 1;
+        for (int i = 1; i <= m; i++) {
+            int friendX = sc.nextInt();
+            int friendY = sc.nextInt();
+            timeToAnnounce[friendX][friendY] = 1;
+            timeToAnnounce[friendY][friendX] = 1;
+        }
+
+        long minimumTimeToAnnounce = getMinimumTimeToAnnounce(source, timeToAnnounce, n);
+        System.out.print(minimumTimeToAnnounce);
+    }
+    
+    private static long getMinimumTimeToAnnounce(int source, long timeToAnnounce[][], int n) {
+
+        PriorityQueue<DijkstraNode> q = new PriorityQueue<>();
+        long timeSourceAll[] = new long[n + 1];
+        boolean isVisited[] = new boolean[n + 1];
+        timeSourceAll[source] = 0;
+        q.add(new DijkstraNode(source, 0));
+
+        for (int i = 2; i < n + 1; i++)
+            timeSourceAll[i] = Long.MAX_VALUE;
+
+        while (!q.isEmpty()) {
+            DijkstraNode dijkstraNode = q.poll();
+            int node = dijkstraNode.node;
+            isVisited[node] = true;
+            for (int i = 1; i < n + 1; i++) {
+                if (timeToAnnounce[node][i] != 0 && !isVisited[i] && timeSourceAll[i] > timeSourceAll[node] + timeToAnnounce[node][i]) {
+                    timeSourceAll[i] = timeSourceAll[node] + timeToAnnounce[node][i];
+                    q.add(new DijkstraNode(i, timeSourceAll[i]));
+                }
+            }
+        }
+
+        long max = -1;
+        for (int i = 1; i <= n; i++) {
+            if (max < timeSourceAll[i])
+                max = timeSourceAll[i];
+        }
+
+        return max;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many times your algorithm scans all other students for each person? How does that grow as the class size increases?
+1408556201,17.5,cpp,Terminated due ...,FLOYD_WARSHALL,medium,1408556201.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+#define INF 1e7
+
+int main() {
+     
+    int n, m;
+    cin>>n>>m;
+    
+    vector<vector<int>> prieteni(n+1, vector<int>(n+1, 0));
+    
+    for (int i = 0; i < m; i++) {
+        int x, y;
+        cin>>x>>y;
+        prieteni[x][y] = prieteni[y][x] = 1;
+    }
+    
+    vector<vector<int>> dist(n+1, vector<int>(n+1, INF));
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (i == j) dist[i][j] = 0;
+            if (prieteni[i][j] == 1) dist[i][j] = 1;
+        }
+    }
+
+    for (int k = 1; k <= n; k++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (dist[i][j] > dist[i][k] + dist[k][j]) {
+                    dist[i][j] = dist[i][k] + dist[k][j];
+                    dist[j][i] = dist[i][k] + dist[k][j];
+                }
+            }
+        }
+    }
+    
+    int rasp = 0;
+    for (int i = 1; i <= n; i++) {
+        if (rasp < dist[1][i]) rasp = dist[1][i];
+    }
+    cout<<rasp;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many operations your algorithm performs as the number of students grows? Does that fit within the time limits?
+1314237345,45,java,Terminated due ...,BFS,high_partial,1314237345.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+    
+    
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class Elev{
+    
+    int id;
+    ArrayList<Elev> prieteni = new ArrayList<Elev>();
+    int visited;
+    int timeDiscovered;
+    
+    public Elev(int id){
+        this.id = id;
+        this.prieteni = new ArrayList<Elev>();
+        this.visited = 0;
+        this.timeDiscovered = 0;
+    }
+    
+    public void addFriend(Elev prieten){
+        this.prieteni.add(prieten);
+    }
+    
+ 
+    
+    
+}
+
+public class Solution {
+    
+  
+
+    public static void main(String[] args) {
+        
+        
+        MyScanner sc = new MyScanner();
+        
+        int n = sc.nextInt();
+        ArrayList<Elev> elevi = new ArrayList<Elev>();
+        
+        Solution sol = new Solution();
+        
+        for(int i = 0; i < n; i++)
+        {
+            elevi.add(new Elev(i));
+        }
+        int p = sc.nextInt();
+        
+        int first, second;
+        
+        for(int i = 0; i < p; i++)
+        {
+            first = sc.nextInt() - 1;
+            second =  sc.nextInt() - 1;
+            elevi.get(first).addFriend(elevi.get(second));
+            elevi.get(second).addFriend(elevi.get(first));
+        }
+        
+        
+        Queue<Elev> q = new LinkedList<Elev>();
+        
+        elevi.get(0).visited = 1;
+        q.add(elevi.get(0));
+        int t = 1;
+        
+        while( !q.isEmpty())
+        {
+            Elev e = q.poll();
+            for(Elev pr : e.prieteni)
+            {   
+                if(pr.visited == 0 && !q.contains(pr)){
+                    pr.visited = 1; 
+                    q.add(pr);
+                     pr.timeDiscovered = e.timeDiscovered + 1;
+                     }
+            }
+        }
+        
+        int max = 0;
+        
+        for(Elev e : elevi){
+            if(e.timeDiscovered > max)
+                max = e.timeDiscovered;
+        }
+        System.out.println(max);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many times you search the list of students who are already set to receive the news? How does that number grow as the class size increases?
+1314235958,2.5,cpp,Wrong Answer,BFS,low,1314235958.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#define kMax 1000001
+using namespace std;
+
+
+int main() {
+    int n, m, u, v, maxim = 1, left;
+    cin >> n >> m;
+    left = n - 1;
+    vector<int> adj[n + 1];
+    vector<int> dist(n + 1);
+    vector<int> queue;
+    vector<bool> visited(n + 1);
+
+    for (int i = 0; i < m + 1; i++) {
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    dist[1] = 0;
+    visited[1] = true;
+    for (auto kid : adj[1]) {
+        queue.push_back(kid);
+        dist[kid] = 1;
+    }
+    int node;
+    while (!queue.empty()) {
+        node = queue.back();
+        queue.pop_back();
+        if (visited[node]) {
+            continue;
+        }
+        visited[node] = true;
+
+        for (auto kid : adj[node]) {
+            if (!visited[kid]) {
+                dist[kid] = dist[node] + 1;
+                queue.push_back(kid);
+            }
+        }
+    }
+    for (int x : dist) {
+        maxim = max(maxim, x);
+    }
+    
+    cout << maxim;
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you tried drawing a tiny graph and following the spread by hand for the first few time steps? What pattern do you notice about when each student first hears the news?
+1408570828,25,cpp,Segmentation Fault,BFS,medium,1408570828.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include<queue>
+using namespace std;
+
+
+int main() {
+       
+    int n,m,i,x,y;
+    cin>>n>>m;
+    
+    vector<int>graf[10005];
+    for(i=1;i<=m;i++)
+    {
+        cin>>x>>y;
+        graf[x].push_back(y);
+        graf[y].push_back(x);
+    }
+    
+    queue<int> q;
+    int distanta[10005];
+    bool vizitat[10005];
+    
+    for(i=1;i<=n;i++)
+    {
+        distanta[i]=0;
+        vizitat[i]=false;
+    }
+    
+    q.push(1);
+    vizitat[1]=true;
+    distanta[1]=0;
+    
+    int raspuns=0;
+    
+    while(!q.empty())
+    {
+        int nod = q.front();
+        q.pop();
+        
+        for(int vecin:graf[nod])
+        {
+            if(!vizitat[vecin])
+            {
+                vizitat[vecin]=true;
+                distanta[vecin]=distanta[nod]+1;
+                raspuns=max(raspuns, distanta[vecin]);
+                q.push(vecin);
+            }
+        }
+            
+    }
+    cout<<raspuns;
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you verified that your data structures can hold every student when n is at its maximum? Try a test with a very large n and see how your program behaves.
+1323456095,5,java,Wrong Answer,DFS,low,1323456095.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner M=new MyScanner();
+        int n=M.nextInt();
+        int m=M.nextInt();
+        Graph g=new Graph(n);
+        for(;m>0;m--)
+            g.addEdge(M.nextInt()-1,M.nextInt()-1);
+        g.DFS(0);
+        System.out.println(g.mx);
+        
+    }
+}
+
+class Graph 
+{ 
+    private int V; 
+    private LinkedList<Integer> adj[]; 
+
+    int mx=0;
+    
+    Graph(int v) 
+    { 
+        V = v; 
+        adj = new LinkedList[v]; 
+        for (int i=0; i<v; ++i) 
+            adj[i] = new LinkedList(); 
+    } 
+
+    void addEdge(int v,int w) 
+    { 
+        adj[v].add(w); 
+    } 
+
+   void DFSUtil(int v,boolean visited[],int d)
+    { 
+        visited[v] = true; 
+       
+        if(d>mx)
+            mx=d;
+       
+        Iterator<Integer> i = adj[v].listIterator(); 
+        while (i.hasNext()) 
+        { 
+            int n = i.next(); 
+            if (!visited[n]) 
+                DFSUtil(n, visited,d+1); 
+        } 
+    } 
+  
+    void DFS(int v) 
+    { 
+        boolean visited[] = new boolean[V];
+        DFSUtil(v, visited,0); 
+    } 
+}",statement_code_only,gpt-oss-20b,medium,Draw a tiny network where a student can hear the news through two different paths. Run your program and see if it reports the earliest moment. What could make it report a later one?
+1314237792,47.5,java,Terminated due ...,DIJKSTRA,high_partial,1314237792.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class Node {
+    public int node;
+    public int time;
+
+    public Node(int node, int time) {
+        this.node = node;
+        this.time = time;
+    }
+}
+
+class ComparableNode implements Comparable<ComparableNode> {
+    int node;
+    long time;
+
+    public ComparableNode(int node, long time) {
+        this.node = node;
+        this.time = time;
+    }
+
+    public int compareTo(ComparableNode node) {
+        if (time == node.time) {
+            return Integer.compare(this.node, node.node);
+        }
+
+        return Long.compare(time, node.time);
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int source = 1;
+        ArrayList<Node> adj[] = new ArrayList[200000];
+
+        for (int i = 1; i < n + 1; i++) {
+            adj[i] = new ArrayList<>();
+        }
+
+        for (int i = 1; i < m + 1; i++) {
+            int friendX = sc.nextInt();
+            int friendY = sc.nextInt();
+            adj[friendX].add(new Node(friendY, 1));
+            adj[friendY].add(new Node(friendX, 1));
+        }
+
+        ArrayList<Long> timeToAnnounce = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            timeToAnnounce.add(Long.MAX_VALUE);
+        }
+
+        TreeSet<ComparableNode> q = new TreeSet<>();
+        timeToAnnounce.set(source, 0L);
+        q.add(new ComparableNode(source, timeToAnnounce.get(source)));
+
+        while (!q.isEmpty()) {
+            ComparableNode comparableNode = q.pollFirst();
+            int currentNode = comparableNode.node;
+
+            for (Node neighbour : adj[currentNode]) {
+                int neighbourNode = neighbour.node;
+                long timeNeighbour = neighbour.time;
+                if (timeToAnnounce.get(neighbourNode) > timeToAnnounce.get(currentNode) + timeNeighbour) {
+                    q.remove(new ComparableNode(neighbourNode, timeToAnnounce.get(neighbourNode)));
+                    q.add(new ComparableNode(neighbourNode ,timeToAnnounce.get(neighbourNode)));
+                    timeToAnnounce.set(neighbourNode, timeToAnnounce.get(currentNode) + timeNeighbour);
+                }
+            }
+        }
+
+        long minimumTimeToAnnounce = -1;
+        timeToAnnounce.set(source, 0L);
+        for (int i = 1; i < n + 1; i++) {
+            long currentTime = timeToAnnounce.get(i);
+            if (currentTime != Long.MAX_VALUE && currentTime > minimumTimeToAnnounce) {
+                minimumTimeToAnnounce = currentTime;
+            }
+        }
+        System.out.print(minimumTimeToAnnounce);
+    }
+}",statement_code_only,gpt-oss-20b,medium,"Try a very small graph, step through your algorithm, and compare the times you compute with the actual spread of the news. Do you see any mismatch?"
+1314236425,10,java,Wrong Answer,DIJKSTRA,low,1314236425.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    Graph g;
+    int N,M;
+    PriorityQueue<Node> coada;
+    boolean[] vizitat;
+    int[] distanta;
+    
+    public static void main(String[] args) {
+        
+        Solution s = new Solution();
+        s.solve();
+    }
+    
+    public void solve () {
+        readInput();
+        System.out.println(getResult());
+    }
+    
+    public int getResult () {
+        
+        for (int i=1; i<N+1; i++) {
+            vizitat[i] = false;
+            distanta[i] = Integer.MAX_VALUE;
+        }
+        
+        distanta[1] = 0;
+        coada = new PriorityQueue<>((i, j) -> i.cost - j.cost);
+        
+        coada.add(new Node(1, 0));
+        int timp = Integer.MIN_VALUE;
+        
+        while (! coada.isEmpty()) {
+            
+            Node n = coada.poll();
+            
+            
+            
+            
+            
+            vizitat[n.nod] = true;
+            
+            Iterator<Node> it = g.listaAdiacenta[n.nod].iterator();
+            while (it.hasNext()) {
+                Node temp = it.next();
+                
+                if(vizitat[temp.nod]) {
+                    continue;
+                }
+                
+                if (distanta[temp.nod] > distanta[n.nod] + temp.cost) {
+                    distanta[temp.nod] = distanta[n.nod] + temp.cost;
+                    coada.add(new Node(temp.nod, distanta[temp.nod]));
+                }
+            }
+        }
+        
+        for (int i=1; i<N+1; i++) {
+            if (timp < distanta[i] && distanta[i] != Integer.MAX_VALUE) { 
+                timp = distanta[i];
+            }
+        }
+        
+        return timp;
+        
+    }
+    
+    public void readInput() {
+        MyScanner s = new MyScanner();
+        N = s.nextInt();
+        M = s.nextInt();
+        g = new Graph(N+1);
+        vizitat = new boolean[N+1];
+        distanta = new int[N+1];
+        
+        for (int i=1; i<N+1; i++) {
+            int u = s.nextInt();
+            int v = s.nextInt();
+            g.adaugaMuchie(new Node(u,1), new Node(v,1));
+        }
+    }
+}
+
+class Node {
+
+    int nod;
+    int cost;
+
+    
+    public Node(int nod, int cost) {
+        this.nod = nod;
+        this.cost = cost;
+    }
+    
+
+}
+
+class Graph {
+
+    private int numarNoduri;
+    public List<Node> listaAdiacenta[];
+
+    
+    @SuppressWarnings(""unchecked"")
+    public Graph(int numarNoduri) {
+        this.numarNoduri = numarNoduri;
+
+        listaAdiacenta = new ArrayList[numarNoduri];
+        for (int count = 0; count < numarNoduri; count++) {
+            listaAdiacenta[count] = new ArrayList<>();
+        }
+
+    }
+
+    
+    public boolean adaugaMuchie(Node nod1, Node nod2) {
+
+        if (nod1.nod >= numarNoduri || nod2.nod >= numarNoduri) {
+            return false;
+        }
+
+        listaAdiacenta[nod1.nod].add(nod2);
+        listaAdiacenta[nod2.nod].add(nod1);
+
+        return true;
+
+    }
+
+    public void printGraf () {
+
+        for (int i=0; i<numarNoduri; i++) {
+            System.out.println(i + ""-> "" + listaAdiacenta[i]);
+        }
+
+    }
+
+}",statement_code_only,gpt-oss-20b,medium,Have you verified that you read exactly the number of friendship pairs given in the input? Try a tiny example and compare the graph your program builds with the expected one.
+1314236976,25,java,Runtime Error,DIJKSTRA,medium,1314236976.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class DijkstraNode implements Comparable<DijkstraNode> {
+    int node;
+    long time;
+
+    public DijkstraNode(int node, long time) {
+        this.node = node;
+        this.time = time;
+    }
+
+    public int compareTo(DijkstraNode node) {
+        if (this.time == node.time) {
+            return Long.compare(this.node, node.node);
+        }
+
+        return Long.compare(this.time, node.time);
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        long timeToAnnounce[][] = new long[n + 1][n + 1];
+        int source = 1;
+        for (int i = 1; i <= m; i++) {
+            int friendX = sc.nextInt();
+            int friendY = sc.nextInt();
+            timeToAnnounce[friendX][friendY] = 1;
+            timeToAnnounce[friendY][friendX] = 1;
+        }
+
+        long minimumTimeToAnnounce = getMinimumTimeToAnnounce(source, timeToAnnounce, n);
+        System.out.print(minimumTimeToAnnounce);
+    }
+    
+    private static long getMinimumTimeToAnnounce(int source, long timeToAnnounce[][], int n) {
+        int NMAX = 200005;
+        PriorityQueue<DijkstraNode> q = new PriorityQueue<>(NMAX);
+        long timeSourceAll[] = new long[n + 1];
+        boolean isVisited[] = new boolean[n + 1];
+        timeSourceAll[source] = 0;
+        q.add(new DijkstraNode(source, 0));
+
+        for (int i = 2; i < n + 1; i++)
+            timeSourceAll[i] = Long.MAX_VALUE;
+
+        while (!q.isEmpty()) {
+            DijkstraNode dijkstraNode = q.poll();
+            int node = dijkstraNode.node;
+            isVisited[node] = true;
+            for (int i = 1; i < n + 1; i++) {
+                if (timeToAnnounce[node][i] != 0 && !isVisited[i] && timeSourceAll[i] > timeSourceAll[node] + timeToAnnounce[node][i]) {
+                    timeSourceAll[i] = timeSourceAll[node] + timeToAnnounce[node][i];
+                    q.add(new DijkstraNode(i, timeSourceAll[i]));
+                }
+            }
+        }
+
+        long max = -1;
+        for (int i = 1; i <= n; i++) {
+            if (max < timeSourceAll[i])
+                max = timeSourceAll[i];
+        }
+
+        return max;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you thought about how the size of the table you use to store friendships grows as the class gets larger? What happens when you try a very large number of students?
+1391934649,17.5,cpp,Terminated due ...,FLOYD_WARSHALL,medium,1391934649.cpp,"#include <iostream>
+#include <vector>
+using namespace std;
+
+const int INF = 1e9;
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    vector<vector<int>> dist(N + 1, vector<int>(N + 1, INF));
+
+    for (int i = 1; i <= N; i++)
+        dist[i][i] = 0;
+
+    for (int i = 0; i < M; i++) {
+        int u, v;
+        cin >> u >> v;
+        dist[u][v] = 1;
+        dist[v][u] = 1;
+    }
+
+    for (int k = 1; k <= N; k++)
+        for (int i = 1; i <= N; i++)
+            for (int j = 1; j <= N; j++)
+                if (dist[i][j] > dist[i][k] + dist[k][j])
+                    dist[i][j] = dist[i][k] + dist[k][j];
+
+    int max_time = 0;
+    for (int i = 1; i <= N; i++)
+        if (dist[1][i] != INF && dist[1][i] > max_time)
+            max_time = dist[1][i];
+
+    cout << max_time << endl;
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how the amount of work and memory grows as the number of students increases? How does that compare to the limits?
+1314234532,42.5,java,Runtime Error,BFS,high_partial,1314234532.java,"import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int NMAX = 100000;
+        
+
+        @SuppressWarnings(""unchecked"")
+        ArrayList<Integer> adj[] = new ArrayList[NMAX];
+        
+        for (int i = 1; i <= n; i++)
+            adj[i] = new ArrayList<>();
+        for (int i = 1; i <= m; i++) {
+            int x, y;
+            x = sc.nextInt();
+            y = sc.nextInt();
+            adj[x].add(y);
+            adj[y].add(x);
+        }
+
+        int alb = 0;
+        int gri = 1;
+        int negru = 2;
+        int d[] = new int[n + 1];
+        int c[] = new int[n + 1];
+
+        for (int i = 0; i <= n; i++) {
+            d[i] = 0;
+            c[i] = alb;
+        }
+
+        int source = 1;
+        c[source] = gri;
+        LinkedList<Integer> Q = new LinkedList<>();
+        Q.add(source);
+        while(! Q.isEmpty()) {
+            int u = Q.poll();
+            for (int v : adj[u]) {
+                if (c[v] == alb) {
+                    d[v] = d[u] + 1;
+                    c[v] = gri;
+                    Q.add(v);
+                }
+            }
+            c[u] = negru;
+        }
+
+        int time = Integer.MIN_VALUE;
+        for (int i = 1; i <= n; i++) {
+            if (time < d[i]) {
+                time = d[i];
+            }
+        }
+        System.out.println(time);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a test where the number of students is exactly the maximum you allowed for your data structure. Does the program still run correctly?
+1408457402,10,cpp,Wrong Answer,BFS,low,1408457402.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+int main() {
+       
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> adj(n + 1);
+    vector<int> visited(n + 1, false);
+    
+    for (int i = 1; i <= n; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    
+    int max_level = 0;
+    queue<pair<int,int>> q; 
+    q.push({0, 1});
+    while (!q.empty()) {
+        pair<int,int> p = q.front();
+        q.pop();
+        int level = p.first;
+        int u = p.second;
+        
+        visited[u] = true;
+        for (int neigh : adj[u]) {
+            if (!visited[neigh]) {
+                visited[neigh] = true;
+                q.push({level + 1, neigh});
+            }
+        }
+        
+        max_level = max(max_level, level);
+    }
+    
+    cout << max_level << endl;
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you checked that you read exactly M friendship pairs from the input? Try a tiny test where M differs from N and trace what your program consumes.
+1378154672,25,cpp,Abort Called,BFS,medium,1378154672.cpp,"#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> adj(n + 1, vector<int>(n + 1));
+    vector<int> timestamps(n + 1);
+    vector<int> viz(n + 1);
+    for(int i = 1; i <= m; i++) {
+        int x, y;
+        cin >> x >> y;
+        adj[x][y] = 1;
+        adj[y][x] = 1;
+    }
+
+    queue<int> q;
+    q.push(1);
+    viz[1] = 1;
+    timestamps[1] = 0;
+    while(!q.empty()) {
+        int node = q.front();
+        q.pop();
+        for(int i = 1; i <= n; i++) {
+            if(adj[node][i] == 1 && viz[i] == 0) {
+                q.push(i);
+                viz[i] = 1;
+                timestamps[i] = timestamps[node] + 1;
+            }
+        }
+    }
+
+    int max_timestamp = *max_element(timestamps.begin(), timestamps.end());
+    cout << max_timestamp << endl;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how the amount of work or memory grows with the number of students? What happens if the friendship graph is dense?
+1314234935,2.5,java,Wrong Answer,DFS,low,1314234935.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+      static class Edge {
+            public int node;
+            public int cost;
+
+            Edge(int _node, int _cost) {
+                node = _node;
+                cost = _cost;
+            }
+        }
+    
+        static public void DFS(int v, ArrayList<Boolean> visited, Stack<Integer> stack, ArrayList<Integer> adj) {
+            visited.set(v, true);
+            Iterator<Integer> i = adj.iterator();
+            while (i.hasNext()) {
+                int u = i.next();
+                if (!visited.get(u)) {
+                    DFS(u, visited, stack, adj);
+                }
+            }
+            stack.push(new Integer(v));
+        }
+    public static void main(String[] args) {
+        
+        MyScanner myscanner = new MyScanner();
+        int n = myscanner.nextInt();
+        int m = myscanner.nextInt();
+        
+        @SuppressWarnings(""unchecked"")
+        ArrayList<Integer> adj[] = new ArrayList[100001];
+         for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y, w;
+                    x = myscanner.nextInt();
+                    y = myscanner.nextInt();
+                    adj[x].add(y);
+                }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         ArrayList<ArrayList<Integer>> sol = new ArrayList<>();
+            Stack<Integer> stack = new Stack<>();
+        int d =0;
+
+            ArrayList<Boolean> visited = new ArrayList<>(n + 1);
+
+            for (int v = 0; v <= n; v++) {
+                visited.add(false);
+            }
+
+            for (int v = 1; v <= n; v++) {
+                if (visited.get(v).equals(false)) {
+                    d++;
+                    DFS(v, visited, stack, adj[v]);
+                }
+            }
+        
+        System.out.println(d);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Draw a tiny network and simulate the news spread step by step. What property of the network tells you when the last student hears it?
+1314237779,2.5,java,Wrong Answer,DIJKSTRA,low,1314237779.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static class Task {
+
+        int n;
+        int m;
+        int x;
+        int source;
+
+        public class Edge {
+            public int node;
+            public int cost;
+
+            Edge(int _node, int _cost) {
+                node = _node;
+                cost = _cost;
+            }
+        }
+
+        @SuppressWarnings(""unchecked"")
+        ArrayList<Edge> adj[] = new ArrayList[100005];
+
+        private void readInput() {
+
+            MyScanner sc = new MyScanner();
+            n = sc.nextInt();
+            m = sc.nextInt();
+
+            for (int i = 1; i <= n; i++) {
+                adj[i] = new ArrayList<>();
+            }
+            int counter = 0;
+            for (int i = 1; i <= m; i++) {
+                int x, y, w;
+                x = sc.nextInt();
+                y = sc.nextInt();
+                w = 1;
+                adj[x].add(new Edge(y, w));
+                counter++;
+            }
+            x = counter;
+
+        }
+
+        private void getResult() {
+            ArrayList<Integer> d = new ArrayList<>();
+            for (int i = 0; i <= n; i++)
+                d.add(0);
+
+            Integer dist[] = new Integer[n+1];
+            int p[] = new int[n+1];
+            for (int i = 0; i <= n; i++) {
+                d.add(0);
+                dist[i] = Integer.MAX_VALUE/2;
+                p[i]=-1;
+            }
+            dist[1] = 0;
+            for(int i =  1; i <= n-2; i++) {
+                boolean flag = false;
+                for(int u = 1; u <=n; u++) {
+                    for(int j = 0; j < adj[u].size(); j++) {
+                        Edge edge = adj[u].get(j);
+                        int v = edge.node;
+                        if(dist[v] > dist[u] + edge.cost) {
+                            dist[v] = dist[u] + edge.cost;
+                            p[v] = u;
+                            flag = true;
+                        }
+                        if (flag == true) {
+                            break;
+                        }
+                    }
+                }
+            }
+            for(int u = 1; u <=n; u++) {
+                for(int j = 0; j < adj[u].size(); j++) {
+                    Edge edge = adj[u].get(j);
+                    int v = edge.node;
+                    if(dist[v] > dist[u] + edge.cost) {
+                        System.out.println(dist[n]);
+                    }
+                }
+            }
+
+            System.out.println(dist[n]);
+        }
+
+        public void solve() {
+            readInput();
+            getResult();
+        }
+    }
+
+    public static void main(String args[]) throws Exception {
+        
+        new Task().solve();
+    }
+}
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}",statement_code_only,gpt-oss-20b,medium,"Have you tried a tiny graph and followed the spread step by step? Does your program reach every student, or only the one with the highest id?"
+1314235877,32.5,java,Runtime Error,DIJKSTRA,medium,1314235877.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    public static int INF = 0x3f3f3f3f;
+    public static final int NMAX = 50005;
+
+    public static class Edge {
+        public int node;
+        public int cost;
+
+        Edge(int _node, int _cost) {
+            node = _node;
+            cost = _cost;
+        }
+    }
+
+    @SuppressWarnings(""unchecked"")
+    static
+    ArrayList<Edge>[] adj = new ArrayList[NMAX];
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            adj[i] = new ArrayList<>();
+        }
+        for (int i = 1; i <= m; i++) {
+            int x, y, w;
+            x = sc.nextInt();
+            y = sc.nextInt();
+            w = 1;
+            adj[x].add(new Edge(y, w));
+            adj[y].add(new Edge(x, w));
+        }
+
+        ArrayList<Integer> results = getResult(1, n);
+        
+        Integer max = -1;
+        for (int i = 1; i <= n; i++) {
+            Integer j = results.get(i);
+            if (j > max && j != INF) {
+                max = j;
+            }
+        }
+        System.out.print(max);
+    }
+
+    static class DijkstraNode implements Comparable<DijkstraNode> {
+        int dist;
+        int node;
+
+        public DijkstraNode(int _dist, int _node) {
+            dist = _dist;
+            node = _node;
+        }
+
+        public int compareTo(DijkstraNode other) {
+            if (dist == other.dist) return Integer.compare(node, other.node);
+            return Integer.compare(dist, other.dist);
+        }
+    }
+
+    private static ArrayList<Integer> getResult(int source, int n) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        ArrayList<Integer> d = new ArrayList<>();
+        for (int i = 0; i <= n; i++)
+            d.add(INF);
+
+        
+        
+        
+        
+        TreeSet<DijkstraNode> q = new TreeSet<>();
+        d.set(source, 0);
+        q.add(new DijkstraNode(d.get(source), source));
+
+        while (!q.isEmpty()) {
+            DijkstraNode dnode = q.pollFirst();
+            int x = dnode.node;
+
+            for (Edge e : adj[x]) {
+                int y = e.node;
+                int c = e.cost;
+
+                
+                if (d.get(y) > d.get(x) + c) {
+                    
+                    
+                    q.remove(new DijkstraNode(d.get(y), y));
+                    
+                    d.set(y, d.get(x) + c);
+                    q.add(new DijkstraNode(d.get(y), y));
+                }
+            }
+        }
+
+        
+        for (int i = 1; i <= n; i++) {
+            if (d.get(i) == INF)
+                d.set(i, -1);
+        }
+
+        return d;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you tried a tiny graph where some students are not connected to student 1? What does your program output in that case?
+1323089769,17.5,cpp,Terminated due ...,FLOYD_WARSHALL,medium,1323089769.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <climits>
+using namespace std;
+
+
+int main() {
+    
+    int N, M, X, Y, max_time = 0;
+    cin >> N >> M;
+    vector<vector<int>> d(N + 1, vector<int>(N + 1, 0));
+    for(int i = 1; i <= N; ++i) {
+        for(int j = 1; j <= N; ++j) {
+            if(i == j) {
+                d[i][j] = 0;
+            } else {
+        d[i][j] = INT_MAX / 2 - 1;
+            }
+
+        }
+    }
+    for(int k = 1; k <= M ; ++k) {
+        cin >> X >> Y;
+        d[X][Y] = 1;
+    d[Y][X] = 1;
+    }
+    for(int k = 1; k <= N; ++k) {
+        for(int i = 1; i <= N; ++i) {
+            for(int j = 1; j <= N; ++j) {
+                d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+            }
+        }
+    }
+    
+   for(int j = 1; j <= N; ++j) {
+        if(d[1][j] > max_time) {
+            max_time = d[1][j];
+        }
+    }
+    cout << max_time;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Have you tried running your program on a tiny graph, say 3 or 4 students, and stepping through each time unit to see how the distances you compute match the actual spread of the news?"
+1344603958,42.5,cpp,Abort Called,BFS,high_partial,1344603958.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+using namespace std;
+int t = 0, nvisited = 1, x;
+int n, m;
+vector<int> adj[100000];
+
+void bfs_util(int source, vector<int>&color, vector<int>&d) {
+    queue<int> q;
+
+    d[source] = 0;
+    color[source] = 1;
+    q.push(source);
+
+    while(!q.empty()) {
+        int node = q.front();
+        q.pop();
+        for (int neigh : adj[node]) {
+            if (d[node] + 1 < d[neigh]) {  
+                d[neigh] = d[node] + 1;
+                color[neigh] = 1;
+                q.push(neigh);
+            }
+        }
+        color[node] = 2;
+    }
+}
+
+int main() {
+    
+    
+    cin >> n >> m;
+    vector<int> visited(n, 0);
+    for (int i = 1, x, y; i <= m; i++) {
+        cin >> x >> y; 
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+    
+    vector<int> d(n + 1, 99999);
+    vector<int> color(n + 1, 0); 
+    
+    
+    
+    
+    
+    bfs_util(1, color, d);
+    cout << *std::max_element(d.begin() + 1, d.end());
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Try a test with the largest allowed number of students. Does your program still run correctly, or do you see any unexpected behavior?"
+1314235683,2.5,cpp,Wrong Answer,BFS,low,1314235683.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#define kMax 1000001
+using namespace std;
+
+
+int main() {
+    int n, m, u, v, maxim = 1, left;
+    cin >> n >> m;
+    left = n - 1;
+    vector<int> adj[n + 1];
+    vector<int> dist(n + 1);
+    vector<int> queue;
+
+    for (int i = 0; i < m + 1; i++) {
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    dist[1] = 0;
+    for (auto kid : adj[1]) {
+        queue.push_back(kid);
+        dist[kid] = 1;
+        maxim = 1;
+    }
+    int node;
+    while (left) {
+        node = queue.back();
+        queue.pop_back();
+        if (!dist[node]) {
+            continue;
+        }
+        left--;
+        for (auto kid : adj[node]) {
+            if (!dist[kid] || dist[kid] > dist[node] + 1) {
+                dist[kid] = dist[node] + 1;
+                queue.push_back(kid);
+                maxim = max(dist[kid], maxim);
+            }
+        }
+    }
+
+    cout << maxim;
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you tried a tiny test and traced how your program reads the edges? Does it consume exactly the number of friendships given?
+1314235452,17.5,cpp,Wrong Answer,BFS,medium,1314235452.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+
+vector<int> adj[10000000];
+
+
+int bfs(int current, vector<int> &vizited, int n) {
+    queue<pair<int, int> >q;
+    q.push(make_pair(current, 0));
+
+    int max = 0;
+    while (!q.empty()){
+        pair<int, int> u = q.front();
+        q.pop();
+        int nod = u.first;
+        int t = u.second;
+        vizited[nod] = 1;
+        
+        for (int i = 0; i < (signed) adj[nod].size(); ++i) {
+            int v = adj[nod][i];
+            if (!vizited[v]) {
+                
+                q.push(make_pair(v, t + 1));
+                max = t + 1;
+            }
+        }
+    }
+    return max;
+}
+
+int main() {
+    
+    int n, m;
+    scanf(""%d %d"", &n, &m);
+    for (int i = 0, x, y; i < m; ++i)
+       {
+               scanf(""%d %d"", &x, &y);
+               adj[x].push_back(y);
+               adj[y].push_back(x);
+       }   
+    vector<int> vizited(n+1);
+    int seful_clasei = 1;
+    int timp = bfs(seful_clasei, vizited, n);
+    printf(""%d\n"", timp);
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Think about how many empty containers you allocate for friendships. Does that fit in memory for the largest input size?
+1314235475,2.5,cpp,Wrong Answer,DFS,low,1314235475.cpp,"#include <cstdio>
+#include <iostream>
+#include <vector>
+#include <stack>
+#include <list>
+
+int dfs(std::vector<std::list<int>> *connections, int n) {
+    int *val = (int *) calloc(n, sizeof(int));
+    std::stack<std::pair<int, int>> stack;
+    stack.push(std::make_pair(0, 0));
+
+    int max = 0;
+    std::pair<int, int> s;
+    while (!stack.empty()) {
+        s = stack.top();
+        if (s.second > max) {
+            max = s.second;
+        }
+        stack.pop();
+        val[s.first] = 1;
+        std::list<int> friends = connections->at(s.first);
+
+        for (auto const &i : friends) {
+            if (!val[i]) {
+                stack.push(std::make_pair(i, s.second + 1));
+                val[i] = -1;
+
+            }
+        }
+
+    }
+
+    free(val);
+    return max;
+}
+
+int main() {
+    
+    int n, m;
+    scanf(""%d %d"", &n, &m);
+    std::vector<std::list<int>> *connections = new std::vector<std::list<int>>(n);
+    int i, f1, f2;
+    for (i = 0; i < m; i++) {
+        scanf(""%d %d"", &f1, &f2);
+        connections->at(f1 - 1).emplace_back(f2 - 1);
+        connections->at(f2 - 1).emplace_back(f1 - 1);
+    }
+
+    int time = dfs(connections, n);
+    printf(""%d\n"", time);
+    delete connections;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny graph and manually trace how the news spreads each time step. Does your program’s result match what you expect from that manual trace?
+1314235032,2.5,java,Wrong Answer,DIJKSTRA,low,1314235032.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+  BufferedReader br;
+  StringTokenizer st;
+
+  public MyScanner() {
+    br = new BufferedReader(new InputStreamReader(System.in));
+  }
+
+  String next() {
+    while (st == null || !st.hasMoreElements()) {
+      try {
+        st = new StringTokenizer(br.readLine());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+    return st.nextToken();
+  }
+
+  int nextInt() {
+    return Integer.parseInt(next());
+  }
+
+  long nextLong() {
+    return Long.parseLong(next());
+  }
+
+  double nextDouble() {
+    return Double.parseDouble(next());
+  }
+
+  String nextLine(){
+    String str = """";
+    try {
+      str = br.readLine();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return str;
+  }
+}
+
+public class Solution {
+  static class Solve {
+    public static final int NMAX = 50005;
+
+    int n;
+    int m;
+    int source;
+
+    public class Edge {
+      public int node;
+      public int cost;
+
+      Edge(int _node, int _cost) {
+        node = _node;
+        cost = _cost;
+      }
+    }
+
+    @SuppressWarnings(""unchecked"")
+    ArrayList<Edge> adj[] = new ArrayList[NMAX];
+
+    ArrayList<Edge> edges = new ArrayList<>();
+
+
+    public void readInput() {
+      MyScanner sc = new MyScanner();
+      n = sc.nextInt();
+      m = sc.nextInt();
+
+      for (int i = 1; i <= n; i++) {
+        adj[i] = new ArrayList<>();
+      }
+      for (int i = 1; i <= m; i++) {
+        int x, y, w;
+        x = sc.nextInt();
+        y = sc.nextInt();
+        adj[x].add(new Edge(y, 1));
+      }
+    }
+
+    private ArrayList<Integer> getResult() {
+      int source = 1;
+      
+      boolean[] visited = new boolean[n + 1];
+      
+      ArrayList<Integer> d = new ArrayList<>(n + 1);
+
+      
+      PriorityQueue<Edge> queue = new PriorityQueue<>(new Comparator<Edge>() {
+        @Override
+        public int compare(Edge o1, Edge o2) {
+          if (o1.cost == o2.cost) {
+            return 0;
+          } else if (o1.cost > o2.cost) {
+            return 1;
+          } else return -1;
+        }
+      });
+
+      visited[0] = false;
+      d.add(0);
+      for (int i = 1; i <= n; i++) {
+        visited[i] = false;
+        if (i == source) {
+          queue.add(new Edge(source, 0));
+          d.add(source, 0);
+        } else {
+          d.add(i, Integer.MAX_VALUE/2);
+        }
+      }
+
+      while (!queue.isEmpty()) {
+        
+        Edge current = queue.poll();
+        visited[current.node] = true;
+        if (current.cost > d.get(current.node)) continue;
+        
+        for (int j = 1; j <= adj[current.node].size(); j++) {
+          
+          Edge neigh = adj[current.node].get(j - 1);
+
+          
+          if (!visited[neigh.node]) {
+            int dist = d.get(current.node) + neigh.cost;
+            if (dist < d.get(neigh.node)) {
+              d.set(neigh.node, dist);
+              
+              int node = neigh.node;
+              queue.add(new Edge(node, dist));
+            }
+          }
+        }
+      }
+      for (int i = 0; i <= n; i++) {
+        if (d.get(i) == Integer.MAX_VALUE/2) {
+          d.set(i, -1);
+        }
+      }
+
+      return d;
+    }
+    public void s() {
+      readInput();
+      ArrayList<Integer> result = getResult();
+      System.out.println(result.get(n));
+    }
+  }
+
+  public static void main(String[] args) {
+    new Solve().s();
+  }
+}",statement_code_only,gpt-oss-20b,medium,"Have you thought about what the answer really represents?  
+Try a tiny graph and see if the farthest student is always the one with the largest id."
+1314237106,25,java,Runtime Error,DIJKSTRA,medium,1314237106.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class DijkstraNode implements Comparator<DijkstraNode> {
+    int node;
+    long time;
+
+    public DijkstraNode() {
+    }
+
+    public DijkstraNode(int node, long time) {
+        this.node = node;
+        this.time = time;
+    }
+
+    @Override
+    public int compare(DijkstraNode o1, DijkstraNode o2) {
+        if (o1.time == o2.time) {
+            return Long.compare(o1.node, o2.node);
+        }
+
+        return Long.compare(o1.time, o2.time);
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        long timeToAnnounce[][] = new long[n + 1][n + 1];
+        int source = 1;
+        for (int i = 1; i <= m; i++) {
+            int friendX = sc.nextInt();
+            int friendY = sc.nextInt();
+            timeToAnnounce[friendX][friendY] = 1;
+            timeToAnnounce[friendY][friendX] = 1;
+        }
+
+        long minimumTimeToAnnounce = getMinimumTimeToAnnounce(source, timeToAnnounce, n);
+        System.out.print(minimumTimeToAnnounce);
+    }
+
+
+    private static long getMinimumTimeToAnnounce(int source, long timeToAnnounce[][], int n) {
+        PriorityQueue<DijkstraNode> q = new PriorityQueue<DijkstraNode>(200000, new DijkstraNode());
+        long timeSourceAll[] = new long[n + 1];
+        boolean isVisited[] = new boolean[n + 1];
+        timeSourceAll[source] = 0;
+        q.add(new DijkstraNode(source, 0));
+
+        for (int i = 2; i < n + 1; i++)
+            timeSourceAll[i] = Long.MAX_VALUE;
+
+        while (!q.isEmpty()) {
+            DijkstraNode dijkstraNode = q.poll();
+            int node = dijkstraNode.node;
+            isVisited[node] = true;
+            for (int i = 1; i < n + 1; i++) {
+                if (timeToAnnounce[node][i] != 0 && !isVisited[i] && timeSourceAll[i] > timeSourceAll[node] + timeToAnnounce[node][i]) {
+                    timeSourceAll[i] = timeSourceAll[node] + timeToAnnounce[node][i];
+                    q.add(new DijkstraNode(i, timeSourceAll[i]));
+                }
+            }
+        }
+
+        long max = -1;
+        for (int i = 1; i <= n; i++) {
+            if (max < timeSourceAll[i])
+                max = timeSourceAll[i];
+        }
+
+        return max;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many operations your algorithm performs as the number of students grows? What happens if the class is large and friendships are sparse?
+1323090456,17.5,cpp,Terminated due ...,FLOYD_WARSHALL,medium,1323090456.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <climits>
+using namespace std;
+
+
+int main() {
+    
+    int N, M, X, Y;
+    long long max_time = 0;
+    cin >> N >> M;
+    vector<vector<long long>> d(N + 1, vector<long long>(N + 1, 0));
+    for(int i = 1; i <= N; ++i) {
+        for(int j = 1; j <= N; ++j) {
+            if(i == j) {
+                d[i][j] = 0;
+            } else {
+        d[i][j] = LLONG_MAX / 2 - 1;
+            }
+
+        }
+    }
+    for(int k = 1; k <= M ; ++k) {
+        cin >> X >> Y;
+        d[X][Y] = 1;
+    d[Y][X] = 1;
+    }
+    for(int k = 1; k <= N; ++k) {
+        for(int i = 1; i <= N; ++i) {
+            for(int j = 1; j <= N; ++j) {
+                d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+            }
+        }
+    }
+    
+   for(int j = 1; j <= N; ++j) {
+        if(d[1][j] > max_time) {
+            max_time = d[1][j];
+        }
+    }
+    cout << max_time;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many operations and how much memory your approach uses for the largest input? How does that compare to the limits?
+1333804439,42.5,cpp,Segmentation Fault,BFS,high_partial,1333804439.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+#define NMAX 100000
+#define INF 10000000
+
+vector<int> bfs(int source, int n, vector<int> adj[]){
+    
+    
+    vector<int> d(n + 1, INF);
+
+    queue<int> q;
+
+    q.push(source);
+    d[source] = 0;
+
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+
+        for (auto& neigh : adj[node]) {
+            if (d[node] + 1 < d[neigh]) {
+                d[neigh] = d[node] + 1;
+                q.push(neigh);
+            }
+        }
+    }
+
+    
+    
+    for (auto& value : d) {
+        if (value == INF) {
+            value = -1;
+        }
+    }
+
+    return d;
+}
+
+int main() {
+    vector<int> adj[NMAX];
+    int n, m;
+    cin >> n >> m;
+    for (int i = 1, x, y; i <= m; i++) {
+        cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+    vector<int> solution = bfs(1, n, adj);
+    int d_max = -2;
+    for(int i = 1; i <= n; i++) {
+        if(d_max < solution[i])
+            d_max = solution[i];
+    }
+    cout<<d_max;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Have you tried a tiny graph where a student has no friends? What does your program output, and does that match the expected behavior when not everyone can learn the news?"
+1314236984,5,java,Wrong Answer,BFS,low,1314236984.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+    
+    
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+class Elev{
+    
+    int id;
+    ArrayList<Elev> prieteni = new ArrayList<Elev>();
+    int visited;
+    int timeDiscovered;
+    
+    public Elev(int id){
+        this.id = id;
+        this.prieteni = new ArrayList<Elev>();
+        this.visited = 0;
+        this.timeDiscovered = 0;
+    }
+    
+    public void addFriend(Elev prieten){
+        this.prieteni.add(prieten);
+    }
+    
+ 
+    
+    
+}
+
+public class Solution {
+    
+  
+
+    public static void main(String[] args) {
+        
+        
+        MyScanner sc = new MyScanner();
+        
+        int n = sc.nextInt();
+        ArrayList<Elev> elevi = new ArrayList<Elev>();
+        
+        Solution sol = new Solution();
+        
+        for(int i = 0; i < n; i++)
+        {
+            elevi.add(new Elev(i));
+        }
+        int p = sc.nextInt();
+        
+        int first, second;
+        
+        for(int i = 0; i < p; i++)
+        {
+            first = sc.nextInt() - 1;
+            second =  sc.nextInt() - 1;
+            elevi.get(first).addFriend(elevi.get(second));
+        }
+        
+        
+        Queue<Elev> q = new LinkedList<Elev>();
+        
+        elevi.get(0).visited = 1;
+        q.add(elevi.get(0));
+        int t = 1;
+        
+        while( !q.isEmpty())
+        {
+            Elev e = q.peek();
+            for(Elev pr : e.prieteni)
+            {   
+                if(pr.visited == 0 && !q.contains(pr)){
+                     q.add(pr);
+                     pr.timeDiscovered = e.timeDiscovered + 1;
+                     }
+            }
+            
+            e.visited = 1;
+            if(e.timeDiscovered > t)
+                t++;
+            q.remove();
+        }
+        
+        int max = 0;
+        
+        for(Elev e : elevi){
+            if(e.timeDiscovered > max)
+                max = e.timeDiscovered;
+        }
+        System.out.println(max + 1);
+    }
+}",statement_code_only,gpt-oss-20b,medium,"Run a very small test case (for example, two students with one friendship) and compare the time your program reports with what you expect by hand. What do you observe?"
+1408484773,17.5,cpp,Wrong Answer,BFS,medium,1408484773.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+struct State{
+    int node;
+    int niv;
+};
+
+vector<int> viz;
+
+void bfs(int x, vector<vector<int>> graf) {
+    queue<State> q;
+    q.push({x, 0});
+    int lastNiv = 0;
+    while(!q.empty()) {
+        State stateNod = q.front();
+        q.pop();
+        
+        int nod = stateNod.node;
+        viz[nod] = 1;
+        for(int y: graf[nod]) {
+            if (viz[y] == 0) {
+                q.push({y, stateNod.niv+1});
+                lastNiv = stateNod.niv+1;
+            }
+        }
+    }
+    cout<<lastNiv;
+}
+
+
+int main() {
+       
+    int n, m;
+    cin>>n>>m;
+    vector<vector<int>> graf(n+1, vector<int>());
+    viz.assign(n+1, 0);
+    for (int i = 0; i < m; i++) {
+        int x, y;
+        cin>>x>>y;
+        graf[x].push_back(y);
+        graf[y].push_back(x);
+    }
+    bfs(1, graf);
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Have you tried a tiny graph where a student has no friends? What does your program output, and does it still reflect that all students know the news?"
+1361914865,2.5,java,Wrong Answer,DFS,low,1361914865.java,"import java.util.*;
+
+public class Main {
+
+    static ArrayList<Integer>[]adj;
+    
+    static int[] s;
+    
+    static int[] f;
+    
+    static int[] index;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int M = scanner.nextInt();
+
+        adj = new ArrayList[N + 1];
+        int[] p = new int[N + 1];
+        s = new int[N + 1];
+        f = new int[N + 1];
+        for (int i = 0; i <= N; i++) {
+            adj[i] = new ArrayList<>();
+        }
+
+        for (int i = 0; i < M; i++) {
+            int u = scanner.nextInt();
+            int v = scanner.nextInt();
+            adj[v].add(u);
+        }
+
+        int source = N;
+
+        int[] time = new int[N + 1];
+        Arrays.fill(time, -1);
+
+        int maxTime = dfs(source, 0, time);
+
+        System.out.println(maxTime);
+    }
+
+    private static int dfs(int node, int currentTime, int[] time) {
+        time[node] = currentTime;
+        int maxTime = currentTime;
+
+        for (int neighbor : adj[node]) {
+            if (time[neighbor] == -1) {
+                int neighborMaxTime = dfs(neighbor, currentTime + 1, time);
+                maxTime = Math.max(maxTime, neighborMaxTime);
+            }
+        }
+
+        return maxTime;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you tried drawing a tiny graph and following the spread by hand for the first few time steps? What pattern do you notice?
+1333805723,10,cpp,Wrong Answer,DIJKSTRA,low,1333805723.cpp,"#include <bits/stdc++.h>
+#include <limits.h>
+using namespace std;
+
+#define NMAX 100001
+
+vector<int> adj[NMAX];
+
+void dijkstra(int source, vector<int>& d) {
+    fill(d.begin(), d.end(), INT_MAX);
+
+    set<pair<int, int>> pq;
+
+    d[source] = 0;
+    pq.insert({d[source], source});
+
+    while (!pq.empty()) {
+        auto top = pq.begin();
+        auto x = top->second;
+        pq.erase(top);
+
+        for (const auto& y : adj[x]) {
+            if (d[y] > d[x] + 1) {
+                pq.erase({d[y], y});
+                d[y] = d[x] + 1;
+                pq.insert({d[y], y});
+            }
+        }
+    }
+}
+
+
+int main() {
+    int n, m;
+    
+    cin >> n >> m;
+    for(int i = 0; i < n; i++) {
+        int x, y;
+        cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+    
+    vector<int> d(n + 1, 0);
+    set<pair<int, int>> pq;
+    
+    dijkstra(1, d);
+    for (int i = 0; i <= n; i++) {
+        
+        if (d[i] == INT_MAX) {
+            d[i] = -1;
+        }
+    }
+    int result = *max_element(d.begin(), d.end());
+    cout << result;
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you verified that the loop that reads the friendship pairs runs exactly M times? Try a tiny graph and compare the edges your program actually stores with the ones you entered.
+1333803362,42.5,java,Runtime Error,BFS,high_partial,1333803362.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    int n, m;
+    ArrayList<Integer> adj[] = new ArrayList[100000];
+
+    void solve(){
+        readInput();
+        getResult();
+    }
+
+    void readInput(){
+        MyScanner myScanner = new MyScanner();
+        n = myScanner.nextInt();
+        m = myScanner.nextInt();
+
+        for(int i = 1; i <= n; i++){
+            adj[i] = new ArrayList<>();
+        }
+
+        for(int i = 1; i <= m; i++){
+            int x = myScanner.nextInt();
+            int y = myScanner.nextInt();
+            adj[x].add(y);
+            adj[y].add(x);
+        }
+    }
+
+    void getResult(){
+        boolean[] visited = new boolean[n + 1];
+        int[] level = new int[n + 1];
+        Queue<Integer> q = new LinkedList<>();
+        int source = 1;
+        q.add(source);
+        visited[source] = true;
+        level[source] = 0;
+
+        while(!q.isEmpty()){
+            int node = q.peek();
+            q.poll();
+
+            for(int i = 0; i < adj[node].size(); i++){
+                if(!visited[adj[node].get(i)]){
+                    visited[adj[node].get(i)] = true;
+                    level[adj[node].get(i)] = level[node] + 1;
+                    q.add(adj[node].get(i));
+                }
+            }
+        }
+        int max = Integer.MIN_VALUE;
+        for(int i = 0 ; i <= n; i++){
+            if(level[i] > max){
+                max = level[i];
+            }
+        }
+        System.out.println(max);
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        solution.solve();
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you considered what happens if the number of students is larger than the size you reserved for storing friendships?
+1333805208,15,java,Wrong Answer,BFS,low,1333805208.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        
+        MyScanner sc = new MyScanner();
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
+        
+        for (int i = 0; i <= N; i++) {
+            ArrayList<Integer> lst = new ArrayList<Integer>();
+            adj.add(lst);
+        }
+        
+        for (int i = 1; i <= M; i++) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            adj.get(x).add(y);
+            adj.get(y).add(x);
+        }
+        
+        int source = 1;
+        int d[] = new int[N + 1];
+        int v[] = new int[N + 1];
+
+        Queue<Integer> q = new LinkedList<>();
+        q.add(source);
+        d[source] = 0;
+
+        while (!q.isEmpty()) {
+            int node = q.poll();
+            v[node] = 1;
+            Iterator<Integer> iter = adj.get(node).iterator();
+            while(iter.hasNext()) {
+                int neigh = iter.next();
+                if (v[neigh] == 0) {
+                    d[neigh] = d[node] + 1;
+                    q.add(neigh);
+                }
+            }
+        }
+        
+        int max = 0;
+        for (int i = 1; i <= N; i++) {
+            if (d[i] > max) {
+                max = d[i];
+            }
+        }
+        System.out.println(max);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny graph where a student can hear the news from two different friends. Walk through your program and see what distance it records for that student. Does it match the earliest time it should learn the news?
+1314235574,22.5,java,Terminated due ...,BFS,medium,1314235574.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+   
+    public static int check(ArrayList<Boolean> elevi) {
+        for(int i = 1; i < elevi.size(); i++) {
+            if(elevi.get(i) ==  false) return 0;
+        }
+        return 1;
+        
+    }
+
+    public static void main(String[] args) {
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] matrix = new int[m][2];
+        int aux1 = 0;
+        int aux2 = 0;
+        for(int i = 0; i < m; i++) {    
+            aux1 = sc.nextInt();
+            aux2 = sc.nextInt();
+            matrix[i][0] = aux1;
+            matrix[i][1] = aux2;
+        }
+        
+        ArrayList<Boolean> elevi = new ArrayList<Boolean>();
+        ArrayList<Integer> aux = new ArrayList<Integer>();
+
+        for(int i = 0; i <= n; i++){
+            elevi.add(false);
+        }
+        int t = 0;
+        elevi.set(1, true);
+        while(check(elevi) != 1) {
+            t++;
+            for(int i = 1; i <= n; i++) {
+                if(elevi.get(i) == true) {
+                    aux.add(i);
+                }    
+            }
+            for(int i = 0; i < aux.size(); i++) {
+                for(int j = 0; j < m; j++) {
+                    if(matrix[j][0] == aux.get(i)) {
+                        if(elevi.get(matrix[j][1]) == false) elevi.set(matrix[j][1], true);                        
+                    }
+                    if(matrix[j][1] == aux.get(i)) {
+                        if(elevi.get(matrix[j][0]) == false) elevi.set(matrix[j][0], true);      
+                    }
+                }  
+            }
+            aux.clear();
+        }
+        System.out.println(t);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how the total amount of work grows as the graph becomes dense? Does that fit within the input limits?
+1314235900,5,java,Wrong Answer,DFS,low,1314235900.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class P1 {
+    
+    static class P12{
+    
+    public void explore(int[][] elev, int i, int timp, 
+                        int[] c, int[] d, int n){
+        
+        d[i] = timp++;
+        c[i] = 1;
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        for (int k = 0; k <= n; k++){
+            if (elev[i][k] == 1){
+                if (c[k] == 0){
+                    explore(elev, k, timp, c, d, n);
+                }
+            }
+        }
+        
+        c[i] = 2;
+    }
+        
+    public void solve(){
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] elev = new int[n+1][n+1];
+        
+        int x, y;
+        for (int i = 0; i < m; i++){
+            x = sc.nextInt();
+            y = sc.nextInt();
+            elev[x][y] = 1;
+            
+        }
+
+
+
+
+
+
+        int[] c = new int[n+1];
+        
+        int[] d = new int[n+1];
+        for (int i = 1; i <= n; i++){
+                c[i] = 0;
+                
+                d[i] = 0;
+        }
+        
+        int timp = 0;
+        for (int i = 1; i <= n; i++){
+                if (c[i] == 0)
+                   explore(elev, i, timp, c, d, n);
+        }
+        
+        
+        
+        int max = 0;
+        for (int i = 1; i <= n; i++){
+                if (d[i] > max)
+                    max = d[i];
+        }
+        
+        System.out.print(max);
+        
+    }
+        
+    }
+
+    public static void main(String[] args) {
+        
+        new P12().solve();
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you tried a tiny graph with just two students and one friendship? Does your program make both students know the news? What might be missing in how you record the friendships?
+1314237212,2.5,java,Wrong Answer,DIJKSTRA,low,1314237212.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+  BufferedReader br;
+  StringTokenizer st;
+
+  public MyScanner() {
+    br = new BufferedReader(new InputStreamReader(System.in));
+  }
+
+  String next() {
+    while (st == null || !st.hasMoreElements()) {
+      try {
+        st = new StringTokenizer(br.readLine());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+    return st.nextToken();
+  }
+
+  int nextInt() {
+    return Integer.parseInt(next());
+  }
+
+  long nextLong() {
+    return Long.parseLong(next());
+  }
+
+  double nextDouble() {
+    return Double.parseDouble(next());
+  }
+
+  String nextLine(){
+    String str = """";
+    try {
+      str = br.readLine();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return str;
+  }
+}
+
+public class Solution {
+  static class Solve {
+    public static final int NMAX = 50005;
+
+    int n;
+    int m;
+    int source;
+
+    public class Edge {
+      public int node;
+      public int cost;
+
+      Edge(int _node, int _cost) {
+        node = _node;
+        cost = _cost;
+      }
+    }
+
+    @SuppressWarnings(""unchecked"")
+    ArrayList<Edge> adj[] = new ArrayList[NMAX];
+
+
+    public void readInput() {
+      MyScanner sc = new MyScanner();
+      n = sc.nextInt();
+      m = sc.nextInt();
+
+      for (int i = 1; i <= n; i++) {
+        adj[i] = new ArrayList<>();
+      }
+
+      for (int i = 1; i <= m; i++) {
+        int x, y;
+        x = sc.nextInt();
+        y = sc.nextInt();
+        adj[x].add(new Edge(y, 1));
+      }
+    }
+
+    public ArrayList<Integer> getResult() {
+      int source = 1;
+      
+      boolean[] visited = new boolean[n + 1];
+      
+      ArrayList<Integer> d = new ArrayList<>(n + 1);
+
+      
+      PriorityQueue<Edge> queue = new PriorityQueue<>(new Comparator<Edge>() {
+        @Override
+        public int compare(Edge o1, Edge o2) {
+          if (o1.cost == o2.cost) {
+            return 0;
+          } else if (o1.cost > o2.cost) {
+            return 1;
+          } else return -1;
+        }
+      });
+
+      visited[0] = false;
+      d.add(0);
+      for (int i = 1; i <= n; i++) {
+        visited[i] = false;
+        if (i == source) {
+          queue.add(new Edge(source, 0));
+          d.add(source, 0);
+        } else {
+          d.add(i, Integer.MAX_VALUE/2);
+        }
+      }
+
+      while (!queue.isEmpty()) {
+        
+        Edge current = queue.poll();
+        visited[current.node] = true;
+        if (current.cost > d.get(current.node)) continue;
+        
+        for (int j = 1; j <= adj[current.node].size(); j++) {
+          
+          Edge neigh = adj[current.node].get(j - 1);
+
+          
+          if (!visited[neigh.node]) {
+            int dist = d.get(current.node) + neigh.cost;
+            if (dist < d.get(neigh.node)) {
+              d.set(neigh.node, dist);
+              
+              int node = neigh.node;
+              queue.add(new Edge(node, dist));
+            }
+          }
+        }
+
+      }
+      return d;
+    }
+    public void s() {
+      readInput();
+      ArrayList<Integer> res = getResult();
+      System.out.println(res.get(n));
+    }
+  }
+
+  public static void main(String[] args) {
+    new Solve().s();
+  }
+}",statement_code_only,gpt-oss-20b,medium,Run a very small test graph by hand and compare the times your program reports with what you expect. Does every friendship appear in both directions when you trace the spread?
+1333683868,37.5,cpp,Wrong Answer,BFS,high_partial,1333683868.cpp,"#include <bits/stdc++.h>
+using namespace std;
+
+void printLevels(vector<int> graph[], int V, int x)
+{
+    int max_lev = 0;
+    int level[V];
+    bool marked[V];
+
+    queue<int> que;
+
+    que.push(x);
+
+    level[x] = 0;
+
+    marked[x] = true;
+
+    while (!que.empty()) {
+
+        x = que.front();
+
+        que.pop();
+
+        for (long unsigned int i = 0; i < graph[x].size(); i++) {
+            int b = graph[x][i];
+
+            if (!marked[b]) {
+
+                que.push(b);
+
+                level[b] = level[x] + 1;
+                if (level[b] > max_lev){
+                    max_lev = level[b];
+                }
+                marked[b] = true;
+            }
+        }
+    }
+    cout << max_lev;
+}
+
+int main()
+{
+    int N, M;
+    cin >> N >> M;
+    vector<int> graph[N];
+    for (int i = 0; i < M ; i++ ) {
+        int x, y;
+        cin >> x >> y;
+        graph[x-1].push_back(y-1);
+        graph[y-1].push_back(x-1);
+    }
+    printLevels(graph, N, 0);
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you initialized the array that tracks whether a student has already heard the news before you start the traversal?
+1323433091,2.5,cpp,Wrong Answer,BFS,low,1323433091.cpp,"#include <bits/stdc++.h>
+using namespace std;
+
+map<int, vector<int>> adj;
+int contor = 0;
+bitset<100005> used;
+queue<int> q;
+void bfs(int node){
+    used[node] = 1;
+    q.push(node);
+    while(!q.empty()){
+        int x = q.front();
+        q.pop();
+        for(auto n : adj[x]){
+        if(!used[n]){
+            used[n] = 1;
+            q.push(n);
+        }
+    }
+        contor++;
+}
+    
+    contor++;
+}
+int main() {
+    
+    int n, m;
+    cin >> n >> m;
+    for(int i = 0; i < m; i++){
+        int a, b;
+        cin >> a >> b;
+        adj.insert(make_pair(a, b));
+        adj.insert(make_pair(b, a));
+    }
+    bfs(1);
+    cout << contor;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a very small graph and follow the news spread over time. What pattern emerges for when each student first hears it?
+1391934796,25,cpp,Abort Called,BFS,medium,1391934796.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+
+int main() {
+       
+    int n,m;
+    cin>>n>>m;
+
+    vector<vector<int>> grid(n + 1, vector<int>(n + 1, 0));
+    for (int i = 1; i <= m; i++) {
+        int u, v;
+        cin >>u>>v;
+        grid[u][v] = 1;
+        grid[v][u] = 1;
+    }
+    vector<bool> visited(n + 1, false);
+    vector<int> dist(n + 1, 0);
+    queue<int> q;
+    q.push(1);
+    visited[1] = true;
+    int max_time = 0;
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+        for(int k = 1; k <= n; k++) {
+            if(grid[node][k] && !visited[k]) {
+                visited[k] = 1;
+                dist[k] = dist[node] + 1;
+                q.push(k);
+                if(dist[k] > max_time) {
+                    max_time = dist[k];
+                }
+            }
+        }
+    }
+    cout<<max_time;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many operations your approach performs on the largest input? How does that compare with the limits?
+1323456054,2.5,cpp,Wrong Answer,DFS,low,1323456054.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+#define kNMAx 1000000
+
+int N, M;
+vector<int> adj[kNMAx];
+
+void DFS(vector<int> &dp, int node, vector<bool> &visited) {
+    if (visited[node]) {
+        return;
+    }
+    visited[node] = true;
+    for (long unsigned int i = 0; i < adj[node].size(); ++i) {
+        int neigh = adj[node][i];
+        if (!visited[neigh]) {
+            DFS(dp, neigh, visited);
+        }
+         dp[node] = std :: max(dp[node], dp[neigh] + 1);
+    }
+}
+int main() {
+    
+    cin >> N >> M;
+    for (int i = 0; i < M; ++i) {
+        int aux1, aux2;
+        cin >> aux1 >> aux2;
+        adj[aux1].push_back(aux2);
+    }
+    
+    vector<bool> visited(N + 1, 0);
+    
+    vector<int> dp(N + 1, 1);
+    int src = 1;
+    visited[src] = true;
+    for (int i = 1; i <= N; ++i) {
+        if (!visited[i])
+            DFS(dp, i, visited);
+    }
+    int max = dp[0];
+    for (int i = 1; i < N + 1; ++i) {
+        max = std :: max(max, dp[i]);
+    }
+    std :: cout << max;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Try a tiny graph with a few students and friendships, and manually follow how the news spreads. Does your program’s output match what you expect?"
+1314236900,2.5,java,Wrong Answer,DIJKSTRA,low,1314236900.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static class Task {
+
+        int n;
+        int m;
+        int source;
+
+        public class Edge {
+            public int node;
+            public int cost;
+
+            Edge(int _node, int _cost) {
+                node = _node;
+                cost = _cost;
+            }
+        }
+
+        @SuppressWarnings(""unchecked"")
+        ArrayList<Edge> adj[] = new ArrayList[100005];
+
+        private void readInput() {
+
+            MyScanner sc = new MyScanner();
+            n = sc.nextInt();
+            m = sc.nextInt();
+
+            for (int i = 1; i <= n; i++) {
+                adj[i] = new ArrayList<>();
+            }
+            for (int i = 1; i <= m; i++) {
+                int x, y, w;
+                x = sc.nextInt();
+                y = sc.nextInt();
+                w = 1;
+                adj[x].add(new Edge(y, w));
+            }
+
+        }
+
+        private void getResult() {
+            ArrayList<Integer> d = new ArrayList<>();
+            for (int i = 0; i <= n; i++)
+                d.add(0);
+
+            Integer dist[] = new Integer[n+1];
+            int p[] = new int[n+1];
+            for (int i = 0; i <= n; i++) {
+                d.add(0);
+                dist[i] = Integer.MAX_VALUE/2;
+                p[i]=-1;
+            }
+            dist[1] = 0;
+            for(int i =  1; i <= n-2; i++) {
+                boolean flag = false;
+                for(int u = 1; u <=n; u++) {
+                    for(int j = 0; j < adj[u].size(); j++) {
+                        Edge edge = adj[u].get(j);
+                        int v = edge.node;
+                        if(dist[v] > dist[u] + edge.cost) {
+                            dist[v] = dist[u] + edge.cost;
+                            p[v] = u;
+                            flag = true;
+                        }
+                        if (flag == true) {
+                            break;
+                        }
+                    }
+                }
+            }
+            for(int u = 1; u <=n; u++) {
+                for(int j = 0; j < adj[u].size(); j++) {
+                    Edge edge = adj[u].get(j);
+                    int v = edge.node;
+                    if(dist[v] > dist[u] + edge.cost) {
+                        System.out.println(dist[n]);
+                    }
+                }
+            }
+            System.out.println(dist[n]);
+        }
+
+        public void solve() {
+            readInput();
+            getResult();
+        }
+    }
+
+    public static void main(String args[]) throws Exception {
+        
+        new Task().solve();
+    }
+}
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny graph and trace the news spread by hand. Does your program’s result match what you expect? Pay attention to whether every friendship is represented in both directions.
+1314237660,42.5,cpp,Segmentation Fault,BFS,high_partial,1314237660.cpp,"#include <iostream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+const int kNmax = 100000;
+
+int main() {
+    int n;
+    int m;
+    vector<int > adj[kNmax];
+
+    cin >> n >> m;
+    for (int i = 1, x, y; i <= m; i++) {
+        cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+    
+    vector<int> d(n + 1, -1);
+    vector<bool> visited(n + 1, false);
+    queue<int> q;
+    visited[1] = true;
+    d[1] = 0;
+
+    q.push(1);
+    while(!q.empty()) {
+        int node = q.front();
+        q.pop();
+
+        for (unsigned int i = 0; i != adj[node].size(); ++i) {
+            if (!visited[adj[node][i]]) {
+                visited[adj[node][i]] = true;
+                d[adj[node][i]] = d[node] + 1;
+
+                q.push(adj[node][i]);
+            }
+        }
+    }
+    int max = 0;
+
+    for (int i = 1; i < d.size(); i++) {
+        if (d[i] > max) {
+            max = d[i];
+        }
+    }
+
+    
+    cout << max;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you verified that your adjacency list can hold all node indices up to the maximum ID? What happens if the largest ID equals the size you allocated?
+1323417646,5,cpp,Wrong Answer,BFS,low,1323417646.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+#define kMax 100000
+
+int main() {
+       
+    int N, M;
+    cin >> N >> M;
+    vector<int> adj[kMax];
+    
+    for (int i = 0, x, y; i <= N; i++) {
+        cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+    
+    vector<int> d(N + 1, kMax);
+    queue<int> q;
+    vector<int> c(N + 1, 0);
+    
+    d[1] = 0;
+    q.push(1);
+    c[1] = 1;
+    
+    while (!q.empty()) {
+        int u = q.front();
+        for (int v : adj[u]) {
+            if (c[v] == 0) {
+                d[v] = d[u] + 1;
+                c[v] = 1;
+                q.push(v);
+            }
+        }
+        c[u] = 2;
+        q.pop();
+    }
+    int max = d[1];
+    for (int i = 2; i <= N; i++) {
+        if (max < d[i]) {
+            max = d[i];
+        }
+    }
+    cout << max;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a very small test case and step through how your program reads the friendships. Does the input loop consume exactly the number of edges given in the problem?
+1314237278,17.5,c,Wrong Answer,BFS,medium,1314237278.c,"#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+bool allVisited(bool **visited, int N)
+{
+    for (int i = 1; i <= N; i++)
+        if((*visited)[i] == false)
+            return false;
+    
+    return true;
+}
+
+typedef struct mystruct{
+    
+    int level;
+    int node;
+    
+}BFSArr;
+
+int main() {
+
+    int N = 0, M = 0;
+    int sefuClasei = 1;
+    
+    scanf(""%d%d"", &N, &M);
+    
+    int **adjmatrix = (int **) calloc(100001, sizeof(int *));
+    bool *visited = (bool *) calloc(100001, sizeof(bool));
+        
+    for(int i = 1; i <= N; i++)
+    {
+        adjmatrix[i] = (int *) calloc(100001, sizeof(int));
+        visited[i] = false;
+    }
+    
+    for (int i = 1; i <= N; i ++)
+        for (int j = 1; j <= N; j++)
+            adjmatrix[i][j] = 0; 
+    
+    for (int i = 0; i < M; i++)
+    {
+        int node1, node2;
+        
+        scanf(""%d%d"", &node1, &node2);
+        
+        adjmatrix[node1][node2] = 1;
+        adjmatrix[node2][node1] = 1;
+         
+    }
+    
+    int index = 0;
+    int size = 1;
+    
+    for (int i = 1; i <= N; i++)
+        visited[i] = false;
+    
+    BFSArr *BFSArray = (BFSArr *) calloc(100001, sizeof(BFSArr));
+    BFSArray[index].node = 1;
+    BFSArray[index].level = 0;
+    visited[sefuClasei] = true;
+
+    int maxLevel = -1;
+    int Count = N;
+    Count --;
+    
+    while(allVisited(&visited, N) == false)
+    {
+        
+        for (int i = 1; i <= N; i++)
+        {
+            if (i != BFSArray[index].node && adjmatrix[BFSArray[index].node][i] == 1 && visited[i] == false)
+            {
+                size ++;
+                visited[i] = true;
+                
+                BFSArray[size - 1].node = i;
+                BFSArray[size - 1].level = BFSArray[index].level + 1;
+                
+                if (BFSArray[size - 1]. level > maxLevel)
+                    maxLevel = BFSArray[size - 1].level;
+                
+            }
+        }
+        
+        
+        index ++;
+    }
+  
+    printf(""%d\n"", maxLevel);
+    
+    
+    for (int i = 1; i <= N; i++)
+        free(adjmatrix[i]);
+    
+    free(BFSArray);
+    free(adjmatrix);
+    free(visited);
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how much memory your adjacency matrix uses for the largest input? Does that fit within the limits?

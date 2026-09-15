@@ -1,0 +1,75 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+organizare-mafiota,1378143030,0,0,0,passed,,8.0,passed,0.110641,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,1 ,"1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,1,1,1,passed,,8.0,passed,0.372905,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,0 0 ,"0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,2,2,2,passed,,8.0,passed,0.097817,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,1 1 1 0 1 1 1 1 0 1 ,"1 1 1 0 1 1 1 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,3,3,3,passed,,8.0,passed,0.376003,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,1 1 0 1 0 1 0 1 0 0 ,"1 1 0 1 0 1 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,4,4,4,failed,,8.0,wrong_answer,0.196657,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,1 1 0 1 0 0 1 1 0 0 ,"1 0 0 1 0 0 1 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,5,5,5,passed,,8.0,passed,0.319045,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,0 0 1 1 1 1 1 1 0 1 ,"0 0 1 1 1 1 1 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,6,6,6,passed,,8.0,passed,2.385880,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,1 1 0 0 0 0 0 1 0 0 ,"1 1 0 0 0 0 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,7,7,7,passed,,8.0,timeout,9.408854,,timeout,8.389253,,passed,5.534874,0,9.0,passed,passed,ENV_GRACE_MATCH,True,True,True,False,False,,1 1 0 0 1 0 0 0 0 1 ,"1 1 0 0 1 0 0 0 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,8,8,8,failed,,8.0,timeout,8.259935,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"1 1 0 1 1 1 1 0 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,9,9,9,failed,,8.0,timeout,8.287711,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"0 0 1 0 0 1 1 1 1 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,10,10,10,failed,,8.0,timeout,8.259587,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"1 1 1 0 1 0 0 0 1 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,11,11,11,failed,,8.0,timeout,8.308761,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"1 0 0 0 0 1 1 1 1 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,12,12,12,failed,,8.0,runtime_error,0.876236,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 1 1 1 0 0 0 1 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,13,13,13,failed,,8.0,runtime_error,0.813279,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"0 1 0 0 1 1 1 1 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,14,14,14,failed,,8.0,runtime_error,0.860439,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 1 1 1 0 1 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,15,15,15,failed,,8.0,runtime_error,0.869189,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"0 0 1 1 1 1 1 1 0 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,16,16,16,failed,,8.0,runtime_error,0.814253,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"0 1 0 1 1 1 1 0 0 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,17,17,17,failed,,8.0,runtime_error,0.779692,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 0 1 1 1 0 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,18,18,18,failed,,8.0,runtime_error,0.831800,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 1 0 1 1 0 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,19,19,19,failed,,8.0,runtime_error,0.837134,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 1 1 0 0 0 0 1 0 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,20,20,20,failed,,8.0,runtime_error,0.785873,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 1 1 1 0 1 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv
+organizare-mafiota,1378143030,21,21,21,failed,,8.0,runtime_error,0.922553,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 1 0 0 1 0 1 0 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.checkTree(Solution.java:100)
+	at Solution.main(Solution.java:151)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1378143030.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1378143030.csv

@@ -1,0 +1,89 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+organizare-mafiota,1314184304,0,0,0,passed,,8.0,passed,0.116176,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1 
+","1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,1,1,1,passed,,8.0,passed,0.171119,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"0 0 
+","0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,2,2,2,passed,,8.0,passed,0.144906,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1 1 1 0 1 1 1 1 0 1 
+","1 1 1 0 1 1 1 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,3,3,3,passed,,8.0,passed,0.152670,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1 1 0 1 0 1 0 1 0 0 
+","1 1 0 1 0 1 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,4,4,4,passed,,8.0,passed,0.244606,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1 0 0 1 0 0 1 1 0 0 
+","1 0 0 1 0 0 1 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,5,5,5,passed,,8.0,passed,0.222244,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"0 0 1 1 1 1 1 1 0 1 
+","0 0 1 1 1 1 1 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,6,6,6,passed,,8.0,passed,1.437029,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1 1 0 0 0 0 0 1 0 0 
+","1 1 0 0 0 0 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,7,7,7,passed,,8.0,passed,5.318824,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1 1 0 0 1 0 0 0 0 1 
+","1 1 0 0 1 0 0 0 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,8,8,8,passed,,8.0,timeout,24.519256,,,,,timeout,32.476323,,32.0,timeout,failed,DIFF,False,True,False,False,True,LOCAL_TIMEOUT_OFFICIAL_PASS,1 1 0 1 1 ,"1 1 0 1 1 1 1 0 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,9,9,9,passed,,8.0,timeout,24.447392,,,,,timeout,32.484485,,32.0,timeout,failed,DIFF,False,True,False,False,True,LOCAL_TIMEOUT_OFFICIAL_PASS,0 0 1 0 0 ,"0 0 1 0 0 1 1 1 1 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,10,10,10,passed,,8.0,runtime_error,0.668995,1,runtime_error,0.659159,1,,,,,runtime_error,failed,DIFF,False,True,False,False,True,LOCAL_RUNTIME_ERROR_OFFICIAL_PASS,,"1 1 1 0 1 0 0 0 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,11,11,11,passed,,8.0,runtime_error,0.642848,1,runtime_error,0.662038,1,,,,,runtime_error,failed,DIFF,False,True,False,False,True,LOCAL_RUNTIME_ERROR_OFFICIAL_PASS,,"1 0 0 0 0 1 1 1 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,12,12,12,failed,,8.0,runtime_error,0.644857,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 1 1 1 0 0 0 1 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,13,13,13,failed,,8.0,runtime_error,0.630723,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"0 1 0 0 1 1 1 1 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,14,14,14,failed,,8.0,runtime_error,0.559875,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 1 1 1 0 1 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,15,15,15,failed,,8.0,runtime_error,0.540956,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"0 0 1 1 1 1 1 1 0 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,16,16,16,failed,,8.0,runtime_error,0.541571,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"0 1 0 1 1 1 1 0 0 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,17,17,17,failed,,8.0,runtime_error,0.562223,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 0 1 1 1 0 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,18,18,18,failed,,8.0,runtime_error,0.558513,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 1 0 1 1 0 0 0 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,19,19,19,failed,,8.0,runtime_error,0.569602,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 1 1 0 0 0 0 1 0 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,20,20,20,failed,,8.0,runtime_error,0.617150,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 0 0 1 1 1 0 1 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,
+organizare-mafiota,1314184304,21,21,21,failed,,8.0,runtime_error,0.658902,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1 1 0 0 1 0 1 0 1 1 
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.createGraph(Solution.java:59)
+	at Solution.main(Solution.java:101)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314184304.java,

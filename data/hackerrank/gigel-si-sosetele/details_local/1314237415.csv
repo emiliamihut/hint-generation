@@ -1,0 +1,195 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+gigel-si-sosetele,1314237415,0,0,0,passed,,3.0,passed,0.075723,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2
+","2
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,1,1,1,passed,,3.0,passed,0.069850,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5
+","5
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,2,2,2,passed,,3.0,passed,0.074773,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"0
+","0
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,3,3,3,passed,,3.0,passed,0.071335,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"10
+","10
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,4,4,4,failed,,3.0,runtime_error,0.310595,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"90700
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,5,5,5,failed,,3.0,runtime_error,0.295997,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"63334
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,6,6,6,failed,,3.0,runtime_error,0.330783,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"194719
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,7,7,7,failed,,3.0,runtime_error,0.276998,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"70344
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,8,8,8,failed,,3.0,runtime_error,0.275098,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"85677
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,9,9,9,failed,,3.0,runtime_error,0.339584,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"89628
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,10,10,10,failed,,3.0,runtime_error,0.270456,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"75249
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,11,11,11,failed,,3.0,runtime_error,0.269230,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"92752
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,12,12,12,failed,,3.0,runtime_error,0.282571,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"93552
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,13,13,13,failed,,3.0,runtime_error,0.336133,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"65710
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,14,14,14,failed,,3.0,runtime_error,0.302877,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"157323
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,15,15,15,failed,,3.0,runtime_error,0.320382,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"33561
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,16,16,16,failed,,3.0,runtime_error,0.379320,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"69726
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,17,17,17,failed,,3.0,runtime_error,0.297194,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"114160
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,18,18,18,failed,,3.0,runtime_error,0.351293,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"107284
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,19,19,19,failed,,3.0,runtime_error,0.395017,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"29693
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,20,20,20,failed,,3.0,runtime_error,0.351390,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"98905
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,21,21,21,failed,,3.0,runtime_error,0.332813,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"104112
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,22,22,22,failed,,3.0,runtime_error,0.304742,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"85480
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,23,23,23,failed,,3.0,runtime_error,0.410121,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"16509
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,24,24,24,failed,,3.0,runtime_error,0.252627,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"75332
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,25,25,25,failed,,3.0,runtime_error,0.282237,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"141790
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,26,26,26,failed,,3.0,runtime_error,0.267910,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"78596
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,27,27,27,failed,,3.0,runtime_error,0.226181,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"56702
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,28,28,28,failed,,3.0,runtime_error,0.299248,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"72515
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,29,29,29,failed,,3.0,runtime_error,0.333326,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"21273
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,30,30,30,failed,,3.0,runtime_error,0.330296,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"50292
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,31,31,31,failed,,3.0,runtime_error,0.409181,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"17719
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,32,32,32,failed,,3.0,runtime_error,0.282890,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"178137
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,33,33,33,failed,,3.0,runtime_error,0.301920,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"94252
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,34,34,34,failed,,3.0,runtime_error,0.263631,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"130173
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,35,35,35,failed,,3.0,runtime_error,0.355340,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"41002
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,36,36,36,failed,,3.0,wrong_answer,0.809890,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"9859
+","9861
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,37,37,37,failed,,3.0,runtime_error,0.428682,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"20205
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,38,38,38,failed,,3.0,runtime_error,0.426003,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"15767
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,39,39,39,failed,,3.0,runtime_error,0.340599,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"54457
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,40,40,40,failed,,3.0,runtime_error,0.317878,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"30492
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,41,41,41,failed,,3.0,runtime_error,0.316002,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"40011
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,42,42,42,failed,,3.0,runtime_error,0.340725,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"39627
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,43,43,43,failed,,3.0,runtime_error,0.370991,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"31238
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,44,44,44,failed,,3.0,runtime_error,0.283649,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"123700
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,45,45,45,passed,,3.0,passed,0.138813,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3344
+","3344
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,46,46,46,failed,,3.0,runtime_error,0.391212,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"22037
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,47,47,47,failed,,3.0,runtime_error,0.273452,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"101593
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,48,48,48,failed,,3.0,runtime_error,0.288211,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"54688
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv
+gigel-si-sosetele,1314237415,49,49,49,failed,,3.0,runtime_error,0.291092,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"89742
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:65)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237415.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237415.csv

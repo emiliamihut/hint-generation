@@ -1,0 +1,15 @@
+submission_id,user_id,cluster,language,gold_algorithm,gold_label,raw_prediction,predicted_label,correct
+1333787279,user_0016,0,cpp,DFS-based topological sort + uniqueness check,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,1
+1344629085,user_0044,0,cpp,DFS-based topological sort + uniqueness check,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,1
+1314236741,user_0003,1,java,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0
+1323374677,user_0026,1,java,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0
+1314168969,user_0047,2,java,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0
+1314222956,user_0053,2,java,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0
+1314235802,user_0056,0,cpp,DFS-based topological sort + uniqueness check,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,1
+1323431344,user_0031,0,cpp,DFS-based topological sort + uniqueness check,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,1
+1344573200,user_0024,0,cpp,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0
+1314186184,user_0023,0,cpp,DFS-based topological sort + uniqueness check,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,1
+1391186585,user_0020,0,cpp,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0
+1378139766,user_0039,0,cpp,DFS-based topological sort + uniqueness check,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,1
+1378138561,user_0040,1,java,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0
+1333788831,user_0017,1,java,Kahn's algorithm for topological sorting + uniqueness check,KAHN,DFS_TOPOLOGICAL,DFS_TOPOLOGICAL,0

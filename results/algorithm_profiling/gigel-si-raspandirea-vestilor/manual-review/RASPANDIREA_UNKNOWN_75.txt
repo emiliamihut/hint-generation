@@ -1,0 +1,429 @@
+====================================================================================================
+SUBMISSION_ID: 1314234684
+USER_ID: user_0224
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner myScanner = new MyScanner();
+        int n = 0, m = 0;
+        n = myScanner.nextInt();
+        m = myScanner.nextInt();
+        int[][] v = new int[n + 1][m + 1];
+        for(int i = 1; i <= n ; i++) {
+            for(int j = 1; j <= m ; j++) {
+                v[i][j] = 0;
+            }   
+        }
+        
+        int a, b;
+        for(int i = 1; i <= n ; i++) {
+            a = myScanner.nextInt();
+            b = myScanner.nextInt();
+            v[a][b] = 1;
+        }
+        
+        int timp = 0, nrCun = 1, aflat = 0;
+        int[] cunosc = new int[n + 1];
+        cunosc[1] = 1;
+        for(int i = 1; i <= n && nrCun < n; i++) {
+            aflat = 0;
+            for(int j = 1; j <= m ; j++) {
+                if (v[i][j] == 1 && cunosc[i] == 1) {
+                    aflat = 1;
+                    cunosc[j] = 1;
+                    nrCun++;
+                }
+            }
+            if(aflat == 1)
+                timp++;
+        }
+        System.out.println(timp);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235242
+USER_ID: user_0031
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class NewClass {
+    int x, y;
+    public NewClass(int x, int y){
+        this.x = x;
+        this.y = y;
+               
+    }
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        ArrayList<Integer> adj[] = new ArrayList[1000005];
+
+        int n = sc.nextInt();
+                int m = sc.nextInt();
+
+                for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                                        
+                    adj[x].add(y);
+                                      
+                }
+       
+    
+        int k = 0, ok = 0, f = 0;
+        int[] visited = new int[n + 1];
+        for(int i = 1; i <= m; i++){
+            if(ok == 0){
+                k++;
+                for(int j = 1; j <= adj[i].size(); j++)
+                    visited[j] = 1;
+                for(int a = 1; a <= n; a++){
+                    if(visited[a] == 1)
+                        f++;
+                    if( f == n)
+                        ok = 1;
+                }
+        }
+        }
+        System.out.println(k);
+        
+}
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314235764
+USER_ID: user_0031
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class NewClass {
+    int x, y;
+    public NewClass(int x, int y){
+        this.x = x;
+        this.y = y;
+               
+    }
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        ArrayList<Integer> adj[] = new ArrayList[1000005];
+
+        int n = sc.nextInt();
+                int m = sc.nextInt();
+
+                for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                                        
+                    adj[x].add(y);
+                                      
+                }
+       
+    
+        int k = 0, ok = 0, f = 0;
+        int[] visited = new int[n + 1];
+        for(int i = 1; i <= n; i++)
+            for(int j = 1; j < adj[i].size(); i++)
+              
+                if(i + 1 <= n )
+                  if(adj[i + 1].size() >= adj[i].size()){
+                if(adj[i].get(j) == adj[i + 1].get(j))
+                   adj[i + 1].set(j, -1);
+                }
+        for(int i = 1; i <= m; i++){
+            if(ok == 0){
+                k++;
+                for(int j = 1; j <= adj[i].size(); j++)
+                    visited[j] = 1;
+                for(int a = 1; a <= n; a++){
+                    if(visited[a] == 1)
+                        f++;
+                    
+                    if( f == n){
+                        ok = 1;
+                    }
+                }
+        }
+        }
+        System.out.println(k);
+        
+}
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237386
+USER_ID: user_0031
+SCORE: 7.5
+LANGUAGE: java
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class NewClass {
+    int x, y;
+    public NewClass(int x, int y){
+        this.x = x;
+        this.y = y;
+               
+    }
+    public static void main(String[] args) {
+         MyScanner sc = new MyScanner();
+        ArrayList<Integer> adj[] = new ArrayList[1000005];
+
+        int n = sc.nextInt();
+                int m = sc.nextInt();
+
+                for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                                        
+                    adj[x].add(y);
+                                      
+                }
+       
+    
+        int k = 0, ok = 0, f = 0;
+        int[] visited = new int[n + 1];
+        for(int i = 1; i <= n; i++)
+            for(int j = 0; j < adj[i].size(); i++)
+              
+                if(i + 1 <= n ){
+                   
+                    
+                  if(adj[i + 1].size() >= adj[i].size()){
+                    
+                    if(adj[i + 1].get(j) != null && adj[i].get(j) != null)
+                    if(adj[i].get(j) == adj[i + 1].get(j)){
+                       adj[i + 1].remove(j);
+                        
+                    }
+                  }
+                }
+    
+        for(int i = 1; i <= m; i++){
+            if(ok == 0){
+                k++;
+                for(int j = 0; j <= adj[i].size(); j++)
+                    visited[j] = 1;
+                for(int a = 1; a <= n; a++){
+                    if(visited[a] == 1)
+                        f++;
+                    if( f == n)
+                        ok = 1;
+                }
+        }
+        }
+        System.out.println(k);
+        
+}
+}
+

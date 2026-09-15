@@ -1,0 +1,13 @@
+file,user_id,attempt_number,submission_id,language,original_language,result,score,timestamp,code_length,code_lines,_global_index,source_path,language_group,cluster_within_language,language_cluster,candidate_type
+1408417181.cpp,user_0333,1,1408417181,cpp,cpp,Accepted,50.0,3691958,705,36,544,gigel-si-raspandirea-vestilor/submissions/1408417181.cpp,cpp_c,0,cpp_c_0,fullscore
+1378090891.cpp,user_0296,4,1378090891,cpp,cpp14,Accepted,50.0,2636929,708,36,494,gigel-si-raspandirea-vestilor/submissions/1378090891.cpp,cpp_c,0,cpp_c_0,fullscore
+1314213226.cpp,user_0402,1,1314213226,cpp,cpp,Accepted,50.0,-2202,713,39,644,gigel-si-raspandirea-vestilor/submissions/1314213226.cpp,cpp_c,0,cpp_c_0,fullscore
+1391862501.cpp,user_0251,1,1391862501,cpp,cpp,Accepted,50.0,3145196,820,35,428,gigel-si-raspandirea-vestilor/submissions/1391862501.cpp,cpp_c,1,cpp_c_1,fullscore
+1408492735.cpp,user_0409,1,1408492735,cpp,cpp,Accepted,50.0,3695634,884,44,654,gigel-si-raspandirea-vestilor/submissions/1408492735.cpp,cpp_c,1,cpp_c_1,fullscore
+1391862949.cpp,user_0235,1,1391862949,cpp,cpp,Accepted,50.0,3145230,941,46,399,gigel-si-raspandirea-vestilor/submissions/1391862949.cpp,cpp_c,1,cpp_c_1,fullscore
+1314235879.java,user_0032,1,1314235879,java,java8,Accepted,50.0,70,2895,124,47,gigel-si-raspandirea-vestilor/submissions/1314235879.java,java,0,java_0,fullscore
+1314234521.java,user_0205,1,1314234521,java,java8,Accepted,50.0,15,2954,121,355,gigel-si-raspandirea-vestilor/submissions/1314234521.java,java,0,java_0,fullscore
+1314235968.java,user_0175,2,1314235968,java,java8,Accepted,50.0,75,4742,163,292,gigel-si-raspandirea-vestilor/submissions/1314235968.java,java,0,java_0,fullscore
+1391903457.java,user_0282,1,1391903457,java,java8,Accepted,50.0,3146590,1376,43,474,gigel-si-raspandirea-vestilor/submissions/1391903457.java,java,1,java_1,fullscore
+1378096692.java,user_0287,2,1378096692,java,java8,Accepted,50.0,2637272,1693,52,480,gigel-si-raspandirea-vestilor/submissions/1378096692.java,java,1,java_1,fullscore
+1314238913.java,user_0051,1,1314238913,java,java,Accepted,50.0,416,1765,111,77,gigel-si-raspandirea-vestilor/submissions/1314238913.java,java,1,java_1,fullscore

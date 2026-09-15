@@ -1,0 +1,17 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1323388419,15.0,Terminated due ...,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\organizare-mafiota\1323388419.cpp: In member function 'bool Task::bfs(int, std::vector<int>)':
+data\clean_solutions\submissions\organizare-mafiota\1323388419.cpp:73:14: error: 'uint' was not declared in this scope; did you mean 'int'?
+   73 |         for (uint i = source + 1; i < sorted.size(); ++i) {
+      |              ^~~~
+      |              int
+data\clean_solutions\submissions\organizare-mafiota\1323388419.cpp:73:35: error: 'i' was not declared in this scope
+   73 |         for (uint i = source + 1; i < sorted.size(); ++i) {
+      |                                   ^
+data\clean_solutions\submissions\organizare-mafiota\1323388419.cpp: In member function 'int Task::get_result()':
+data\clean_solutions\submissions\organizare-mafiota\1323388419.cpp:84:10: error: 'uint' was not declared in this scope; did you mean 'int'?
+   84 |     for (uint i = 0; i < topsort.size(); ++i) {
+      |          ^~~~
+      |          int
+data\clean_solutions\submissions\organizare-mafiota\1323388419.cpp:84:22: error: 'i' was not declared in this scope
+   84 |     for (uint i = 0; i < topsort.size(); ++i) {
+      |                      ^"

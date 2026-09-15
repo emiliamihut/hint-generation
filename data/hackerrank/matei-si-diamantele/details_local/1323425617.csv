@@ -1,0 +1,121 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+matei-si-diamantele,1323425617,0,0,0,passed,,6.0,passed,0.115641,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+","n = 6 m = 8
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,1,1,1,passed,,6.0,passed,0.113256,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"-1
+","-1
+","n = 4 m = 3
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,2,2,2,passed,,6.0,passed,0.114081,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+","n = 6 m = 8
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,3,3,3,passed,,6.0,passed,0.100895,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7
+","7
+","n = 6 m = 8
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,4,4,4,passed,,6.0,passed,0.112190,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8
+","8
+","n = 6 m = 8
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,5,5,5,passed,,6.0,passed,0.348140,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2234134
+","2234134
+","n = 936 m = 776
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,6,6,6,passed,,6.0,passed,0.266979,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"6325896
+","6325896
+","n = 408 m = 747
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,7,7,7,passed,,6.0,passed,0.347843,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"6354964
+","6354964
+","n = 969 m = 687
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,8,8,8,passed,,6.0,passed,0.338602,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8316606
+","8316606
+","n = 936 m = 685
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,9,9,9,passed,,6.0,passed,0.331671,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8165086
+","8165086
+","n = 591 m = 932
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,10,10,10,passed,,6.0,passed,0.253173,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"4978705
+","4978705
+","n = 604 m = 386
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,11,11,11,passed,,6.0,passed,0.297328,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1220162
+","1220162
+","n = 791 m = 534
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,12,12,12,passed,,6.0,passed,0.361787,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7934215
+","7934215
+","n = 992 m = 784
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,13,13,13,passed,,6.0,passed,0.295071,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7194070
+","7194070
+","n = 775 m = 572
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,14,14,14,passed,,6.0,passed,0.301358,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7341084
+","7341084
+","n = 552 m = 502
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,15,15,15,passed,,6.0,passed,0.349646,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5423248
+","5423248
+","n = 677 m = 954
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,16,16,16,passed,,6.0,passed,0.303452,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"4031457
+","4031457
+","n = 461 m = 986
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,17,17,17,passed,,6.0,passed,0.350602,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"9162920
+","9162920
+","n = 805 m = 690
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,18,18,18,passed,,6.0,passed,0.259989,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5081662
+","5081662
+","n = 641 m = 415
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,19,19,19,passed,,6.0,passed,0.360827,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"9625807
+","9625807
+","n = 695 m = 819
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,20,20,20,passed,,6.0,passed,0.616767,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3901790
+","3901790
+","n = 923 m = 954
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,21,21,21,passed,,6.0,passed,0.359839,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3030246
+","3030246
+","n = 840 m = 885
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,22,22,22,passed,,6.0,passed,0.359075,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7929798
+","7929798
+","n = 879 m = 580
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,23,23,23,passed,,6.0,passed,0.375298,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"4997422
+","4997422
+","n = 867 m = 967
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,24,24,24,passed,,6.0,passed,0.292435,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1758779
+","1758779
+","n = 479 m = 856
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,25,25,25,passed,,6.0,passed,0.332268,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1482237
+","1482237
+","n = 641 m = 815
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,26,26,26,passed,,6.0,passed,0.313832,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5456432
+","5456432
+","n = 826 m = 719
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,27,27,27,passed,,6.0,passed,0.269011,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5598715
+","5598715
+","n = 446 m = 644
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,28,28,28,passed,,6.0,passed,0.305060,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5892050
+","5892050
+","n = 894 m = 601
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv
+matei-si-diamantele,1323425617,29,29,29,passed,,6.0,passed,0.271518,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5649521
+","5649521
+","n = 469 m = 723
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1323425617.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1323425617.csv

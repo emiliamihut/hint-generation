@@ -1,0 +1,263 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+gigel-si-sosetele,1333805417,0,0,0,passed,,3.0,passed,0.150501,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2
+","2
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,1,1,1,passed,,3.0,passed,0.125874,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5
+","5
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,2,2,2,passed,,3.0,passed,0.129205,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"0
+","0
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,3,3,3,passed,,3.0,passed,0.125201,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"10
+","10
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,4,4,4,failed,,3.0,wrong_answer,2.262377,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"91317
+","90700
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,5,5,5,failed,,3.0,wrong_answer,0.806584,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"63581
+","63334
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,6,6,6,failed,,3.0,timeout,3.480101,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"194719
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,7,7,7,failed,,3.0,runtime_error,1.433779,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"70344
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 96887 out of bounds for length 96887
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,8,8,8,failed,,3.0,runtime_error,1.856487,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"85677
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 90463 out of bounds for length 90463
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,9,9,9,failed,,3.0,runtime_error,1.500398,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"89628
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 46019 out of bounds for length 46019
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,10,10,10,failed,,3.0,runtime_error,1.377945,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"75249
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 98644 out of bounds for length 98644
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,11,11,11,failed,,3.0,wrong_answer,1.939087,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"105790
+","92752
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,12,12,12,failed,,3.0,runtime_error,2.360888,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"93552
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 84370 out of bounds for length 84370
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,13,13,13,failed,,3.0,wrong_answer,1.353563,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"69900
+","65710
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,14,14,14,failed,,3.0,timeout,3.573278,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"157323
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,15,15,15,failed,,3.0,wrong_answer,0.656857,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"36967
+","33561
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,16,16,16,failed,,3.0,runtime_error,1.217729,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"69726
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 45500 out of bounds for length 45500
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,17,17,17,failed,,3.0,runtime_error,2.792348,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"114160
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 75681 out of bounds for length 75681
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,18,18,18,failed,,3.0,runtime_error,1.694678,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"107284
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 36823 out of bounds for length 36823
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,19,19,19,failed,,3.0,wrong_answer,0.411391,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"34775
+","29693
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,20,20,20,failed,,3.0,wrong_answer,1.567318,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"106789
+","98905
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,21,21,21,failed,,3.0,runtime_error,1.345209,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"104112
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 1927 out of bounds for length 1927
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(Sol",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,22,22,22,failed,,3.0,runtime_error,1.819721,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"85480
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 99922 out of bounds for length 99922
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,23,23,23,failed,,3.0,wrong_answer,0.219763,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"18018
+","16509
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,24,24,24,failed,,3.0,wrong_answer,1.479388,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"93653
+","75332
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,25,25,25,failed,,3.0,runtime_error,2.525444,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"141790
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 41837 out of bounds for length 41837
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,26,26,26,failed,,3.0,runtime_error,2.076119,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"78596
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 92728 out of bounds for length 92728
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,27,27,27,failed,,3.0,wrong_answer,0.856335,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"70227
+","56702
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,28,28,28,failed,,3.0,wrong_answer,0.720659,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"73262
+","72515
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,29,29,29,failed,,3.0,wrong_answer,0.270914,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"22473
+","21273
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,30,30,30,failed,,3.0,wrong_answer,0.569835,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"58226
+","50292
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,31,31,31,failed,,3.0,runtime_error,0.194609,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"17719
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 13650 out of bounds for length 13650
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,32,32,32,failed,,3.0,timeout,3.386263,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"178137
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,33,33,33,failed,,3.0,runtime_error,1.418921,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"94252
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 43418 out of bounds for length 43418
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,34,34,34,failed,,3.0,wrong_answer,2.040602,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"135202
+","130173
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,35,35,35,failed,,3.0,runtime_error,0.659742,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"41002
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 72279 out of bounds for length 72279
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,36,36,36,failed,,3.0,wrong_answer,0.183266,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"11148
+","9861
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,37,37,37,failed,,3.0,runtime_error,0.226502,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"20205
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 14686 out of bounds for length 14686
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,38,38,38,failed,,3.0,wrong_answer,0.195073,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"15776
+","15767
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,39,39,39,failed,,3.0,wrong_answer,0.585969,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"60604
+","54457
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,40,40,40,passed,,3.0,passed,0.461267,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"30492
+","30492
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,41,41,41,passed,,3.0,passed,0.478627,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"40011
+","40011
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,42,42,42,failed,,3.0,runtime_error,0.522247,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"39627
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 33968 out of bounds for length 33968
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,43,43,43,passed,,3.0,passed,0.378677,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"31238
+","31238
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,44,44,44,failed,,3.0,runtime_error,2.519063,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"123700
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 45868 out of bounds for length 45868
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,45,45,45,failed,,3.0,runtime_error,0.128395,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"3344
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 1629 out of bounds for length 1629
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(Sol",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,46,46,46,failed,,3.0,runtime_error,0.266609,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"22037
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 14444 out of bounds for length 14444
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,47,47,47,failed,,3.0,runtime_error,2.802994,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"101593
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 79996 out of bounds for length 79996
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,48,48,48,failed,,3.0,runtime_error,0.997782,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"54688
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 49812 out of bounds for length 49812
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv
+gigel-si-sosetele,1333805417,49,49,49,failed,,3.0,runtime_error,1.426281,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"89742
+","Exception in thread ""main"" java.lang.IndexOutOfBoundsException: Index 39171 out of bounds for length 39171
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at Solution.main(S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1333805417.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1333805417.csv

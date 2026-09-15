@@ -1,0 +1,5 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1323449697,12.5,Terminated due ...,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\organizare-mafiota\1323449697.java:47: error: class Mafia_siciliana is public, should be declared in a file named Mafia_siciliana.java
+public class Mafia_siciliana {
+       ^
+1 error"

@@ -1,0 +1,20 @@
+{
+  "cppcheck_executable": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+  "dataset": "D:\\Hint-generation\\hackerrank_scraper\\data\\analysis_dataset_no_comments",
+  "cpp_files_analyzed": 1933,
+  "java_files_ignored": 1290,
+  "files_with_unused_code": 326,
+  "all_cppcheck_findings": 2746,
+  "unused_code_findings": 614,
+  "execution_errors": 0,
+  "findings_by_issue_id": {
+    "redundantAssignment": 17,
+    "redundantInitialization": 2,
+    "unreachableCode": 7,
+    "unreadVariable": 391,
+    "unusedFunction": 62,
+    "unusedPrivateFunction": 3,
+    "unusedStructMember": 17,
+    "unusedVariable": 115
+  }
+}

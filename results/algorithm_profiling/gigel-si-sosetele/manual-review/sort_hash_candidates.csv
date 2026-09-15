@@ -1,0 +1,394 @@
+file,user_id,attempt_number,submission_id,language,original_language,result,score,timestamp,code_length,code_lines,uses_sort,uses_hash,source_path
+1361592884.cpp,user_0001,1,1361592884,cpp,cpp,Wrong Answer,1.04,2117027,1034,48,False,True,gigel-si-sosetele/submissions/1361592884.cpp
+1361592965.cpp,user_0001,2,1361592965,cpp,cpp,Wrong Answer,47.92,2117030,1033,47,False,True,gigel-si-sosetele/submissions/1361592965.cpp
+1314236919.java,user_0005,4,1314236919,java,java8,Wrong Answer,5.21,135,1989,80,True,False,gigel-si-sosetele/submissions/1314236919.java
+1314237737.java,user_0005,5,1314237737,java,java8,Terminated due ...,3.13,177,2384,92,True,False,gigel-si-sosetele/submissions/1314237737.java
+1323456813.cpp,user_0008,3,1323456813,cpp,cpp14,Accepted,50.0,523423,1877,83,False,True,gigel-si-sosetele/submissions/1323456813.cpp
+1323384436.cpp,user_0011,1,1323384436,cpp,cpp,Wrong Answer,1.04,519582,1293,64,False,True,gigel-si-sosetele/submissions/1323384436.cpp
+1323384873.cpp,user_0011,2,1323384873,cpp,cpp,Wrong Answer,2.08,519598,2177,96,False,True,gigel-si-sosetele/submissions/1323384873.cpp
+1323387637.cpp,user_0011,3,1323387637,cpp,cpp,Wrong Answer,12.5,519708,1384,75,True,True,gigel-si-sosetele/submissions/1323387637.cpp
+1323387618.cpp,user_0011,4,1323387618,cpp,cpp,Wrong Answer,8.33,519708,1370,75,True,True,gigel-si-sosetele/submissions/1323387618.cpp
+1323387706.cpp,user_0011,5,1323387706,cpp,cpp,Wrong Answer,46.88,519711,1677,87,True,True,gigel-si-sosetele/submissions/1323387706.cpp
+1323387754.cpp,user_0011,6,1323387754,cpp,cpp,Accepted,50.0,519713,1747,89,True,True,gigel-si-sosetele/submissions/1323387754.cpp
+1323432380.cpp,user_0014,1,1323432380,cpp,cpp14,Wrong Answer,46.88,521911,1598,72,True,False,gigel-si-sosetele/submissions/1323432380.cpp
+1323432402.cpp,user_0014,2,1323432402,cpp,cpp14,Accepted,50.0,521913,1627,74,True,False,gigel-si-sosetele/submissions/1323432402.cpp
+1323425285.cpp,user_0017,1,1323425285,cpp,cpp,Wrong Answer,46.88,521525,944,47,True,False,gigel-si-sosetele/submissions/1323425285.cpp
+1323425375.cpp,user_0017,2,1323425375,cpp,cpp,Wrong Answer,12.5,521527,1063,54,True,False,gigel-si-sosetele/submissions/1323425375.cpp
+1323425542.cpp,user_0017,3,1323425542,cpp,cpp,Wrong Answer,12.5,521532,999,50,True,False,gigel-si-sosetele/submissions/1323425542.cpp
+1323425727.cpp,user_0017,5,1323425727,cpp,cpp,Wrong Answer,12.5,521538,1033,52,True,False,gigel-si-sosetele/submissions/1323425727.cpp
+1323425745.cpp,user_0017,6,1323425745,cpp,cpp,Wrong Answer,46.88,521539,1036,52,True,False,gigel-si-sosetele/submissions/1323425745.cpp
+1323426049.cpp,user_0017,7,1323426049,cpp,cpp,Accepted,50.0,521548,1511,72,True,False,gigel-si-sosetele/submissions/1323426049.cpp
+1314236512.cpp,user_0018,2,1314236512,cpp,cpp,Wrong Answer,46.88,111,1429,69,True,False,gigel-si-sosetele/submissions/1314236512.cpp
+1314236675.cpp,user_0018,3,1314236675,cpp,cpp,Wrong Answer,46.88,121,1161,55,True,False,gigel-si-sosetele/submissions/1314236675.cpp
+1314236811.cpp,user_0018,4,1314236811,cpp,cpp,Accepted,50.0,130,1632,70,True,False,gigel-si-sosetele/submissions/1314236811.cpp
+1332321248.java,user_0022,1,1332321248,java,java8,Wrong Answer,13.54,1010118,2464,102,True,False,gigel-si-sosetele/submissions/1332321248.java
+1332321270.java,user_0022,2,1332321270,java,java8,Wrong Answer,14.58,1010123,2480,102,True,False,gigel-si-sosetele/submissions/1332321270.java
+1332321290.java,user_0022,3,1332321290,java,java8,Wrong Answer,16.67,1010129,2414,100,True,False,gigel-si-sosetele/submissions/1332321290.java
+1332321299.java,user_0022,4,1332321299,java,java8,Wrong Answer,13.54,1010130,2274,96,True,False,gigel-si-sosetele/submissions/1332321299.java
+1314237248.java,user_0023,1,1314237248,java,java8,Wrong Answer,1.04,155,3761,131,True,False,gigel-si-sosetele/submissions/1314237248.java
+1314237292.java,user_0023,2,1314237292,java,java8,Wrong Answer,1.04,157,3851,133,True,False,gigel-si-sosetele/submissions/1314237292.java
+1332720143.cpp,user_0024,1,1332720143,cpp,cpp,Accepted,50.0,1025851,1382,69,True,False,gigel-si-sosetele/submissions/1332720143.cpp
+1314237849.java,user_0027,8,1314237849,java,java8,Wrong Answer,1.04,182,4452,166,False,True,gigel-si-sosetele/submissions/1314237849.java
+1323450695.java,user_0028,1,1323450695,java,java8,Wrong Answer,14.58,522979,2618,98,False,True,gigel-si-sosetele/submissions/1323450695.java
+1332549911.java,user_0029,1,1332549911,java,java8,Accepted,50.0,1019935,3240,118,False,True,gigel-si-sosetele/submissions/1332549911.java
+1314237379.cpp,user_0030,1,1314237379,cpp,cpp,Wrong Answer,29.17,161,1183,65,False,True,gigel-si-sosetele/submissions/1314237379.cpp
+1314235623.java,user_0033,1,1314235623,java,java8,Accepted,50.0,59,2907,126,False,True,gigel-si-sosetele/submissions/1314235623.java
+1314235545.cpp,user_0035,1,1314235545,cpp,cpp,Wrong Answer,46.88,56,1621,80,True,False,gigel-si-sosetele/submissions/1314235545.cpp
+1314235697.cpp,user_0035,2,1314235697,cpp,cpp,Wrong Answer,47.92,62,1560,79,True,False,gigel-si-sosetele/submissions/1314235697.cpp
+1314236161.cpp,user_0035,3,1314236161,cpp,cpp,Accepted,50.0,89,1533,79,True,False,gigel-si-sosetele/submissions/1314236161.cpp
+1332621480.java,user_0041,1,1332621480,java,java8,Wrong Answer,46.88,1023069,2569,107,True,False,gigel-si-sosetele/submissions/1332621480.java
+1332621495.java,user_0041,3,1332621495,java,java8,Wrong Answer,47.92,1023074,2644,110,True,False,gigel-si-sosetele/submissions/1332621495.java
+1323072265.cpp,user_0042,1,1323072265,cpp,cpp,Wrong Answer,2.08,503935,1425,64,True,False,gigel-si-sosetele/submissions/1323072265.cpp
+1323072370.cpp,user_0042,2,1323072370,cpp,cpp,Wrong Answer,2.08,503937,1469,65,True,False,gigel-si-sosetele/submissions/1323072370.cpp
+1323073397.cpp,user_0042,3,1323073397,cpp,cpp,Terminated due ...,2.08,503959,1923,75,True,False,gigel-si-sosetele/submissions/1323073397.cpp
+1323073693.cpp,user_0042,5,1323073693,cpp,cpp,Terminated due ...,2.08,503964,2029,79,True,False,gigel-si-sosetele/submissions/1323073693.cpp
+1323073741.cpp,user_0042,6,1323073741,cpp,cpp,Wrong Answer,1.04,503965,2110,79,True,False,gigel-si-sosetele/submissions/1323073741.cpp
+1323075519.cpp,user_0042,7,1323075519,cpp,cpp,Wrong Answer,12.5,503994,2845,117,True,False,gigel-si-sosetele/submissions/1323075519.cpp
+1323075619.cpp,user_0042,8,1323075619,cpp,cpp,Wrong Answer,15.63,503995,2887,120,True,False,gigel-si-sosetele/submissions/1323075619.cpp
+1323075814.cpp,user_0042,9,1323075814,cpp,cpp,Accepted,50.0,503998,2721,116,True,False,gigel-si-sosetele/submissions/1323075814.cpp
+1323425291.cpp,user_0043,1,1323425291,cpp,cpp,Wrong Answer,2.08,521525,1227,60,True,False,gigel-si-sosetele/submissions/1323425291.cpp
+1323426107.cpp,user_0043,3,1323426107,cpp,cpp,Wrong Answer,47.92,521551,2011,86,True,False,gigel-si-sosetele/submissions/1323426107.cpp
+1323426173.cpp,user_0043,4,1323426173,cpp,cpp,Wrong Answer,48.96,521554,2377,100,True,False,gigel-si-sosetele/submissions/1323426173.cpp
+1314236313.java,user_0048,1,1314236313,java,java,Runtime Error,46.88,99,2703,118,True,False,gigel-si-sosetele/submissions/1314236313.java
+1314236406.java,user_0048,2,1314236406,java,java,Runtime Error,35.42,104,2896,121,True,False,gigel-si-sosetele/submissions/1314236406.java
+1314237194.java,user_0051,5,1314237194,java,java8,Terminated due ...,8.33,152,3190,138,True,False,gigel-si-sosetele/submissions/1314237194.java
+1314237424.java,user_0051,7,1314237424,java,java8,Terminated due ...,2.08,163,2978,130,True,False,gigel-si-sosetele/submissions/1314237424.java
+1314236433.java,user_0052,1,1314236433,java,java8,Runtime Error,46.88,106,2540,114,True,False,gigel-si-sosetele/submissions/1314236433.java
+1314236716.java,user_0058,1,1314236716,java,java8,Runtime Error,11.46,124,2216,101,True,False,gigel-si-sosetele/submissions/1314236716.java
+1323447089.java,user_0060,1,1323447089,java,java,Terminated due ...,5.21,522765,2986,108,True,False,gigel-si-sosetele/submissions/1323447089.java
+1323447227.java,user_0060,2,1323447227,java,java,Terminated due ...,5.21,522773,2807,105,True,False,gigel-si-sosetele/submissions/1323447227.java
+1323447320.java,user_0060,3,1323447320,java,java,Terminated due ...,5.21,522777,2610,98,True,False,gigel-si-sosetele/submissions/1323447320.java
+1323447420.java,user_0060,4,1323447420,java,java,Terminated due ...,2.08,522782,2614,98,True,False,gigel-si-sosetele/submissions/1323447420.java
+1323447766.java,user_0060,5,1323447766,java,java,Wrong Answer,12.5,522799,2138,86,False,True,gigel-si-sosetele/submissions/1323447766.java
+1323447837.java,user_0060,6,1323447837,java,java,Accepted,50.0,522802,2232,90,False,True,gigel-si-sosetele/submissions/1323447837.java
+1314236020.cpp,user_0061,1,1314236020,cpp,cpp,Terminated due ...,7.29,79,833,34,True,False,gigel-si-sosetele/submissions/1314236020.cpp
+1314236057.cpp,user_0061,2,1314236057,cpp,cpp,Terminated due ...,7.29,81,888,37,True,False,gigel-si-sosetele/submissions/1314236057.cpp
+1314236259.cpp,user_0061,5,1314236259,cpp,cpp,Terminated due ...,7.29,95,1002,43,True,False,gigel-si-sosetele/submissions/1314236259.cpp
+1314236340.cpp,user_0061,6,1314236340,cpp,cpp,Wrong Answer,5.21,100,1092,45,True,False,gigel-si-sosetele/submissions/1314236340.cpp
+1314236582.cpp,user_0061,7,1314236582,cpp,cpp,Terminated due ...,6.25,116,1025,43,True,False,gigel-si-sosetele/submissions/1314236582.cpp
+1314236795.cpp,user_0061,8,1314236795,cpp,cpp,Terminated due ...,11.46,129,1013,43,True,False,gigel-si-sosetele/submissions/1314236795.cpp
+1314236863.cpp,user_0061,9,1314236863,cpp,cpp,Wrong Answer,40.63,132,1015,44,True,False,gigel-si-sosetele/submissions/1314236863.cpp
+1314236941.cpp,user_0061,10,1314236941,cpp,cpp,Terminated due ...,11.46,137,1067,46,True,False,gigel-si-sosetele/submissions/1314236941.cpp
+1314236231.cpp,user_0062,1,1314236231,cpp,cpp,Wrong Answer,2.08,93,1254,69,True,False,gigel-si-sosetele/submissions/1314236231.cpp
+1314236457.cpp,user_0062,2,1314236457,cpp,cpp,Wrong Answer,2.08,107,1439,80,True,False,gigel-si-sosetele/submissions/1314236457.cpp
+1323075169.cpp,user_0068,1,1323075169,cpp,cpp,Terminated due ...,6.25,503988,1899,80,True,False,gigel-si-sosetele/submissions/1323075169.cpp
+1314236123.cpp,user_0070,2,1314236123,cpp,cpp,Wrong Answer,23.96,86,1475,76,True,False,gigel-si-sosetele/submissions/1314236123.cpp
+1314236220.cpp,user_0070,3,1314236220,cpp,cpp,Wrong Answer,22.92,92,1601,86,True,False,gigel-si-sosetele/submissions/1314236220.cpp
+1314237145.cpp,user_0070,5,1314237145,cpp,cpp,Wrong Answer,20.83,149,1601,86,True,False,gigel-si-sosetele/submissions/1314237145.cpp
+1314237387.cpp,user_0070,6,1314237387,cpp,cpp,Wrong Answer,23.96,161,1333,72,True,False,gigel-si-sosetele/submissions/1314237387.cpp
+1332754138.cpp,user_0073,1,1332754138,cpp,cpp,Wrong Answer,12.5,1026852,1178,76,True,False,gigel-si-sosetele/submissions/1332754138.cpp
+1332754219.cpp,user_0073,3,1332754219,cpp,cpp,Accepted,50.0,1026856,1183,76,True,False,gigel-si-sosetele/submissions/1332754219.cpp
+1314235187.java,user_0078,1,1314235187,java,java8,Terminated due ...,20.83,43,3825,148,True,False,gigel-si-sosetele/submissions/1314235187.java
+1314235767.java,user_0078,3,1314235767,java,java8,Terminated due ...,21.88,65,3807,146,True,False,gigel-si-sosetele/submissions/1314235767.java
+1314236176.java,user_0078,4,1314236176,java,java8,Terminated due ...,27.08,89,4708,178,True,False,gigel-si-sosetele/submissions/1314236176.java
+1314236239.java,user_0078,5,1314236239,java,java8,Terminated due ...,25.0,93,5074,190,True,False,gigel-si-sosetele/submissions/1314236239.java
+1314236273.java,user_0078,6,1314236273,java,java8,Terminated due ...,27.08,96,5082,190,True,False,gigel-si-sosetele/submissions/1314236273.java
+1314236316.java,user_0078,7,1314236316,java,java8,Terminated due ...,25.0,99,5063,190,True,False,gigel-si-sosetele/submissions/1314236316.java
+1314236507.java,user_0078,8,1314236507,java,java8,Terminated due ...,25.0,110,5140,196,True,False,gigel-si-sosetele/submissions/1314236507.java
+1314236542.java,user_0078,9,1314236542,java,java8,Terminated due ...,27.08,113,5167,197,True,False,gigel-si-sosetele/submissions/1314236542.java
+1323420768.java,user_0079,1,1323420768,java,java8,Runtime Error,12.5,521432,3065,106,False,True,gigel-si-sosetele/submissions/1323420768.java
+1323421343.java,user_0079,2,1323421343,java,java8,Runtime Error,12.5,521444,2960,104,False,True,gigel-si-sosetele/submissions/1323421343.java
+1323421515.java,user_0079,3,1323421515,java,java8,Wrong Answer,40.63,521447,2991,104,False,True,gigel-si-sosetele/submissions/1323421515.java
+1323422127.java,user_0079,4,1323422127,java,java8,Accepted,50.0,521458,3247,110,False,True,gigel-si-sosetele/submissions/1323422127.java
+1314235929.cpp,user_0083,4,1314235929,cpp,cpp,Wrong Answer,1.04,73,591,34,True,False,gigel-si-sosetele/submissions/1314235929.cpp
+1314236049.cpp,user_0083,5,1314236049,cpp,cpp,Segmentation Fault,1.04,80,1480,70,True,False,gigel-si-sosetele/submissions/1314236049.cpp
+1314236086.cpp,user_0083,6,1314236086,cpp,cpp,Segmentation Fault,1.04,82,1528,72,True,False,gigel-si-sosetele/submissions/1314236086.cpp
+1314236144.cpp,user_0083,7,1314236144,cpp,cpp,Wrong Answer,2.08,87,1557,72,True,False,gigel-si-sosetele/submissions/1314236144.cpp
+1314236171.cpp,user_0083,8,1314236171,cpp,cpp,Segmentation Fault,1.04,89,1620,76,True,False,gigel-si-sosetele/submissions/1314236171.cpp
+1314236198.cpp,user_0083,9,1314236198,cpp,cpp,Wrong Answer,2.08,91,1633,78,True,False,gigel-si-sosetele/submissions/1314236198.cpp
+1314236240.cpp,user_0083,10,1314236240,cpp,cpp,Wrong Answer,2.08,93,1610,77,True,False,gigel-si-sosetele/submissions/1314236240.cpp
+1314236267.cpp,user_0083,11,1314236267,cpp,cpp,Wrong Answer,2.08,95,1677,79,True,False,gigel-si-sosetele/submissions/1314236267.cpp
+1314236657.cpp,user_0083,15,1314236657,cpp,cpp,Accepted,50.0,120,2227,93,True,False,gigel-si-sosetele/submissions/1314236657.cpp
+1344729655.cpp,user_0085,1,1344729655,cpp,cpp14,Wrong Answer,12.5,1586101,907,45,False,True,gigel-si-sosetele/submissions/1344729655.cpp
+1344729683.cpp,user_0085,2,1344729683,cpp,cpp14,Accepted,50.0,1586109,968,48,False,True,gigel-si-sosetele/submissions/1344729683.cpp
+1323450930.cpp,user_0092,1,1323450930,cpp,cpp,Wrong Answer,12.5,522992,1643,72,True,False,gigel-si-sosetele/submissions/1323450930.cpp
+1323451075.cpp,user_0092,2,1323451075,cpp,cpp,Wrong Answer,4.17,523000,2139,85,True,False,gigel-si-sosetele/submissions/1323451075.cpp
+1323451207.cpp,user_0092,3,1323451207,cpp,cpp,Wrong Answer,12.5,523008,1795,73,True,False,gigel-si-sosetele/submissions/1323451207.cpp
+1323451267.cpp,user_0092,4,1323451267,cpp,cpp,Wrong Answer,5.21,523011,2291,86,True,False,gigel-si-sosetele/submissions/1323451267.cpp
+1323453095.cpp,user_0092,5,1323453095,cpp,cpp,Wrong Answer,46.88,523077,2808,105,True,False,gigel-si-sosetele/submissions/1323453095.cpp
+1323453183.cpp,user_0092,6,1323453183,cpp,cpp,Accepted,50.0,523083,3193,115,True,False,gigel-si-sosetele/submissions/1323453183.cpp
+1332765187.java,user_0099,1,1332765187,java,java8,Wrong Answer,1.04,1027602,2272,91,True,False,gigel-si-sosetele/submissions/1332765187.java
+1332621189.cpp,user_0103,1,1332621189,cpp,cpp,Wrong Answer,46.88,1022999,2602,111,False,True,gigel-si-sosetele/submissions/1332621189.cpp
+1332621209.cpp,user_0103,2,1332621209,cpp,cpp,Wrong Answer,47.92,1023005,2543,117,False,True,gigel-si-sosetele/submissions/1332621209.cpp
+1314236205.java,user_0107,1,1314236205,java,java,Runtime Error,29.17,91,3080,76,False,True,gigel-si-sosetele/submissions/1314236205.java
+1314236357.java,user_0107,2,1314236357,java,java8,Runtime Error,29.17,101,3115,78,False,True,gigel-si-sosetele/submissions/1314236357.java
+1344569945.cpp,user_0111,1,1344569945,cpp,cpp,Wrong Answer,12.5,1578470,1093,57,True,False,gigel-si-sosetele/submissions/1344569945.cpp
+1314236672.java,user_0116,4,1314236672,java,java8,Terminated due ...,5.21,121,3470,130,True,False,gigel-si-sosetele/submissions/1314236672.java
+1314236724.java,user_0116,5,1314236724,java,java8,Terminated due ...,5.21,124,3612,135,True,False,gigel-si-sosetele/submissions/1314236724.java
+1314236970.java,user_0116,6,1314236970,java,java8,Wrong Answer,2.08,139,2618,109,True,False,gigel-si-sosetele/submissions/1314236970.java
+1314237100.java,user_0116,7,1314237100,java,java8,Runtime Error,2.08,147,2674,112,True,False,gigel-si-sosetele/submissions/1314237100.java
+1314236680.java,user_0117,1,1314236680,java,java8,Runtime Error,12.5,122,2859,122,True,False,gigel-si-sosetele/submissions/1314236680.java
+1314236717.java,user_0117,2,1314236717,java,java8,Runtime Error,12.5,124,2719,117,True,False,gigel-si-sosetele/submissions/1314236717.java
+1314236845.java,user_0117,3,1314236845,java,java8,Runtime Error,12.5,131,2513,111,True,False,gigel-si-sosetele/submissions/1314236845.java
+1314236880.java,user_0117,4,1314236880,java,java8,Wrong Answer,11.46,133,2162,95,True,False,gigel-si-sosetele/submissions/1314236880.java
+1314237075.java,user_0117,5,1314237075,java,java8,Runtime Error,12.5,145,2832,127,True,False,gigel-si-sosetele/submissions/1314237075.java
+1314237180.java,user_0117,6,1314237180,java,java8,Wrong Answer,1.04,151,1821,81,True,False,gigel-si-sosetele/submissions/1314237180.java
+1314237403.java,user_0117,9,1314237403,java,java8,Accepted,50.0,162,2613,119,True,False,gigel-si-sosetele/submissions/1314237403.java
+1323445876.cpp,user_0128,1,1323445876,cpp,cpp,Accepted,50.0,522709,1090,60,True,False,gigel-si-sosetele/submissions/1323445876.cpp
+1314235875.java,user_0130,1,1314235875,java,java8,Wrong Answer,4.17,70,4080,152,True,False,gigel-si-sosetele/submissions/1314235875.java
+1314236070.java,user_0130,2,1314236070,java,java8,Wrong Answer,5.21,82,4135,152,True,False,gigel-si-sosetele/submissions/1314236070.java
+1314236113.java,user_0130,3,1314236113,java,java8,Wrong Answer,5.21,85,4131,152,True,False,gigel-si-sosetele/submissions/1314236113.java
+1314236197.java,user_0130,4,1314236197,java,java8,Wrong Answer,4.17,91,4134,152,True,False,gigel-si-sosetele/submissions/1314236197.java
+1314237501.java,user_0130,5,1314237501,java,java8,Wrong Answer,5.21,167,4280,153,True,False,gigel-si-sosetele/submissions/1314237501.java
+1314237591.java,user_0130,6,1314237591,java,java8,Wrong Answer,5.21,171,4548,161,True,False,gigel-si-sosetele/submissions/1314237591.java
+1314237680.java,user_0130,7,1314237680,java,java8,Wrong Answer,5.21,175,4631,164,True,False,gigel-si-sosetele/submissions/1314237680.java
+1314236012.java,user_0131,1,1314236012,java,java,Wrong Answer,12.5,78,2194,95,True,False,gigel-si-sosetele/submissions/1314236012.java
+1314236122.java,user_0131,2,1314236122,java,java,Wrong Answer,12.5,86,2435,104,True,False,gigel-si-sosetele/submissions/1314236122.java
+1314236648.cpp,user_0137,1,1314236648,cpp,cpp,Wrong Answer,14.58,120,1546,72,True,False,gigel-si-sosetele/submissions/1314236648.cpp
+1323429624.cpp,user_0139,1,1323429624,cpp,cpp,Wrong Answer,2.08,521696,1886,81,True,False,gigel-si-sosetele/submissions/1323429624.cpp
+1323429770.cpp,user_0139,2,1323429770,cpp,cpp,Wrong Answer,2.08,521702,1363,70,True,False,gigel-si-sosetele/submissions/1323429770.cpp
+1314237234.java,user_0141,1,1314237234,java,java8,Runtime Error,2.08,154,2188,89,False,True,gigel-si-sosetele/submissions/1314237234.java
+1314237392.java,user_0141,3,1314237392,java,java8,Runtime Error,3.13,161,2318,92,False,True,gigel-si-sosetele/submissions/1314237392.java
+1314237514.java,user_0141,4,1314237514,java,java8,Runtime Error,2.08,168,2292,91,False,True,gigel-si-sosetele/submissions/1314237514.java
+1314237830.java,user_0141,5,1314237830,java,java8,Wrong Answer,3.13,180,2643,97,False,True,gigel-si-sosetele/submissions/1314237830.java
+1344637254.cpp,user_0142,1,1344637254,cpp,cpp,Wrong Answer,46.88,1581702,621,29,False,True,gigel-si-sosetele/submissions/1344637254.cpp
+1344637359.cpp,user_0142,2,1344637359,cpp,cpp,Accepted,50.0,1581712,652,31,False,True,gigel-si-sosetele/submissions/1344637359.cpp
+1344569077.cpp,user_0143,1,1344569077,cpp,cpp,Wrong Answer,46.88,1578435,1100,50,False,True,gigel-si-sosetele/submissions/1344569077.cpp
+1344569110.cpp,user_0143,2,1344569110,cpp,cpp,Accepted,50.0,1578436,1176,54,False,True,gigel-si-sosetele/submissions/1344569110.cpp
+1323419218.cpp,user_0151,1,1323419218,cpp,cpp,Accepted,50.0,521395,586,29,False,True,gigel-si-sosetele/submissions/1323419218.cpp
+1323372857.java,user_0153,2,1323372857,java,java8,Terminated due ...,17.71,518711,2133,71,True,False,gigel-si-sosetele/submissions/1323372857.java
+1323372974.java,user_0153,3,1323372974,java,java8,Terminated due ...,16.67,518716,2093,71,True,False,gigel-si-sosetele/submissions/1323372974.java
+1344527988.cpp,user_0155,1,1344527988,cpp,cpp14,Accepted,50.0,1575709,1286,60,False,True,gigel-si-sosetele/submissions/1344527988.cpp
+1344638092.cpp,user_0162,1,1344638092,cpp,cpp,Accepted,50.0,1581863,647,32,False,True,gigel-si-sosetele/submissions/1344638092.cpp
+1314236013.cpp,user_0164,2,1314236013,cpp,cpp,Wrong Answer,5.21,78,836,42,True,False,gigel-si-sosetele/submissions/1314236013.cpp
+1314236029.cpp,user_0164,3,1314236029,cpp,cpp,Wrong Answer,5.21,79,889,44,True,False,gigel-si-sosetele/submissions/1314236029.cpp
+1314236066.cpp,user_0164,4,1314236066,cpp,cpp,Wrong Answer,2.08,82,822,43,True,False,gigel-si-sosetele/submissions/1314236066.cpp
+1314236217.cpp,user_0164,6,1314236217,cpp,cpp,Terminated due ...,6.25,92,915,46,True,False,gigel-si-sosetele/submissions/1314236217.cpp
+1314236286.cpp,user_0164,7,1314236286,cpp,cpp,Wrong Answer,11.46,97,914,47,True,False,gigel-si-sosetele/submissions/1314236286.cpp
+1314236302.cpp,user_0164,8,1314236302,cpp,cpp,Wrong Answer,11.46,98,959,50,True,False,gigel-si-sosetele/submissions/1314236302.cpp
+1314236452.cpp,user_0164,9,1314236452,cpp,cpp,Wrong Answer,8.33,107,1029,52,True,False,gigel-si-sosetele/submissions/1314236452.cpp
+1314236501.cpp,user_0164,10,1314236501,cpp,cpp,Wrong Answer,11.46,110,1001,51,True,False,gigel-si-sosetele/submissions/1314236501.cpp
+1314236832.cpp,user_0164,15,1314236832,cpp,cpp,Wrong Answer,26.04,131,964,49,True,False,gigel-si-sosetele/submissions/1314236832.cpp
+1314237012.cpp,user_0164,16,1314237012,cpp,cpp,Wrong Answer,26.04,142,984,51,True,False,gigel-si-sosetele/submissions/1314237012.cpp
+1314237048.cpp,user_0164,17,1314237048,cpp,cpp,Wrong Answer,5.21,144,934,49,True,False,gigel-si-sosetele/submissions/1314237048.cpp
+1314237168.cpp,user_0164,19,1314237168,cpp,cpp,Wrong Answer,26.04,150,946,51,True,False,gigel-si-sosetele/submissions/1314237168.cpp
+1314237218.cpp,user_0164,21,1314237218,cpp,cpp,Wrong Answer,7.29,153,971,50,True,False,gigel-si-sosetele/submissions/1314237218.cpp
+1314237238.cpp,user_0164,22,1314237238,cpp,cpp,Wrong Answer,5.21,154,955,51,True,False,gigel-si-sosetele/submissions/1314237238.cpp
+1314237299.cpp,user_0164,23,1314237299,cpp,cpp,Wrong Answer,6.25,157,981,52,True,False,gigel-si-sosetele/submissions/1314237299.cpp
+1314237321.cpp,user_0164,24,1314237321,cpp,cpp,Wrong Answer,6.25,158,1005,54,True,False,gigel-si-sosetele/submissions/1314237321.cpp
+1314237479.cpp,user_0164,25,1314237479,cpp,cpp,Wrong Answer,27.08,166,999,55,True,False,gigel-si-sosetele/submissions/1314237479.cpp
+1314237549.cpp,user_0164,26,1314237549,cpp,cpp,Wrong Answer,27.08,169,1035,57,True,False,gigel-si-sosetele/submissions/1314237549.cpp
+1314237586.cpp,user_0164,27,1314237586,cpp,cpp,Wrong Answer,27.08,171,1049,57,True,False,gigel-si-sosetele/submissions/1314237586.cpp
+1314236498.java,user_0170,2,1314236498,java,java8,Terminated due ...,47.92,110,3889,153,True,False,gigel-si-sosetele/submissions/1314236498.java
+1323432469.cpp,user_0172,1,1323432469,cpp,cpp,Terminated due ...,3.13,521920,955,42,True,False,gigel-si-sosetele/submissions/1323432469.cpp
+1323432509.cpp,user_0172,2,1323432509,cpp,cpp,Terminated due ...,3.13,521923,1037,44,True,False,gigel-si-sosetele/submissions/1323432509.cpp
+1323432719.cpp,user_0172,3,1323432719,cpp,cpp,Wrong Answer,12.5,521953,977,46,True,False,gigel-si-sosetele/submissions/1323432719.cpp
+1323432768.cpp,user_0172,5,1323432768,cpp,cpp,Wrong Answer,11.46,521958,987,46,True,False,gigel-si-sosetele/submissions/1323432768.cpp
+1323432892.cpp,user_0172,8,1323432892,cpp,cpp,Wrong Answer,12.5,521976,977,46,True,False,gigel-si-sosetele/submissions/1323432892.cpp
+1323433002.cpp,user_0172,10,1323433002,cpp,cpp,Wrong Answer,12.5,521991,1027,47,True,False,gigel-si-sosetele/submissions/1323433002.cpp
+1323442426.cpp,user_0172,11,1323442426,cpp,cpp,Wrong Answer,2.08,522570,924,43,True,False,gigel-si-sosetele/submissions/1323442426.cpp
+1323443115.cpp,user_0172,16,1323443115,cpp,cpp,Wrong Answer,1.04,522594,924,43,True,False,gigel-si-sosetele/submissions/1323443115.cpp
+1323445012.cpp,user_0172,17,1323445012,cpp,cpp,Wrong Answer,12.5,522671,959,55,True,False,gigel-si-sosetele/submissions/1323445012.cpp
+1323445293.cpp,user_0172,18,1323445293,cpp,cpp,Wrong Answer,12.5,522683,1024,58,True,False,gigel-si-sosetele/submissions/1323445293.cpp
+1323445311.cpp,user_0172,19,1323445311,cpp,cpp,Wrong Answer,2.08,522685,1024,58,True,False,gigel-si-sosetele/submissions/1323445311.cpp
+1323445461.cpp,user_0172,22,1323445461,cpp,cpp,Wrong Answer,11.46,522691,1072,58,True,False,gigel-si-sosetele/submissions/1323445461.cpp
+1323445516.cpp,user_0172,23,1323445516,cpp,cpp,Wrong Answer,12.5,522694,1102,59,True,False,gigel-si-sosetele/submissions/1323445516.cpp
+1323445602.cpp,user_0172,24,1323445602,cpp,cpp,Wrong Answer,12.5,522698,1065,59,True,False,gigel-si-sosetele/submissions/1323445602.cpp
+1323446057.cpp,user_0172,25,1323446057,cpp,cpp,Wrong Answer,46.88,522717,1061,59,True,False,gigel-si-sosetele/submissions/1323446057.cpp
+1323446183.cpp,user_0172,27,1323446183,cpp,cpp,Wrong Answer,47.92,522723,953,53,True,False,gigel-si-sosetele/submissions/1323446183.cpp
+1314235454.java,user_0173,1,1314235454,java,java8,Wrong Answer,12.5,52,1909,87,True,False,gigel-si-sosetele/submissions/1314235454.java
+1314235606.java,user_0173,2,1314235606,java,java8,Runtime Error,11.46,58,2328,107,True,False,gigel-si-sosetele/submissions/1314235606.java
+1314235859.java,user_0173,3,1314235859,java,java8,Wrong Answer,12.5,69,2516,115,True,False,gigel-si-sosetele/submissions/1314235859.java
+1314236061.java,user_0173,5,1314236061,java,java8,Wrong Answer,46.88,81,2835,126,True,False,gigel-si-sosetele/submissions/1314236061.java
+1314237341.java,user_0173,6,1314237341,java,java8,Wrong Answer,47.92,159,2716,121,True,False,gigel-si-sosetele/submissions/1314237341.java
+1333805417.java,user_0174,2,1333805417,java,java8,Wrong Answer,5.21,1077824,3087,116,True,False,gigel-si-sosetele/submissions/1333805417.java
+1314236796.cpp,user_0178,1,1314236796,cpp,cpp14,Wrong Answer,3.13,129,1629,67,True,False,gigel-si-sosetele/submissions/1314236796.cpp
+1314236857.cpp,user_0178,2,1314236857,cpp,cpp14,Wrong Answer,3.13,132,1401,62,True,False,gigel-si-sosetele/submissions/1314236857.cpp
+1314236924.cpp,user_0178,3,1314236924,cpp,cpp14,Wrong Answer,1.04,136,1407,62,True,False,gigel-si-sosetele/submissions/1314236924.cpp
+1314236947.cpp,user_0178,4,1314236947,cpp,cpp14,Wrong Answer,1.04,137,1635,67,True,False,gigel-si-sosetele/submissions/1314236947.cpp
+1314237036.cpp,user_0178,5,1314237036,cpp,cpp14,Wrong Answer,3.13,143,1687,69,True,False,gigel-si-sosetele/submissions/1314237036.cpp
+1323450352.java,user_0189,1,1323450352,java,java8,Runtime Error,46.88,522957,2498,105,True,False,gigel-si-sosetele/submissions/1323450352.java
+1323450467.java,user_0189,2,1323450467,java,java8,Wrong Answer,47.92,522965,2611,111,True,False,gigel-si-sosetele/submissions/1323450467.java
+1332392159.java,user_0190,1,1332392159,java,java8,Wrong Answer,46.88,1013835,2193,93,True,False,gigel-si-sosetele/submissions/1332392159.java
+1332398082.java,user_0190,2,1332398082,java,java8,Wrong Answer,31.25,1014025,2242,94,True,False,gigel-si-sosetele/submissions/1332398082.java
+1332398213.java,user_0190,3,1332398213,java,java8,Wrong Answer,30.21,1014032,2028,83,True,False,gigel-si-sosetele/submissions/1332398213.java
+1332398242.java,user_0190,4,1332398242,java,java8,Wrong Answer,1.04,1014033,2030,83,True,False,gigel-si-sosetele/submissions/1332398242.java
+1332398341.java,user_0190,5,1332398341,java,java8,Wrong Answer,12.5,1014039,2053,83,True,False,gigel-si-sosetele/submissions/1332398341.java
+1332398499.java,user_0190,6,1332398499,java,java8,Wrong Answer,12.5,1014045,2067,85,True,False,gigel-si-sosetele/submissions/1332398499.java
+1332398740.java,user_0190,8,1332398740,java,java8,Wrong Answer,12.5,1014056,2218,93,True,False,gigel-si-sosetele/submissions/1332398740.java
+1332399243.java,user_0190,9,1332399243,java,java8,Wrong Answer,47.92,1014074,2277,96,True,False,gigel-si-sosetele/submissions/1332399243.java
+1332399368.java,user_0190,10,1332399368,java,java8,Wrong Answer,31.25,1014079,2142,89,True,False,gigel-si-sosetele/submissions/1332399368.java
+1332400106.java,user_0190,11,1332400106,java,java8,Wrong Answer,12.5,1014106,2278,96,True,False,gigel-si-sosetele/submissions/1332400106.java
+1378077612.cpp,user_0191,1,1378077612,cpp,cpp,Accepted,50.0,2636500,2442,93,False,True,gigel-si-sosetele/submissions/1378077612.cpp
+1314236549.java,user_0192,2,1314236549,java,java8,Wrong Answer,18.75,114,5691,195,True,False,gigel-si-sosetele/submissions/1314236549.java
+1314236588.java,user_0192,3,1314236588,java,java8,Wrong Answer,17.71,117,5835,199,True,False,gigel-si-sosetele/submissions/1314236588.java
+1314236618.java,user_0192,4,1314236618,java,java8,Wrong Answer,17.71,118,5691,195,True,False,gigel-si-sosetele/submissions/1314236618.java
+1314236705.java,user_0192,5,1314236705,java,java8,Runtime Error,17.71,123,5871,201,True,False,gigel-si-sosetele/submissions/1314236705.java
+1361674642.cpp,user_0194,4,1361674642,cpp,cpp,Accepted,50.0,2121015,675,34,False,True,gigel-si-sosetele/submissions/1361674642.cpp
+1344626070.cpp,user_0201,1,1344626070,cpp,cpp,Wrong Answer,4.17,1581356,1162,52,False,True,gigel-si-sosetele/submissions/1344626070.cpp
+1344626398.cpp,user_0201,2,1344626398,cpp,cpp,Accepted,50.0,1581365,1167,53,False,True,gigel-si-sosetele/submissions/1344626398.cpp
+1344626508.cpp,user_0201,3,1344626508,cpp,cpp,Accepted,50.0,1581367,1113,50,False,True,gigel-si-sosetele/submissions/1344626508.cpp
+1323445954.cpp,user_0203,1,1323445954,cpp,cpp,Wrong Answer,40.63,522712,1656,58,False,True,gigel-si-sosetele/submissions/1323445954.cpp
+1323447161.cpp,user_0203,3,1323447161,cpp,cpp,Wrong Answer,39.58,522769,1779,63,False,True,gigel-si-sosetele/submissions/1323447161.cpp
+1323448060.cpp,user_0203,5,1323448060,cpp,cpp,Wrong Answer,40.63,522813,1938,68,False,True,gigel-si-sosetele/submissions/1323448060.cpp
+1323454555.cpp,user_0203,6,1323454555,cpp,cpp,Wrong Answer,40.63,523175,1722,64,False,True,gigel-si-sosetele/submissions/1323454555.cpp
+1323454579.cpp,user_0203,7,1323454579,cpp,cpp,Accepted,50.0,523177,1722,64,False,True,gigel-si-sosetele/submissions/1323454579.cpp
+1344599880.java,user_0207,1,1344599880,java,java8,Wrong Answer,4.17,1580087,3011,115,True,False,gigel-si-sosetele/submissions/1344599880.java
+1323432453.java,user_0208,1,1323432453,java,java8,Wrong Answer,2.08,521918,1803,78,True,False,gigel-si-sosetele/submissions/1323432453.java
+1323432672.java,user_0208,2,1323432672,java,java8,Runtime Error,4.17,521948,2339,109,True,False,gigel-si-sosetele/submissions/1323432672.java
+1323432707.java,user_0208,3,1323432707,java,java8,Runtime Error,4.17,521952,2409,112,True,False,gigel-si-sosetele/submissions/1323432707.java
+1323432721.java,user_0208,4,1323432721,java,java8,Wrong Answer,5.21,521953,2223,102,True,False,gigel-si-sosetele/submissions/1323432721.java
+1323432863.java,user_0208,7,1323432863,java,java8,Wrong Answer,5.21,521971,2439,112,True,False,gigel-si-sosetele/submissions/1323432863.java
+1314235844.java,user_0209,1,1314235844,java,java8,Runtime Error,33.33,69,3740,135,True,False,gigel-si-sosetele/submissions/1314235844.java
+1314235894.java,user_0209,2,1314235894,java,java8,Runtime Error,33.33,71,3340,124,True,False,gigel-si-sosetele/submissions/1314235894.java
+1314235975.java,user_0209,3,1314235975,java,java8,Runtime Error,33.33,76,3140,119,True,False,gigel-si-sosetele/submissions/1314235975.java
+1314236100.java,user_0209,4,1314236100,java,java8,Runtime Error,33.33,84,3161,121,True,False,gigel-si-sosetele/submissions/1314236100.java
+1323398262.java,user_0212,1,1323398262,java,java8,Terminated due ...,3.13,520094,2229,99,True,False,gigel-si-sosetele/submissions/1323398262.java
+1323398364.java,user_0212,3,1323398364,java,java8,Terminated due ...,3.13,520100,1870,79,True,False,gigel-si-sosetele/submissions/1323398364.java
+1323398894.java,user_0212,4,1323398894,java,java8,Wrong Answer,11.46,520127,2663,103,True,True,gigel-si-sosetele/submissions/1323398894.java
+1323398992.java,user_0212,5,1323398992,java,java8,Accepted,50.0,520130,2667,103,True,True,gigel-si-sosetele/submissions/1323398992.java
+1314237072.java,user_0213,1,1314237072,java,java8,Wrong Answer,2.08,145,2467,96,False,True,gigel-si-sosetele/submissions/1314237072.java
+1314237129.java,user_0213,2,1314237129,java,java8,Wrong Answer,2.08,148,2588,101,False,True,gigel-si-sosetele/submissions/1314237129.java
+1314237277.java,user_0213,3,1314237277,java,java8,Wrong Answer,1.04,156,2354,93,False,True,gigel-si-sosetele/submissions/1314237277.java
+1314236315.java,user_0214,3,1314236315,java,java8,Wrong Answer,11.46,99,3433,130,True,False,gigel-si-sosetele/submissions/1314236315.java
+1314236505.java,user_0214,4,1314236505,java,java8,Wrong Answer,46.88,110,3855,139,True,False,gigel-si-sosetele/submissions/1314236505.java
+1314236559.java,user_0214,5,1314236559,java,java8,Wrong Answer,47.92,114,4022,142,True,False,gigel-si-sosetele/submissions/1314236559.java
+1314236678.java,user_0214,6,1314236678,java,java8,Accepted,50.0,121,4464,150,True,False,gigel-si-sosetele/submissions/1314236678.java
+1332559507.cpp,user_0214,18,1332559507,cpp,cpp,Wrong Answer,47.92,1020867,1853,83,True,False,gigel-si-sosetele/submissions/1332559507.cpp
+1332560420.cpp,user_0214,19,1332560420,cpp,cpp,Accepted,50.0,1020894,1920,86,True,False,gigel-si-sosetele/submissions/1332560420.cpp
+1314235882.cpp,user_0215,1,1314235882,cpp,cpp,Wrong Answer,8.33,70,1149,60,False,True,gigel-si-sosetele/submissions/1314235882.cpp
+1314236115.cpp,user_0215,5,1314236115,cpp,cpp,Wrong Answer,5.21,85,1160,60,False,True,gigel-si-sosetele/submissions/1314236115.cpp
+1314236132.cpp,user_0215,6,1314236132,cpp,cpp,Wrong Answer,6.25,86,1190,61,False,True,gigel-si-sosetele/submissions/1314236132.cpp
+1314236429.cpp,user_0215,7,1314236429,cpp,cpp,Wrong Answer,5.21,106,1435,67,False,True,gigel-si-sosetele/submissions/1314236429.cpp
+1314236671.cpp,user_0215,8,1314236671,cpp,cpp,Wrong Answer,5.21,121,1594,72,False,True,gigel-si-sosetele/submissions/1314236671.cpp
+1314236698.cpp,user_0215,9,1314236698,cpp,cpp,Wrong Answer,5.21,123,1609,72,False,True,gigel-si-sosetele/submissions/1314236698.cpp
+1314236714.cpp,user_0215,10,1314236714,cpp,cpp,Wrong Answer,1.04,124,1592,72,False,True,gigel-si-sosetele/submissions/1314236714.cpp
+1314236815.cpp,user_0215,12,1314236815,cpp,cpp,Wrong Answer,6.25,130,1626,72,False,True,gigel-si-sosetele/submissions/1314236815.cpp
+1314236806.cpp,user_0215,13,1314236806,cpp,cpp,Wrong Answer,2.08,130,1637,72,False,True,gigel-si-sosetele/submissions/1314236806.cpp
+1314236989.cpp,user_0215,19,1314236989,cpp,cpp,Wrong Answer,1.04,140,1250,58,False,True,gigel-si-sosetele/submissions/1314236989.cpp
+1314237010.cpp,user_0215,20,1314237010,cpp,cpp,Wrong Answer,5.21,141,1250,58,False,True,gigel-si-sosetele/submissions/1314237010.cpp
+1314237375.cpp,user_0215,35,1314237375,cpp,cpp,Wrong Answer,5.21,161,1297,60,False,True,gigel-si-sosetele/submissions/1314237375.cpp
+1314237463.cpp,user_0215,40,1314237463,cpp,cpp,Wrong Answer,1.04,165,1431,62,False,True,gigel-si-sosetele/submissions/1314237463.cpp
+1314237693.cpp,user_0215,49,1314237693,cpp,cpp,Wrong Answer,8.33,176,1195,59,False,True,gigel-si-sosetele/submissions/1314237693.cpp
+1314237713.cpp,user_0215,50,1314237713,cpp,cpp,Wrong Answer,5.21,177,1208,59,False,True,gigel-si-sosetele/submissions/1314237713.cpp
+1314236660.cpp,user_0219,1,1314236660,cpp,cpp,Wrong Answer,12.5,120,1678,84,True,False,gigel-si-sosetele/submissions/1314236660.cpp
+1314237169.cpp,user_0219,2,1314237169,cpp,cpp,Wrong Answer,11.46,150,1898,94,True,False,gigel-si-sosetele/submissions/1314237169.cpp
+1314237395.cpp,user_0219,3,1314237395,cpp,cpp,Wrong Answer,11.46,161,1967,94,True,False,gigel-si-sosetele/submissions/1314237395.cpp
+1314237413.cpp,user_0219,4,1314237413,cpp,cpp,Wrong Answer,12.5,162,1970,94,True,False,gigel-si-sosetele/submissions/1314237413.cpp
+1361720320.java,user_0220,1,1361720320,java,java8,Accepted,50.0,2122489,2552,102,False,True,gigel-si-sosetele/submissions/1361720320.java
+1391926624.cpp,user_0222,1,1391926624,cpp,cpp,Segmentation Fault,3.13,3147801,2314,99,True,False,gigel-si-sosetele/submissions/1391926624.cpp
+1391926940.cpp,user_0222,3,1391926940,cpp,cpp,Abort Called,3.13,3147806,2110,84,True,False,gigel-si-sosetele/submissions/1391926940.cpp
+1391927106.cpp,user_0222,5,1391927106,cpp,cpp,Abort Called,3.13,3147809,2226,89,True,False,gigel-si-sosetele/submissions/1391927106.cpp
+1391927314.cpp,user_0222,6,1391927314,cpp,cpp,Segmentation Fault,3.13,3147812,2370,102,True,False,gigel-si-sosetele/submissions/1391927314.cpp
+1391927276.cpp,user_0222,7,1391927276,cpp,cpp,Segmentation Fault,3.13,3147812,2350,100,True,False,gigel-si-sosetele/submissions/1391927276.cpp
+1391927371.cpp,user_0222,8,1391927371,cpp,cpp,Segmentation Fault,2.08,3147813,2362,102,True,False,gigel-si-sosetele/submissions/1391927371.cpp
+1391927542.cpp,user_0222,9,1391927542,cpp,cpp,Abort Called,3.13,3147817,2161,87,True,False,gigel-si-sosetele/submissions/1391927542.cpp
+1391927653.cpp,user_0222,10,1391927653,cpp,cpp,Abort Called,3.13,3147819,2139,87,True,False,gigel-si-sosetele/submissions/1391927653.cpp
+1391927824.cpp,user_0222,11,1391927824,cpp,cpp,Abort Called,3.13,3147822,2038,75,True,False,gigel-si-sosetele/submissions/1391927824.cpp
+1323450365.cpp,user_0224,1,1323450365,cpp,cpp,Wrong Answer,48.96,522958,1172,52,False,True,gigel-si-sosetele/submissions/1323450365.cpp
+1323450418.cpp,user_0224,2,1323450418,cpp,cpp,Accepted,50.0,522961,1268,57,False,True,gigel-si-sosetele/submissions/1323450418.cpp
+1314236639.java,user_0227,6,1314236639,java,java,Wrong Answer,5.21,119,2378,90,True,False,gigel-si-sosetele/submissions/1314236639.java
+1314236960.java,user_0227,7,1314236960,java,java,Terminated due ...,5.21,139,2642,99,True,False,gigel-si-sosetele/submissions/1314236960.java
+1314237028.java,user_0227,8,1314237028,java,java,Terminated due ...,5.21,143,2791,102,True,False,gigel-si-sosetele/submissions/1314237028.java
+1314237097.java,user_0227,9,1314237097,java,java,Terminated due ...,5.21,146,2802,102,True,False,gigel-si-sosetele/submissions/1314237097.java
+1314237838.java,user_0229,4,1314237838,java,java8,Wrong Answer,12.5,181,4480,147,True,True,gigel-si-sosetele/submissions/1314237838.java
+1361903381.cpp,user_0230,1,1361903381,cpp,cpp,Accepted,50.0,2130182,633,32,False,True,gigel-si-sosetele/submissions/1361903381.cpp
+1314237004.java,user_0234,1,1314237004,java,java8,Wrong Answer,8.33,141,2003,78,False,True,gigel-si-sosetele/submissions/1314237004.java
+1314237476.java,user_0234,3,1314237476,java,java8,Runtime Error,5.21,166,2494,96,False,True,gigel-si-sosetele/submissions/1314237476.java
+1314237655.java,user_0234,4,1314237655,java,java8,Wrong Answer,8.33,174,2682,103,False,True,gigel-si-sosetele/submissions/1314237655.java
+1391862748.cpp,user_0235,1,1391862748,cpp,cpp,Wrong Answer,12.5,3145214,904,42,False,True,gigel-si-sosetele/submissions/1391862748.cpp
+1391862854.cpp,user_0235,2,1391862854,cpp,cpp,Wrong Answer,13.54,3145221,618,30,False,True,gigel-si-sosetele/submissions/1391862854.cpp
+1391862911.cpp,user_0235,3,1391862911,cpp,cpp,Wrong Answer,13.54,3145228,977,45,False,True,gigel-si-sosetele/submissions/1391862911.cpp
+1391863014.cpp,user_0235,4,1391863014,cpp,cpp,Wrong Answer,12.5,3145236,1076,51,False,True,gigel-si-sosetele/submissions/1391863014.cpp
+1391863046.cpp,user_0235,5,1391863046,cpp,cpp,Wrong Answer,12.5,3145239,1237,58,False,True,gigel-si-sosetele/submissions/1391863046.cpp
+1314236111.cpp,user_0237,1,1314236111,cpp,cpp,Segmentation Fault,46.88,84,2231,98,True,False,gigel-si-sosetele/submissions/1314236111.cpp
+1323071007.cpp,user_0239,1,1323071007,cpp,cpp,Accepted,50.0,503910,1293,60,True,False,gigel-si-sosetele/submissions/1323071007.cpp
+1314241570.java,user_0242,1,1314241570,java,java8,Wrong Answer,1.04,1192,2072,90,True,False,gigel-si-sosetele/submissions/1314241570.java
+1361905953.cpp,user_0246,3,1361905953,cpp,cpp14,Accepted,50.0,2130452,675,34,False,True,gigel-si-sosetele/submissions/1361905953.cpp
+1314236876.cpp,user_0248,1,1314236876,cpp,cpp,Segmentation Fault,8.33,133,1516,81,True,False,gigel-si-sosetele/submissions/1314236876.cpp
+1314237296.cpp,user_0248,2,1314237296,cpp,cpp,Wrong Answer,13.54,157,1661,93,True,False,gigel-si-sosetele/submissions/1314237296.cpp
+1314237512.cpp,user_0248,3,1314237512,cpp,cpp,Wrong Answer,13.54,167,1747,97,True,False,gigel-si-sosetele/submissions/1314237512.cpp
+1314237702.cpp,user_0248,4,1314237702,cpp,cpp,Wrong Answer,13.54,176,1667,91,True,False,gigel-si-sosetele/submissions/1314237702.cpp
+1332760229.java,user_0249,1,1332760229,java,java8,Wrong Answer,39.58,1027088,3890,125,False,True,gigel-si-sosetele/submissions/1332760229.java
+1314236852.java,user_0250,3,1314236852,java,java8,Accepted,50.0,132,3038,116,False,True,gigel-si-sosetele/submissions/1314236852.java
+1323454076.cpp,user_0251,1,1323454076,cpp,cpp,Wrong Answer,46.88,523144,1445,53,False,True,gigel-si-sosetele/submissions/1323454076.cpp
+1323454197.cpp,user_0251,2,1323454197,cpp,cpp,Accepted,50.0,523152,1616,59,False,True,gigel-si-sosetele/submissions/1323454197.cpp
+1332463460.cpp,user_0252,1,1332463460,cpp,cpp,Wrong Answer,47.92,1016740,1715,91,True,False,gigel-si-sosetele/submissions/1332463460.cpp
+1332463504.cpp,user_0252,2,1332463504,cpp,cpp,Wrong Answer,47.92,1016741,1733,91,True,False,gigel-si-sosetele/submissions/1332463504.cpp
+1332463544.cpp,user_0252,3,1332463544,cpp,cpp,Segmentation Fault,48.96,1016742,1770,92,True,False,gigel-si-sosetele/submissions/1332463544.cpp
+1332464030.cpp,user_0252,4,1332464030,cpp,cpp,Accepted,50.0,1016755,1665,85,True,False,gigel-si-sosetele/submissions/1332464030.cpp
+1361764067.cpp,user_0256,1,1361764067,cpp,cpp,Accepted,50.0,2123973,747,40,False,True,gigel-si-sosetele/submissions/1361764067.cpp
+1361734461.cpp,user_0257,1,1361734461,cpp,cpp,Accepted,50.0,2122816,544,32,False,True,gigel-si-sosetele/submissions/1361734461.cpp
+1378160221.cpp,user_0262,1,1378160221,cpp,cpp,Wrong Answer,12.5,2640297,1670,72,False,True,gigel-si-sosetele/submissions/1378160221.cpp
+1378159687.cpp,user_0263,4,1378159687,cpp,cpp,Accepted,50.0,2640171,1316,55,False,True,gigel-si-sosetele/submissions/1378159687.cpp
+1378159750.cpp,user_0263,5,1378159750,cpp,cpp,Accepted,50.0,2640180,1179,50,False,True,gigel-si-sosetele/submissions/1378159750.cpp
+1378158403.cpp,user_0267,1,1378158403,cpp,cpp,Wrong Answer,2.08,2640053,806,45,False,True,gigel-si-sosetele/submissions/1378158403.cpp
+1378158476.cpp,user_0267,2,1378158476,cpp,cpp,Accepted,50.0,2640056,814,45,False,True,gigel-si-sosetele/submissions/1378158476.cpp
+1378144132.cpp,user_0268,5,1378144132,cpp,cpp,Accepted,50.0,2639727,1362,58,False,True,gigel-si-sosetele/submissions/1378144132.cpp
+1378159506.cpp,user_0269,1,1378159506,cpp,cpp,Wrong Answer,1.04,2640150,969,48,True,False,gigel-si-sosetele/submissions/1378159506.cpp
+1378159512.cpp,user_0269,2,1378159512,cpp,cpp,Wrong Answer,2.08,2640151,937,48,True,False,gigel-si-sosetele/submissions/1378159512.cpp
+1378120601.java,user_0271,1,1378120601,java,java8,Accepted,50.0,2638634,2845,117,False,True,gigel-si-sosetele/submissions/1378120601.java
+1314236276.java,user_0275,1,1314236276,java,java8,Wrong Answer,1.04,96,2493,105,False,True,gigel-si-sosetele/submissions/1314236276.java
+1314236371.java,user_0275,2,1314236371,java,java8,Wrong Answer,2.08,102,2829,110,False,True,gigel-si-sosetele/submissions/1314236371.java
+1314236518.java,user_0275,3,1314236518,java,java8,Wrong Answer,8.33,111,3064,116,False,True,gigel-si-sosetele/submissions/1314236518.java
+1314236637.java,user_0275,4,1314236637,java,java8,Wrong Answer,21.88,119,3253,122,False,True,gigel-si-sosetele/submissions/1314236637.java
+1314236718.java,user_0275,5,1314236718,java,java8,Wrong Answer,19.79,124,3390,126,False,True,gigel-si-sosetele/submissions/1314236718.java
+1314236787.java,user_0275,6,1314236787,java,java8,Accepted,50.0,128,3418,126,False,True,gigel-si-sosetele/submissions/1314236787.java
+1332305438.cpp,user_0282,1,1332305438,cpp,cpp,Wrong Answer,48.96,1009387,1719,83,True,False,gigel-si-sosetele/submissions/1332305438.cpp
+1332305654.cpp,user_0282,2,1332305654,cpp,cpp,Wrong Answer,48.96,1009392,1751,85,True,False,gigel-si-sosetele/submissions/1332305654.cpp
+1332305841.cpp,user_0282,4,1332305841,cpp,cpp,Accepted,50.0,1009395,1720,83,True,False,gigel-si-sosetele/submissions/1332305841.cpp
+1361601064.cpp,user_0283,1,1361601064,cpp,cpp,Wrong Answer,46.88,2117309,570,26,False,True,gigel-si-sosetele/submissions/1361601064.cpp
+1361601083.cpp,user_0283,2,1361601083,cpp,cpp,Accepted,50.0,2117310,578,26,False,True,gigel-si-sosetele/submissions/1361601083.cpp
+1323071143.cpp,user_0284,1,1323071143,cpp,cpp,Wrong Answer,12.5,503912,1374,55,False,True,gigel-si-sosetele/submissions/1323071143.cpp
+1323071463.cpp,user_0284,2,1323071463,cpp,cpp,Wrong Answer,2.08,503919,1732,67,False,True,gigel-si-sosetele/submissions/1323071463.cpp
+1323071955.cpp,user_0284,3,1323071955,cpp,cpp,Wrong Answer,11.46,503929,1732,67,False,True,gigel-si-sosetele/submissions/1323071955.cpp
+1323072067.cpp,user_0284,4,1323072067,cpp,cpp,Wrong Answer,12.5,503931,1781,68,False,True,gigel-si-sosetele/submissions/1323072067.cpp
+1323074695.cpp,user_0284,5,1323074695,cpp,cpp,Wrong Answer,1.04,503981,1049,45,False,True,gigel-si-sosetele/submissions/1323074695.cpp
+1323075512.cpp,user_0284,6,1323075512,cpp,cpp,Wrong Answer,11.46,503993,1189,59,False,True,gigel-si-sosetele/submissions/1323075512.cpp
+1323077360.cpp,user_0284,7,1323077360,cpp,cpp,Wrong Answer,45.83,504021,1140,59,False,True,gigel-si-sosetele/submissions/1323077360.cpp
+1323077582.cpp,user_0284,8,1323077582,cpp,cpp,Accepted,50.0,504024,1166,60,False,True,gigel-si-sosetele/submissions/1323077582.cpp
+1314235895.java,user_0289,1,1314235895,java,java8,Terminated due ...,11.46,71,3420,123,False,True,gigel-si-sosetele/submissions/1314235895.java
+1314235960.java,user_0289,2,1314235960,java,java8,Terminated due ...,11.46,75,3488,124,False,True,gigel-si-sosetele/submissions/1314235960.java
+1314236202.java,user_0289,4,1314236202,java,java8,Terminated due ...,11.46,91,4206,142,False,True,gigel-si-sosetele/submissions/1314236202.java
+1314236306.java,user_0289,5,1314236306,java,java8,Wrong Answer,10.42,99,4765,165,False,True,gigel-si-sosetele/submissions/1314236306.java
+1314236352.java,user_0289,6,1314236352,java,java8,Terminated due ...,11.46,101,4769,165,False,True,gigel-si-sosetele/submissions/1314236352.java
+1323404622.cpp,user_0290,1,1323404622,cpp,cpp,Wrong Answer,21.88,520544,1049,58,True,False,gigel-si-sosetele/submissions/1323404622.cpp
+1323404630.cpp,user_0290,2,1323404630,cpp,cpp,Wrong Answer,7.29,520545,1049,58,True,False,gigel-si-sosetele/submissions/1323404630.cpp
+1323404669.cpp,user_0290,3,1323404669,cpp,cpp,Wrong Answer,12.5,520552,1117,61,True,False,gigel-si-sosetele/submissions/1323404669.cpp
+1323404695.cpp,user_0290,4,1323404695,cpp,cpp,Accepted,50.0,520556,1090,60,True,False,gigel-si-sosetele/submissions/1323404695.cpp
+1314236209.java,user_0291,1,1314236209,java,java8,Wrong Answer,46.88,92,3415,141,True,False,gigel-si-sosetele/submissions/1314236209.java
+1314236314.java,user_0291,2,1314236314,java,java8,Wrong Answer,46.88,99,3393,142,True,False,gigel-si-sosetele/submissions/1314236314.java
+1314236396.java,user_0291,4,1314236396,java,java8,Wrong Answer,46.88,103,3509,145,True,False,gigel-si-sosetele/submissions/1314236396.java
+1314236487.java,user_0291,5,1314236487,java,java8,Wrong Answer,46.88,109,3297,141,True,False,gigel-si-sosetele/submissions/1314236487.java
+1314236928.java,user_0291,7,1314236928,java,java8,Accepted,50.0,136,3321,141,True,False,gigel-si-sosetele/submissions/1314236928.java
+1378159541.cpp,user_0293,2,1378159541,cpp,cpp,Accepted,50.0,2640154,2215,72,False,True,gigel-si-sosetele/submissions/1378159541.cpp
+1344629507.cpp,user_0298,1,1344629507,cpp,cpp14,Wrong Answer,12.5,1581450,1318,65,False,True,gigel-si-sosetele/submissions/1344629507.cpp
+1344629769.cpp,user_0298,2,1344629769,cpp,cpp14,Accepted,50.0,1581456,1426,68,False,True,gigel-si-sosetele/submissions/1344629769.cpp
+1361812337.cpp,user_0300,1,1361812337,cpp,cpp,Wrong Answer,25.0,2125710,1617,73,False,True,gigel-si-sosetele/submissions/1361812337.cpp
+1332463492.cpp,user_0302,1,1332463492,cpp,cpp,Wrong Answer,47.92,1016740,1733,91,True,False,gigel-si-sosetele/submissions/1332463492.cpp
+1332464046.cpp,user_0302,2,1332464046,cpp,cpp,Accepted,50.0,1016755,1665,85,True,False,gigel-si-sosetele/submissions/1332464046.cpp
+1314235745.java,user_0305,1,1314235745,java,java8,Terminated due ...,5.21,64,2450,95,True,False,gigel-si-sosetele/submissions/1314235745.java
+1314236838.java,user_0305,2,1314236838,java,java8,Terminated due ...,4.17,131,2815,103,True,False,gigel-si-sosetele/submissions/1314236838.java
+1314237018.java,user_0305,3,1314237018,java,java8,Runtime Error,3.13,142,3182,118,True,False,gigel-si-sosetele/submissions/1314237018.java
+1314237067.java,user_0305,4,1314237067,java,java8,Runtime Error,3.13,145,3203,118,True,False,gigel-si-sosetele/submissions/1314237067.java
+1314237171.java,user_0305,5,1314237171,java,java8,Runtime Error,2.08,150,3413,125,True,False,gigel-si-sosetele/submissions/1314237171.java
+1314237294.java,user_0305,6,1314237294,java,java8,Terminated due ...,3.13,157,3495,127,True,False,gigel-si-sosetele/submissions/1314237294.java
+1314237668.java,user_0305,8,1314237668,java,java8,Terminated due ...,4.17,174,3733,134,True,False,gigel-si-sosetele/submissions/1314237668.java
+1314237730.java,user_0305,9,1314237730,java,java8,Runtime Error,3.13,177,3755,134,True,False,gigel-si-sosetele/submissions/1314237730.java
+1361359836.cpp,user_0310,1,1361359836,cpp,cpp,Wrong Answer,46.88,2109024,1225,54,False,True,gigel-si-sosetele/submissions/1361359836.cpp
+1361359845.cpp,user_0310,2,1361359845,cpp,cpp,Accepted,50.0,2109027,893,46,False,True,gigel-si-sosetele/submissions/1361359845.cpp
+1361582042.cpp,user_0310,3,1361582042,cpp,cpp,Accepted,50.0,2116728,675,34,False,True,gigel-si-sosetele/submissions/1361582042.cpp
+1314236600.java,user_0311,1,1314236600,java,java8,Wrong Answer,1.04,117,4969,183,False,True,gigel-si-sosetele/submissions/1314236600.java
+1314236794.java,user_0311,3,1314236794,java,java8,Wrong Answer,1.04,129,5223,188,False,True,gigel-si-sosetele/submissions/1314236794.java
+1314237417.java,user_0311,5,1314237417,java,java,Wrong Answer,1.04,162,5148,186,False,True,gigel-si-sosetele/submissions/1314237417.java
+1314237604.java,user_0311,6,1314237604,java,java,Wrong Answer,1.04,172,4856,176,False,True,gigel-si-sosetele/submissions/1314237604.java
+1314237706.java,user_0311,7,1314237706,java,java8,Wrong Answer,47.92,176,5134,185,False,True,gigel-si-sosetele/submissions/1314237706.java
+1323366002.java,user_0318,1,1323366002,java,java,Accepted,50.0,518483,3839,158,True,False,gigel-si-sosetele/submissions/1323366002.java
+1378120985.java,user_0321,1,1378120985,java,java8,Wrong Answer,12.5,2638693,2164,88,False,True,gigel-si-sosetele/submissions/1378120985.java
+1378121015.java,user_0321,2,1378121015,java,java8,Wrong Answer,14.58,2638697,2526,102,False,True,gigel-si-sosetele/submissions/1378121015.java
+1378121026.java,user_0321,4,1378121026,java,java8,Accepted,50.0,2638700,3166,108,False,True,gigel-si-sosetele/submissions/1378121026.java
+1391972256.java,user_0325,1,1391972256,java,java8,Wrong Answer,12.5,3149775,2134,90,False,True,gigel-si-sosetele/submissions/1391972256.java
+1314199824.java,user_0326,1,1314199824,java,java8,Accepted,50.0,-3645,3227,86,False,True,gigel-si-sosetele/submissions/1314199824.java
+1361812114.java,user_0328,1,1361812114,java,java8,Wrong Answer,47.92,2125704,2552,105,True,False,gigel-si-sosetele/submissions/1361812114.java
+1361812966.java,user_0329,1,1361812966,java,java8,Wrong Answer,29.17,2125726,2183,102,True,False,gigel-si-sosetele/submissions/1361812966.java
+1314236030.java,user_0335,1,1314236030,java,java8,Wrong Answer,1.04,79,3030,126,False,True,gigel-si-sosetele/submissions/1314236030.java
+1314236296.java,user_0335,2,1314236296,java,java8,Runtime Error,6.25,98,3186,134,False,True,gigel-si-sosetele/submissions/1314236296.java
+1314236387.java,user_0335,3,1314236387,java,java8,Runtime Error,6.25,103,3164,134,False,True,gigel-si-sosetele/submissions/1314236387.java
+1314236443.java,user_0335,4,1314236443,java,java8,Accepted,50.0,106,3165,134,False,True,gigel-si-sosetele/submissions/1314236443.java
+1391901507.cpp,user_0336,1,1391901507,cpp,cpp,Terminated due ...,2.08,3146438,2064,94,True,False,gigel-si-sosetele/submissions/1391901507.cpp
+1391901542.cpp,user_0336,2,1391901542,cpp,cpp,Terminated due ...,2.08,3146440,2148,98,True,False,gigel-si-sosetele/submissions/1391901542.cpp
+1314237007.java,user_0338,5,1314237007,java,java8,Terminated due ...,2.08,141,2367,116,True,False,gigel-si-sosetele/submissions/1314237007.java
+1314237256.java,user_0339,1,1314237256,java,java8,Runtime Error,1.04,155,4038,151,True,False,gigel-si-sosetele/submissions/1314237256.java
+1314237444.java,user_0339,2,1314237444,java,java8,Runtime Error,1.04,164,3856,144,True,False,gigel-si-sosetele/submissions/1314237444.java
+1314237715.java,user_0339,3,1314237715,java,java8,Runtime Error,1.04,177,3443,128,True,False,gigel-si-sosetele/submissions/1314237715.java
+1314237843.java,user_0339,5,1314237843,java,java8,Runtime Error,1.04,182,3484,129,True,False,gigel-si-sosetele/submissions/1314237843.java

@@ -1,0 +1,6 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1378065070,17.86,Terminated due ...,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\matei-si-diamantele\1378065070.cpp: In function 'int main()':
+data\clean_solutions\submissions\matei-si-diamantele\1378065070.cpp:15:28: error: 'INT32_MIN' was not declared in this scope; did you mean 'INT_MIN'?
+   15 |     int n, m, p, l, c, f = INT32_MIN;
+      |                            ^~~~~~~~~
+      |                            INT_MIN"

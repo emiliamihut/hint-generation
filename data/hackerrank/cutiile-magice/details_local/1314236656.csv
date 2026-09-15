@@ -1,0 +1,47 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+cutiile-magice,1314236656,0,0,0,failed,,1.0,runtime_error,0.091876,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"10.000000000000000
+","Exception in thread ""main"" java.util.IllegalFormatConversionException: f != java.lang.Integer
+	at java.base/java.util.Formatter$FormatSpecifier.failConversion(Formatter.java:4662)
+	at java.base/java.util.Formatter$FormatSpecifier.printFloat(Formatter.java:3213)
+	at java.base/java.util.Formatter$FormatSpecifier.print(Formatter.java:3161)
+	at java.base/java.util.Formatter.format(Formatter.java:2761)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1183)
+	at java.base/java.io.PrintStream.p",D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,1,1,1,passed,,1.0,passed,0.122160,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,3.500000000,"3.500000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,2,2,2,passed,,1.0,passed,0.103691,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,1.000000000,"1.000000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,3,3,3,failed,,1.0,wrong_answer,0.108994,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,25.000000000,"1.500000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,4,4,4,failed,,1.0,wrong_answer,0.123628,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,467.500000000,"1.562500000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,5,5,5,failed,,1.0,wrong_answer,0.128003,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,336.000000000,"1.187500000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,6,6,6,failed,,1.0,wrong_answer,0.124432,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,4.500000000,"1.062500000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,7,7,7,failed,,1.0,wrong_answer,0.135559,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,2002.000000000,"1.312500000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,8,8,8,failed,,1.0,wrong_answer,0.127232,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,8372.000000000,"1.171875000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,9,9,9,failed,,1.0,wrong_answer,0.128892,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,273.000000000,"2.500000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,10,10,10,failed,,1.0,wrong_answer,0.122689,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,59.500000000,"4.250000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,11,11,11,failed,,1.0,wrong_answer,0.129556,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,400.000000000,"2.750000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,12,12,12,failed,,1.0,wrong_answer,0.146668,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,476.000000000,"2.875000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,13,13,13,failed,,1.0,wrong_answer,0.127262,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,47481.000000000,"1.250000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,14,14,14,failed,,1.0,wrong_answer,0.120215,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,3562.500000000,"2.062500000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,15,15,15,failed,,1.0,wrong_answer,0.153070,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,307648.000000000,"1.140625000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,16,16,16,failed,,1.0,wrong_answer,0.136631,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,875.000000000,"3.375000000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,17,17,17,failed,,1.0,wrong_answer,0.176777,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,140505.000000000,"1.050781250000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,18,18,18,failed,,1.0,wrong_answer,0.175473,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,70499.000000000,"1.008789062500000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv
+cutiile-magice,1314236656,19,19,19,failed,,1.0,wrong_answer,0.136257,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,157462.500000000,"4.062500000000000
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\cutiile-magice\1314236656.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\cutiile-magice\1314236656.csv

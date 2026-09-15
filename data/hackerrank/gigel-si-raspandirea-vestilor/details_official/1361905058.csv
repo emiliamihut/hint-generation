@@ -1,0 +1,12 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1361905058,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1361905058.cpp: In function 'void bfs(std::vector<int>*, std::vector<int>&, std::vector<int>&, int)':
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1361905058.cpp:15:13: error: 'uint64_t' was not declared in this scope
+   15 |         for(uint64_t i = 0; i < graph[current].size(); i++) {
+      |             ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1361905058.cpp:5:1: note: 'uint64_t' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+    4 | #include <climits>
+  +++ |+#include <cstdint>
+    5 | 
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1361905058.cpp:15:29: error: 'i' was not declared in this scope
+   15 |         for(uint64_t i = 0; i < graph[current].size(); i++) {
+      |                             ^"

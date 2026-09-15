@@ -1,0 +1,985 @@
+====================================================================================================
+SUBMISSION_ID: 1323073128
+USER_ID: user_0097
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class Task {
+ public:
+    void solve() {
+        read_input();
+        get_result();
+    }
+
+ private:
+    double n, m;
+
+    void read_input() {
+        cin >> n >> m;
+    }
+
+    void get_result() {
+        double res = 0;
+        vector<vector<double>> dp(m, vector<double> (n + 1, 0));
+        
+        
+        if (m == 0) {
+            cout << n << '\n';
+            return;
+        }
+        for (int i = 0; i < n; ++i) {
+            dp[0][i] = (double)(1/n);
+        }
+        
+        
+        for (int i = 1; i < m; ++i) {
+            for (int j = n - 1; j >= 0; --j) {
+                dp[i][j] = dp[i][j + 1] + dp[i - 1][j] / (double)(j + 1);
+            }
+        }
+        
+        
+        for (int i = 0; i < n; ++i) {
+            res += ((double)(i + 1) * dp[m - 1][i]);
+        }
+        
+        printf("%.9lf\n", res);
+    }
+
+};
+
+int main() {
+    Task *task = new Task();
+    task->solve();
+    delete task;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1361335320
+USER_ID: user_0033
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+double prob(double n, int k) {
+    if (k == 0) {
+        return n;
+    }
+    double sum = 0;
+    for(int i = 1; i <= n; i++) {
+          sum += (prob(i, k - 1));
+    }
+    return (1/n) * sum;
+}
+
+int main() {
+    int n , k;
+    cin >> n >> k;
+    cout << prob(n, k);
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1359953979
+USER_ID: user_0002
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int n, k;
+
+double dp[55][15];
+
+int main()
+{
+    cin >> n >> k;
+    for (int i = 0; i <= n; i++)
+        dp[i][0] = i;
+
+    for (int nr = 1; nr <= k; nr++) {
+        double sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += dp[i][nr - 1];
+            dp[i][nr] = sum / (double) i;
+        }
+    }
+
+    cout << fixed << setprecision(9) << dp[n][k];
+}
+
+====================================================================================================
+SUBMISSION_ID: 1370578798
+USER_ID: user_0135
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    
+    double prob[n + 1][k + 1];
+    for(int i = 1;i <= n;++i)
+        prob[i][0] = i;
+    
+    for(int i = 1;i <= k;++i)
+    {
+        for(int j = 1;j <= n;++j)
+        {
+            prob[j][i] = 0;
+            for(int l = j;l >= 1;--l)
+                prob[j][i] += prob[l][i - 1] / j;
+        }
+    }
+    cout << fixed << setprecision(9) << prob[n][k] << "\n";
+}
+
+====================================================================================================
+SUBMISSION_ID: 1391865112
+USER_ID: user_0093
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_2
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    
+    int n, k;
+    cin >> n >> k;
+    double res = n;
+    
+    for (int i = 0; i < k; ++i) {
+        res = (res + 1) / 2;
+    }
+    printf("%lf\n", res);
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332763768
+USER_ID: user_0004
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_2
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int n, k;
+  cin >> n >> k;
+  double init = n;
+  for (int i = 0; i < k; i++) {
+    init = (init + 1.0) / 2.0;
+  }
+  cout << fixed << setprecision(9) << init << endl;
+  return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332762969
+USER_ID: user_0045
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_2
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+       
+    int n, k;
+    cin >> n >> k;
+    double sol = n;
+    for (int i = 1; i <= k; i++) {
+        sol = (sol+1)/2;
+    }
+    cout << setprecision(7) << sol;
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323426563
+USER_ID: user_0060
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner ms=new MyScanner();
+        int n=ms.nextInt();
+        int k=ms.nextInt();
+        double rez=n;
+        for(int i=1;i<=k;i++)
+        {
+            rez=(rez+1)/2;
+        }
+        System.out.println(rez);
+        
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236668
+USER_ID: user_0092
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner scan = new MyScanner();
+        int n = scan.nextInt();
+        int k = scan.nextInt();
+        double out = n;
+        for(int i = 0; i < k; i++){
+            out = (out + 1) / 2;
+        }
+        System.out.printf("%.9f", out);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332760961
+USER_ID: user_0037
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner scan = new MyScanner();
+        int N = scan.nextInt();
+        int K = scan.nextInt();
+        double result = N;
+        for (int i = 0 ; i < K; i++) {
+            result = (result +1)/2;
+        }
+        System.out.printf("%.9f", result);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1378142650
+USER_ID: user_0107
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner sc = new MyScanner();
+        int N = sc.nextInt();
+        int K = sc.nextInt();
+
+        double[][] expected = new double[N + 1][K + 1];
+
+        
+        for (int i = 1; i <= N; i++) {
+            expected[i][0] = i;
+        }
+
+        
+        for (int k = 1; k <= K; k++) {
+            for (int i = 1; i <= N; i++) {
+                double sum = 0.0;
+                for (int j = 1; j <= i; j++) {
+                    sum += expected[j][k - 1];
+                }
+                expected[i][k] = sum / i;
+            }
+        }
+
+        
+        System.out.printf("%.9f\n", expected[N][K]);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314236869
+USER_ID: user_0082
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner scan = new MyScanner();
+        int n = scan.nextInt();
+        int k = scan.nextInt();
+        
+        double[][] dp = new double[k + 1][n + 1];
+        
+        for(int i = 1; i <= n; i++) {
+            dp[0][i] = i;
+        }
+        
+        for(int i = 1; i <= k; i++) {
+            double sum = 0;
+            for(int j = 1; j <= n; j++) {
+                sum += dp[i-1][j];
+                dp[i][j] = sum / j;
+            }
+        }
+        System.out.println(dp[k][n]);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314170331
+USER_ID: user_0122
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    public static void main(String args[]) {
+        MyScanner stdin = new MyScanner();
+        int N, K;
+        N = stdin.nextInt();
+        K = stdin.nextInt();
+        double dp[][] = new double[N+1][K+1];
+        dp[N][0] = 1.0;
+        double solution = 0.0;
+        for (int k = 1; k <= K; k++) {
+            for (int n = 1; n <= N; n++) {
+                for (int i = 1; i <= n; i++) {
+                    dp[i][k] += dp[n][k-1] / n;
+                }
+            }
+        }
+        for (int n = 1; n <= N; n++) {
+            solution += n * dp[n][K];
+        }
+        System.out.println(solution);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314237325
+USER_ID: user_0126
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_2
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+
+    static class Task {
+        
+        int n;
+        int jmps;
+
+        
+        private void readInput() {
+            
+            MyScanner sc = new MyScanner();
+
+            
+            n = sc.nextInt();
+            jmps = sc.nextInt();
+        }
+
+        
+        private void getResult() {
+            double result = n;
+            for(int i = 0; i < jmps; i++) {
+                result = (result + 1) / 2;
+            }
+
+            System.out.println(result);
+
+        }
+
+        public void solve() {
+            readInput();
+            getResult();
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        new Task().solve();
+    }
+}
+
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323427418
+USER_ID: user_0006
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_2
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner sc = new MyScanner();
+        int buckets = sc.nextInt();
+        int steps = sc.nextInt();
+        if (steps == 0) {
+            System.out.printf("%.10f", 1.0 * buckets);
+            return;
+        }
+        
+
+
+
+        double[][] dp = new double[steps + 1][buckets];
+        for (int i = 1; i <= steps; i++) {
+            for (int j = 0; j < buckets; j++) {
+                if (i != 1) dp[i][j] = 0;
+                else dp[i][j] = 1.0 / buckets;
+            }
+        }
+
+        for (int i = 2; i <= steps; i++) {
+            double sum = 0;
+            for (int j = buckets - 1; j >= 0; j--) {
+                dp[i][j] = dp[i - 1][j] / (j + 1) + sum;
+                sum += dp[i - 1][j] / (j + 1);
+            }
+        }
+        double mean = 0;
+        for(int i = 0; i < buckets; i++){
+            mean += (i + 1) * dp[steps][i];
+        }
+        System.out.printf("%.10f", mean);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323453896
+USER_ID: user_0008
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_2
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int cutii = sc.nextInt();
+        int aruncari =    sc.nextInt();
+        double[][] dp = new double[aruncari + 1][cutii + 1];
+        double arunc =(double) aruncari;
+        if (aruncari == 0) {
+            System.out.println((double) cutii);
+        } else {
+            
+            for (int i = 1; i <= cutii; i ++) {
+                double a = (double) (1 /(double)cutii);
+                
+                dp[1][i] = a;
+            
+                
+            }
+            
+            if (aruncari == 1) {
+                System.out.println((double)cutii/2);
+            } else {
+                for (int i = 2; i <= aruncari; i ++) {
+                    for(int j = cutii; j >= 1; j--) {
+                        double procent = 1 / (double) j;
+                        if (j == cutii) {
+                            dp[i][j] = dp[i - 1][j] * procent;
+                            
+                        } else {
+                            dp[i][j] = dp[i - 1][j] * procent + dp[i][j+1];
+                            
+                        }
+                    }
+                }
+                
+                double rez = 0;
+                for (int x = 1; x <= cutii; x++) {
+                    rez +=(double)x * dp[aruncari][x];
+                }
+                System.out.println(rez);
+            }    
+        }
+    }
+}
+

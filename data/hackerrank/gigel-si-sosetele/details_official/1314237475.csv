@@ -1,0 +1,5 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314237475,1.04,Wrong Answer,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-sosetele\1314237475.java:49: error: class Solution2 is public, should be declared in a file named Solution2.java
+public class Solution2 
+       ^
+1 error"

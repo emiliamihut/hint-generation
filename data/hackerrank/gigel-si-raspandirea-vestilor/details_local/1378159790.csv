@@ -1,0 +1,77 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+gigel-si-raspandirea-vestilor,1378159790,0,0,0,passed,,4.0,passed,0.131913,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2
+","2
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,1,1,1,passed,,4.0,passed,0.155378,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,2,2,2,passed,,4.0,passed,0.106704,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,3,3,3,passed,,4.0,passed,0.104751,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"4
+","4
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,4,4,4,passed,,4.0,passed,0.110144,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8
+","8
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,5,5,5,passed,,4.0,passed,0.114435,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5
+","5
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,6,6,6,passed,,4.0,passed,0.103374,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"131
+","131
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,7,7,7,passed,,4.0,passed,0.128905,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"10
+","10
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,8,8,8,passed,,4.0,passed,0.397650,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"6
+","6
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,9,9,9,passed,,4.0,passed,0.282332,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"15
+","15
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,10,10,10,passed,,4.0,passed,0.722114,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"16
+","16
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,11,11,11,failed,,4.0,passed,2.343730,0,,,,,,,,passed,passed,DIFF,True,False,False,False,False,,"7
+","7
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,12,12,12,failed,,4.0,runtime_error,0.642123,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"10
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,13,13,13,failed,,4.0,runtime_error,0.622414,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"13
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,14,14,14,failed,,4.0,runtime_error,0.538595,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"70
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,15,15,15,failed,,4.0,runtime_error,0.484286,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"11
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,16,16,16,failed,,4.0,runtime_error,0.465027,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"294
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,17,17,17,failed,,4.0,runtime_error,0.523350,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"38
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,18,18,18,failed,,4.0,runtime_error,0.428027,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"47
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,19,19,19,failed,,4.0,runtime_error,0.465436,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"17
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,20,20,20,failed,,4.0,runtime_error,0.442607,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"14
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,
+gigel-si-raspandirea-vestilor,1378159790,21,21,21,failed,,4.0,runtime_error,0.471080,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"83
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:58)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1378159790.java,

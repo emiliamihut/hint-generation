@@ -1,0 +1,5 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314236523,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"C:\Users\Emilia\AppData\Local\Temp\tmp82i7ke8f\matei-si-diamantele\Solution.java:1: error: package javafx.geometry does not exist
+import javafx.geometry.Pos;
+                      ^
+1 error"

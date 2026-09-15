@@ -1,0 +1,5 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314236758,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\matei-si-diamantele\1314236758.java:53: error: class Matrix is public, should be declared in a file named Matrix.java
+public class Matrix{
+       ^
+1 error"

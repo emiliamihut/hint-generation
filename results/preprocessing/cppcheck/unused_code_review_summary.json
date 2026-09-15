@@ -1,0 +1,24 @@
+{
+  "input_report": "D:\\Hint-generation\\hackerrank_scraper\\data\\analysis_dataset_no_comments\\cppcheck_reports\\unused_code_report.csv",
+  "output_plan": "D:\\Hint-generation\\hackerrank_scraper\\data\\analysis_dataset_no_comments\\cppcheck_reports\\unused_code_review_plan.csv",
+  "total_candidates": 614,
+  "affected_files": 326,
+  "affected_submissions": 326,
+  "missing_source_files": 0,
+  "invalid_line_locations": 0,
+  "candidates_by_issue": {
+    "redundantAssignment": 17,
+    "redundantInitialization": 2,
+    "unreachableCode": 7,
+    "unreadVariable": 391,
+    "unusedFunction": 62,
+    "unusedPrivateFunction": 3,
+    "unusedStructMember": 17,
+    "unusedVariable": 115
+  },
+  "candidates_by_risk": {
+    "high": 89,
+    "medium": 525
+  },
+  "automatic_removal_performed": false
+}

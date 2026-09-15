@@ -1,0 +1,9 @@
+submission_id,user_id,cluster,selection_role,score,result,language,attempt_number,file,centroid_similarity
+1314235802,user_0056,0,round2_farthest_first,50.0,Accepted,cpp,1,1314235802.cpp,0.951438307762146
+1323431344,user_0031,0,round2_farthest_first,50.0,Accepted,cpp,1,1323431344.cpp,0.9236650466918944
+1344573200,user_0024,0,round2_farthest_first,50.0,Accepted,cpp,1,1344573200.cpp,0.956409215927124
+1314186184,user_0023,0,round2_farthest_first,50.0,Accepted,cpp,1,1314186184.cpp,0.9565935134887696
+1391186585,user_0020,0,round2_farthest_first,50.0,Accepted,cpp,1,1391186585.cpp,0.9687094688415528
+1378139766,user_0039,0,round2_farthest_first,50.0,Accepted,cpp,1,1378139766.cpp,0.9606629014015198
+1378138561,user_0040,1,round2_farthest_first,50.0,Accepted,java,1,1378138561.java,0.94509357213974
+1333788831,user_0017,1,round2_farthest_first,50.0,Accepted,java,1,1333788831.java,0.9848366379737854

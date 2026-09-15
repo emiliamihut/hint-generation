@@ -1,0 +1,7 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1361914865,2.5,Wrong Answer,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1361914865.java:3: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+Note: data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1361914865.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 error"

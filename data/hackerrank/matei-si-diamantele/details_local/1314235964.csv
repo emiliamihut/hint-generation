@@ -1,0 +1,278 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+matei-si-diamantele,1314235964,0,0,0,passed,,6.0,passed,0.133981,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,1,1,1,passed,,6.0,passed,0.131931,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"-1
+","-1
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,2,2,2,passed,,6.0,passed,0.140771,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,3,3,3,passed,,6.0,passed,0.149452,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7
+","7
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,4,4,4,failed,,6.0,wrong_answer,0.135639,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"3
+","8
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,5,5,5,failed,,6.0,runtime_error,3.042223,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"2234134
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,6,6,6,passed,,6.0,passed,0.629335,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"6325896
+","6325896
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,7,7,7,failed,,6.0,runtime_error,0.340471,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"6354964
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index 986 out of bounds for length 970
+	at Solution.cautare(Solution.java:57)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	a",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,8,8,8,failed,,6.0,runtime_error,2.908132,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"8316606
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,9,9,9,failed,,6.0,runtime_error,3.429063,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"8165086
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:62)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,10,10,10,failed,,6.0,runtime_error,3.151651,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"4978705
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:62)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,11,11,11,failed,,6.0,runtime_error,2.886665,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1220162
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,12,12,12,failed,,6.0,runtime_error,3.316104,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"7934215
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:62)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,13,13,13,failed,,6.0,runtime_error,3.399262,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"7194070
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:62)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,14,14,14,failed,,6.0,runtime_error,0.268893,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"7341084
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index 588 out of bounds for length 553
+	at Solution.cautare(Solution.java:57)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	a",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,15,15,15,passed,,6.0,passed,0.355537,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5423248
+","5423248
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,16,16,16,failed,,6.0,runtime_error,3.493903,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"4031457
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,17,17,17,failed,,6.0,runtime_error,2.707852,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"9162920
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,18,18,18,failed,,6.0,runtime_error,3.267741,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5081662
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,19,19,19,failed,,6.0,runtime_error,2.853643,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"9625807
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,20,20,20,failed,,6.0,runtime_error,3.149541,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"3901790
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,21,21,21,passed,,6.0,passed,0.435996,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3030246
+","3030246
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,22,22,22,passed,,6.0,passed,0.329017,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7929798
+","7929798
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,23,23,23,failed,,6.0,runtime_error,3.900373,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"4997422
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:62)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,24,24,24,failed,,6.0,runtime_error,3.449363,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1758779
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3509)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3478)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:238)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:245)
+	at java.base/java.util.ArrayList.add(ArrayList.java:484)
+	at java.base/java.util.ArrayList.add(ArrayList.java:497)
+	at Solution.cautare(Solution.java:64)
+	at Solution.cautare(Solution.java:66)
+	at S",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,25,25,25,failed,,6.0,runtime_error,0.723358,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1482237
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.ca",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,26,26,26,failed,,6.0,runtime_error,0.616870,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5456432
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.ca",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,27,27,27,failed,,6.0,runtime_error,0.535012,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5598715
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.ca",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,28,28,28,failed,,6.0,runtime_error,0.597580,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5892050
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.ca",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv
+matei-si-diamantele,1314235964,29,29,29,failed,,6.0,runtime_error,0.574617,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5649521
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.cautare(Solution.java:60)
+	at Solution.ca",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314235964.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314235964.csv

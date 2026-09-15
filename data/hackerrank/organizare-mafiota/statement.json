@@ -1,0 +1,22 @@
+{
+  "id": "organizare-mafiota",
+  "statement": "Se da o organizare ierarhica a N mafioti prin M relatii de subordonare directa. Pentru fiecare dintre cele Q interogari, trebuie verificat daca pentru orice doi mafioti exista un drum de la primul la al doilea sau de la al doilea la primul.",
+  "input_format": "Pe prima linie se citesc N, M si Q. Pentru fiecare interogare urmeaza M linii cu perechi i j, unde j este subordonatul direct al lui i.",
+  "constraints": [
+    "1 <= N <= 50000",
+    "1 <= M <= 100000",
+    "1 <= Q <= 10",
+    "Timp: C++ 4s, Java 8s"
+  ],
+  "output_format": "Pentru fiecare interogare se afiseaza 1 daca proprietatea este adevarata, altfel 0.",
+  "samples": [
+    {
+      "input": "4 3 1\n1 2\n2 3\n3 4",
+      "output": "1"
+    },
+    {
+      "input": "5 5 2\n1 2\n1 3\n3 2\n3 5\n4 5\n1 3\n1 4\n1 5\n3 2\n3 5",
+      "output": "0 0"
+    }
+  ]
+}

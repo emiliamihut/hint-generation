@@ -1,0 +1,146 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+matei-si-diamantele,1314237765,0,0,0,passed,,6.0,passed,0.194514,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,1,1,1,passed,,6.0,passed,0.094952,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"-1
+","-1
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,2,2,2,passed,,6.0,passed,0.097767,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,3,3,3,passed,,6.0,passed,0.101371,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7
+","7
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,4,4,4,failed,,6.0,wrong_answer,0.119023,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"3
+","8
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,5,5,5,failed,,6.0,timeout,6.213261,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"2234134
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,6,6,6,passed,,6.0,passed,0.252485,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"6325896
+","6325896
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,7,7,7,failed,,6.0,runtime_error,0.334634,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"6354964
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index 970 out of bounds for length 970
+	at Solution.recursive(Solution.java:58)
+	at Solution.recursive(Solution.java:64)
+	at Solution.recursive(Solution.java:64)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,8,8,8,failed,,6.0,timeout,6.255434,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"8316606
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,9,9,9,failed,,6.0,timeout,6.229490,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"8165086
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,10,10,10,failed,,6.0,timeout,6.236470,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"4978705
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,11,11,11,passed,,6.0,passed,0.320442,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"1220162
+","1220162
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,12,12,12,failed,,6.0,timeout,6.263936,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"7934215
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,13,13,13,failed,,6.0,runtime_error,0.304902,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"7194070
+","Exception in thread ""main"" java.lang.ArrayIndexOutOfBoundsException: Index 603 out of bounds for length 573
+	at Solution.recursive(Solution.java:58)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,14,14,14,failed,,6.0,timeout,6.229268,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"7341084
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,15,15,15,passed,,6.0,passed,0.332909,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5423248
+","5423248
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,16,16,16,failed,,6.0,timeout,6.232365,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"4031457
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,17,17,17,failed,,6.0,timeout,6.218098,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"9162920
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,18,18,18,failed,,6.0,timeout,6.235785,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"5081662
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,19,19,19,failed,,6.0,timeout,6.386009,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"9625807
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,20,20,20,failed,,6.0,timeout,6.366493,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"3901790
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,21,21,21,passed,,6.0,passed,0.397061,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3030246
+","3030246
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,22,22,22,passed,,6.0,passed,0.320947,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"7929798
+","7929798
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,23,23,23,failed,,6.0,timeout,6.257002,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"4997422
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,24,24,24,failed,,6.0,timeout,6.241056,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"1758779
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,25,25,25,failed,,6.0,runtime_error,0.716580,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"1482237
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.ja",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,26,26,26,failed,,6.0,runtime_error,0.719920,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5456432
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.ja",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,27,27,27,failed,,6.0,runtime_error,0.696028,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5598715
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.ja",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,28,28,28,failed,,6.0,runtime_error,0.711602,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5892050
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.ja",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv
+matei-si-diamantele,1314237765,29,29,29,failed,,6.0,runtime_error,0.601932,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"5649521
+","Exception in thread ""main"" java.lang.StackOverflowError
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.java:62)
+	at Solution.recursive(Solution.ja",D:\Hint-generation\hackerrank_scraper\data\execution_sources\matei-si-diamantele\1314237765.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\matei-si-diamantele\1314237765.csv

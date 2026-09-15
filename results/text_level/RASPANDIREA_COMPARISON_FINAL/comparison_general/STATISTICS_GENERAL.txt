@@ -1,0 +1,52 @@
+RASPANDIREA - GENERAL TAXONOMY - CODE VS TEXT
+
+TOTAL: 729
+SAME: 702
+DIFFERENT: 27
+AGREEMENT: 96.30%
+
+CODE DISTRIBUTION:
+ 655 | BFS
+  26 | UNKNOWN
+  25 | DIJKSTRA
+  19 | DFS
+   4 | FLOYD_WARSHALL
+
+TEXT DISTRIBUTION:
+ 657 | BFS
+  26 | UNKNOWN
+  25 | DIJKSTRA
+  17 | DFS
+   4 | FLOYD_WARSHALL
+
+MOST COMMON DIFFERENCES:
+  11 | UNKNOWN                          -> BFS
+   8 | BFS                              -> UNKNOWN
+   2 | BFS                              -> DIJKSTRA
+   2 | DFS                              -> UNKNOWN
+   1 | DIJKSTRA                         -> BFS
+   1 | DFS                              -> BFS
+   1 | DIJKSTRA                         -> UNKNOWN
+   1 | BFS                              -> DFS
+
+SCORE DISTRIBUTION - DIFFERENT CASES:
+score=     50 |   1 submissions |   3.70%
+score=     35 |   1 submissions |   3.70%
+score=     15 |   1 submissions |   3.70%
+score=      5 |   3 submissions |  11.11%
+score=    2.5 |  21 submissions |  77.78%
+
+CODE NON-UNKNOWN ONLY:
+TOTAL: 703
+SAME: 687
+AGREEMENT: 97.72%
+
+CONFUSION MATRIX
+rows = CODE, columns = TEXT
+
+CODE \ TEXT                                      BFS               DFS          DIJKSTRA    FLOYD_WARSHALL           UNKNOWN
+BFS                                              644                 1                 2                 0                 8
+DFS                                                1                16                 0                 0                 2
+DIJKSTRA                                           1                 0                23                 0                 1
+FLOYD_WARSHALL                                     0                 0                 0                 4                 0
+UNKNOWN                                           11                 0                 0                 0                15

@@ -1,0 +1,1338 @@
+
+====================================================================================================
+CASE 1/14
+submission_id: 1314186184
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 0
+cluster_size: 5
+selection_role: diverse_A
+pair_cosine_distance: 0.0624394416809082
+====================================================================================================
+
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+const int kNmax = 50005;
+
+class Task {
+ public:
+    int n;
+    int m;
+    int q;
+    vector<int> adj[kNmax];
+        
+    void solve() {
+        cin >> n >> m >> q;
+        for (int k = 1; k <= q; k++) {
+            for (int i = 1; i <= n; i++)
+                adj[i].clear();
+            for (int i = 1, x, y; i <= m; i++) {
+                cin >> x >> y;
+                adj[x].push_back(y);
+            }
+            cout << get_result() << ' ';
+        }
+        cout << '\n';
+    }
+
+    void dfs(int v, vector<int> &rev, vector<int> &col) {
+        col[v] = 1;
+        for (int n : adj[v]) 
+            if (!col[n]) {
+                col[n] = 1;
+                dfs(n, rev, col);
+            }
+        rev.push_back(v);
+    }
+
+    int get_result() {
+        vector<int> topsort;
+        vector<int> col(n + 1, 0);
+        for (int i = 1; i <= n; i++)
+            if (!col[i])
+                dfs(i, topsort, col);
+        for (int i = 1; i < n; i++) 
+            if(find(adj[topsort[i]].begin(), adj[topsort[i]].end(), topsort[i-1]) == adj[topsort[i]].end())
+                return 0;
+        return 1;
+    }
+
+};
+
+int main() {
+    std::ios::sync_with_stdio(false);
+    Task *task = new Task();
+    task->solve();
+    delete task;
+    return 0;
+}
+
+
+====================================================================================================
+CASE 2/14
+submission_id: 1370607970
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 0
+cluster_size: 5
+selection_role: diverse_B
+pair_cosine_distance: 0.0624394416809082
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool solve(int n, const vector<vector<int>>& adj)
+{
+    int in[n + 1];
+    memset(in, 0, sizeof(in));
+    
+    for(int i = 0;i < adj.size();++i)
+        for(int j = 0;j < adj[i].size();++j)
+            ++in[adj[i][j]];
+    queue<int> q;
+    for(int i = 1;i <= n;++i)
+        if(!in[i])
+            q.push(i);
+    if(q.size() > 1)
+        return false;
+    while(!q.empty())
+    {
+        int nod = q.front();
+        q.pop();
+        for(int i = 0;i < adj[nod].size();++i)
+        {
+            int neigh = adj[nod][i];
+            --in[neigh];
+            if(!in[neigh])
+                q.push(neigh);
+        }
+        if(q.size() > 1)
+            return false;
+    }
+    return true;
+}
+
+
+int main() {
+    int n, m, q;
+    cin >> n >> m >> q;
+    
+    for(int i = 0;i < q;++i)
+    {
+        vector<vector<int>> adj;
+        adj.resize(n + 1);
+        for(int j = 0;j < m;++j)
+        {
+            int a, b;
+            cin >> a >> b;
+            adj[a].push_back(b);
+        }
+        bool ret = solve(n, adj);
+        if(ret)
+            cout << "1 ";
+        else
+            cout << "0 ";
+    }
+}
+
+
+====================================================================================================
+CASE 3/14
+submission_id: 1314235802
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 1
+cluster_size: 3
+selection_role: diverse_A
+pair_cosine_distance: 0.04716610908508301
+====================================================================================================
+
+#include <bits/stdc++.h>
+#define x first
+#define y second
+#define pb push_back
+using namespace std;
+typedef long long ll;
+typedef pair<ll,ll> pll;
+typedef vector<ll> vll;
+
+ll N, M, Q, B[50100], T[50100], t;
+map<int, bool> G[50100];
+
+void dfs(int x){
+    if(B[x] == Q+1) return;
+    B[x] = Q+1;
+    for(auto y : G[x]) dfs(y.first);
+    T[++t] = x;
+}
+
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    cin >> N >> M >> Q;
+    while(Q--){
+        for(int i=1;i<=N;i++) G[i].clear(), T[i] = 0;
+
+        for(int i=0,x,y;i<M;i++){
+            cin >> x >> y;
+            G[x][y] = 1;
+        }
+
+        t = 0;
+        for(int i=1;i<=N;i++) dfs(i);
+        bool u = 1;
+        for(int i=1;i<N && u;i++) if(!G[T[i+1]][T[i]]) u = 0;
+        cout << u << ' ';
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================
+CASE 4/14
+submission_id: 1359952643
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 1
+cluster_size: 3
+selection_role: diverse_B
+pair_cosine_distance: 0.04716610908508301
+====================================================================================================
+
+#include<bits/stdc++.h>
+using namespace std;
+
+map<int, int>g[50005];
+
+int n, x, y, m, q, nr_noduri;
+
+int nod[500005];
+
+int viz[500005];
+
+void dfs(int node)
+{
+    if (viz[node] == 1)
+        return;
+
+    viz[node] = 1;
+    for (auto it: g[node])
+        dfs(it.first);
+
+    nod[++nr_noduri] = node;
+}
+
+int main()
+{
+    cin >> n >> m >> q;
+    for (int test = 1; test <= q; test++) {
+        for (int i = 1; i <= n; i++) {
+            g[i].clear();
+            nod[i] = 0;
+            viz[i] = 0;
+        }
+
+        nr_noduri = 0;
+
+        for (int i = 1; i <= m; i++) {
+            cin >> x >> y;
+            g[x][y] = 1;
+        }
+
+        for (int i = 1; i <= n; i++)
+            dfs(i);
+
+        int ok = 1;
+        for (int i = 1; i < n && ok == 1; i++) {
+            if (!g[nod[i + 1]][nod[i]])
+                ok = 0;
+        }
+
+        cout << ok << " ";
+    }
+}
+
+
+====================================================================================================
+CASE 5/14
+submission_id: 1323431344
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 2
+cluster_size: 5
+selection_role: diverse_A
+pair_cosine_distance: 0.12678742408752441
+====================================================================================================
+
+#include <fstream>
+    #include <vector>
+    #include <algorithm>
+    #include <queue>
+    #include <bits/stdc++.h>
+    
+    using namespace std;
+
+    const int kNmax = 100005;
+
+    bool sort_finish_time(const pair<int, int> &a, const pair<int, int> &b) {
+        return a.second > b.second; 
+    }
+
+    class Task {
+    public:
+        void solve() {
+            read_input_multiple_times();
+            
+           
+        }
+
+    private:
+        int n;
+        int m;
+        int time;
+        vector<int> adj[kNmax];
+        vector<pair<int, int>> node_time;
+
+        void read_input_multiple_times() {
+            int q;
+            cin >> n >> m >> q;
+            for (int i = 0; i < q; ++i) {
+                read_input();
+                get_result();
+
+                for (int j = 1; j <= n; ++j) {
+                    adj[j].clear();
+                }
+
+                node_time.clear();
+
+                time = 0;
+            }
+        }
+
+        void read_input() {
+            
+            
+            for (int i = 1, x, y; i <= m; i++) {
+                cin >> x >> y;
+                adj[x].push_back(y);
+            }
+        
+        }
+
+        void dfs(const int &node) {
+            time++;
+            node_time[node].first = time;
+
+            for (int i = 0; i < adj[node].size(); ++i) {
+                if (node_time[adj[node][i]].first == -1) {
+                    dfs(adj[node][i]);
+                }
+            }
+
+            time++;
+            node_time[node].second = time;
+        }
+
+        void get_result() {
+            
+
+
+
+
+
+
+            
+            
+            
+
+            for (int i = 0; i <= n; ++i) {
+                node_time.push_back(make_pair(-1, -1));
+            }
+
+            time = 0;
+            for (int i = 1; i <= n; ++i) {
+                if (node_time[i].first == -1) {
+                    dfs(i);
+                }
+            }
+
+            vector<pair<int, int>> node_fin_time;
+            for (int i = 0; i < n; ++i) {
+                node_fin_time.push_back(make_pair(i + 1, node_time[i + 1].second));
+            }
+
+            sort(node_fin_time.begin(), node_fin_time.end(), sort_finish_time);
+
+            vector<int> topsort;
+            for (int i = 0; i < n; ++i) {
+                topsort.push_back(node_fin_time[i].first);
+            }
+
+            for (int i = n - 2; i >= 0; --i) {
+                int prim = topsort[i];
+                int doi = topsort[i + 1];
+                bool ok = false;
+               
+                for (auto& son : adj[prim]) {
+                  
+                    if (doi == son) {
+                        ok = true;
+                    }
+                }
+                
+                if (!ok) {
+                    cout << "0 ";
+                    return;
+                }
+            }
+
+            cout << "1 ";
+        }
+
+
+
+
+
+
+
+
+
+    };
+
+    int main() {
+        Task *task = new Task();
+        task->solve();
+        delete task;
+        return 0;
+    }
+
+
+====================================================================================================
+CASE 6/14
+submission_id: 1378139766
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 2
+cluster_size: 5
+selection_role: diverse_B
+pair_cosine_distance: 0.12678742408752441
+====================================================================================================
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+bool ok[50010];
+int n, m, q, x, y, ret[100010];
+vector<int > G[50010], sol;
+
+void DFS(int nod) {
+    ok[nod] = true;
+    for (auto it : G[nod])
+        if (!ok[it])
+            DFS(it);
+    sol.push_back(nod);
+}
+
+int main()
+{
+    cin >> n >> m >> q;
+    for (int i = 0; i < q; ++i) {
+        for (int j = 0; j < m; ++j) {
+            cin >> x >> y;
+            G[x].push_back(y);
+        }
+        for (int j = 1; j <= n; ++j)
+            if (!ok[j])
+                DFS(j);
+        int nodprec = -1;
+        ret[i] = 1;
+        while (!sol.empty()) {
+            int nod = sol.back();
+            sol.pop_back();
+            if (nodprec != -1) {
+                int localRet = 0;
+                for (auto it : G[nodprec])
+                    if (it == nod)
+                        localRet = 1;
+                if (!localRet)
+                    ret[i] = 0;
+            }
+            nodprec = nod;
+        }
+        sol.clear();
+        for (int j = 1; j <= n; ++j)
+            ok[j] = false, G[j].clear();
+    }
+    for (int i = 0; i < q; ++i)
+        cout << ret[i] << " ";
+    return 0;
+}
+
+
+====================================================================================================
+CASE 7/14
+submission_id: 1314158862
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 3
+cluster_size: 3
+selection_role: diverse_A
+pair_cosine_distance: 0.1180773377418518
+====================================================================================================
+
+#include <bits/stdc++.h>
+#define MAXN 100005
+using namespace std;
+
+int n, m, nrq;
+set<int> G[MAXN];
+bool uz[MAXN];
+
+void clear_things() {
+    for (int i = 1; i <= n; ++i)
+        G[i].clear();
+    memset(uz, 0, sizeof(uz));
+}
+
+void DFS(int u, vector<int> &topsort) {
+    uz[u] = 1;
+    for (auto v: G[u]) {
+        if (!uz[v])
+            DFS(v, topsort);
+    }
+    topsort.push_back(u);
+}
+
+int main() {
+    cin >> n >> m >> nrq;
+    while (nrq--) {
+        clear_things();
+        for (int i = 1; i <= m; ++i) {
+            int x, y;
+            cin >> x >> y;
+            G[x].insert(y);
+        }
+
+        vector<int> topsort;
+        for (int i = 1; i <= n; ++i) {
+            if (!uz[i])
+                DFS(i, topsort);
+        }
+        reverse(topsort.begin(), topsort.end());
+
+        bool sol = 1;
+        for (int i = 0; i < (int) topsort.size() - 1; ++i) {
+            if (!G[topsort[i]].count(topsort[i + 1])) {
+                sol = 0;
+                break;
+            }
+        }
+
+        cout << sol << " ";
+    }
+
+    cout << "\n";
+
+    return 0;
+}
+
+
+====================================================================================================
+CASE 8/14
+submission_id: 1344629085
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 3
+cluster_size: 3
+selection_role: diverse_B
+pair_cosine_distance: 0.1180773377418518
+====================================================================================================
+
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define pb push_back
+
+typedef long long           ll;
+typedef long double         ld;
+typedef pair<ll, ll>        pll;
+typedef vector<ll>          vll;
+
+void dfs(ll root, vector<vll> &adj, vector<bool> &V, vector<ll> &T, int &t) {
+    if (V[root]) return;
+    V[root] = 1;
+
+    for (auto &it : adj[root]) {
+        dfs(it, adj, V, T, t);
+    }
+
+    T[++t] = root;
+}
+
+int main() {
+    
+    int n, m; cin >> n >> m;
+    
+    int t; cin >> t;
+    for (int l = 0; l < t; ++l) {
+        vector<vll> adj(n + 1);
+        vector<unordered_set<int>> adj_set(n + 1);
+        
+        for (int i = 0 ; i < m; ++i) {
+            ll u, v;
+            cin >> u >> v;
+            
+            adj[u].pb(v);
+        }
+        
+        for (int i = 1; i <= n; ++i)
+            for (int j = 0; j < (int)adj[i].size(); ++j)
+                adj_set[i].insert(adj[i][j]);
+        
+        vector<bool> vis(n + 1, 0);
+        vector<ll> visitedAtTime(n + 1, 0);
+        int time = 0;
+        for (int i = 1; i <= n; ++i) {
+            dfs(i, adj, vis, visitedAtTime, time);
+        }
+        
+        bool res = true;
+        for (int i = 1; res && i <= n - 1; ++i) res = res
+            && (adj_set[visitedAtTime[i + 1]].find(visitedAtTime[i])
+                != adj_set[visitedAtTime[i + 1]].end());
+        
+        cout << (res ? "1 " : "0 ");
+    }
+    
+    return 0;
+}
+
+
+====================================================================================================
+CASE 9/14
+submission_id: 1391688758
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 4
+cluster_size: 8
+selection_role: diverse_A
+pair_cosine_distance: 0.09331846237182617
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N, M, Q;
+    cin >> N >> M >> Q;
+    while (Q--) {
+        vector<vector<int>> adj(N+1);
+        vector<int> indeg(N+1, 0);
+        for (int i = 0, u, v; i < M; i++) {
+            cin >> u >> v;
+            adj[u].push_back(v);
+            indeg[v]++;
+        }
+
+        queue<int> q;
+        for (int i = 1; i <= N; i++)
+            if (indeg[i] == 0)
+                q.push(i);
+
+        bool total = true;
+        int cnt = 0;
+        while (!q.empty()) {
+            if ((int)q.size() > 1) {
+                total = false;
+                break;
+            }
+            int u = q.front();
+            q.pop();
+            cnt++;
+            for (int w : adj[u]) {
+                if (--indeg[w] == 0)
+                    q.push(w);
+            }
+        }
+
+        if (cnt < N)
+            total = false;
+
+        cout << (total ? '1' : '0') << ' ';
+    }
+    return 0;
+}
+
+
+====================================================================================================
+CASE 10/14
+submission_id: 1391779888
+language: cpp
+score: 50.0
+language_group: cpp_c
+cluster: 4
+cluster_size: 8
+selection_role: diverse_B
+pair_cosine_distance: 0.09331846237182617
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+      
+    int n, m, q;
+    cin >> n >> m >> q;
+    while (q--) {
+        vector<vector<int>> in(n + 1);
+        vector<vector<int>> out(n + 1);
+        for (int i = 0; i < m; i++) {
+            int x, y;
+            cin >> x >> y;
+            out[x].push_back(y);
+            in[y].push_back(x);
+        }
+        int count1 = 0, count2 = 0;
+        bool ok = true;  
+        int leaf;
+        for (int i = 1; i < in.size(); i++) {
+            if (out[i].size() == 0) {
+                count1++;
+                leaf = i;
+            }
+            if (!in[i].size()) {
+                count2++;
+            }
+            if (count1 > 1 || count2 > 1) {
+                ok = false;
+                break;
+            }
+        }
+        int count3 = 0;
+        for (int i = 0; i < in[leaf].size() ; i++) {
+            if (out[in[leaf][i]].size() < 2) {
+                count3++;
+                if (count3 == 2) {
+                    ok = false;
+                }
+            }
+        }
+        
+        if (ok)
+            cout << "1 ";
+        else 
+            cout << "0 ";
+    }
+    return 0;
+}
+
+
+====================================================================================================
+CASE 11/14
+submission_id: 1314236741
+language: java
+score: 50.0
+language_group: java
+cluster: 0
+cluster_size: 6
+selection_role: diverse_A
+pair_cosine_distance: 0.06813573837280273
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    @SuppressWarnings("unchecked")
+    static ArrayList<Integer>[] adj = new ArrayList[100005];
+    
+    static int n;
+    
+
+        
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+    public static void main(String[] args) {
+        
+        
+        
+        MyScanner sc = new MyScanner();
+        
+        n = sc.nextInt();
+        int m = sc.nextInt();
+        int q = sc.nextInt();
+        
+        for (int ww = 0; ww < q; ww++) {
+            
+            int next = 0;
+            int[] inMuchii = new int[n+1];
+            
+            for (int i = 1; i <= n; i++) {
+                    adj[i] = new ArrayList<>();
+                }
+            
+            for (int j = 0; j < m; j++) {
+                int u = sc.nextInt();
+                int v = sc.nextInt();
+                adj[u].add(v);
+                inMuchii[v]++;
+            }
+            
+            Queue<Integer> queue = new LinkedList<>();
+            
+            for (int i = 1; i <= n; i++) {
+                if (inMuchii[i] == 0) {
+                    queue.add(i);
+                }
+            }
+            
+            if (queue.size() > 1) {
+                System.out.printf("0 ");
+                continue;
+            }
+            
+            while (!queue.isEmpty()) {
+                int u = queue.poll();
+                
+                for (Integer vecin : adj[u]) {
+                    
+                    if (inMuchii[vecin] == 1) {
+                        queue.add(vecin);
+                    }
+                    inMuchii[vecin]--;
+                }
+                
+                adj[u] = new ArrayList<>();
+                
+                if (queue.size() > 1) {
+                    next = 1;
+                    System.out.printf("0 ");
+                    break;
+                }
+                
+            }
+            
+            if (next == 0) {
+                System.out.printf("1 ");
+            }
+            
+        }
+    }
+}
+
+
+====================================================================================================
+CASE 12/14
+submission_id: 1323374677
+language: java
+score: 50.0
+language_group: java
+cluster: 0
+cluster_size: 6
+selection_role: diverse_B
+pair_cosine_distance: 0.06813573837280273
+====================================================================================================
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Stack;
+
+public class Main {
+    static class Task {
+        public static final int NMAX = 100005; 
+
+        int n;
+        int m;
+        int q;
+
+        @SuppressWarnings("unchecked")
+        ArrayList<Integer> adj[] = new ArrayList[NMAX];
+
+        private void readInput() {
+            Scanner sc = new Scanner(System.in);
+            n = sc.nextInt();
+            m = sc.nextInt();
+            q = sc.nextInt();
+            int[] res = new int[q];
+
+            for (int j = 0; j < q; j++) {
+                for (int i = 1; i <= n; i++)
+                    adj[i] = new ArrayList<>();
+                for (int i = 1; i <= m; i++) {
+                    int x, y;
+                    x = sc.nextInt();
+                    y = sc.nextInt();
+                    adj[x].add(y);
+                }
+                res[j] = sortare_topo();
+            }
+            writeOutput(res);
+            sc.close();
+        }
+
+        private void writeOutput(int[] result) {
+            PrintWriter pw = new PrintWriter(System.out);
+            for (int i = 0; i < q; i++) {
+                pw.printf("%d ", result[i]);
+            }
+            pw.printf("\n");
+            pw.close();
+
+        }
+
+        private int[] in_muchii() {
+            int[] in_m = new int[n + 1];
+            for (int i = 1; i <= n; i++) {
+                for (int j = 0; j < adj[i].size(); j++) {
+                    in_m[adj[i].get(j)]++;
+                }
+            }
+            return in_m;
+        }
+
+        private int sortare_topo() {
+            ArrayList<Integer> topsort = new ArrayList<>();
+            Stack<Integer> stack = new Stack<>();
+            int[] d = new int[n + 1];
+            d = new int[n + 1];
+            for (int i = 1; i <= n; i++) {
+                if (i != 1) {
+                    d[i] = Integer.MAX_VALUE;
+                }
+            }
+
+            int[] in_m = in_muchii();
+            for (int i = 1; i <= n; i++) {
+                if (in_m[i] == 0) {
+                    stack.push(i);
+                }
+            }
+
+            while (stack.size() != 0) {
+                Integer u = stack.pop();
+                topsort.add(u);
+                for (int j = 0; j < adj[u].size(); j++) {
+                    Integer v = adj[u].get(j);
+                    in_m[v]--;
+                    if (in_m[v] == 0) {
+                        stack.push(v);
+                    }
+                }
+            }
+            for (int i = 0; i < topsort.size()-1; i++) {
+                int ok = 0;
+                int u = topsort.get(i);
+                int v = topsort.get(i+1);
+                for(int j = 0; j<adj[u].size();j++) {
+                    int nod = adj[u].get(j);
+                    if (nod == v) {
+                        ok = 1;
+                        break;
+                    }
+                }
+                if(ok == 0) {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+    }
+
+    public static void main(String[] args) {
+        new Task().readInput();
+    }
+}
+
+
+====================================================================================================
+CASE 13/14
+submission_id: 1314168969
+language: java
+score: 50.0
+language_group: java
+cluster: 1
+cluster_size: 2
+selection_role: diverse_A
+pair_cosine_distance: 0.0
+====================================================================================================
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    private int N;
+    private ArrayList<Integer> topSort;
+    private ArrayList<Integer>[] graph;
+    private int[] in;
+
+    public void createGraph(int N) {
+        this.N = N;
+        graph = new ArrayList[N+1];
+        in = new int[N+1];
+        for (int i = 0; i <= N; i++) {
+            graph[i] = new ArrayList<>();
+            in[i] = 0;
+        }
+        topSort = new ArrayList<>();
+    }
+
+    public void insertEdge(int u, int v) {
+        graph[u].add(v);
+        in[v]++;
+    }
+
+    public void KahnAlgorithm() {
+        ArrayList<Integer> S = new ArrayList<>();
+        for (int i = 1; i <= N; i++) {
+            if (in[i] == 0) {
+                S.add(i);
+            }
+        }
+        while (!S.isEmpty()) {
+            int u = S.get(0);
+            S.remove(0);
+            topSort.add(u);
+            for (Integer v : graph[u]) {
+                in[v]--;
+                if (in[v] == 0) {
+                    S.add(v);
+                }
+            }
+        }
+        for (int i = 0; i <= N; i++) {
+            if (in[i] > 0) {
+                topSort.clear();
+                return;
+            }
+        }
+    }
+
+    public int solve() {
+        KahnAlgorithm();
+        for (int i = 0; i < topSort.size() - 1; i++) {
+            if (!graph[topSort.get(i)].contains(topSort.get(i+1))) {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    public static void main(String[] args) {
+        MyScanner fin = new MyScanner();
+        int N, M, T;
+        N = fin.nextInt();
+        M = fin.nextInt();
+        T = fin.nextInt();
+        for (int i = 0; i < T; i++) {
+            Solution sol = new Solution();
+            sol.createGraph(N);
+            for (int j = 0; j < M; j++) {
+                int x, y;
+                x = fin.nextInt();
+                y = fin.nextInt();
+                sol.insertEdge(x, y);
+            }
+            System.out.print(sol.solve() + " ");
+        }
+        System.out.println();
+    }
+}
+
+
+====================================================================================================
+CASE 14/14
+submission_id: 1314222956
+language: java
+score: 50.0
+language_group: java
+cluster: 1
+cluster_size: 2
+selection_role: diverse_B
+pair_cosine_distance: 0.0
+====================================================================================================
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    private int N;
+    private ArrayList<Integer> topSort;
+    private ArrayList<Integer>[] graph;
+    private int[] in;
+
+    public void createGraph(int N) {
+        this.N = N;
+        graph = new ArrayList[N+1];
+        in = new int[N+1];
+        for (int i = 0; i <= N; i++) {
+            graph[i] = new ArrayList<>();
+            in[i] = 0;
+        }
+        topSort = new ArrayList<>();
+    }
+
+    public void insertEdge(int u, int v) {
+        graph[u].add(v);
+        in[v]++;
+    }
+
+    public void KahnAlgorithm() {
+        ArrayList<Integer> S = new ArrayList<>();
+        for (int i = 1; i <= N; i++) {
+            if (in[i] == 0) {
+                S.add(i);
+            }
+        }
+        while (!S.isEmpty()) {
+            int u = S.get(0);
+            S.remove(0);
+            topSort.add(u);
+            for (Integer v : graph[u]) {
+                in[v]--;
+                if (in[v] == 0) {
+                    S.add(v);
+                }
+            }
+        }
+        for (int i = 0; i <= N; i++) {
+            if (in[i] > 0) {
+                topSort.clear();
+                return;
+            }
+        }
+    }
+
+    public int solve() {
+        KahnAlgorithm();
+        for (int i = 0; i < topSort.size() - 1; i++) {
+            if (!graph[topSort.get(i)].contains(topSort.get(i+1))) {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    public static void main(String[] args) {
+        MyScanner fin = new MyScanner();
+        int N, M, T;
+        N = fin.nextInt();
+        M = fin.nextInt();
+        T = fin.nextInt();
+        for (int i = 0; i < T; i++) {
+            Solution sol = new Solution();
+            sol.createGraph(N);
+            for (int j = 0; j < M; j++) {
+                int x, y;
+                x = fin.nextInt();
+                y = fin.nextInt();
+                sol.insertEdge(x, y);
+            }
+            System.out.print(sol.solve() + " ");
+        }
+        System.out.println();
+    }
+}
+

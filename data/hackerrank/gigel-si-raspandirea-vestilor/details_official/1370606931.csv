@@ -1,0 +1,2 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1370606931,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,cc1plus.exe: out of memory allocating 1052671 bytes

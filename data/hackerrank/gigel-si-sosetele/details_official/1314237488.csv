@@ -1,0 +1,5 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314237488,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-sosetele\1314237488.java:57: error: class P2Gigel is public, should be declared in a file named P2Gigel.java
+public class P2Gigel{
+       ^
+1 error"

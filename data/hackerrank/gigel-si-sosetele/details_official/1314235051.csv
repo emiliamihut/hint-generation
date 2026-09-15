@@ -1,0 +1,7 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314235051,20.83,Terminated due ...,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-sosetele\1314235051.java:50: error: class Sosete is public, should be declared in a file named Sosete.java
+public class Sosete {
+       ^
+Note: data\clean_solutions\submissions\gigel-si-sosetele\1314235051.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 error"

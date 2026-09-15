@@ -1,0 +1,7 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314236610,27.5,Terminated due ...,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1314236610.java:52: error: class problema is public, should be declared in a file named problema.java
+public class problema {
+       ^
+Note: data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1314236610.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 error"

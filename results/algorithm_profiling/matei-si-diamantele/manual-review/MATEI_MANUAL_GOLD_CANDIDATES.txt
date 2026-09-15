@@ -1,0 +1,684 @@
+====================================================================================================
+SUBMISSION_ID: 1370607065
+USER_ID: user_0287
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    int ans = INT_MIN;
+    for(int i = 1;i <= n;++i)
+        for(int j = 1;j <= m;++j)
+        {
+            int a;
+            cin >> a;
+            if(abs(i - l) + abs(j - c) <= p)
+                ans = max(ans, a);
+        }
+    cout << ans;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344626355
+USER_ID: user_0096
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+
+int main(){
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    int maxim = INT32_MIN;
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= m; j++) {
+            int x;
+            cin >> x;
+            int d = abs(l - i) + abs(c - j);
+            if(d <= p && x > maxim)
+                maxim = x;
+        }
+    }
+    cout << maxim;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314234451
+USER_ID: user_0071
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n,m,i,p,l,c;
+    cin >> n>>m>>p>>l>>c;
+    int max = -1000000000;
+    for (i = 1; i <=n;i++) {
+        for (int j =1; j <= m; j++) {
+            int f;
+            cin >> f;
+            if (f > max && abs(l-i)+abs(c-j) <= p)
+                max = f;
+        }
+    }
+    
+    cout << max;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1344373888
+USER_ID: user_0259
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+       
+    
+    int n,m,p,x,y,max=-100000000000,a;
+    cin>>n>>m>>p>>x>>y;
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=m;j++)
+        {   cin>>a;
+            int dist=abs(x-i)+ abs(y-j);
+            if(dist<=p&&a>max)
+                max=a;
+        }   
+            
+    cout<<max;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314234384
+USER_ID: user_0289
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <bits/stdc++.h>
+#define x first
+#define y second
+#define pb push_back
+using namespace std;
+typedef long long ll;
+typedef pair<ll,ll> pll;
+typedef vector<ll> vll;
+
+ll N, M, P, L, C, rs=-1e15;
+pll J;
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    cin >> N >> M >> P >> J.x >> J.y;
+
+    for(ll i = 1;i<=N;i++)
+        for(ll j = 1,x;j<=M;j++){
+            cin >> x;
+            ll d = abs(J.x - i) + abs(J.y - j);
+            if(d <= P) rs = max(rs,x);
+        }
+
+    cout << rs;
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1332550913
+USER_ID: user_0074
+SCORE: 50.0
+LANGUAGE: cpp
+LANGUAGE_CLUSTER: cpp_c_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+       
+    
+    int n, m, p, pos_i, pos_j, max_val = INT_MIN;
+    cin >> n >> m >> p >> pos_i >> pos_j;
+    pos_i--;
+    pos_j--;
+    
+    vector<vector<int>> v(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> v[i][j];
+            if (abs(i - pos_i) + abs(j - pos_j) <= p && max_val < v[i][j]) {
+                max_val = v[i][j];
+            }
+        }
+    }
+    
+    cout << max_val;
+    
+    return 0;
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323422331
+USER_ID: user_0110
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner ms=new MyScanner();
+        int n=ms.nextInt();
+        int m=ms.nextInt();
+        int p=ms.nextInt();
+        int l=ms.nextInt();
+        int c=ms.nextInt();
+        int i,j;
+        int max=Integer.MIN_VALUE;
+        int nr;
+        for(i=1;i<=n;i++)
+        {
+            for(j=1;j<=m;j++)
+            {
+                nr=ms.nextInt();
+                if((Math.abs(l-i)+Math.abs(c-j)<=p)&&(nr>max))
+                    max=nr;
+            }
+                
+        }
+        System.out.println(max);
+        
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1391907417
+USER_ID: user_0163
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner sc = new MyScanner();
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int P = sc.nextInt();
+        int L = sc.nextInt();
+        int C = sc.nextInt();
+        int max = Integer.MIN_VALUE;
+        for (int i = 1; i <= N; i++)
+            for (int j = 1; j <= M; j++) {
+                int val = sc.nextInt();
+                if (Math.abs(i - L) + Math.abs(j - C) <= P)
+                    if (val > max)
+                        max = val;
+            }
+                
+        
+        System.out.print(max);
+        
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1323366910
+USER_ID: user_0109
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_0
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner s = new MyScanner();
+        int n,m,l,c;
+        long p;
+        n = s.nextInt();
+        m = s.nextInt();
+        p = s.nextLong();
+        l = s.nextInt();
+        c = s.nextInt();
+        long max = Integer.MIN_VALUE;
+        for(int i = 1; i<= n; i++) {
+            for(int j = 1; j <=m; j++) {
+                long elem = s.nextLong();
+                if (Math.abs(l - i) + Math.abs(c - j) <= p) {
+                    if (elem > max) {
+                        max = elem;
+                    }
+                }
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1391817300
+USER_ID: user_0268
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    static class Point {
+        int x, y, steps;
+        public Point(int x, int y, int steps) {
+            this.x = x;
+            this.y = y;
+            this.steps = steps;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int p = sc.nextInt();
+        int l = sc.nextInt() - 1;
+        int c = sc.nextInt() - 1;
+
+        int[][] grid = new int[n][m];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                grid[i][j] = sc.nextInt();
+
+        boolean[][] visited = new boolean[n][m];
+        Queue<Point> queue = new LinkedList<>();
+        queue.add(new Point(l, c, 0));
+        visited[l][c] = true;
+
+        int maxBeauty = grid[l][c];
+
+        int[] dx = {-1, 1, 0, 0};
+        int[] dy = {0, 0, -1, 1};
+
+        while (!queue.isEmpty()) {
+            Point curr = queue.poll();
+
+            if (curr.steps == p) continue;
+
+            for (int d = 0; d < 4; d++) {
+                int nx = curr.x + dx[d];
+                int ny = curr.y + dy[d];
+
+                if (nx >= 0 && nx < n && ny >= 0 && ny < m && !visited[nx][ny]) {
+                    visited[nx][ny] = true;
+                    maxBeauty = Math.max(maxBeauty, grid[nx][ny]);
+                    queue.add(new Point(nx, ny, curr.steps + 1));
+                }
+            }
+        }
+
+        System.out.println(maxBeauty);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1391995049
+USER_ID: user_0236
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int p = sc.nextInt();
+        int istart = sc.nextInt();
+        int jstart = sc.nextInt();
+        int max = Integer.MIN_VALUE;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                int nr = sc.nextInt();
+                if (i <= istart + p && i >= istart - p && j <= jstart + p - Math.abs(i - istart) && j >= jstart - p + Math.abs(i - istart)) {
+                    if (nr > max) {
+                        max = nr;
+                    }
+                }
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+====================================================================================================
+SUBMISSION_ID: 1314234433
+USER_ID: user_0231
+SCORE: 50.0
+LANGUAGE: java
+LANGUAGE_CLUSTER: java_1
+CANDIDATE_TYPE: fullscore
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int p = sc.nextInt();
+        int l = sc.nextInt()-1;
+        int c = sc.nextInt()-1;
+        int[][] mat = new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                mat[i][j] = sc.nextInt();
+            }
+        }
+        int result = mat[l][c];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                int mutari = Math.abs(i-l) + Math.abs(j-c);
+                if(mutari > p){
+                    continue;
+                }
+                if(mat[i][j]>result){
+                    result = mat[i][j];
+                }
+            }
+        }
+        System.out.print(result);
+    }
+}
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = "";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+

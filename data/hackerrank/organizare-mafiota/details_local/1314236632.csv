@@ -1,0 +1,45 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+organizare-mafiota,1314236632,0,0,0,passed,,4.0,passed,0.035088,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,1 ,"1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,1,1,1,passed,,4.0,passed,0.031339,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,0 0 ,"0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,2,2,2,failed,,4.0,wrong_answer,0.036474,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,0 1 1 0 1 1 1 1 0 1 ,"1 1 1 0 1 1 1 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,3,3,3,failed,,4.0,wrong_answer,0.040984,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,0 1 0 1 0 1 0 1 0 0 ,"1 1 0 1 0 1 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,4,4,4,failed,,4.0,wrong_answer,0.095017,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,1 1 0 1 0 0 1 1 0 0 ,"1 0 0 1 0 0 1 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,5,5,5,passed,,4.0,passed,0.093487,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,0 0 1 1 1 1 1 1 0 1 ,"0 0 1 1 1 1 1 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,6,6,6,failed,,4.0,wrong_answer,1.076894,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,0 1 0 0 0 0 0 1 0 0 ,"1 1 0 0 0 0 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,7,7,7,failed,,4.0,wrong_answer,0.927844,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,0 1 0 0 1 0 0 0 0 1 ,"1 1 0 0 1 0 0 0 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,8,8,8,failed,,4.0,wrong_answer,2.309561,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,0 1 0 1 1 1 1 0 0 1 ,"1 1 0 1 1 1 1 0 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,9,9,9,failed,,4.0,timeout,4.214772,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 0 1 0 0 1 1 1 1 ,"0 0 1 0 0 1 1 1 1 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,10,10,10,failed,,4.0,wrong_answer,3.220286,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,0 1 1 0 1 0 0 0 1 1 ,"1 1 1 0 1 0 0 0 1 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,11,11,11,failed,,4.0,timeout,4.226841,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 0 0 0 0 1 1 ,"1 0 0 0 0 1 1 1 1 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,12,12,12,failed,,4.0,timeout,4.188912,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 1 1 1 0 0 0 1 0 ,"1 1 1 1 0 0 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,13,13,13,failed,,4.0,timeout,4.200436,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 1 0 0 1 1 1 1 ,"0 1 0 0 1 1 1 1 1 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,14,14,14,failed,,4.0,timeout,4.206000,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 0 0 1 1 1 0 ,"1 0 0 1 1 1 0 1 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,15,15,15,failed,,4.0,timeout,4.237385,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 0 0 1 1 1 1 1 ,"0 0 1 1 1 1 1 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,16,16,16,failed,,4.0,timeout,4.223142,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 1 0 1 1 1 ,"0 1 0 1 1 1 1 0 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,17,17,17,failed,,4.0,timeout,4.368312,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 0 0 0 ,"1 0 0 0 1 1 1 0 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,18,18,18,failed,,4.0,timeout,4.239652,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 0 0 1 ,"1 0 0 1 0 1 1 0 0 0 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,19,19,19,failed,,4.0,timeout,4.395196,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 1 1 0 0 ,"1 1 1 0 0 0 0 1 0 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,20,20,20,failed,,4.0,timeout,4.178685,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 0 0 1 1 1 ,"1 0 0 1 1 1 0 1 1 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv
+organizare-mafiota,1314236632,21,21,21,failed,,4.0,timeout,4.187998,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,0 1 0 0 1 ,"1 1 0 0 1 0 1 0 1 1 
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\organizare-mafiota\1314236632.cpp,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\organizare-mafiota\1314236632.csv

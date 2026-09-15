@@ -1,0 +1,590 @@
+submission_id,score,language,code_algorithm,text_algorithm,same,code_probability,code_second_algorithm,code_second_probability,text_probability,text_second_algorithm,text_second_probability,description
+1314235050,2.5,cpp,UNKNOWN,BFS,NO,0.671875,BFS,0.31640625,0.890625,UNKNOWN,0.09375,"The program first reads the number of students `students` and the number of friendship pairs `relationships`. 
+It creates an array called `level` that can hold `students` vectors of integers. 
+The vector `level[0]` is filled with the single value `1`, representing that student 1 knows the news at time 0. 
+
+While the input still contains pairs `parent child`, the program processes each pair one by one. 
+For the current pair it scans all indices `i` from `0` to `students‑1`. 
+At each index it checks whether exactly one of the two students of the pair is already stored in `level[i]`. 
+If the first student (`parent`) is found in `level[i]` but the second (`child`) is not, the program puts `child` into the next vector `level[i+1]` and stops checking further indices for this pair. 
+(If the second student were the one already present, the same test would add the first student to the next level, but the code only adds when the first student is present.)
+
+After all pairs have been read, the program scans the `level` array from the beginning. 
+It looks for the first index `i` whose vector is empty. 
+When it finds such an index, it prints `i‑1` and stops. 
+Thus the printed number is the highest index that contains at least one student, which corresponds to the last “time step” that received a new student."
+1314236456,35.0,java,DIJKSTRA,BFS,NO,0.6640625,BFS,0.27734375,0.9140625,DIJKSTRA,0.0849609375,"The program reads a number of students \(N\) and a number of friendship pairs \(M\). 
+It builds an adjacency list: an array `vecini` of size \(N+1\) where each entry is a list that holds the neighbours of that student. For every pair \(a, b\) read from input, the program adds \(b\) to the list of \(a\) and \(a\) to the list of \(b\).
+
+Two integer arrays are created: 
+* `d` – stores a distance value for each student, initially all zeros. 
+* `vizitat` – marks whether a student has already been processed, initially all zeros.
+
+A priority queue `q` holds objects of type `Pair`, each containing a student id (`node`) and a distance (`distance`). The queue orders pairs by the distance value in ascending order. The program starts by putting the first student (id 1) into the queue with its current distance (which is 0).
+
+The main loop runs while the queue is not empty. In each iteration:
+
+1. The pair at the front of the queue (`u`) is examined. 
+2. For every neighbour `v` of `u.node` (obtained from the adjacency list), the program checks if `v` has not been visited (`vizitat[v] == 0`). 
+ * If not visited, it sets `d[v] = u.distance + 1` and inserts a new pair `(v, d[v])` into the queue. 
+3. After all neighbours are processed, the pair `u` is removed from the queue and `vizitat[u.node]` is set to 1, marking that student as processed.
+
+Thus each student is processed once, and its neighbours are added to the queue with a distance one greater than the current student’s distance. Because the queue orders by distance, students with smaller distances are processed earlier.
+
+After the loop finishes, the program scans the `d` array to find the largest distance value stored. That maximum value is printed. This value represents the longest number of steps needed for the news to reach any student, starting from student 1."
+1314236508,5.0,java,BFS,DIJKSTRA,NO,0.51953125,UNKNOWN,0.24609375,0.7265625,BFS,0.236328125,"The program reads two numbers, **N** and **M**, which are the number of students and the number of friendship pairs. 
+It then reads **M** pairs of integers. For each pair `(x, y)` it puts `y` into a list that belongs to `x` and `x` into a list that belongs to `y`. 
+These lists are stored in an array called `adj`. 
+So `adj[i]` contains all students that are direct friends of student `i`. 
+The array has a fixed size of 100 005, but only the first `N` positions are used.
+
+After the graph is built, the program prepares several helper arrays:
+
+* `d` – a list that holds a large initial value (`distanceMAX`) for every student. 
+ `d[i]` will later hold the number of “steps” needed for student `i` to learn the news. 
+ The entry for student 1 (the source) is set to 0, because that student knows the news at time 0.
+
+* `parents` – an array that records, for each student, the student from which it received the news. 
+ All entries start at –1.
+
+* `visited` – a Boolean array that marks whether a student has already been processed. 
+ All entries start as `false`; the source student is marked `true`.
+
+A priority queue called `queue` is created. The source student (1) is added to this queue.
+
+The main loop runs while the queue is not empty:
+
+1. The student `u` at the front of the queue is removed. 
+ It is marked as visited (again, though it was already marked before).
+
+2. The program looks at every friend `v` of `u` (by iterating over `adj[u]`).
+
+3. For each friend `v` that has not yet been visited and whose current distance value is larger than the distance of `u` plus one, the program does the following:
+ * If `v` is already in the queue, it is removed first.
+ * The distance of `v` is updated to `d[u] + 1`.
+ * The parent of `v` is set to `u`.
+ * `v` is added to the back of the queue.
+
+Because the queue"
+1314236554,2.5,java,UNKNOWN,BFS,NO,0.71484375,BFS,0.232421875,0.53125,UNKNOWN,0.412109375,"The program reads the number of students `n` and the number of friendship pairs `m`. 
+It builds a square table called **matrix** of size `(n+1) × (n+1)`. 
+For every friendship pair `(x , y)` it writes a `1` in `matrix[x][y]`. 
+The table is not filled symmetrically, so only the direction written in the input is stored.
+
+A boolean array **visited** of length `n+1` keeps track of which students already know the news. 
+All entries are initially `false`; the program then sets `visited[1] = true` because student 1 knows the news at time 0.
+
+The main part of the program uses a loop that runs while there is at least one student that has not yet been marked as visited. 
+Inside this loop the program scans the students one by one:
+
+1. If the current student `i` is already visited, it skips to the next student. 
+2. If `i` is not visited, the program looks at every possible friend `j` (from `1` to `n`). 
+ For each `j` it checks whether `matrix[i][j]` equals `1`. 
+ If it does, the program sets `visited[j] = true`, meaning that student `j` now knows the news. 
+3. After scanning all `j` for this `i`, the program increases a counter called **count** by one. 
+ This counter represents the number of times the program has processed an unvisited student. 
+4. The program then checks the whole `visited` array. 
+ If it finds any `false` value, it sets a flag `OK` to `true` so that the outer loop will run again. 
+ If all entries are `true`, `OK` becomes `"
+1314236875,2.5,cpp,UNKNOWN,BFS,NO,0.859375,BFS,0.1318359375,0.80078125,UNKNOWN,0.1787109375,"The program reads the number of students and the number of friendship pairs. 
+It keeps two lists of integers: **parents** and **childs**. 
+Initially **parents** contains only the student with id 1, and **childs** is empty.
+
+For every friendship pair read from the input it does the following:
+
+1. It checks whether the first student of the pair (`parent`) is already in the **parents** list. 
+ *If it is*, the second student (`child`) is added to the **childs** list, but only if it is not already there.
+
+2. If the first student is **not** in **parents**, the program checks whether it is in **childs**. 
+ *If it is*, this means that the current pair connects a student that was just discovered in the previous step to a new student. 
+ In this case the program:
+ * increases a counter (`counter`) by one,
+ * swaps the two lists so that the newly found students become the new **parents**,
+ * clears the old **childs** list,
+ * and adds the new student (`child`) to the now‑empty **childs** list.
+
+After all pairs have been processed, the program outputs the value of `counter`.
+
+Thus the program tries to group students into layers: the first layer starts with student 1, the next layer consists of students directly connected to any student in the first layer, and so on. Each time a new layer is started, the counter is increased. The final printed number is the count of times a new layer was started during the single pass through the input pairs."
+1314237032,2.5,java,UNKNOWN,BFS,NO,0.4765625,BFS,0.421875,0.91796875,UNKNOWN,0.06640625,"The program reads two numbers, **N** (the number of students) and **M** (the number of friendship pairs). 
+It then creates an array called `arr` that has `m+1` positions. 
+For each of the `M` pairs it reads two integers `t` and `p` and puts `p` into the list at `arr[t]` and `t` into the list at `arr[p]`. 
+Thus each list `arr[i]` is intended to hold the friends of student `i`. 
+(If a student number is larger than `m`, the list for that student is never created, but the code still tries to use it.)
+
+After building the lists, the program creates an integer array `visited` of size `n+2` and sets every entry to `0`. 
+This array will mark whether a student has already heard the news (`1`) or not (`0`).
+
+A `Vector<Integer>` called `next` is filled with all student numbers from `1` to `n`. 
+This vector is used to keep track of which students still need to be processed.
+
+The main loop uses an index variable `i` that starts at `1`. 
+A counter `count` is initialized to `0` and will be increased each time the loop processes a student.
+
+Inside the loop:
+
+1. If `visited[i]` is `0`, the student `i` is marked as visited (`visited[i] = 1`) and a separate counter `c` is increased. 
+2. If the vector `next` is not empty and not all students are visited (`c != n`), the current student `i` is removed from `next`. 
+3. For every friend `it` listed in `arr[i]` the program: 
+ * marks that friend as visited (`visited[it] = 1`), 
+ * increases `c`, 
+ * removes that friend from `next`. 
+4. The loop counter `count` is increased by one, representing the passage of one time unit. 
+5. If `next` still contains elements, the program sets `i` to the first element in `next` (the smallest index still in the vector). 
+ If"
+1314237057,2.5,cpp,UNKNOWN,BFS,NO,0.97265625,BFS,0.0228271484375,0.78125,UNKNOWN,0.173828125,"The program reads the number of students and the number of friendship pairs. 
+It does **not** build a full adjacency list or matrix. 
+Instead it keeps two small lists:
+
+* **parents** – the students that are known to have the news at the current moment. 
+ Initially it contains only student 1. 
+* **childs** – the students that will learn the news in the next moment. 
+ It starts empty.
+
+For every friendship pair `(parent, child)` that is read from the input the program does:
+
+1. If the first student of the pair is already in **parents** and the second student is not yet in **childs** and also not already in **parents**, the second student is added to **childs**. 
+ This means the second student will learn the news one moment after the first.
+
+2. If the first student of the pair is **not** in **parents** but **is** already in **childs**, the program interprets this as the end of the current “wave” of news. 
+ It then:
+ * increases a counter that counts how many waves have finished,
+ * clears **parents**,
+ * copies all students from **childs** into **parents** (they become the new wave),
+ * clears **childs** to start collecting the next wave.
+
+After all friendship pairs have been processed, the program outputs the value of the counter. 
+This counter represents the number of times the"
+1314237059,2.5,java,UNKNOWN,BFS,NO,0.50390625,BFS,0.392578125,0.54296875,UNKNOWN,0.423828125,"The program reads a number of students `n` and a number of friendship pairs `m`. 
+It builds an adjacency list: an array `arr` of size `m+1` where each entry is a list of the friends of the student whose index is the list’s position. For every input pair `(t , p)` the program adds `p` to the list at `arr[t]` and `t` to the list at `arr[p]`. 
+
+After the graph is stored, the program prepares an array `visited` of length `n+2`. All entries are set to `0`, meaning “not yet known the news”. 
+A `Vector<Integer>` called `next` is filled with all student numbers from `1` to `n`. This vector is intended to keep the students that still need to be processed. 
+
+The main loop uses an index variable `i` that starts at `1`. In each iteration the following happens:
+
+1. If student `i` has not been visited, the program marks it visited (`visited[i] = 1`) and increases a counter `c` that counts how many students have been marked visited. 
+2. If the `next` vector is not empty and not all students are visited (`c != n`), the program removes the element `i` from `next`. 
+3. For every friend `it` of student `i` (obtained from `arr[i]`), the program marks that friend visited, increments `c`, and removes that friend from `next`. 
+4. A variable `count` that represents the number of time steps is increased by one. 
+5. The program then decides the next value of `i`. If `next` still contains elements, it takes the first element in the vector (`next.get(0)`). If that element is larger than the current `i`, `i` is set to that element; otherwise `i` is simply incremented by one. If `next` is empty, the loop ends. 
+
+When the loop finishes, the variable `count` holds the number of iterations that were performed. The program prints this value. This printed number is intended to represent the time needed for all students to learn the news, based on the way the"
+1314237086,15.0,java,DFS,BFS,NO,0.8515625,BFS,0.0615234375,0.99609375,DIJKSTRA,0.00070953369140625,"The program reads a number of students \(N\) and a number of friendship pairs \(M\). 
+It builds an adjacency list: an array of lists where the list at index \(i\) contains all students that are friends with student \(i\). 
+For example, if the input contains “1 2”, the number 2 is added to the list for 1 and the number 1 is added to the list for 2.
+
+After the graph is built, the program prepares three arrays of length \(N+1\):
+
+* `visited` – marks whether a student has already been taken from the processing queue. 
+* `parent` – stores the student that first discovered this student. 
+* `d` – stores a value called “depth” that the program calculates for each student.
+
+A linked list called `stack` is used as a queue. The student with id 1 is added first, and its parent is set to –1. 
+The program then repeatedly removes the first element from the queue (`pollFirst`). 
+When a student `u` is removed, it is marked as visited. 
+For every friend `v` of `u` that has not yet been visited, the program:
+
+1. Sets `parent[v]` to `u`. 
+2. Computes a depth value for `v` by walking up the parent chain from `u` back to the root (student 1), counting how many steps are taken. 
+3. Stores that count in `d[v]`. 
+4. Adds `v` to the end of the queue.
+
+Thus each student is processed once, and its neighbours that are not yet processed are queued for later processing. The order in which neighbours are added is the order they appear in the adjacency list, so the queue behaves like a first‑in, first‑out structure.
+
+After the queue becomes empty, every student has a depth value in `d`. 
+The program scans all students from 2 to \(N\) and keeps the largest depth found. 
+That maximum depth is printed as the final result.
+
+In short, the program builds a graph, walks through it starting from node 1, records a depth value for each node based on how many parent links separate it from the start, and finally outputs the largest depth among all nodes."
+1314237179,2.5,cpp,UNKNOWN,BFS,NO,0.9609375,BFS,0.032958984375,0.984375,UNKNOWN,0.01239013671875,"The program reads the number of students and the number of friendship pairs. 
+It does **not** build a full adjacency list or matrix. 
+Instead it keeps two small lists:
+
+* **parents** – the students that are already known to have the news at the current moment. 
+ Initially it contains only student 1. 
+* **childs** – the students that will learn the news in the next moment. 
+ It starts empty.
+
+For every friendship pair `(parent, child)` read from the input the program checks two situations:
+
+1. **Adding a new student to the next moment** 
+ If the first person of the pair is already in `parents`, the second person is not yet in `childs`, and neither person is in the other list, the second person is appended to `childs`. 
+ This means that the second person will learn the news one step later.
+
+2. **Starting a new moment** 
+ If the first person is **not** in `parents` but **is** already in `childs`, and the second person is not in either list, the program interprets this as the end of the current moment and the beginning of the next one. 
+ It then:
+ * increases the counter (`counter++`) – this counter counts how many moments have passed. 
+ * clears the `parents` list and copies all students from `childs` into it"
+1314237236,2.5,java,BFS,UNKNOWN,NO,0.8359375,UNKNOWN,0.07763671875,0.76953125,BFS,0.220703125,"The program reads a graph with N vertices and M undirected edges. 
+It keeps an array of lists called **adj**. 
+For every vertex v (1 ≤ v ≤ N) the list adj[v] contains all vertices that are directly connected to v. 
+The array **visited** has one entry for each vertex; it is set to 0 for all vertices at the start.
+
+After the graph is built the program runs a single loop over all vertices i from 1 to N. 
+For each vertex i it first checks whether **visited[i]** is still 0. 
+If it is, the program looks at every neighbour j in adj[i]. 
+For each neighbour that has **visited[j] == 0** it does two things:
+
+1. sets **visited[j] = 1** – the neighbour is now marked as visited,
+2. increases the counter **t** by 1.
+
+When all neighbours of i have been examined, the program sets **visited[i] = 1** and moves on to the next vertex.
+
+The counter **t** therefore counts how many times the program found a neighbour that had not yet been marked visited while processing a vertex. 
+After the loop finishes, the program prints the value of **t**."
+1314237290,5.0,java,BFS,UNKNOWN,NO,0.9140625,UNKNOWN,0.06591796875,0.875,BFS,0.1181640625,"The program reads a number of students `n` and a number of friendship pairs `m`. 
+It builds an adjacency list called `adj`. 
+`adj` is an array of `ArrayList<Integer>` with indices from 1 to `n`. 
+For each friendship pair `(x, y)` the program adds `y` to the list at `adj[x]`. 
+(Only one direction is stored, so the list contains only the second student of each pair.)
+
+After the graph is built, the program creates an integer array `visited` of size `n+1`. 
+All entries are set to `0`. 
+The array is used to keep a value for each student that will later represent the
+time step at which that student learns the news.
+
+The main processing loop runs through every student index `i` from 1 to `n`. 
+For each student `i` it looks at every neighbour `v` stored in `adj[i]`. 
+If `visited[v]` is still `0` (meaning student `v` has not yet been given a time), the program sets 
+`visited[v] = visited[i] + 1`. 
+Thus the neighbour receives a time that is one more than the time of the current student.
+
+Because the loop visits students in increasing numeric order, a student’s neighbours
+are updated only once, and the value assigned to a neighbour is the first time it is
+encountered in this linear scan.
+
+After all students have been processed, the program scans the `visited` array to find
+the largest value stored in it. 
+That maximum value is printed. 
+It represents the greatest time step assigned to any student during the single pass
+through the list."
+1314237315,2.5,cpp,UNKNOWN,BFS,NO,0.97265625,BFS,0.02294921875,0.9453125,UNKNOWN,0.032470703125,"The program reads the number of students `N` and the number of friendship pairs `M`. 
+It does **not** build a full adjacency list or matrix. Instead it keeps two small lists:
+
+* `parents` – the students that are currently known to have the news. 
+ It is initially filled with only student 1. 
+* `childs` – a temporary list that will hold the students that will learn the news in the next moment.
+
+The program then reads the `M` friendship pairs one after another. 
+For each pair `(parent, child)` it checks two situations:
+
+1. **Adding a new student to the next group** 
+ If the first number of the pair is already in `parents` (so that student knows the news), 
+ and the second number is not yet in `childs`, `parents`, or `childs`, 
+ then the second student is added to `childs`. 
+ This means that this student will learn the news one moment after the current group.
+
+2. **Moving to the next moment** 
+ If the first number is **not** in `parents` but **is** in `childs` (so it was just added in the previous step), 
+ and the second number is not yet in any list"
+1314237425,2.5,cpp,UNKNOWN,BFS,NO,0.8203125,BFS,0.162109375,0.91796875,UNKNOWN,0.06640625,"The program reads two integers, **N** (the number of students) and **M** (the number of friendship pairs). 
+It then creates an array called `visited` of length **N**. 
+Each element of this array is set to `0` at the start, meaning that the corresponding student does not yet know the news. 
+The student with id 1 is the first to know the news, so the program sets `visited[0]` (the first element, because the array is 0‑based) to `1` and puts the value `1` into a vector called `parents`. 
+A second vector called `childs` is also created; it will hold students that are discovered in the next step.
+
+The program then enters a loop that will run **M** times, once for each friendship pair that will be read. 
+At the beginning of each iteration it checks whether every entry in `visited` is `1`. 
+If all students are already marked as visited, it prints the current value of `counter` (which counts how many “steps” have been taken) and stops.
+
+If not all students are visited, the program reads the next friendship pair `parent` and `child`. 
+It then tests several conditions using `find` on the two vectors:
+
+1. If `parent` is already in `parents`, `child` is not yet in `childs`, `child` is not in `parents`, and `parent` is not in `childs`, the program treats `child` as a new student that learns the news in the current step. 
+ It pushes `child` into `childs` and marks `visited[child]` as `1`.
+
+2. If `parent` is not in `parents` but is in `childs`, and `child` is not in `childs` and not in `parents`, the program interprets this as the end of the current step. 
+ It increments `counter`, clears the `parents` vector, swaps the contents of `parents` and `childs` (so the newly discovered students become the current group), and clears `childs` to start collecting the next group.
+
+After the loop finishes, the program prints the final value of `counter`.
+
+In short, the program keeps two lists: one for the students"
+1314237500,2.5,java,DFS,UNKNOWN,NO,0.83203125,UNKNOWN,0.087890625,0.5859375,DFS,0.314453125,"The program reads a graph with **N** vertices and **M** undirected edges. 
+It keeps an array called `adj` where `adj[i]` is a list of `Edge` objects that
+represent the neighbours of vertex *i*. 
+Each `Edge` stores the neighbour’s id (`node`) and a cost that is always `1`
+(the cost is never used later).
+
+After the graph is built, the program creates a boolean array `visited`
+of size `n+1`. 
+All entries are initially `false`, meaning that no vertex has been seen yet.
+
+The main part of the program loops over every vertex `j` from `1` to `n`. 
+If `visited[j]` is still `false`, the program treats this vertex as the start
+of a new component:
+
+1. It increments `result`, which counts how many separate groups of
+ connected vertices have been found.
+2. It calls the method `DFS(visited, j)`.
+
+The `DFS` method marks the starting vertex `s` as visited. 
+Then it iterates over the adjacency list of `s`. 
+For each neighbour `cur` in that list, if that neighbour has not yet been
+visited, the method simply marks it as visited. 
+No further recursive calls are made, so only the immediate neighbours of `s`
+are processed.
+
+Because the loop in `getResult` continues to the next vertex after each
+`DFS` call, the program will start a new `DFS` whenever it encounters a
+vertex that has not been reached by a previous call. 
+Each new call therefore counts one connected component of the graph.
+
+When the loop finishes, `result` holds the total number of connected
+components. 
+The program prints this number, which is the value that appears on the
+output."
+1314237749,2.5,cpp,UNKNOWN,BFS,NO,0.96484375,BFS,0.0291748046875,0.84375,UNKNOWN,0.0693359375,"The program reads the number of students and the number of friendship pairs, but it does not use the second number after the first line. 
+It then reads pairs of integers until the input ends. Each pair is treated as a friendship between two students, called *parent* and *child* in the code.
+
+Two dynamic lists are kept:
+
+* **parents** – a list that starts with only the student whose id is 1. 
+* **childs** – an empty list that will hold students that are discovered from the current group of parents.
+
+A counter called **counter** is set to 1. This counter will be printed at the end.
+
+For every friendship pair read, the program checks two different situations:
+
+1. **Adding a new child** 
+ If the first student of the pair is already in the *parents* list, the second student is not yet in *childs*, and neither student is in the other list, the second student is appended to *childs*. 
+ This means that a student who is a friend of someone in the current group is remembered to be processed later.
+
+2. **Moving to the next group** 
+ If the first student is not in *parents* but is already in *childs*, and the second student is not in either list, the program interprets this as the end of the current group. 
+ It then:
+ * increases **counter** by one,
+ * clears the *parents* list,
+ * copies all students from *childs* into *parents* (by swapping the two lists),
+ * clears *childs* again.
+
+After all pairs have been"
+1314237779,2.5,java,DIJKSTRA,UNKNOWN,NO,0.62109375,DFS,0.2275390625,0.49609375,DIJKSTRA,0.234375,"The program reads a graph with \(N\) vertices and \(M\) undirected edges. 
+It keeps an adjacency list: an array `adj` where `adj[i]` is a list of `Edge` objects that store a neighbour node and a cost (the cost is always 1). 
+For every input edge \((x,y)\) the program adds an `Edge(y,1)` to `adj[x]` and an `Edge(x,1)` to `adj[y]`.
+
+After building the graph the program creates several arrays. 
+`dist[i]` holds the current best known distance from vertex 1 to vertex i, initially set to a very large number except `dist[1] = 0`. 
+`p[i]` stores the predecessor of i on the best path found so far, initially –1.
+
+The main processing loop runs \(n-2\) times. In each iteration it scans all vertices \(u\) from 1 to \(n\). For each vertex it looks at every edge in `adj[u]`. 
+If the distance to the neighbour `v` can be improved by going through `u` (i.e., `dist[v] > dist[u] + edge.cost`), the program updates `dist[v]` and records `u` as the predecessor of `v`. 
+A boolean flag is set when an improvement occurs, and the inner loop breaks early, moving to the next vertex.
+
+After the repeated relaxation passes, the program performs one more scan of all edges. If any edge still offers a shorter path, it prints `dist[n]` immediately. 
+Finally, it prints `dist[n]` again, which is the distance from vertex 1 to vertex n after all relaxations.
+
+Thus the program outputs the length of the shortest path from vertex 1 to vertex n in the given graph."
+1322777673,2.5,cpp,BFS,UNKNOWN,NO,0.71484375,UNKNOWN,0.205078125,0.8984375,BFS,0.07373046875,"The program keeps a single array called `v` that has one entry for every student. 
+`v[i]` is meant to hold the number of “steps” it takes for student `i` to learn the news, but the array is only updated when an edge is read.
+
+The program reads the number of students `n` and the number of friendship pairs `m`. 
+It then sets every entry of `v` to `0`. 
+After that it reads the `m` pairs one by one. For each pair `(x , y)` it does the following:
+
+1. If `v[y]` is still `0` (meaning the program has not yet given a value to student `y`), it assigns `v[y] = v[x] + 1`. 
+2. If `v[y]` already has a value, it compares the current value with `v[x] + 1`. 
+ If `v[x] + 1` is smaller, it replaces `v[y]` with this smaller number. 
+3. After possibly changing `v[y]`, it checks whether this new value is larger than the current maximum time `tmax`. 
+ If it is, it updates `tmax` to this new value.
+
+No other data structures are used. The program never revisits a pair, never stores a list of neighbours, and never uses a queue or stack. 
+The array `v` therefore ends up containing, for each student, the smallest number of steps that the program has seen so far for that student based on the order of the input edges. 
+The variable `tmax` always holds the largest value that has been written into `v` during the whole input loop.
+
+When all `m` pairs have been processed, the program outputs the value of `tmax`. This is the largest step count that the program has assigned to any student, and that value is printed as the result."
+1323418248,50.0,java,BFS,DIJKSTRA,NO,0.765625,DIJKSTRA,0.21875,0.875,BFS,0.1181640625,"The program reads two numbers, **N** and **M**, which are the number of students and the number of friendship pairs. 
+It then builds an adjacency list: an array‑like list called `adj` where each index `i` holds a list of all students that are friends with student `i`. 
+For every friendship pair `(a, b)` the program adds `b` to the list at `adj[a]` and `a` to the list at `adj[b]`. 
+After this step the graph is completely stored in `adj`.
+
+A boolean array `visited` of size `N+1` is created. 
+`visited[i]` will become `true` when student `i` has already received the news.
+
+The program uses a priority queue `q` that stores objects of type `Node`. 
+Each `Node` contains two fields: `idx` (the student number) and `time` (the moment when that student learns the news). 
+The queue orders its elements by the `time` field, so the node with the smallest time is always removed first.
+
+The process starts by putting student 1 into the queue with time 0 and marking `visited[1]` as `true`. 
+A variable `time` is also set to 0; it will hold the latest time seen while processing.
+
+The main loop runs while the queue is not empty:
+
+1. The node with the smallest time is removed (`v = q.poll()`).
+2. For every friend `next` of `v.idx` (obtained from `adj.get(v.idx)`):
+ * If `next` has not been visited yet, a new `Node(next, v.time + 1)` is created and added to the queue.
+ * `visited[next]` is set to `true` so it will not be processed again.
+ * The variable `time` is updated to `v.time + 1`, which is the time when this new student learns the news.
+
+Because the queue orders nodes by their time, nodes are processed in increasing order of the moment they receive the news. 
+When the loop finishes, every student that can be reached from student 1 has been visited, and the variable `time` holds the largest time assigned, i.e., the moment when the last student learns the news.
+
+Finally, the program"
+1323452201,2.5,java,BFS,UNKNOWN,NO,0.7578125,UNKNOWN,0.19140625,0.6171875,BFS,0.2275390625,"The program reads a number of students `n` and a number of friendship pairs `m`. 
+It does **not** build an explicit graph structure such as an adjacency list or matrix. 
+Instead it keeps a single integer array called `resultat` that has `n+1` elements (index 0 is unused). 
+For every student `i` (except student 1) the array is initially filled with the value `100000`. 
+Student 1 is never given a value in this initial step.
+
+The program then reads each of the `m` friendship pairs one by one. 
+For a pair `(elev1, elev2)` it performs two checks:
+
+1. If `resultat[elev1]` is still `100000`, it assigns `resultat[elev1] = elev1`. 
+ This means that the first time a student appears on the left side of a pair, the program records the student’s own id in the array.
+
+2. It compares the current value stored for `elev2` with `resultat[elev1] + 1`. 
+ If the stored value is larger, it replaces it with `resultat[elev1] + 1`. 
+ Thus the array entry for `elev2` is updated to be one more than the value that was just (or previously) stored for `elev1`.
+
+After all pairs have been processed, the program scans the `resultat` array from index 1 to `n`. 
+It keeps a variable `meh` that starts at the smallest possible integer. 
+For each student `i`, if `resultat[i]` is larger than the current `meh`, it updates `meh` to that larger value. 
+Finally it prints the value of `meh`.
+
+In short, the program reads edges, updates a single array by propagating values from one endpoint to the other, and then reports the maximum value that ended up in the array. The array is used to store a numeric value for each student that is"
+1344591257,2.5,cpp,UNKNOWN,BFS,NO,0.9453125,BFS,0.046875,0.81640625,UNKNOWN,0.16015625,"The program first reads the number of students `n` and the number of friendship pairs `m`. 
+It stores each friendship as a pair of integers in an array called `prieteni`. 
+The array `viz` is used to keep a list of students that are known to have heard the news. 
+Initially only the first student (id 1) is considered to know the news, so `viz[0]` is set to 1.
+
+The main part of the program runs a loop that iterates `n` times (although the graph has only `m` edges). 
+For each iteration it takes the first student of the current friendship pair (`cur = prieteni[i].x`) and then scans all friendship pairs that start from this student. 
+During this scan it checks whether both students in a friendship pair are already in the `viz` list. 
+If neither of them is in `viz`, the second student of the pair (`prieteni[j].y`) is added to the end of `viz` and a flag `ok` is set to 1.
+
+After finishing the inner scan, if the flag `ok` is 1 the program increases a counter `t`. 
+The counter `t` is intended to represent the number of “rounds” needed for the news to spread.
+
+The array `viz` grows each time a new student is added; its elements are never removed. 
+The program never removes students from `viz`, so once a student is marked as known it stays known for the rest of the execution.
+
+Finally, after all iterations, the program outputs the value of `t`, which is the number of times the outer loop added at least one new student to `viz`. This value is printed as the result."
+1344629074,2.5,cpp,BFS,UNKNOWN,NO,0.91015625,UNKNOWN,0.07470703125,0.94140625,BFS,0.041259765625,"The program reads two integers `n` and `m`, then reads `m` pairs of integers that represent friendships. 
+It does **not** build an explicit graph structure; it only keeps an array called `time` that has `n+1` elements (index 0 is unused). 
+All elements of `time` are initially set to 0.
+
+For each friendship pair `(a, b)` the program does the following:
+
+1. It checks whether `time[b]` is different from `time[a]` **or** whether `a` is the special student 1. 
+2. If that condition is true, it writes `time[b] = time[a] + 1`.
+
+Thus, for every edge the program may update the value stored for one of its endpoints, using the value stored for the other endpoint plus one. 
+No other data structures are used, and the order of processing is simply the order in which the edges are read from the input.
+
+After all edges have been processed, the program scans the `time` array to find the largest value stored in it. 
+That maximum value is printed as the result.
+
+So the program reads the input, updates a single array according to a simple rule for each edge, and finally outputs the largest number that appears in that array."
+1344629136,2.5,cpp,BFS,UNKNOWN,NO,0.7421875,UNKNOWN,0.240234375,0.72265625,BFS,0.265625,"The program reads the number of students \(N\) and the number of friendship pairs \(M\). 
+It does **not** build a full graph structure. Instead it keeps two simple arrays:
+
+* `time[1…N]` – initially all zeros. 
+ `time[i]` is meant to store the moment when student \(i\) learns the news. 
+* `parent[1…N]` – initially all zeros. 
+ `parent[i]` is used only to remember from which student the time for \(i\) was set.
+
+For every friendship line it reads two integers `a` and `b`. 
+The code then checks the condition 
+
+```
+if (parent[b] != parent[a] || a == 1)
+```
+
+If the condition is true, it assigns
+
+```
+time[b] = time[a] + 1;
+parent[b] = a;
+```
+
+So when a pair `(a,b)` is processed, the program treats `a` as the source that
+already knows the news and gives `b` a time one unit later. 
+The check with `parent` is meant to avoid overwriting a time that has already
+been set from a different source, except when `a` is the first student (id 1),
+who is the original source of the news.
+
+The edges are processed strictly in the order they appear in the input file.
+No queue, stack, or other data structure"
+1344636952,2.5,cpp,DFS,UNKNOWN,NO,0.5078125,UNKNOWN,0.39453125,0.73828125,DFS,0.1455078125,"The program first reads the number of students `n` and the number of friendship pairs `m`. 
+For every pair it puts the second student into a list that belongs to the first student. 
+These lists are stored in an array called `adj` where `adj[x]` contains all students that are friends with student `x`. 
+The array has a size of `MAX` (200 005) so it can hold all possible student numbers.
+
+After the input is read, the program calls the function `DFS(1)`. 
+Inside this function the student with id 1 is marked as visited by setting `visited[1] = true`. 
+Then the function runs a loop over all student numbers from 1 to `n`. 
+For each student `i` that has not yet been marked visited, the function does two things:
+
+1. It goes through every friend stored in `adj[i]` and marks that friend as visited (`visited[friend] = true`). 
+2. It increases the counter `res` by one.
+
+The loop does **not** call `DFS` again; it simply repeats the same two steps for every student that is still unvisited after the previous iterations. 
+Because the loop scans the students in increasing order, the counter `res` is incremented each time the program encounters a new group of students that were not reached before. 
+After the loop finishes, all students that can be reached from student 1 are marked visited, and `res` holds the number of times the program found a new unvisited student and processed its friends.
+
+Finally, the program prints the value of `res`. This value is the number of times the loop found an unvisited student and marked its friends, which the program interprets as the time needed for all students to learn the news."
+1378096682,2.5,java,BFS,UNKNOWN,NO,0.75,UNKNOWN,0.189453125,0.5546875,BFS,0.4296875,"The program first reads the number of students `n` and the number of friendship pairs `m`. 
+It builds a square table `x` of size `(n+1) × (n+1)` that works as an adjacency matrix: 
+`x[u][v]` is set to `1` when students `u` and `v` are friends, and the same is done for `x[v][u]` because the friendship is symmetric. 
+All other entries of the matrix stay at their default value `0`.
+
+An array `visited` of length `n+1` is created. Each element is a Boolean that tells whether the corresponding student has already been “processed”. Initially every entry is `false`.
+
+The program then scans the students one by one with a loop over `i` from `1` to `n`. 
+For each student `i` it checks whether `visited[i]` is `false`. 
+If the student has not been processed yet, the program:
+
+1. Increases a counter called `time` by one. 
+2. Marks the current student as processed: `visited[i] = true`. 
+3. Looks at every possible friend `j` (another loop over `j` from `1` to `n`). 
+ If the matrix entry `x[i][j]` equals `1`, meaning `i` and `j` are friends, the program marks `j` as processed as well: `visited[j] = true`.
+
+If the student `i` was already marked as processed, the loop simply continues to the next `i`.
+
+After the outer loop finishes, the variable `time` holds the number of times the program entered the “unprocessed” branch. 
+This value is printed as the program’s output.
+
+In short, the program counts how many groups of students are formed"
+1378148743,5.0,cpp,BFS,UNKNOWN,NO,0.9140625,UNKNOWN,0.07470703125,0.52734375,BFS,0.46484375,"The program reads the number of students `n` and the number of friendship pairs `m`. 
+It then builds a list called `adj` that stores, for every student, all the students that are directly friends with him. 
+Each entry in this list is a pair: the first element is the friend’s id, and the second element is a number that the program calls a “level”. 
+The program also creates an array called `niv` that keeps a level for every student. All entries are initially set to –1, except for student 1 whose level is set to 0 because he knows the news at time 0.
+
+While reading the `m` friendship pairs, the program does two things for each pair `(x, y)`:
+
+1. It adds the pair `(y, niv[x] + 1)` to the list of friends of `x`. 
+2. If student `y` has not yet received a level (its entry in `niv` is –1), the program assigns `niv[y] = niv[x] + 1`.
+
+After all pairs are read, the program scans every student from 1 to `n`. 
+For each student it does two checks:
+
+* It compares the current maximum value `Max` with `niv[i]` and updates `Max` if `niv[i]` is larger. 
+* It goes through every pair stored in `adj[i]` and compares `Max` with the second element of that pair (the stored level), updating `Max` if that level is larger.
+
+Finally, the program prints the value of `Max`. This value is the largest level that was ever stored in either the `niv` array or in any of the pairs inside the adjacency lists. It represents the greatest distance, according to the way the program assigned levels, from student 1 to any other student."
+1391941282,2.5,cpp,BFS,DFS,NO,0.84765625,DFS,0.11474609375,0.94140625,FLOYD_WARSHALL,0.036376953125,"The program reads the number of students `n` and the number of friendship pairs `m`. 
+It builds an adjacency list: `adj[i]` holds a list of all students that are friends with student `i`. 
+The list is stored as a vector of vectors, so each student has its own small list of neighbours.
+
+An array called `time` of length `n+1` is created and all entries are set to `-1`. 
+`time[i]` will later hold the moment (in whole units) when student `i` first learns the news. 
+Initially only student 1 knows the news, so `time[1]` is set to `0`.
+
+A stack named `q` is used to keep the students that still need to be processed. 
+Student 1 is pushed onto the stack. 
+While the stack is not empty the program does:
+
+1. Take the top student from the stack (`current`) and remove it.
+2. For every neighbour `neigh` of `current` (obtained from `adj[current]`):
+ * If `time[neigh]` is still `-1` (meaning `neigh` has not learned the news yet), 
+ set `time[neigh] = time[current] + 1` – the news reaches `neigh` one unit of time after `current`. 
+ Then push `neigh` onto the stack so that its neighbours will be examined later.
+
+Because a stack is used, the next student processed is the most recently added one, so the order of processing follows a depth‑first pattern.
+
+After the stack becomes empty, every student that can be reached from student 1 has a non‑negative time value. 
+The program then scans the `time` array to find the largest value, which represents the latest moment when any student learns the news. 
+That maximum value is printed.
+
+Thus the program outputs the number of time units needed for the news to reach every student in the connected group."

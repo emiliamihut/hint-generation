@@ -1,0 +1,13 @@
+﻿problem,language,report,comparison_count,avg_100_count,max_100_count,avg_at_least_99_count,avg_at_least_95_count,avg_at_least_90_count,highest_avg_similarity,highest_avg_percent
+cutiile-magice,cpp,cutiile-magice_cpp.jplag,2500,106,125,112,118,144,1.0,100.0
+cutiile-magice,java,cutiile-magice_java.jplag,2500,43,62,47,70,91,1.0,100.0
+gigel-si-raspandirea-vestilor,cpp,gigel-si-raspandirea-vestilor_cpp.jplag,2500,128,173,134,172,220,1.0,100.0
+gigel-si-raspandirea-vestilor,java,gigel-si-raspandirea-vestilor_java.jplag,2500,81,134,107,152,230,1.0,100.0
+gigel-si-sosetele,cpp,gigel-si-sosetele_cpp.jplag,2500,463,541,485,568,916,1.0,100.0
+gigel-si-sosetele,java,gigel-si-sosetele_java.jplag,2500,155,272,204,351,602,1.0,100.0
+gigel-si-telefonul,cpp,gigel-si-telefonul_cpp.jplag,2500,184,241,214,243,284,1.0,100.0
+gigel-si-telefonul,java,gigel-si-telefonul_java.jplag,2500,49,92,75,108,145,1.0,100.0
+matei-si-diamantele,cpp,matei-si-diamantele_cpp.jplag,2500,217,352,226,361,446,1.0,100.0
+matei-si-diamantele,java,matei-si-diamantele_java.jplag,2500,110,196,159,255,410,1.0,100.0
+organizare-mafiota,cpp,organizare-mafiota_cpp.jplag,2500,27,32,27,32,36,1.0,100.0
+organizare-mafiota,java,organizare-mafiota_java.jplag,703,5,7,5,8,15,1.0,100.0

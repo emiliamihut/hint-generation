@@ -1,0 +1,147 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+gigel-si-sosetele,1314237476,0,0,0,passed,,3.0,passed,0.362337,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2
+","2
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,1,1,1,passed,,3.0,passed,0.287414,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5
+","5
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,2,2,2,passed,,3.0,passed,0.293315,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"0
+","0
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,3,3,3,failed,,3.0,runtime_error,0.323548,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"10
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,4,4,4,failed,,3.0,timeout,3.708013,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"90700
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,5,5,5,failed,,3.0,runtime_error,0.449854,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"63334
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,6,6,6,failed,,3.0,timeout,3.613574,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"194719
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,7,7,7,failed,,3.0,runtime_error,0.381670,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"70344
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,8,8,8,failed,,3.0,timeout,3.526184,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"85677
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,9,9,9,failed,,3.0,runtime_error,0.309488,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"89628
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,10,10,10,failed,,3.0,wrong_answer,0.438874,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"152552
+","75249
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,11,11,11,failed,,3.0,timeout,3.565635,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"92752
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,12,12,12,failed,,3.0,runtime_error,0.398419,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"93552
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,13,13,13,failed,,3.0,timeout,3.542900,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"65710
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,14,14,14,failed,,3.0,timeout,3.625032,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"157323
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,15,15,15,failed,,3.0,timeout,3.486283,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"33561
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,16,16,16,failed,,3.0,timeout,3.491849,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"69726
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,17,17,17,failed,,3.0,runtime_error,0.444614,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"114160
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,18,18,18,failed,,3.0,runtime_error,0.410255,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"107284
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,19,19,19,failed,,3.0,timeout,3.511667,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"29693
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,20,20,20,failed,,3.0,runtime_error,0.311444,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"98905
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,21,21,21,failed,,3.0,timeout,3.451402,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"104112
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,22,22,22,failed,,3.0,runtime_error,0.264257,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"85480
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,23,23,23,failed,,3.0,runtime_error,0.211611,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"16509
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,24,24,24,failed,,3.0,timeout,3.489671,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"75332
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,25,25,25,failed,,3.0,timeout,3.513027,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"141790
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,26,26,26,failed,,3.0,timeout,3.468958,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"78596
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,27,27,27,failed,,3.0,runtime_error,0.345049,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"56702
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,28,28,28,failed,,3.0,timeout,3.446837,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"72515
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,29,29,29,failed,,3.0,runtime_error,0.216001,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"21273
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,30,30,30,failed,,3.0,timeout,3.400002,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"50292
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,31,31,31,failed,,3.0,runtime_error,0.432850,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"17719
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,32,32,32,failed,,3.0,timeout,3.465575,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"178137
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,33,33,33,failed,,3.0,timeout,3.471184,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"94252
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,34,34,34,failed,,3.0,runtime_error,0.402499,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"130173
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,35,35,35,failed,,3.0,timeout,3.458277,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"41002
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,36,36,36,failed,,3.0,runtime_error,0.169630,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"9861
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,37,37,37,failed,,3.0,timeout,3.382310,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"20205
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,38,38,38,failed,,3.0,runtime_error,0.171915,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"15767
+","Exception in thread ""main"" java.lang.NullPointerException: Cannot invoke ""java.lang.Integer.intValue()"" because the return value of ""java.util.HashMap.get(Object)"" is null
+	at Solution.main(Solution.java:84)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,39,39,39,failed,,3.0,timeout,3.385041,,,,,,,,,timeout,failed,MATCH,True,False,False,False,False,,,"54457
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,40,40,40,failed,,3.0,wrong_answer,0.226906,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"50670
+","30492
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,41,41,41,failed,,3.0,wrong_answer,0.223604,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"47601
+","40011
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,42,42,42,passed,,3.0,passed,0.223524,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"39627
+","39627
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,43,43,43,failed,,3.0,wrong_answer,0.183805,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"34931
+","31238
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,44,44,44,passed,,3.0,passed,0.241327,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"123700
+","123700
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,45,45,45,failed,,3.0,wrong_answer,0.133534,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"3424
+","3344
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,46,46,46,passed,,3.0,passed,0.173117,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"22037
+","22037
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,47,47,47,failed,,3.0,wrong_answer,0.233365,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"102001
+","101593
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,48,48,48,passed,,3.0,passed,0.198464,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"54688
+","54688
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv
+gigel-si-sosetele,1314237476,49,49,49,failed,,3.0,wrong_answer,0.213769,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"108514
+","89742
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237476.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237476.csv

@@ -1,0 +1,4406 @@
+﻿submission_id,score,language,algorithm_for_sampling,score_group,source_file,source_code,input_condition,model,reasoning_effort,hint
+1323447453,37.5,cpp,BFS_RADIUS,high_partial,1323447453.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <queue>
+using namespace std;
+
+bool is_in(int x, int y, int n, int m) {
+    return ((x <= n) && (x > 0) && (y <= m) && (y > 0) );
+}
+int main() {
+       
+    int n, m, no_move, x, current_move;
+    pair<int, int> initial;
+    cin >> n >> m >> no_move;
+    cin >> initial.first >> initial.second;
+    int matrix[n + 1][m + 1];
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> x;
+            matrix[i][j] = x;
+        }
+    }
+    priority_queue<int> timp; 
+    int diamond[n + 1][m + 1];
+    diamond[initial.first][initial.second] = matrix[initial.first][initial.second];
+    set<pair<int, int>> future_pos;
+    set<pair<int, int>> old_pos;
+    future_pos.insert(initial);
+    current_move = 0;
+    timp.push( diamond[initial.first][initial.second]);
+    while (current_move != no_move + 1) {
+        if (!old_pos.empty()) {
+            while (!old_pos.empty()) {
+                set<pair<int, int>> :: iterator itr;
+                itr = old_pos.begin();
+                pair<int, int> curr_pos = make_pair(itr->first, itr->second);
+                if (is_in(curr_pos.first + 1, curr_pos.second, n, m) && matrix[curr_pos.first + 1][curr_pos.second] >
+                    diamond[curr_pos.first][curr_pos.second]) {
+                    diamond[curr_pos.first + 1][curr_pos.second] = matrix[curr_pos.first + 1][curr_pos.second];
+                    timp.push(diamond[curr_pos.first + 1][curr_pos.second]);
+                }
+                if (is_in(curr_pos.first + 1, curr_pos.second, n, m))
+                   future_pos.insert(make_pair(curr_pos.first + 1, curr_pos.second));
+                if (is_in(curr_pos.first - 1, curr_pos.second, n, m) && matrix[curr_pos.first - 1][curr_pos.second] >
+                    diamond[curr_pos.first][curr_pos.second]) {
+                    diamond[curr_pos.first - 1][curr_pos.second] = matrix[curr_pos.first - 1][curr_pos.second];
+                    timp.push(diamond[curr_pos.first - 1][curr_pos.second]);
+                    
+                }
+                if (is_in(curr_pos.first - 1, curr_pos.second, n, m))
+                    future_pos.insert(make_pair(curr_pos.first - 1, curr_pos.second));
+                if (is_in(curr_pos.first, curr_pos.second + 1, n, m) && matrix[curr_pos.first][curr_pos.second + 1] >
+                    diamond[curr_pos.first][curr_pos.second]) {
+                    diamond[curr_pos.first][curr_pos.second + 1] = matrix[curr_pos.first][curr_pos.second + 1];
+                    timp.push(diamond[curr_pos.first][curr_pos.second + 1]);
+                }
+                if (is_in(curr_pos.first, curr_pos.second + 1, n, m))
+                    future_pos.insert(make_pair(curr_pos.first, curr_pos.second + 1)); 
+                if (is_in(curr_pos.first, curr_pos.second - 1, n, m) &&  matrix[curr_pos.first][curr_pos.second - 1] >
+                    diamond[curr_pos.first][curr_pos.second]) {
+                    diamond[curr_pos.first][curr_pos.second - 1] = matrix[curr_pos.first][curr_pos.second - 1];
+                    timp.push(diamond[curr_pos.first][curr_pos.second - 1]);
+                }
+                if (is_in(curr_pos.first, curr_pos.second - 1, n, m))
+                    future_pos.insert(make_pair(curr_pos.first, curr_pos.second - 1));
+                timp.push(diamond[curr_pos.first][curr_pos.second - 1]);
+                old_pos.erase(*itr);
+            }
+        } else {
+            swap(old_pos, future_pos);
+            current_move++;
+        }
+    }
+    cout << timp.top();
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you tried a tiny example where the best diamond is reachable only by passing through a lower‑valued cell? Does your logic still find it?
+1323405525,3.57,cpp,BFS_RADIUS,low,1323405525.cpp,"#include <bits/stdc++.h>
+
+using namespace std;
+
+int n, m, p, l, c;
+int matrix[1001][1001];
+bool viz[1001][1001];
+
+int dx[] = {1, -1, 0, 0};
+int dy[] = {0, 0, 1, -1};
+
+
+struct Pozitie {
+    int x, y;
+
+    Pozitie() {
+        x = y = 0;
+    }
+
+    Pozitie(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
+};
+
+int lee(int l, int c, int p) {
+    queue<Pozitie> q;
+    int Max = 0;
+
+    q.push(Pozitie(l, c));
+    viz[l][c] = true;
+
+    while (p > 0 && !q.empty()) {
+        Pozitie crt = q.front();
+        q.pop();
+
+        for (int i = 0; i < 4; i++) {
+            Pozitie next = Pozitie(crt.x + dx[i], crt.y + dy[i]);
+            if (viz[next.x][next.y] == false) {
+                q.push(next);
+                viz[next.x][next.y] = true;
+                if (matrix[next.x][next.y] > Max) {
+                    Max = matrix[next.x][next.y];
+                }
+            }
+        }
+
+        p--;
+    }
+
+    return Max;
+}
+
+int main() {
+    cin >> n >> m >> p >> l >> c;
+    
+    for (int i = 1; i <= n; i++) 
+        for (int j = 1; j <= m; j++)
+            cin >> matrix[i][j]; 
+
+    cout << lee(l, c, p) << endl;
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you tried running the logic by hand on a tiny example? Can you find a case where the result differs from what you expect?
+1323452118,14.29,java,BFS_RADIUS,medium,1323452118.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static class Point {
+        int x, y;
+
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    static class Task {
+        public static final int NMAX = 100005;
+        public static final int source = 1;
+
+        int n, m, p, l, c;
+
+        int[][] matrix;
+
+        static int rowIdx[] = { -1, 0, 0, 1 };
+        static int colIdx[] = { 0, -1, 1, 0 };
+
+        @SuppressWarnings(""unchecked"")
+        ArrayList<Integer> adj[] = new ArrayList[NMAX];
+
+        private void readInput() {
+           MyScanner sc = new MyScanner();
+            
+
+            n = sc.nextInt();
+            m = sc.nextInt();
+            p = sc.nextInt();
+            l = sc.nextInt();
+            c = sc.nextInt();
+
+            matrix = new int[n + 1][m + 1];
+
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= m; j++) {
+                    matrix[i][j] = sc.nextInt();
+                }
+            }
+        }
+
+        private void writeOutput(int result) {
+            System.out.println(result);
+        }
+
+        private int getResult() {
+            if (p > n*m) {
+                p = n*m;
+            }
+            
+            int colors[][] = new int[n + 1][m + 1];    
+
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= m; j++) {
+                    colors[i][j] = 1; 
+                }
+            }
+
+            colors[l][c] = -1; 
+            int max = matrix[l][c];
+            
+            Queue<Point> Q = new LinkedList<Point>();
+            
+            Q.add(new Point(l, c));
+
+            int cnt = p;
+            
+            while(!Q.isEmpty() && cnt > 0) {
+                Point u = Q.peek();
+                Q.poll();
+
+                for (int i = 0; i < 4; i++) {
+                    int row = u.x + rowIdx[i];
+                    int col = u.y + colIdx[i];
+
+
+                    if (row > 0 && row <= n && col > 0 && col <= m) {
+                        if (matrix[row][col] > max) {
+                            max = matrix[row][col];
+                        }
+                        
+                        if (colors[row][col] == 1) {
+                            Q.add(new Point(row, col));
+                        }
+
+                    colors[row][col] = -1; 
+
+                    }
+                }
+                
+                cnt--;
+            }
+
+            return max;
+        }
+        
+        public void solve() {
+            readInput();
+            writeOutput(getResult());
+        }
+    }
+
+    public static void main(String[] args) {
+        new Task().solve();
+    }
+}
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny grid where the best diamond is exactly P steps away. Does your algorithm still return that value?
+1323450205,30.36,cpp,DFS_RADIUS,high_partial,1323450205.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <stack>
+using namespace std;
+int n,m;
+bool valid_move(pair<int,int> pos) {
+    if (pos.first < 1 || pos.second < 1 || pos.first > n || pos.second > m)
+        return false;
+    return true;
+}
+
+vector<pair<int,int>> gen_move(pair<int,int> pos) {
+    vector<pair<int,int>> pairs;
+    pair<int,int> north = make_pair(pos.first - 1, pos.second);
+    pair<int,int> west = make_pair(pos.first, pos.second - 1);
+    pair<int,int> south = make_pair(pos.first + 1, pos.second);
+    pair<int,int> east = make_pair(pos.first,pos.second + 1);
+    
+    if (valid_move(north))
+        pairs.push_back(north);
+    if (valid_move(west))
+        pairs.push_back(west);
+    if (valid_move(south))
+        pairs.push_back(south);
+    if (valid_move(east))
+        pairs.push_back(east);
+    
+    return pairs;
+}
+
+int main() {
+    
+    int p,l,c,el,max;
+    cin >> n >> m >> p >> l >> c;
+    int matrix[n+1][m+1];
+    for (int j = 0; j <= m;j++)
+        matrix[0][j] = 0;
+    for (int i = 1; i <= n; i++)
+        matrix[i][0] = 0;
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++) {
+            cin >> el;
+            matrix[i][j] = el;
+            }
+    
+    
+    bool viz[n+1][m+1];
+    for (int i = 1; i <= n;i++)
+        for (int j = 1; j <= m; j++)
+               viz[i][j] = false;
+    viz[l][c] = true;
+    max = matrix[l][c];
+    pair<int,int> start = make_pair(l,c);
+    
+    stack<pair<int,pair<int,int>>> s;
+    
+    s.push(make_pair(p,start));
+    while(!s.empty()) {
+        pair<int,pair<int,int>> pos = s.top();
+        s.pop();
+        int rem_moves = pos.first;
+        pair<int,int> cpos = pos.second;
+        if (max < matrix[cpos.first][cpos.second]){
+            max = matrix[cpos.first][cpos.second];
+        }
+        vector<pair<int,int>> next = gen_move(cpos);
+        for (unsigned int i = 0; i < next.size();i++){
+            if (viz[next[i].first][next[i].second] == false && rem_moves > 0) {
+                viz[next[i].first][next[i].second] = true;
+                s.push(make_pair(rem_moves - 1, next[i]));
+            }       
+        }
+    }
+   cout << max;   
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you considered that a cell might be reachable with more remaining moves later? What happens if you mark it visited the first time? Try a tiny example to see if you miss a better path.
+1314234878,5.36,java,DFS_RADIUS,low,1314234878.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    int n, m, p, l, c, max;
+    int[][] val;
+    int[][] viz;
+    
+    public void readInput(){
+        MyScanner sc = new MyScanner();
+        n = sc.nextInt();
+        m = sc.nextInt();
+        p = sc.nextInt();
+        l = sc.nextInt();
+        c = sc.nextInt();
+        val = new int[n + 1][m + 1];
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                val[i][j] = sc.nextInt();
+            }
+        }
+        max = val[l][c];
+    }
+    
+    public int aux(int l, int c, int p){
+        if(p == 0)
+            return val[l][c];
+        int N = 0, S = 0, W = 0, E = 0;
+        if(l > 1 && viz[l - 1][c] == 0)
+            N = aux(l - 1, c, p - 1);
+        if(l < n && viz[l + 1][c] == 0)
+            S = aux(l + 1, c, p - 1);
+        if(c > 1 && viz[l][c - 1] == 0)
+            W = aux(l, c - 1, p - 1);
+        if(c < m && viz[l - 1][c] == 0)
+            E = aux(l, c + 1, p - 1);
+        
+        viz[l][c] = 1;
+        if(N > max)
+            max = N;
+        if(S > max)
+            max = S;
+        if(W > max)
+            max = W;
+        if(E > max)
+            max = E;
+        return max;
+    }
+    
+    public void solve(){
+        viz = new int[n + 1][m + 1];
+        
+
+
+
+
+
+
+        System.out.println(aux(l, c, p));
+        
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        s.readInput();
+        s.solve();
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you tried estimating how many recursive calls your algorithm could make for the largest input? How does that compare to the allowed time?
+1378148490,14.29,cpp,DFS_RADIUS,medium,1378148490.cpp,"#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin(""test.in"");
+
+int n, m, l, c, p, a[1010][1010];
+vector<pair<int, int>> mutari;
+
+void bkt(int k, int l, int c, int pl, int pc, vector<pair<int, int>> mutari, int &mx) {
+  int i;
+  for (i = 0; i < mutari.size(); i++) {
+    int x = l + mutari[i].first;
+    int y = c + mutari[i].second;
+   
+    if (!(x == pl && y == pc)){
+      
+      if (a[x][y] > mx){
+        mx = a[x][y];
+        
+      }
+      if (k < p) {
+        
+        bkt(k + 1, x, y, l, c, mutari, mx);
+      }
+    }
+
+  }
+}
+
+int main(){
+    int i, j;
+    int mx;
+    cin >> n >> m >> p >> l >> c;
+    for (i = 1; i <= n; i++){
+        for (j = 1; j <= m; j++){
+            cin >> a[i][j];
+        }
+    }
+
+    mx = a[l][c];
+    mutari.push_back({-1, 0});
+    mutari.push_back({1, 0});
+    mutari.push_back({0, 1});
+    mutari.push_back({0, -1});
+
+    
+    
+    
+
+    if(p > 0){
+    bkt(1, l, c, l, c, mutari, mx);
+    }
+    cout << mx << ""\n"";
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"How many different ways can the piece move in p steps? Roughly how many recursive calls would that produce, and does that fit within the time limits for the largest input?"
+1378078722,41.07,cpp,DP_RADIUS,high_partial,1378078722.cpp,"#include <iostream>
+#include <vector>
+#include <limits>
+using namespace std;
+#define INF numeric_limits<int>::max()
+
+class Solution {
+    vector<vector<int>> diamonds;
+    int n, m;
+    int max_moves;
+    pair<int, int> start;
+    int max_diamond_value = -INF;
+
+public:
+    void read() {
+        cin >> n >> m >> max_moves;
+        cin >> start.first >> start.second;
+
+        diamonds.resize(n + 1, vector<int>(m + 1));
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                cin >> diamonds[i][j];
+            }
+        }
+    }
+
+    void solve() {
+        
+        vector<vector<vector<int>>> dp(n + 1, vector<vector<int>>(m + 1, vector<int>(max_moves + 1, -INF)));
+        dp[start.first][start.second][0] = diamonds[start.first][start.second];
+
+        
+        for (int k = 1; k <= max_moves; ++k) {
+            for (int i = 1; i <= n; ++i) {
+                for (int j = 1; j <= m; ++j) {
+                    int max_from_neighbors = -INF;
+
+                    
+                    if (i > 1) max_from_neighbors = max(max_from_neighbors, dp[i-1][j][k-1]);
+                    if (i < n) max_from_neighbors = max(max_from_neighbors, dp[i+1][j][k-1]);
+                    if (j > 1) max_from_neighbors = max(max_from_neighbors, dp[i][j-1][k-1]);
+                    if (j < m) max_from_neighbors = max(max_from_neighbors, dp[i][j+1][k-1]);
+
+                    dp[i][j][k] = max(dp[i][j][k-1], max_from_neighbors);
+                    if (dp[i][j][k] != -INF) dp[i][j][k] = max(dp[i][j][k], diamonds[i][j]);
+                }
+            }
+        }
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
+                max_diamond_value = max(max_diamond_value, dp[i][j][max_moves]);
+            }
+        }
+    }
+
+    void print() {
+        cout << max_diamond_value << endl;
+    }
+};
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    Solution solution;
+    solution.read();
+    solution.solve();
+    solution.print();
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Have you tried checking the maximum diamond value after every number of moves up to P, not just after the full P moves?"
+1314234838,8.93,java,DP_RADIUS,low,1314234838.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    int[][] matrice;
+    int[][] dp;
+    int N,M,P,L,C;
+    
+    public static void main(String[] args) {
+        
+        Solution s = new Solution();
+        s.solve();
+    }
+    
+    public void solve () {
+        readInput();
+        System.out.println(getSolution());
+    }
+    
+    public int getSolution () {
+        return helperDiamond(L,C,P);
+    }
+    
+    public int helperDiamond (int i, int j, int ramase) {
+        
+        if (ramase == 0) {
+            
+            dp[i][j] = matrice[i][j];
+            return matrice[i][j];
+        }
+        
+        int max = Integer.MIN_VALUE;
+        int r1, r2, r3, r4;
+        if (i > 1) {
+            if (dp[i-1][j] != Integer.MIN_VALUE) {
+                r1 = dp[i-1][j];
+            } else {
+                r1 = helperDiamond(i-1, j, ramase-1);
+                dp[i-1][j] = r1;
+            }
+            
+            if (r1 > max) 
+                max = r1;
+        }
+        
+        if (j > 1) {
+            if (dp[i][j-1] != Integer.MIN_VALUE) {
+                r2 = dp[i][j-1];
+            } else {
+                r2 = helperDiamond(i, j-1, ramase-1);
+                dp[i][j-1] = r2;
+            }
+            
+            if (r2 > max) 
+                max = r2;
+        }
+        
+        if (i < N) {
+            if (dp[i+1][j] != Integer.MIN_VALUE) {
+                r3 = dp[i+1][j];
+            } else {
+                r3 = helperDiamond(i+1, j, ramase-1);
+                dp[i+1][j] = r3;
+            }
+            
+            if (r3 > max) 
+                max = r3;
+        }
+        
+        if (j < M) {
+            if (dp[i][j+1] != Integer.MIN_VALUE) {
+                r4 = dp[i][j+1];
+            } else {
+                r4 = helperDiamond(i, j+1, ramase-1);
+                dp[i][j+1] = r4;
+            }
+            
+            if (r4 > max) 
+                max = r4;
+        }
+        
+        matrice[i][j] = max;
+        return max;
+        
+    }
+    
+    public void readInput () {
+        MyScanner s = new MyScanner();
+        N = s.nextInt(); 
+        M = s.nextInt(); 
+        P = s.nextInt(); 
+        L = s.nextInt(); 
+        C = s.nextInt(); 
+        
+        matrice = new int[N+1][M+1];
+        dp = new int[N+1][M+1];
+        
+        for (int i=1; i<N+1; i++) {
+            for (int j=1; j<M+1; j++) {
+                matrice[i][j] = s.nextInt();
+                dp[i][j] = Integer.MIN_VALUE;
+            }
+        }
+    }
+    
+}",statement_code_only,gpt-oss-20b,medium,Have you considered that the maximum value reachable from a cell might depend on how many moves remain? Try a tiny grid with a few moves and see if the same cell gives different results.
+1332757017,14.29,cpp,DP_RADIUS,medium,1332757017.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void dp_rec(int a[1001][1001], int n, int m, int p, int l, int c, int &mx) {
+    if (l < 1 || l > n || c < 1 || c > m) {
+        
+        return;
+    }
+    if (p == -1) {
+        
+        return;
+    }
+    
+    if (a[l][c] > mx) {
+        mx = a[l][c];
+    }
+    
+    dp_rec(a, n, m, p - 1, l, c - 1, mx);
+    dp_rec(a, n, m, p - 1, l - 1, c, mx);
+    dp_rec(a, n, m, p - 1, l, c + 1, mx);
+    dp_rec(a, n, m, p - 1, l + 1, c, mx);
+}
+
+int main() {
+       
+    int n, m, a[1001][1001], i, j, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= m; j++) {
+            cin >> a[i][j];
+        }
+    }
+    int mx = a[l][c];
+    dp_rec(a, n, m, p, l, c, mx);
+    cout << mx << ""\n"";
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,How many different paths could your recursive search explore when the allowed number of moves is large? Does that number look reasonable for the input limits?
+1314236524,41.07,java,GEOMETRIC_SCAN,high_partial,1314236524.java,"import java.io.*;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+
+
+    public static void main(String[] args) {
+        MyScanner scan = new MyScanner();
+        int n = scan.nextInt();
+        int m = scan.nextInt();
+        int p = scan.nextInt();
+        int l = scan.nextInt();
+        int c = scan.nextInt();
+        int table[][] = new int[n + 1][m + 1];
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                table[i][j] = scan.nextInt();
+            }
+        }
+
+        int max = table[l][c];
+        for(int i = l - p; i <= l + p; i++){
+            if(i < 1 || i > n){
+                continue;
+            }
+            for(int j = c - p; j <= c + p; j++){
+                if(j < 1 || j > m){
+                    continue;
+                }
+                if(i <= l){
+                    if(j <= c){
+                        if((l - i +  c - j ) <= p){
+                            if(table[i][j] > max){
+                                max = table[i][j];
+                            }
+                        }
+                    }
+                    else{
+                        if((l - i +  j - c ) <= p){
+                            if(table[i][j] > max){
+                                max = table[i][j];
+                            }
+                        }
+                    }
+                }
+                else{
+                    if(j <= c){
+                        if((i - l +  c - j ) <= p){
+                            if(table[i][j] > max){
+                                max = table[i][j];
+                            }
+                        }
+                    }
+                    else{
+                        if((i - l + j - c ) <= p){
+                            if(table[i][j] > max){
+                                max = table[i][j];
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+        System.out.println(max);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you thought about how many times the two nested loops run when P is much larger than the grid size? Try a tiny test where P exceeds the dimensions and see what happens.
+1314235346,1.79,cpp,GEOMETRIC_SCAN,low,1314235346.cpp,"#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int N,M,L,C;
+    int i,j;
+    int ok=0;
+    long long Matrix[1002][1002];
+    long long P;
+    long long maxDiamond;
+    cin >> N;
+    cin >> M;
+    cin >> P;
+    cin >> L;
+    cin >> C;
+    
+    for(i = 1; i<= N; i++)
+        for(j = 1; j<= M; j++){
+            cin>> Matrix[i][j];
+        }
+
+    if(P > 0){
+        ok = 1;
+        while(P>0){
+        maxDiamond = -1;
+        
+            if(Matrix[L-1][C] > maxDiamond){
+                maxDiamond = Matrix[L-1][C];
+            }
+            if(Matrix[L][C-1] > maxDiamond){
+                maxDiamond = Matrix[L][C-1];
+            }
+            if(Matrix[L][C+1] > maxDiamond){
+                maxDiamond = Matrix[L][C+1];
+            }
+            if(Matrix[L+1][C] > maxDiamond){
+                maxDiamond = Matrix[L+1][C];
+            }
+        
+        P--;
+        }
+
+    }
+    if(P==0 && ok==0) 
+        cout<<Matrix[L][C]; 
+    else cout<< maxDiamond;
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you thought about how the piece’s coordinates change as you make moves? What happens if you keep checking the same neighbors without ever updating the position?
+1314234927,10.71,cpp,GEOMETRIC_SCAN,medium,1314234927.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <tuple>
+#include <queue>
+using namespace std;
+
+int n, m, k, x, y;
+
+
+int main() {
+    
+    ios::sync_with_stdio(false);
+
+    cin>>n>>m>>k>>x>>y;
+    x-=1;y-=1;
+    vector<vector<int>> mat(n, vector<int>(m));
+    vector<vector<bool>> visited(n, vector<bool>(m, false));
+
+    for (int i = 0; i < n; i++) {
+        for (int j =0 ;j < m; j++) {
+            cin>>mat[i][j];
+        }
+    }
+
+    int res = numeric_limits<int>::min();
+    
+    
+    
+    int level = 0;
+
+    
+    
+
+    
+
+    for (level = 0; level <= k; level ++) {
+        for (int i = 0; i <= level; i++) {
+            int j = k - i;
+            if (x - i > 0 && y - j > 0) {
+                res = max(res, mat[x-i][y-j]);
+            }
+            if (x - i > 0 && y + j < m) {
+                res = max(res, mat[x-i][y+j]);
+            }
+            if (x + i < n && y - j > 0) {
+                res = max(res, mat[x+i][y-j]);
+            }
+            if (x + i < n && y + j < m) {
+                res = max(res, mat[x+i][y+j]);
+            }
+        }
+    }
+
+    cout<<res;
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny grid where the best diamond is reachable in fewer than k steps. Does your program still report that value?
+1314237181,5.36,cpp,GREEDY_NEIGHBOR_WALK,low,1314237181.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    
+
+
+     ios::sync_with_stdio(false);
+    int n,m,p,l,c;
+    cin >> n;
+    cin >> m;
+    cin >> p;
+    cin >> l;
+    cin >> c;
+
+    int a[n + 1][m + 1];
+    for(int i = 1; i <= n; ++i)
+        for(int j = 1; j <= m; ++j)
+            cin >> a[i][j];
+    int m1 = 0, m2 = 0, lin1 = 0, col1 =  0, lin2 = 0, col2 = 0, maxi = 0,m3 = 0, lin3 = 0, col3 = 0;
+    if (p == 0)
+        cout << -1 << endl;
+    else{
+        while(p > 0 ){
+            int curent = a[l][c];
+            int sus = a[l - 1][c];
+            int jos = a[l + 1][c];
+            if (sus > jos){
+                m1 = sus;
+                lin1 = l - 1;
+                col1 = c;
+            }
+            else{
+                m1 = jos;
+                lin1 = l + 1;
+                col1 = c;
+            }
+            int st = a[l][c - 1];
+            int dr = a[l][c + 1];
+            if (st > dr){
+                m2 = st;
+                lin2 = l;
+                col2 = c - 1;
+            }
+            else{
+                m2 = dr;
+                lin2 = l;
+                col2 = c + 1;
+            }
+            if(m1 > m2){
+                m3 = m1;
+                lin3 = lin1;
+                col3 = col1;
+            }
+            else{
+                m3 = m2;
+                lin3 = lin2;
+                col3 = col2;
+            }
+            if(curent > m3){
+                maxi = curent; 
+            }
+            else {
+                maxi = m3;
+                l = lin3;
+                c = col3;
+            }
+            --p;
+
+        }
+        cout << maxi;
+    }
+    
+
+    
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you tried running your logic on a very small grid where the best diamond is not adjacent to the start? What happens when you need to pass through a lower‑valued cell to reach a higher one?
+1344667888,12.5,cpp,GREEDY_NEIGHBOR_WALK,medium,1344667888.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <tuple>
+#include <climits>
+
+using namespace std;
+int N, M, P, L, C;
+vector<vector<int>> F;
+vector<tuple<int, int, int>> domain, solution;
+int max_frumix;
+int line_moves[4] = {-1, 0, 1, 0};
+int col_moves[4] = {0, -1, 0, 1};
+
+void read_input() {
+    cin >> N >> M >> P >> L >> C;
+    F = vector<vector<int>>(N + 1, vector<int>(M + 1));
+    for(int i = 1;i <= N; i++) {
+        for(int j = 1; j <= M; j++) {
+            cin >> F[i][j];
+            domain.push_back(make_tuple(i, j, F[i][j]));
+        }
+    }
+}
+bool check() {
+    if(get<2>(solution.back()) > max_frumix) {
+        max_frumix = get<2>(solution.back());
+                            return true;
+    }
+                            return false;
+}
+void back() {
+    tuple<int, int, int> x;
+    
+    if((int)solution.size() == P + 1) {
+        
+        if(check()) {
+           
+           
+            
+           
+           
+        }
+        return;
+    }
+    if((int)solution.size() == 0) {
+        solution.push_back(make_tuple(L, C, F[L][C]));
+        max_frumix = F[L][C];
+        back();
+        solution.pop_back();
+        return;
+    }
+    for(unsigned i = 0; i < 4; i++) {
+        int old_line = get<0>(solution.back());
+        int old_col = get<1>(solution.back());
+        
+        int new_line = old_line + line_moves[i];
+        int new_col = old_col + col_moves[i];
+        
+        int new_frumix = F[new_line][new_col];
+        
+        if(new_line <= N && new_col <= M) {
+           
+           
+           
+            
+            solution.push_back(make_tuple(new_line, new_col, new_frumix));
+            back();
+            solution.pop_back();
+            
+        }
+    }
+    
+}
+int main() {
+       
+   
+    read_input();
+    max_frumix = INT_MIN;
+    if(P == 0) {
+        cout << F[L][C];
+        return 0;
+    }
+    back();
+    cout << max_frumix << endl;
+    
+}",statement_code_only,gpt-oss-20b,medium,"Have you tried checking the value after each move, not only when you’ve taken exactly P steps? What happens on a tiny grid where the best diamond is reached in fewer than P moves?"
+1323404068,41.07,cpp,SORTED_MANHATTAN,high_partial,1323404068.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    
+    vector <pair<int, int>> aux;
+    int val;
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            int dist = abs (l - i) + abs (c - j);
+            cin >> val;
+            aux.emplace_back (dist, val);
+        }
+    }
+    
+    sort (aux.begin(), aux.end());
+    
+    int i = 0;
+    int maxim = -100;
+    while (aux[i].first <= p) {
+        if (aux[i].second > maxim) {
+            maxim = aux[i].second;
+        }
+        i++;
+    }
+    
+    cout << maxim;
+    
+    
+    
+    
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you considered what happens when you run past the last element in your sorted list? How can you guard against reading beyond the vector?
+1314235622,5.36,cpp,SORTED_MANHATTAN,low,1314235622.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+
+
+int main() {
+    
+
+    int n, m, p, l, c;
+    std::cin >> n >> m >> p >> l >> c;
+
+    std::vector < std::vector <int>  > matrix(n + 1);
+    for (int i = 0; i <= n; ++i) {
+        matrix[i].resize(m + 1);
+    }
+
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            std::cin >> matrix[i][j];
+        }
+    }
+
+    std::vector<int> moves;
+
+    for (int i = 0; i <= p; ++i) {
+        moves.push_back(matrix[l + i][c]);
+        moves.push_back(matrix[l - i][c]);
+        moves.push_back(matrix[l][c - i]);
+        moves.push_back(matrix[l][c + i]);
+    }
+
+    std::sort(moves.begin(), moves.end(), [](const int &a, const int &b) {
+       return a > b;
+    });
+
+    std::cout << moves[0];
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny grid where the highest‑valued diamond isn’t on the same row or column as the start. Does your current logic still pick it up?
+1323448212,41.07,cpp,BFS_RADIUS,high_partial,1323448212.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <queue>
+using namespace std;
+
+bool is_in(int x, int y, int n, int m) {
+    return ((x <= n) && (x > 0) && (y <= m) && (y > 0) );
+}
+int main() {
+       
+    int n, m, no_move, x, current_move;
+    pair<int, int> initial;
+    cin >> n >> m >> no_move;
+    cin >> initial.first >> initial.second;
+    int matrix[n + 1][m + 1];
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> x;
+            matrix[i][j] = x;
+        }
+    }
+    
+    priority_queue<int> timp; 
+    int diamond[n + 1][m + 1];
+    diamond[initial.first][initial.second] = matrix[initial.first][initial.second];
+    set<pair<int, int>> future_pos;
+    set<pair<int, int>> old_pos;
+    set<pair<int, int>> :: iterator itr;
+    old_pos.insert(initial);
+    current_move = 0;
+    if (no_move > m && no_move > n) {
+        no_move = max(m, n);
+    }
+    timp.push (diamond[initial.first][initial.second]);
+    
+    while (current_move != no_move) {
+        if (!old_pos.empty()) {
+            
+            while (!old_pos.empty()) {
+
+                itr = old_pos.begin();
+                pair<int, int> curr_pos = make_pair(itr->first, itr->second);
+                
+                if (is_in(curr_pos.first + 1, curr_pos.second, n, m) && (matrix[curr_pos.first + 1][curr_pos.second] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first + 1][curr_pos.second] = matrix[curr_pos.first + 1][curr_pos.second];
+                    
+                        timp.push (diamond[curr_pos.first + 1][curr_pos.second]);
+                }
+                if (is_in(curr_pos.first + 1, curr_pos.second, n, m))
+                   future_pos.insert(make_pair(curr_pos.first + 1, curr_pos.second));
+                
+                if (is_in(curr_pos.first - 1, curr_pos.second, n, m) && (matrix[curr_pos.first - 1][curr_pos.second] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first - 1][curr_pos.second] = matrix[curr_pos.first - 1][curr_pos.second];
+                    
+                        timp.push (diamond[curr_pos.first - 1][curr_pos.second]);  
+                }
+                if (is_in(curr_pos.first - 1, curr_pos.second, n, m))
+                    future_pos.insert(make_pair(curr_pos.first - 1, curr_pos.second));
+                
+                if (is_in(curr_pos.first, curr_pos.second + 1, n, m) && (matrix[curr_pos.first][curr_pos.second + 1] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first][curr_pos.second + 1] = matrix[curr_pos.first][curr_pos.second + 1];
+                    
+                    timp.push( diamond[curr_pos.first][curr_pos.second + 1]);
+                }
+                if (is_in(curr_pos.first, curr_pos.second + 1, n, m))
+                    future_pos.insert(make_pair(curr_pos.first, curr_pos.second + 1));
+                
+                if (is_in(curr_pos.first, curr_pos.second - 1, n, m) && (matrix[curr_pos.first][curr_pos.second - 1] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first][curr_pos.second - 1] = matrix[curr_pos.first][curr_pos.second - 1];
+                    
+                    timp.push(diamond[curr_pos.first][curr_pos.second - 1]);
+                }
+                if (is_in(curr_pos.first, curr_pos.second - 1, n, m))
+                    future_pos.insert(make_pair(curr_pos.first, curr_pos.second - 1));
+                
+                old_pos.erase(*itr);
+            }
+            
+        } else {
+            swap(old_pos, future_pos);
+            current_move++;
+        }
+    }
+    cout << timp.top();
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny test where the best diamond is only reachable by first stepping onto a lower‑valued cell. Does your program still find that higher value?
+1323452315,8.93,java,BFS_RADIUS,low,1323452315.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static class Point {
+        int x, y;
+
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    static class Task {
+        public static final int NMAX = 100005;
+        public static final int source = 1;
+
+        int n, m, p, l, c;
+
+        int[][] matrix;
+
+        static int rowIdx[] = { -1, 0, 0, 1 };
+        static int colIdx[] = { 0, -1, 1, 0 };
+
+        @SuppressWarnings(""unchecked"")
+        ArrayList<Integer> adj[] = new ArrayList[NMAX];
+
+        private void readInput() {
+           MyScanner sc = new MyScanner();
+            
+
+            n = sc.nextInt();
+            m = sc.nextInt();
+            p = sc.nextInt();
+            l = sc.nextInt();
+            c = sc.nextInt();
+
+            matrix = new int[n + 1][m + 1];
+
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= m; j++) {
+                    matrix[i][j] = sc.nextInt();
+                }
+            }
+        }
+
+        private void writeOutput(int result) {
+            System.out.println(result);
+        }
+
+        private int getResult() {
+            if (p > n*m) {
+                p = n*m;
+            }
+                        
+            int colors[][] = new int[n + 1][m + 1];    
+
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= m; j++) {
+                    colors[i][j] = 1; 
+                }
+            }
+
+            colors[l][c] = -1; 
+            int max = matrix[l][c];
+            
+            Queue<Point> Q = new LinkedList<Point>();
+            
+            Q.add(new Point(l, c));
+            
+            int[][] pasi = new int[n + 1][m + 1];
+            
+            while(!Q.isEmpty()) {
+                Point u = Q.peek();
+                Q.poll();
+                if (pasi[u.x][u.y] >= p) {
+                    continue;
+                }
+
+                for (int i = 0; i < 4; i++) {
+                    int row = u.x + rowIdx[i];
+                    int col = u.y + colIdx[i];
+
+
+                    if (row > 0 && row <= n && col > 0 && col <= m) {
+                        if (matrix[row][col] > max) {
+                            max = matrix[row][col];
+                        }
+                        
+                        pasi[row][col]++;
+                        if (colors[row][col] == 1) {
+                            Q.add(new Point(row, col));
+                        }
+
+                    colors[row][col] = -1; 
+
+                    }
+                }
+            }
+
+            return max;
+        }
+        
+        public void solve() {
+            readInput();
+            writeOutput(getResult());
+        }
+    }
+
+    public static void main(String[] args) {
+        new Task().solve();
+    }
+}
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}",statement_code_only,gpt-oss-20b,medium,"Try a tiny example with a very small grid (e.g., 2×2) and a small P (1 or 2). Walk through the algorithm by hand—does it consider all cells reachable within that many steps, and what happens when a cell is visited again?"
+1323450102,14.29,java,BFS_RADIUS,medium,1323450102.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    int n, m, l, c;
+    int p;
+    int[][] grid;
+    int max = -1000000000;
+    boolean[][] visited;
+    
+    public void readInput() {
+        MyScanner sc = new MyScanner();
+        n = sc.nextInt();
+        m = sc.nextInt();
+        p = sc.nextInt();
+        l = sc.nextInt();
+        c = sc.nextInt();
+        
+        grid = new int [n+1][m+1];
+        visited = new boolean[n+1][m+1];
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= m; j++) {
+                grid[i][j] = sc.nextInt();
+                if(grid[i][j] > max) {
+                    max = grid[i][j];
+                }
+            }
+        }
+    }
+    
+    class Pair {
+        int i, j;
+        Pair(int i, int j) {
+            this.i=i;
+            this.j=j;
+        }
+    }
+    
+    public int solve() {
+        if(p >= n*m) {
+            return max;
+        }
+        
+        int result = grid[l][c];
+        visited[l][c] = true;
+        
+        Queue<Pair> q = new LinkedList<Pair>();
+        q.add(new Pair(l,c));
+        
+        while(q.size() != 0 && this.p != 0) {
+
+            Pair p = q.poll();
+            
+            if(p.i - 1 >= 1) {
+                if(!visited[p.i-1][p.j]) {
+                    if(grid[p.i-1][p.j] > result) {
+                        result = grid[p.i-1][p.j];
+                    }
+                    visited[p.i-1][p.j] = true;
+                    q.add(new Pair(p.i-1,p.j));
+                }
+            }
+            
+            if(p.i + 1 >= 1) {
+                if(!visited[p.i+1][p.j]) {
+                    if(grid[p.i+1][p.j] > result) {
+                        result = grid[p.i+1][p.j];
+                    }
+                    visited[p.i+1][p.j] = true;
+                    q.add(new Pair(p.i+1,p.j));
+                }
+            }
+            
+            if(p.j - 1 >= 1) {
+                if(!visited[p.i][p.j-1]) {
+                    if(grid[p.i][p.j-1] > result) {
+                        result = grid[p.i][p.j-1];
+                    }
+                    visited[p.i][p.j-1] = true;
+                    q.add(new Pair(p.i,p.j-1));
+                }
+            }
+            
+            if(p.j + 1 >= 1) {
+                if(!visited[p.i][p.j+1]) {
+                    if(grid[p.i][p.j+1] > result) {
+                        result = grid[p.i][p.j+1];
+                    }
+                    visited[p.i][p.j+1] = true;
+                    q.add(new Pair(p.i,p.j+1));
+                }
+            }
+
+            visited[p.i][p.j] = true;
+            this.p--;
+        }
+        
+        return result;
+    }
+    
+    void writeOutput(int result) {
+        System.out.println(result);
+    }
+    
+    public static void main(String[] args) {
+        Solution obj = new Solution();
+        obj.readInput();
+        obj.writeOutput(obj.solve());
+        
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you checked that every neighbor you add is actually inside the grid? Try a tiny grid with the piece starting on the edge and see what happens.
+1323450132,30.36,cpp,DFS_RADIUS,high_partial,1323450132.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <stack>
+using namespace std;
+int n,m;
+bool valid_move(pair<int,int> pos) {
+    if (pos.first < 1 || pos.second < 1 || pos.first > n || pos.second > m)
+        return false;
+    return true;
+}
+
+vector<pair<int,int>> gen_move(pair<int,int> pos) {
+    vector<pair<int,int>> pairs;
+    pair<int,int> north = make_pair(pos.first - 1, pos.second);
+    pair<int,int> west = make_pair(pos.first, pos.second - 1);
+    pair<int,int> south = make_pair(pos.first + 1, pos.second);
+    pair<int,int> east = make_pair(pos.first,pos.second + 1);
+    
+    if (valid_move(north))
+        pairs.push_back(north);
+    if (valid_move(west))
+        pairs.push_back(west);
+    if (valid_move(south))
+        pairs.push_back(south);
+    if (valid_move(east))
+        pairs.push_back(east);
+    
+    return pairs;
+}
+
+int main() {
+    
+    int p,l,c,el,max;
+    cin >> n >> m >> p >> l >> c;
+    int matrix[n+1][m+1];
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++) {
+            cin >> el;
+            matrix[i][j] = el;
+            }
+    
+    
+    bool viz[n+1][m+1];
+    for (int i = 1; i <= n;i++)
+        for (int j = 1; j <= m; j++)
+               viz[i][j] = false;
+    viz[l][c] = true;
+    max = matrix[l][c];
+    pair<int,int> start = make_pair(l,c);
+    
+    stack<pair<int,pair<int,int>>> s;
+    
+    s.push(make_pair(p,start));
+    while(!s.empty()) {
+        pair<int,pair<int,int>> pos = s.top();
+        s.pop();
+        int rem_moves = pos.first;
+        pair<int,int> cpos = pos.second;
+        if (max < matrix[cpos.first][cpos.second]){
+            max = matrix[cpos.first][cpos.second];
+        }
+        vector<pair<int,int>> next = gen_move(cpos);
+        for (unsigned int i = 0; i < next.size();i++){
+            if (viz[next[i].first][next[i].second] == false && rem_moves > 0) {
+                viz[next[i].first][next[i].second] = true;
+                s.push(make_pair(rem_moves - 1, next[i]));
+            }       
+        }
+    }
+   cout << max;   
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Try a tiny grid where a cell can be reached by two different routes, one leaving more moves unused. Does your program still explore the second route?"
+1391824959,5.36,cpp,DFS_RADIUS,low,1391824959.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+long long nmax = -9999999999999;
+
+void rec(int n, int m, int p, vector<vector<int> > mat, int l, int c, int el) {
+    if (p < 0) {
+        if (el > nmax)
+            nmax = el;
+        return;
+    }
+    
+    if (l - 1 > 0)
+        rec(n, m, p - 1, mat, l - 1, c, mat[l][c]);
+    
+    if (c - 1 > 0)
+        rec(n, m, p - 1, mat, l, c - 1, mat[l][c]);
+    
+    if (c + 1 <= m)
+        rec(n, m, p - 1, mat, l, c + 1, mat[l][c]);
+    
+    if (l + 1 <= n)
+        rec(n, m, p - 1, mat, l + 1, c, mat[l][c]);
+}
+
+int main() {
+       
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    
+    vector<vector<int> > mat(n + 1, vector<int>(m + 1));
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j ++)
+            cin >> mat[i][j];
+    
+    rec(n, m, p, mat, l, c, mat[l][c]);
+    
+    cout << nmax;
+    
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Run the program on a tiny grid and step through the recursion. Does the value you compare at the end change when you move to a different cell?
+1314265771,12.5,c,DFS_RADIUS,medium,1314265771.c,"#include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+long maxim(long a, long b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
+void searchDiamonds(long matriceDiamante[][1001], bool ***matriceVizitat,long x, 
+                    long y,long P, long *maxDiamant, long N, long M)
+{    
+
+    (*matriceVizitat)[x][y] = true;
+    *maxDiamant = maxim(*maxDiamant, matriceDiamante[x][y]);
+
+    if (P > 0)
+    {
+        if (x > 0 && (*matriceVizitat)[x - 1][y] == false)
+        {
+            searchDiamonds(matriceDiamante, matriceVizitat, x - 1, y, P - 1, maxDiamant, N, M);
+        }
+
+        if (x < N - 1 && (*matriceVizitat)[x + 1][y] == false)
+        {
+            searchDiamonds(matriceDiamante, matriceVizitat, x + 1, y, P - 1, maxDiamant, N, M);
+        }
+
+        if (y > 0 && (*matriceVizitat)[x][y - 1] == false)
+        {
+            searchDiamonds(matriceDiamante, matriceVizitat, x, y - 1, P - 1, maxDiamant, N, M);
+        }
+
+        if (y < M - 1 && (*matriceVizitat)[x][y + 1] == false)
+        {
+            searchDiamonds(matriceDiamante, matriceVizitat, x, y + 1, P - 1, maxDiamant, N, M);
+        }
+
+    }
+
+}
+
+int main(int argc, char const *argv[])
+{
+    long N, M, P, L, C;
+
+    scanf(""%ld%ld%ld%ld%ld"", &N, &M, &P, &L, &C);
+
+    long matriceDiamante[1001][1001];
+    bool **matriceVizitat = (bool **) calloc(1001, sizeof(bool *));
+
+    for (int i = 0; i <= 1000; i++)
+        matriceVizitat[i] = (bool *) calloc(1001, sizeof(bool));
+
+
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < M; j++)
+            scanf(""%ld"", &matriceDiamante[i][j]);
+
+    long maxDiamant = LONG_MIN;
+
+    searchDiamonds(matriceDiamante, &matriceVizitat, L - 1, C - 1, P, &maxDiamant, N, M);
+
+    printf(""%ld\n"", maxDiamant);
+
+    for (int i = 0; i <= 1000; i++)
+        free(matriceVizitat[i]);
+
+    free(matriceVizitat);
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you considered whether marking a square as visited might stop you from reaching it again with a different number of moves left? Try a tiny grid where you need to revisit a cell to get a better diamond.
+1378159523,41.07,cpp,DP_RADIUS,high_partial,1378159523.cpp,"#include <bits/stdc++.h>
+
+using namespace std;
+
+int valMax = INT_MIN;
+vector<vector<vector<int>>> dp;
+
+int find_max(int n, int m, int p, int l, int c, vector<vector<int>> &map) {
+  if (p < 0 || l < 1 || l > n || c < 1 || c > m) return INT_MIN;
+  if (dp[p][l][c] != -1) return dp[p][l][c];
+
+  int val1 = find_max(n, m, p - 1, l + 1, c, map);  
+  int val2 = find_max(n, m, p - 1, l, c - 1, map);  
+  int val3 = find_max(n, m, p - 1, l - 1, c, map);  
+  int val4 = find_max(n, m, p - 1, l, c + 1, map);  
+
+  return dp[p][l][c] = max({map[l][c], val1, val2, val3, val4});
+}
+
+int main() {
+  int n, m, p, l, c;
+
+  scanf(""%d %d %d %d %d"", &n, &m, &p, &l, &c);
+
+  vector<vector<int>> map(n + 1, vector<int>(m + 1, 0));
+  dp = vector<vector<vector<int>>>(p + 1, vector<vector<int>>(n + 1, vector<int>(m + 1, -1)));
+
+  for (int i = 1; i <= n; i++)
+    for (int j = 1; j <= m; j++) {
+      int x;
+      scanf(""%d"", &x);
+      if (x > valMax) valMax = x;
+      map[i][j] = x;
+    }
+
+  printf(""%d\n"", find_max(n, m, p, l, c, map));
+
+  return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Have you estimated how many different (step, row, column) states your recursion could visit? Does that number fit comfortably within the input limits?"
+1314234943,8.93,java,DP_RADIUS,low,1314234943.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    int[][] matrice;
+    int[][] dp;
+    int N,M,P,L,C;
+    
+    public static void main(String[] args) {
+        
+        Solution s = new Solution();
+        s.solve();
+    }
+    
+    public void solve () {
+        readInput();
+        System.out.println(getSolution());
+    }
+    
+    public int getSolution () {
+        return helperDiamond(L,C,P);
+    }
+    
+    public int helperDiamond (int i, int j, int ramase) {
+        
+        if (ramase == 0) {
+            
+            dp[i][j] = matrice[i][j];
+            return matrice[i][j];
+        }
+        
+        int max = Integer.MIN_VALUE;
+        int r1, r2, r3, r4;
+        if (i > 1) {
+            if (dp[i-1][j] != Integer.MIN_VALUE) {
+                r1 = dp[i-1][j];
+            } else {
+                r1 = helperDiamond(i-1, j, ramase-1);
+                
+            }
+            
+            if (r1 > max) 
+                max = r1;
+        }
+        
+        if (j > 1) {
+            if (dp[i][j-1] != Integer.MIN_VALUE) {
+                r2 = dp[i][j-1];
+            } else {
+                r2 = helperDiamond(i, j-1, ramase-1);
+                
+            }
+            
+            if (r2 > max) 
+                max = r2;
+        }
+        
+        if (i < N) {
+            if (dp[i+1][j] != Integer.MIN_VALUE) {
+                r3 = dp[i+1][j];
+            } else {
+                r3 = helperDiamond(i+1, j, ramase-1);
+                
+            }
+            
+            if (r3 > max) 
+                max = r3;
+        }
+        
+        if (j < M) {
+            if (dp[i][j+1] != Integer.MIN_VALUE) {
+                r4 = dp[i][j+1];
+            } else {
+                r4 = helperDiamond(i, j+1, ramase-1);
+                
+            }
+            
+            if (r4 > max) 
+                max = r4;
+        }
+        
+        matrice[i][j] = max;
+        return max;
+        
+    }
+    
+    public void readInput () {
+        MyScanner s = new MyScanner();
+        N = s.nextInt(); 
+        M = s.nextInt(); 
+        P = s.nextInt(); 
+        L = s.nextInt(); 
+        C = s.nextInt(); 
+        
+        matrice = new int[N+1][M+1];
+        dp = new int[N+1][M+1];
+        
+        for (int i=1; i<N+1; i++) {
+            for (int j=1; j<M+1; j++) {
+                matrice[i][j] = s.nextInt();
+                dp[i][j] = Integer.MIN_VALUE;
+            }
+        }
+    }
+    
+}",statement_code_only,gpt-oss-20b,medium,Can you estimate how many recursive calls your routine could make for a grid of size N × M with P steps? How does that compare to the input limits?
+1391825349,23.21,cpp,DP_RADIUS,medium,1391825349.cpp,"#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+
+    vector<vector<int>> mat(n + 1, vector<int>(m + 1));
+    for (int i = 1; i <= n; ++i)
+        for (int j = 1; j <= m; ++j)
+            cin >> mat[i][j];
+
+    vector<vector<vector<bool>>> dp(p + 1, vector<vector<bool>>(n + 1, vector<bool>(m + 1, false)));
+    dp[0][l][c] = true;
+
+    int di[] = {-1, 1, 0, 0};
+    int dj[] = {0, 0, -1, 1};
+
+    for (int step = 1; step <= p; ++step) {
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
+                if (!dp[step - 1][i][j]) continue;
+                for (int d = 0; d < 4; ++d) {
+                    int ni = i + di[d];
+                    int nj = j + dj[d];
+                    if (ni >= 1 && ni <= n && nj >= 1 && nj <= m)
+                        dp[step][ni][nj] = true;
+                }
+            }
+        }
+    }
+
+    int ans = -1e9;
+    for (int i = 1; i <= n; ++i)
+        for (int j = 1; j <= m; ++j)
+            if (dp[p][i][j])
+                ans = max(ans, mat[i][j]);
+
+    cout << ans << ""\n"";
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you considered that you can stop before using all P moves? How would you include cells reachable in fewer steps when determining the maximum value?
+1344697187,39.29,cpp,GEOMETRIC_SCAN,high_partial,1344697187.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    int matrix[n][m];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    int diff = p;
+    int till = 1;
+    int max = -1000000000;
+    l--;
+    c--;
+    while(diff != 0) {
+        for (int i = 0; i <= diff; i++) {
+            if (l - diff + i < 0 || c - i < 0) {
+                continue;
+            }
+            
+            if (max < matrix[l - diff + i][c - i]) {
+                max = matrix[l - diff + i][c - i];
+            }
+        }
+        for (int i = 1; i <= diff; i++) {
+            if (l - diff + i < 0 || c + i >= m) {
+                continue;
+            }
+            
+            if (max < matrix[l - diff + i][c + i]) {
+                max = matrix[l - diff + i][c + i];
+            }
+        }
+        for (int i = 0; i < diff; i++) {
+            if (l + diff + i >= n || c - i < 0) {
+                continue;
+            }
+            
+            if (max < matrix[l + diff - i][c - i]) {
+                max = matrix[l + diff - i][c - i];
+            }
+        }
+        for (int i = 1; i < diff; i++) {
+            if (l + diff - i >= n || c - 1 >= m) {
+                continue;
+            }
+            
+            if (max < matrix[l + diff - i][c + i]) {
+                max = matrix[l + diff - i][c + i];
+            }
+        }
+        diff--;
+    }
+    if (matrix[l][c] > max) {
+        max = matrix[l][c];
+    }
+    cout << max;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny grid with a few steps and trace which cells your loops visit. Are there any positions that are reachable within the allowed moves but never examined?
+1314238008,8.93,cpp,GEOMETRIC_SCAN,low,1314238008.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+        
+    int n;
+    int m;  
+    int l; 
+    int c;  
+    int p;
+    int el;
+    
+    scanf(""%d%d%d%d%d"", &n, &m , &p, &l, &c); 
+    int max = -10000; 
+    int dist;
+    
+    
+    for(int i =0 ; i< n ;i++) 
+        for(int j=0; j<m;j++){
+            
+           scanf(""%d"" , &el);
+            dist = abs(i-l) + abs(j-c); 
+            if(dist <= p && max < el) 
+                max = el;
+        }
+    printf(""%d"", max);
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you verified that the values you use for the starting position and the move limit come from the correct input fields? Try a tiny example to see if the distance you compute matches the intended reachable cells.
+1344594910,14.29,java,GEOMETRIC_SCAN,medium,1344594910.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner myScanner = new MyScanner();
+        int n = myScanner.nextInt();
+        int m = myScanner.nextInt();
+        int p = myScanner.nextInt();
+        int l = myScanner.nextInt();
+        int c = myScanner.nextInt();
+        int [][] matrix = new int[n + 1][m + 1];
+
+        for (int i = 1; i <= n; i++) {
+            for (int j  = 1; j <= m; j++) {
+                matrix[i][j] = myScanner.nextInt();
+            }
+        }
+
+        ArrayList<Integer> prices = new ArrayList<>();
+
+        int k = 1;
+        if (l - p > 0) {
+            k = l - p + 1;
+        }
+
+        int r = 1;
+        if (c - p > 0) {
+            r = c - p + 1;
+        }
+
+        if (p == 0) {
+            prices.add(matrix[l][c]);
+        }
+
+        for (int i = k; i <= l + p - 1 && i <= n; i++) {
+            for (int j = r; j <= c + p - 1 && j <= m; j++) {
+                prices.add(matrix[i][j]);
+            }
+        }
+
+        if (c + p <= m) {
+            prices.add(matrix[l][c + p]);
+        }
+
+        if (c - p > 0) {
+            prices.add(matrix[l][c - p]);
+        }
+
+        if (l + p <= n) {
+            prices.add(matrix[l + p][c]);
+        }
+
+        if (l - p > 0) {
+            prices.add(matrix[l - p][c]);
+        }
+
+
+
+
+
+        Collections.sort(prices);
+        System.out.println(prices.get(prices.size() - 1));
+
+
+    }
+}
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny grid and manually list every cell that can be reached in at most P steps. Does your program collect all of those cells?
+1344635640,5.36,cpp,GREEDY_NEIGHBOR_WALK,low,1344635640.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    
+    int N, M, P, L, C, a[1001][1001], x;
+    cin>>N>>M>>P>>L>>C;
+    for(int i = 1; i <= N; i++)
+        for(int j = 1; j <= M; j++) {
+            cin>>x;
+            a[i][j] = x;
+        }
+    int i = 1, posi = L, posj = C, max = a[L][C];
+    while(i <= P) {
+        if(L - 1 >= 1 && L - 1 <= N && C >= 1 && C <= M && a[L-1][C] > max) {
+            posi = L - 1;
+            posj = C;
+            max = a[L-1][C];
+        }
+        if(L >= 1 && L <= N && C - 1 >= 1 && C - 1 <= M && a[L][C-1] > max) {
+            posi = L;
+            posj = C - 1;
+            max = a[L][C-1];
+        }
+        if(L + 1 >= 1 && L + 1 <= N && C >= 1 && C <= M && a[L+1][C] > max) {
+            posi = L + 1;
+            posj = C;
+            max = a[L+1][C];
+        }
+        if(L >= 1 && L <= N && C + 1 >= 1 && C + 1 <= M && a[L][C+1] > max) {
+            posi = L;
+            posj = C + 1;
+            max = a[L][C+1];
+        }
+        if(L == posi && C == posj) {
+            break;
+        } else {
+            L = posi;
+            C = posj;
+            i++;
+        }
+    }
+    cout<<max;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny grid where the highest diamond isn’t an immediate neighbor but can be reached in a few moves. Does your greedy step still lead to that cell?
+1323404104,41.07,cpp,SORTED_MANHATTAN,high_partial,1323404104.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    
+    vector <pair<int, int>> aux;
+    int val;
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            int dist = abs (l - i) + abs (c - j);
+            cin >> val;
+            aux.push_back (make_pair(dist, val));
+        }
+    }
+    
+    sort (aux.begin(), aux.end());
+    
+    int i = 0;
+    int maxim = -100;
+    while (aux[i].first <= p) {
+        if (aux[i].second > maxim) {
+            maxim = aux[i].second;
+        }
+        i++;
+    }
+    
+    cout << maxim;   
+    
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,What happens if every cell is within the allowed distance? Does your loop stop before you run off the end of the list?
+1323404960,37.5,java,BFS_RADIUS,high_partial,1323404960.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    static class Pair{
+        public int x;
+        public int y;
+
+        public Pair(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+    public static int bfs(int l, int c, int p, int[][] grid,int m,int n) {
+        int[][] vizitat = new int[n+1][m+1];
+        vizitat[l][c] = 1;
+        Queue<Pair> Q = new LinkedList<>();
+        Q.add(new Pair(l, c));
+        int mx = grid[l][c];
+        while(!Q.isEmpty()) {
+         
+            Pair pair = Q.poll();
+            int l_N = pair.x - 1;
+            int c_N = pair.y;
+
+            int l_S = pair.x + 1;
+            int c_S = pair.y;
+
+            int l_E = pair.x;
+            int c_E = pair.y + 1;
+
+            int l_V = pair.x;
+            int c_V = pair.y - 1;
+            if (Math.abs(l_N - l) > p || Math.abs(l_S - l) > p || Math.abs(c_E - c) > p 
+                || Math.abs(c_V - c) > p || l_N < 1 || l_S > n || c_E > m || c_V < 1)
+                break;
+            if(vizitat[l_N][c_N] == 0) {
+                vizitat[l_N][c_N] = 1;
+                Q.add(new Pair(l_N, c_N));
+                if (mx < grid[l_N][c_N]) {
+                    mx = grid[l_N][c_N];
+                }
+            }
+
+            if(vizitat[l_S][c_S] == 0) {
+                vizitat[l_S][c_S] = 1;
+                Q.add(new Pair(l_S, c_S));
+                if (mx < grid[l_S][c_S]) {
+                    mx = grid[l_S][c_S];
+                }
+            }
+
+            if(vizitat[l_E][c_E] == 0) {
+                vizitat[l_E][c_E] = 1;
+                Q.add(new Pair(l_E, c_E));
+                if (mx < grid[l_E][c_E]) {
+                    mx = grid[l_E][c_E];
+                }
+            }
+
+            if(vizitat[l_V][c_V] == 0) {
+                vizitat[l_V][c_V] = 1;
+                Q.add(new Pair(l_V, c_V));
+                if (mx < grid[l_V][c_V]) {
+                    mx = grid[l_V][c_V];
+                }
+            }
+
+        }
+        return mx;
+
+    }
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int p = sc.nextInt();
+        int l = sc.nextInt();
+        int c = sc.nextInt();
+        int[][] grid = new int[n+1][m+1];
+        for (int i = 1 ; i <= n ; i++) {
+            for (int j = 1 ; j <= m ; j++) {
+                grid[i][j] = sc.nextInt();
+            }
+
+            
+
+        }
+        
+        System.out.println(bfs(l, c, p, grid, m, n));
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a very small grid and walk through the first few steps of your search. Does it stop before exploring all cells that are within the allowed number of moves?
+1323404864,7.14,java,BFS_RADIUS,low,1323404864.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    static class Pair{
+        public int x;
+        public int y;
+
+        public Pair(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+    public static int bfs(int l, int c, int p, int[][] grid,int m,int n) {
+        int[][] vizitat = new int[n+1][m+1];
+        vizitat[l][c] = 1;
+        Queue<Pair> Q = new LinkedList<>();
+        Q.add(new Pair(l, c));
+        int nr = 0;
+        int mx = grid[l][c];
+        while(!Q.isEmpty() && nr < 4*p - 3) {
+            nr++;
+            Pair pair = Q.poll();
+            int l_N = pair.x - 1;
+            int c_N = pair.y;
+
+            int l_S = pair.x + 1;
+            int c_S = pair.y;
+
+            int l_E = pair.x;
+            int c_E = pair.y + 1;
+
+            int l_V = pair.x;
+            int c_V = pair.y - 1;
+
+            if(vizitat[l_N][c_N] == 0) {
+                vizitat[l_N][c_N] = 1;
+                Q.add(new Pair(l_N, c_N));
+                if (mx < grid[l_N][c_N]) {
+                    mx = grid[l_N][c_N];
+                }
+            }
+
+            if(vizitat[l_S][c_S] == 0) {
+                vizitat[l_S][c_S] = 1;
+                Q.add(new Pair(l_S, c_S));
+                if (mx < grid[l_S][c_S]) {
+                    mx = grid[l_S][c_S];
+                }
+            }
+
+            if(vizitat[l_E][c_E] == 0) {
+                vizitat[l_E][c_E] = 1;
+                Q.add(new Pair(l_E, c_E));
+                if (mx < grid[l_E][c_E]) {
+                    mx = grid[l_E][c_E];
+                }
+            }
+
+            if(vizitat[l_V][c_V] == 0) {
+                vizitat[l_V][c_V] = 1;
+                Q.add(new Pair(l_V, c_V));
+                if (mx < grid[l_V][c_V]) {
+                    mx = grid[l_V][c_V];
+                }
+            }
+
+        }
+        return mx;
+
+    }
+    public static void main(String[] args) {
+        
+        MyScanner sc = new MyScanner();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int p = sc.nextInt();
+        int l = sc.nextInt();
+        int c = sc.nextInt();
+        int[][] grid = new int[n+1][m+1];
+        for (int i = 1 ; i <= n ; i++) {
+            for (int j = 1 ; j <= m ; j++) {
+                grid[i][j] = sc.nextInt();
+            }
+
+            
+
+        }
+        
+        System.out.println(bfs(l, c, p, grid, m, n));
+    }
+}",statement_code_only,gpt-oss-20b,medium,"Try a tiny grid where the starting cell is on the edge. Does the program still run, or does it try to look outside the grid?"
+1378040345,10.71,cpp,BFS_RADIUS,medium,1378040345.cpp,"#include <iostream>
+#include <vector>
+#include <queue>
+#include <tuple>
+#include <climits>
+using namespace std;
+
+int main() {
+    int N, M, P, L, C;
+    cin >> N >> M >> P >> L >> C;
+
+    vector<vector<int>> beauty(N, vector<int>(M));
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < M; ++j) {
+            cin >> beauty[i][j];
+        }
+    }
+
+    vector<int> dx = {-1, 0, 1, 0};
+    vector<int> dy = {0, 1, 0, -1};
+
+    vector<vector<bool>> visited(N, vector<bool>(M, false));
+
+    queue<tuple<int, int, int>> q;
+    q.push(make_tuple(L - 1, C - 1, 0)); 
+    int max_beauty = INT_MIN; 
+    while (!q.empty()) {
+        int x, y, steps;
+        tie(x, y, steps) = q.front();
+        q.pop();
+
+        if (steps == P) {
+            max_beauty = max(max_beauty, beauty[x][y]);
+            continue;
+        }
+
+        for (int k = 0; k < 4; ++k) {
+            int new_x = x + dx[k];
+            int new_y = y + dy[k];
+
+            if (new_x >= 0 && new_x < N && new_y >= 0 && new_y < M) {
+                if (!visited[new_x][new_y]) {
+                    visited[new_x][new_y] = true;
+                    q.push(make_tuple(new_x, new_y, steps + 1));
+                }
+            }
+        }
+    }
+
+    if (max_beauty == INT_MIN) {
+        cout << ""-1"" << endl;
+    } else {
+        cout << max_beauty << endl;
+    }
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny grid where the best diamond can be reached in fewer than the maximum number of moves. Does your algorithm still report that value?
+1361903616,1.79,cpp,DFS_RADIUS,low,1361903616.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void find_max(int i, int j, vector<vector<int>> v, int &max, int &p) {
+    if (i < 0 || j < 0 || i >= v.size() || j >= v[0].size()) return;
+    if (v[i][j] > max) {
+        max = v[i][j];
+        p--;
+    }
+    if (p == 0) {
+        return;
+    }
+    find_max(i - 1, j, v, max, p);
+    find_max(i + 1, j, v, max, p);
+    find_max(i, j - 1, v, max, p);
+    find_max(i, j + 1, v, max, p);
+}
+
+int main() {
+    int n, m, p, l, c;
+    cin >> n >> m >> p >> l >> c;
+    vector<vector<int>> v(n + 1, vector<int>(m + 1));
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> v[i][j];
+        }
+    }
+    if (p == 0) {
+        cout << v[l][c] << endl;
+    } else {
+        p++;
+        int i = l, j = c, max = 0;
+        find_max(i, j, v, max, p);
+        cout << max << endl;
+    }
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Have you checked whether the step counter is reduced for every move you make, or only when a better value is found? Does the recursion actually explore all cells within exactly P steps?"
+1314234805,12.5,java,DFS_RADIUS,medium,1314234805.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    int n, m, p, l, c, max;
+    int[][] val;
+    int[][] viz;
+    
+    public void readInput(){
+        MyScanner sc = new MyScanner();
+        n = sc.nextInt();
+        m = sc.nextInt();
+        p = sc.nextInt();
+        l = sc.nextInt();
+        c = sc.nextInt();
+        val = new int[n + 1][m + 1];
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                val[i][j] = sc.nextInt();
+            }
+        }
+        max = val[l][c];
+    }
+    
+    public int aux(int l, int c, int p){
+        if(p == 0)
+            return val[l][c];
+        int N = 0, S = 0, W = 0, E = 0;
+        if(l > 1) 
+            N = aux(l - 1, c, p - 1);
+        if(l < n) 
+            S = aux(l + 1, c, p - 1);
+        if(c > 1) 
+            W = aux(l, c - 1, p - 1);
+        if(c < m)
+            E = aux(l, c + 1, p - 1);
+        
+        if(N > max)
+            max = N;
+        if(S > max)
+            max = S;
+        if(W > max)
+            max = W;
+        if(E > max)
+            max = E;
+        return max;
+        
+    }
+    
+    public void solve(){
+        viz = new int[n + 1][m + 1];
+        
+
+
+
+
+
+
+        System.out.println(aux(l, c, p));
+        
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        s.readInput();
+        s.solve();
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you tried estimating how many recursive calls your algorithm makes as p grows? How does that compare to the input limits?
+1332753487,41.07,cpp,DP_RADIUS,high_partial,1332753487.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, m, p, l, c;
+
+    cin >> n >> m >> p >> l >> c;
+
+    long z = numeric_limits<long>::min();
+    
+    vector<vector<long>> f(n + 1, vector<long>(m + 1, 0));
+
+
+    vector<vector<vector<bool>>> dp(p + 1, vector<vector<bool>>(n + 2, vector<bool>(m + 2, false)));
+
+
+    dp[0][l][c] = true;
+    
+    z = f[l][c];
+
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            cin >> f[i][j];
+        }
+    }
+
+    for (int k = 1; k <= p; ++k) {
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
+                dp[k][i][j] = dp[k - 1][i - 1][j] || dp[k - 1][i + 1][j] ||
+                    dp[k - 1][i][j + 1] || dp[k - 1][i][j - 1];
+                
+                if (dp[k][i][j]) {
+                    z = max(z, f[i][j]);
+                }
+            }
+        }
+    }
+    
+    
+
+
+
+
+        
+
+
+    
+    cout << z << endl;
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you tried running the logic on a tiny grid where the best diamond is at the starting position? Does the program consider that value when it first sets the maximum?
+1314235171,16.07,java,DP_RADIUS,medium,1314235171.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    int[][] matrice;
+    int[][] dp;
+    int N,M,P,L,C;
+    PriorityQueue<Integer> maxim;
+    
+    public static void main(String[] args) {
+        
+        Solution s = new Solution();
+        s.solve();
+    }
+    
+    public void solve () {
+        readInput();
+        System.out.println(getSolution());
+    }
+    
+    public int getSolution () {
+        return helperDiamond(L,C,P);
+    }
+    
+    public int helperDiamond (int i, int j, int ramase) {
+        
+        if (ramase == 0) {
+            
+            dp[i][j] = matrice[i][j];
+            return matrice[i][j];
+        }
+        
+        int max = Integer.MIN_VALUE;
+        int r1, r2, r3, r4;
+        if (i > 1) {
+            if (dp[i-1][j] != Integer.MIN_VALUE) {
+                r1 = dp[i-1][j];
+            } else {
+                r1 = helperDiamond(i-1, j, ramase-1);
+                dp[i-1][j] = r1;
+            }
+            
+            
+            
+            if (r1 > max) 
+                max = r1;
+        }
+        
+        if (j > 1) {
+            if (dp[i][j-1] != Integer.MIN_VALUE) {
+                r2 = dp[i][j-1];
+            } else {
+                r2 = helperDiamond(i, j-1, ramase-1);
+                dp[i][j-1] = r2;
+            }
+            
+            if (r2 > max) 
+                max = r2;
+        }
+        
+        if (i < N) {
+            if (dp[i+1][j] != Integer.MIN_VALUE) {
+                r3 = dp[i+1][j];
+            } else {
+                r3 = helperDiamond(i+1, j, ramase-1);
+                dp[i+1][j] = r3;
+            }
+            
+            if (r3 > max) 
+                max = r3;
+        }
+        
+        if (j < M) {
+            if (dp[i][j+1] != Integer.MIN_VALUE) {
+                r4 = dp[i][j+1];
+            } else {
+                r4 = helperDiamond(i, j+1, ramase-1);
+                dp[i][j+1] = r4;
+            }
+            
+            if (r4 > max) 
+                max = r4;
+        }
+        
+        if (matrice[i][j] > max) {
+            max = matrice[i][j];
+        }
+        
+        dp[i][j] = max;
+        return max;
+        
+    }
+    
+    public void readInput () {
+        MyScanner s = new MyScanner();
+        N = s.nextInt(); 
+        M = s.nextInt(); 
+        P = s.nextInt(); 
+        L = s.nextInt(); 
+        C = s.nextInt(); 
+        
+        matrice = new int[N+1][M+1];
+        dp = new int[N+1][M+1];
+        
+        for (int i=1; i<N+1; i++) {
+            for (int j=1; j<M+1; j++) {
+                matrice[i][j] = s.nextInt();
+                dp[i][j] = Integer.MIN_VALUE;
+            }
+        }
+    }
+    
+}",statement_code_only,gpt-oss-20b,medium,Have you thought about whether the best value you can reach from a given cell depends on how many moves you still have? Does your memoization capture that possibility?
+1332615936,42.86,java,GEOMETRIC_SCAN,high_partial,1332615936.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        MyScanner reader = new MyScanner();
+        int N = reader.nextInt();
+        int M = reader.nextInt();
+        int P = reader.nextInt();
+        int L = reader.nextInt();
+        int C = reader.nextInt();
+        int[][] grid = new int[N][M];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                grid[i][j] = reader.nextInt();
+            }
+        }
+
+        int diamond = grid[L - 1][C - 1];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (Math.abs(L - 1 - i) + Math.abs(C - 1 -j) <= P) {
+                    diamond = Math.max(diamond, grid[i][j]);
+                }
+            }
+        }
+       System.out.print(diamond);
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you verified that the inner loop iterates over the correct range? What happens if the number of columns differs from the number of rows?
+1314236550,5.36,java,GEOMETRIC_SCAN,low,1314236550.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner scan = new MyScanner();
+        int n = scan.nextInt();
+        int m = scan.nextInt();
+        int p = scan.nextInt();
+        int l = scan.nextInt();
+        int c = scan.nextInt();
+        int[][] mat = new int[n][m];
+        for(int i =0;i<n;i++){
+            for(int j =0;j<m;j++){
+                mat[i][j]=scan.nextInt();
+            }
+        }
+        int N = 0,NE=0,NV=0;
+        int V = 0;
+        int E = 0;
+        int S = 0,SE=0,SV=0;
+        int max = 0;
+        if(p == 0){
+            System.out.println(mat[l-1][c-1]);
+        } else {
+            int x=l-1;
+            int y=c-1;
+            for(int i = 0; i< p ;i++){
+                for(int j =0; j<p ;j++){
+                    for(int k = 0;k<p;k++){
+                        max = Math.max(max,mat[x-j][y-k]);
+                        max = Math.max(max,mat[x-j][y+k]);
+                        max = Math.max(max,mat[x+j][y-k]);
+                        max = Math.max(max,mat[x+j][y+k]);
+                    }
+                }
+            }
+            System.out.println(max);
+        }
+        
+    }
+}",statement_code_only,gpt-oss-20b,medium,Have you thought about how to list all cells you can reach with at most p moves? Does your current loops cover all those positions?
+1323401347,14.29,cpp,GEOMETRIC_SCAN,medium,1323401347.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int n, m, p, l, c;
+std::vector<std::vector<int>> matrix;
+
+void back(std::vector<std::pair<int,int>>& sol, int& max, std::vector<std::pair<int, int>>& moves) {
+    if (sol.size() == p + 1) {
+        return;
+    }
+    for (int i = 0; i < moves.size(); i++) {
+        int new_line = sol.back().first + moves[i].first;
+        int new_col = sol.back().second + moves[i].second;
+        
+        if ((new_line >= 0 && new_line < n) && (new_col >= 0 && new_col < m)) {
+            sol.push_back({new_line, new_col});
+            if (max < matrix[new_line][new_col]) {
+                max = matrix[new_line][new_col];
+            }
+            back(sol, max, moves);
+            sol.pop_back();
+        }
+    }
+}
+
+void read_input() {
+    std::cin >> n >> m >> p >> l >> c;
+    for (int i = 0; i < n; i++) {
+      matrix.push_back(std::vector<int>());
+        for (int j = 0; j < m; j++) {
+          int x;
+          std::cin >> x;
+          matrix[i].push_back(x);
+        }
+    }
+}
+
+int main() {
+    
+    std::vector<std::pair<int,int>> sol;
+    std::vector<std::pair<int, int>> moves = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    
+    read_input();
+    sol.push_back({l - 1, c -1});
+    int max = matrix[l - 1][c - 1];
+
+    back(sol, max, moves);
+    
+    std::cout << max;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you estimated how many different move sequences your backtracking explores for the worst case? How does that compare to the input limits?
+1323456288,5.36,java,GREEDY_NEIGHBOR_WALK,low,1323456288.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    static class Task{
+        int n,m,p,l,c,max;
+        int[][] board;
+        private void readInput(){
+             Scanner sc = new Scanner(System.in);
+            n = sc.nextInt();
+            m = sc.nextInt();
+            p = sc.nextInt();
+            l = sc.nextInt();
+            c = sc.nextInt();
+            board = new int[n+1][m+1];
+        
+            for(int i = 1; i <= n ; i++){
+                for(int j = 1 ; j <= m ; j++){
+                    board[i][j] = sc.nextInt();
+                }
+            }
+        
+            max = board[l][c];
+        
+        }
+        private void backtrack(int step,int l,int c){
+            
+            if(step == p){
+                return;
+            }
+            
+            for(int i = 1; i <= p ; i++){
+                
+                if((l-1) >= 1 && board[l-1][c] > max){
+                    
+                    max = board[l-1][c];
+                    backtrack((step+1),(l-1),c);
+                }
+                else if((l+1) <= m && board[l+1][c] > max){
+                    
+                    max = board[l+1][c];
+                    backtrack((step+1),(l+1),c);
+                }
+                else if((c-1) >= 1 && board[l][c-1] > max){
+                    
+                    max = board[l][c-1];
+                    backtrack((step+1),l,(c-1));
+                }
+                else if((c+1) <= n && board[l][c+1] > max){
+                    
+                    max = board[l][c+1];
+                    backtrack((step+1),l,(c+1));
+                }
+                else{
+                    return;
+                }
+            }
+        }
+        
+        private void solve(){
+            readInput();
+            backtrack(0,l,c);
+            System.out.println(max);
+        }
+    }
+    public static void main(String[] args) {
+        
+       
+        new Task().solve();
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny example where the piece has more than one possible move. Does the algorithm still find the maximum reachable diamond?
+1323447806,41.07,cpp,BFS_RADIUS,high_partial,1323447806.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <queue>
+using namespace std;
+
+bool is_in(int x, int y, int n, int m) {
+    return ((x <= n) && (x > 0) && (y <= m) && (y > 0) );
+}
+int main() {
+       
+    int n, m, no_move, x, current_move;
+    pair<int, int> initial;
+    cin >> n >> m >> no_move;
+    cin >> initial.first >> initial.second;
+    int matrix[n + 1][m + 1];
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> x;
+            matrix[i][j] = x;
+        }
+    }
+    
+    priority_queue<int> timp; 
+    int diamond[n + 1][m + 1];
+    diamond[initial.first][initial.second] = matrix[initial.first][initial.second];
+    set<pair<int, int>> future_pos;
+    set<pair<int, int>> old_pos;
+    set<pair<int, int>> :: iterator itr;
+    old_pos.insert(initial);
+    current_move = 0;
+    timp.push(diamond[initial.first][initial.second]);
+    
+    while (current_move != no_move) {
+        if (!old_pos.empty()) {
+            
+            while (!old_pos.empty()) {
+
+                itr = old_pos.begin();
+                pair<int, int> curr_pos = make_pair(itr->first, itr->second);
+                
+                if (is_in(curr_pos.first + 1, curr_pos.second, n, m) && (matrix[curr_pos.first + 1][curr_pos.second] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first + 1][curr_pos.second] = matrix[curr_pos.first + 1][curr_pos.second];
+                    timp.push(diamond[curr_pos.first + 1][curr_pos.second]);
+                }
+                if (is_in(curr_pos.first + 1, curr_pos.second, n, m))
+                   future_pos.insert(make_pair(curr_pos.first + 1, curr_pos.second));
+                
+                if (is_in(curr_pos.first - 1, curr_pos.second, n, m) && (matrix[curr_pos.first - 1][curr_pos.second] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first - 1][curr_pos.second] = matrix[curr_pos.first - 1][curr_pos.second];
+                    timp.push(diamond[curr_pos.first - 1][curr_pos.second]);  
+                }
+                if (is_in(curr_pos.first - 1, curr_pos.second, n, m))
+                    future_pos.insert(make_pair(curr_pos.first - 1, curr_pos.second));
+                
+                if (is_in(curr_pos.first, curr_pos.second + 1, n, m) && (matrix[curr_pos.first][curr_pos.second + 1] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first][curr_pos.second + 1] = matrix[curr_pos.first][curr_pos.second + 1];
+                    timp.push(diamond[curr_pos.first][curr_pos.second + 1]);
+                }
+                if (is_in(curr_pos.first, curr_pos.second + 1, n, m))
+                    future_pos.insert(make_pair(curr_pos.first, curr_pos.second + 1));
+                
+                if (is_in(curr_pos.first, curr_pos.second - 1, n, m) && (matrix[curr_pos.first][curr_pos.second - 1] >
+                    diamond[curr_pos.first][curr_pos.second])) {
+                    diamond[curr_pos.first][curr_pos.second - 1] = matrix[curr_pos.first][curr_pos.second - 1];
+                    timp.push(diamond[curr_pos.first][curr_pos.second - 1]);
+                }
+                if (is_in(curr_pos.first, curr_pos.second - 1, n, m))
+                    future_pos.insert(make_pair(curr_pos.first, curr_pos.second - 1));
+                
+                old_pos.erase(*itr);
+            }
+            
+        } else {
+            swap(old_pos, future_pos);
+            current_move++;
+        }
+    }
+    cout << timp.top();
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Have you tested a tiny grid where the highest diamond can only be reached after stepping onto a lower‑valued cell? Does your algorithm still return that maximum? What might be missing in the move logic?
+1314235663,1.79,cpp,BFS_RADIUS,low,1314235663.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+#include <tuple>
+#define NMAX 1001
+#define MMAX 1001
+#define PMAX 1000000000
+using namespace std;
+
+float beauty[NMAX][MMAX];
+int visited[NMAX][MMAX];
+int map[NMAX][MMAX];
+int N, M, P, start_i, start_j;
+
+float max(float a, float b){
+    if (a > b){
+        return a;
+    }
+    return b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int isSafe(int posi, int posj){
+    if(posi < 1 || posi > N){
+        return 0;
+    }
+    if(posj < 1 || posj > M){
+        return 0;
+    }
+    if(visited[posi][posj] != 0){
+        return 0;
+    }
+    return 1;
+}
+
+
+void solve(){
+    queue<pair<int, int>>posQ;
+    int pmax = P + 1;
+    int posi = start_i; int posj = start_j;
+    posQ.push(make_pair(posi, posj));
+
+    float res = 0;
+    while(!posQ.empty() && pmax > 0){
+        visited[posi][posj] = 1;
+        pmax--;
+        pair<int, int> currPos = posQ.front();
+        posQ.pop(); 
+        posi = currPos.first;posj = currPos.second;
+        float b = map[posi][posj];
+        beauty[posi][posj] += b;
+        res = max(res, beauty[posi][posj]);
+
+        if(isSafe(posi + 1, posj)){
+            beauty[posi + 1][posj] += b;
+            posQ.push(make_pair(posi + 1, posj));
+        }
+        
+        if(isSafe(posi - 1, posj)){
+            beauty[posi - 1][posj] += b;
+            posQ.push(make_pair(posi - 1, posj));
+        }
+        
+        if(isSafe(posi, posj + 1)){
+            beauty[posi][posj + 1] += b;
+            posQ.push(make_pair(posi, posj + 1));
+        }
+
+        if(isSafe(posi, posj - 1)){
+            beauty[posi][posj - 1] += b;
+            posQ.push(make_pair(posi, posj - 1));
+        }
+    }
+
+    if(P > 0){
+        cout<<res<<""\n"";
+    }
+    else{
+        cout<<""-1""<<""\n"";
+    }
+   
+}
+
+int main() {
+       
+    cin>>N>>M>>P>>start_i>>start_j;
+    for(int i = 1; i <= N; i++){
+        for(int j = 1; j <= M; j++){
+            cin>>map[i][j];
+        }
+    }
+    solve();
+    
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny example with more than one possible choice. Does the result still lead to the best reachable value?
+1323376847,14.29,cpp,BFS_RADIUS,medium,1323376847.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <queue>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct pos {
+    int x, y;
+};
+bool validPos(struct pos position, int n, int m) {
+    return (position.x > 0 && position.x <=n && position.y > 0 && position.y <= m);
+}
+int main() {
+    int n, m, moves;
+    struct pos start;
+
+    cin >> n >> m >> moves;
+    cin >> start.x >> start.y;
+    vector<vector<int>> map(n + 1);
+    vector<vector<bool>> visited(n + 1);
+    for (int i = 1; i <= n; i++) {
+        map[i] = vector<int>(m + 1);
+        visited[i] = vector<bool>(m + 1, false);
+    }
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> map[i][j];
+        }
+    }
+
+    struct pos directions[4];
+    directions[0].x = 0;
+    directions[0].y = 1;
+    
+    directions[1].x = 1;
+    directions[1].y = 0;
+    
+    directions[2].x = 0;
+    directions[2].y = -1;
+    
+    directions[3].x = -1;
+    directions[3].y = 0;
+    
+    queue<pos> queue;
+    queue.push(start);
+    visited[start.x][start.y] = true;
+    int best = map[start.x][start.y];
+    struct pos nextPos, currPos;
+    while (!queue.empty() && moves > 0) {
+        currPos = queue.front();
+        queue.pop();
+        for (int i = 0; i < 4; i++) {
+            nextPos.x = currPos.x + directions[i].x;
+            nextPos.y = currPos.y + directions[i].y;
+            
+            if (validPos(nextPos, n, m) && !visited[nextPos.x][nextPos.y]) {
+                visited[nextPos.x][nextPos.y] = true;
+                if (map[nextPos.x][nextPos.y] > best) {
+                    best = map[nextPos.x][nextPos.y];
+                }
+                queue.push(nextPos);
+            }
+        }
+        moves--;
+    }
+    cout << best;
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"Try a tiny grid where a cell can be reached in two different ways, one with more moves left than the other. Does your algorithm still consider the better option?"
+1314237848,8.93,java,DFS_RADIUS,low,1314237848.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    int max = -1;
+    int number;
+
+    public int isSafe(int x, int y, int n){
+        if(x <= 0 || x > n || y <= 0 || y > n)
+            return -1;
+        else
+            return 1;
+    }
+
+    public void recursive(int[][] adj, int x, int y, int p){
+
+        if(p == 0) {
+
+
+            if (adj[x][y] > max)
+                max = adj[x][y];
+            return ;
+        }
+
+        if(isSafe(x, y + 1, number) == 1)
+            recursive(adj, x, y+1, p-1);
+        if(isSafe(x, y-1, number) == 1)
+            recursive(adj, x, y-1, p-1);
+        if(isSafe(x+1, y, number) == 1)
+            recursive(adj, x+1, y, p-1);
+        if(isSafe(x - 1, y, number) == 1)
+            recursive(adj, x - 1, y, p-1);
+
+    }
+    public void solve(){
+        MyScanner st = new MyScanner();
+        int n = st.nextInt();
+        int m = st.nextInt();
+        int p = st.nextInt();
+        int l = st.nextInt();
+        int c = st.nextInt();
+
+        int[][] adj = new int[n+1][m+1];
+
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                adj[i][j] = st.nextInt();
+            }
+        }
+        number = n;
+        recursive(adj, l, c, p);
+        System.out.println(max);
+    }
+    
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        s.solve();
+    }
+}",statement_code_only,gpt-oss-20b,medium,"When you check if a move stays inside the grid, are you using the correct limits for both row and column? Try a tiny grid where the number of rows and columns differ and trace a move that goes out of bounds."
+1361805995,14.29,java,DFS_RADIUS,medium,1361805995.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+    
+    static class Pair {
+        int l, c;
+        
+        Pair(int l, int c) {
+            this.l = l;
+            this.c = c;
+        } 
+    }
+
+    public static void main(String[] args) {
+        MyScanner scan = new MyScanner();
+        
+        int n = scan.nextInt();
+        int m = scan.nextInt();
+        int p = scan.nextInt();
+        int l = scan.nextInt();
+        int c = scan.nextInt();
+        
+        int[][] mat = new int[n + 1][m + 1];
+        
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
+                mat[i][j] = scan.nextInt();
+            }
+        }
+        
+        ArrayList<Pair> seen = new ArrayList<>();
+        
+        System.out.println(dfs(l, c, p, n, m, seen, mat));
+    }
+    
+    private static int dfs(int l, int c, int p, int n, int m, ArrayList<Pair> seen, int[][] mat) {
+        if (l > n || l < 1 || c > m || c < 1) {
+            return Integer.MIN_VALUE;
+        }
+        
+        if (seen.contains(new Pair(l, c)) || p < 0) {
+            return Integer.MIN_VALUE;
+        }
+        
+        seen.add(new Pair(l, c));
+
+        int north = dfs(l - 1, c, p - 1, n, m, seen, mat);
+        int west = dfs(l, c - 1, p - 1, n, m, seen, mat);
+        int east = dfs(l, c + 1, p - 1, n, m, seen, mat);
+        int south = dfs(l + 1, c, p - 1, n, m, seen, mat);
+        
+        return Math.max(Math.max(Math.max(Math.max(north, west), east), south), mat[l][c]); 
+    }
+}",statement_code_only,gpt-oss-20b,medium,"How many different paths could your DFS explore in the worst case? Try to estimate the number of recursive calls for a small grid and a few moves, then compare that to the input limits."
+1332753509,41.07,cpp,DP_RADIUS,high_partial,1332753509.cpp,"#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, m, p, l, c;
+
+    cin >> n >> m >> p >> l >> c;
+
+    long z = numeric_limits<long>::min();
+    
+    vector<vector<long>> f(n + 1, vector<long>(m + 1, 0));
+
+
+    vector<vector<vector<bool>>> dp(p + 1, vector<vector<bool>>(n + 2, vector<bool>(m + 2, false)));
+
+
+    dp[0][l][c] = true;
+    
+
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            cin >> f[i][j];
+        }
+    }
+    
+    z = f[l][c];
+
+    for (int k = 1; k <= p; ++k) {
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
+                dp[k][i][j] = dp[k - 1][i - 1][j] || dp[k - 1][i + 1][j] ||
+                    dp[k - 1][i][j + 1] || dp[k - 1][i][j - 1];
+                
+                if (dp[k][i][j]) {
+                    z = max(z, f[i][j]);
+                }
+            }
+        }
+    }
+    
+    
+
+
+
+
+        
+
+
+    
+    cout << z << endl;
+
+    return 0;
+}",statement_code_only,gpt-oss-20b,medium,"How many times does the triple‑nested loop run for the largest possible N, M, P? Roughly estimate the total operations and compare that with the problem’s limits."
+1314235033,12.5,java,DP_RADIUS,medium,1314235033.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    int[][] matrice;
+    int[][] dp;
+    int N,M,P,L,C;
+    
+    public static void main(String[] args) {
+        
+        Solution s = new Solution();
+        s.solve();
+    }
+    
+    public void solve () {
+        readInput();
+        System.out.println(getSolution());
+    }
+    
+    public int getSolution () {
+        return helperDiamond(L,C,P);
+    }
+    
+    public int helperDiamond (int i, int j, int ramase) {
+        
+        if (ramase == 0) {
+            
+            dp[i][j] = matrice[i][j];
+            return matrice[i][j];
+        }
+        
+        int max = Integer.MIN_VALUE;
+        int r1, r2, r3, r4;
+        if (i > 1) {
+            if (dp[i-1][j] != Integer.MIN_VALUE) {
+                
+                r1 = helperDiamond(i-1, j, ramase-1);
+            } else {
+                r1 = helperDiamond(i-1, j, ramase-1);
+                
+            }
+            
+            if (r1 > max) 
+                max = r1;
+        }
+        
+        if (j > 1) {
+            if (dp[i][j-1] != Integer.MIN_VALUE) {
+                
+                r2 = helperDiamond(i, j-1, ramase-1);
+            } else {
+                r2 = helperDiamond(i, j-1, ramase-1);
+                
+            }
+            
+            if (r2 > max) 
+                max = r2;
+        }
+        
+        if (i < N) {
+            if (dp[i+1][j] != Integer.MIN_VALUE) {
+                
+                r3 = helperDiamond(i+1, j, ramase-1);
+            } else {
+                r3 = helperDiamond(i+1, j, ramase-1);
+                
+            }
+            
+            if (r3 > max) 
+                max = r3;
+        }
+        
+        if (j < M) {
+            if (dp[i][j+1] != Integer.MIN_VALUE) {
+                
+                r4 = helperDiamond(i, j+1, ramase-1);
+            } else {
+                r4 = helperDiamond(i, j+1, ramase-1);
+                
+            }
+            
+            if (r4 > max) 
+                max = r4;
+        }
+        
+        matrice[i][j] = max;
+        return max;
+        
+    }
+    
+    public void readInput () {
+        MyScanner s = new MyScanner();
+        N = s.nextInt(); 
+        M = s.nextInt(); 
+        P = s.nextInt(); 
+        L = s.nextInt(); 
+        C = s.nextInt(); 
+        
+        matrice = new int[N+1][M+1];
+        dp = new int[N+1][M+1];
+        
+        for (int i=1; i<N+1; i++) {
+            for (int j=1; j<M+1; j++) {
+                matrice[i][j] = s.nextInt();
+                dp[i][j] = Integer.MIN_VALUE;
+            }
+        }
+    }
+    
+}",statement_code_only,gpt-oss-20b,medium,Have you tried estimating how many different positions and remaining‑step combinations your recursion could visit? How does that number compare to the input limits?
+1314234605,35.71,java,GEOMETRIC_SCAN,high_partial,1314234605.java,"import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+
+    static class Task {
+        
+
+        
+        int n;
+        int m;
+        int p;
+        Position startingPos;
+        int[][] mat;
+
+
+        public class Position {
+
+            public Position() {
+            }
+
+            public Position(int i, int j) {
+                this.i = i;
+                this.j = j;
+            }
+
+            int i;
+            int j;
+        }
+
+        
+        private void readInput() {
+            
+            MyScanner sc = new MyScanner();
+
+            
+            n = sc.nextInt();
+            m = sc.nextInt();
+            p = sc.nextInt();
+            startingPos = new Position();
+            startingPos.i = sc.nextInt();
+            startingPos.j = sc.nextInt();
+            mat = new int[n + 1][m + 1];
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= m; j++) {
+                    mat[i][j] = sc.nextInt();
+                }
+            }
+        }
+
+        
+        private void getResult() {
+            int bestDiamond = mat[startingPos.i][startingPos.j];
+            int range = p;
+
+            Position st = new Position(startingPos.i - range, startingPos.j - range);
+            Position dr = new Position(startingPos.i + range, startingPos.j + range);
+
+            int midI = startingPos.i;
+            int midJ = startingPos.j;
+
+            for (int i = st.i; i <= dr.i; i++) {
+                int offset = range - Math.abs(i - midI);
+                for (int j = midJ - offset; j <= midJ + offset; j++) {
+                    Position currentPosition = new Position(i, j);
+                    if (i > 0 && j > 0 && mat[currentPosition.i][currentPosition.j] > bestDiamond) {
+                        bestDiamond = mat[currentPosition.i][currentPosition.j];
+                    }
+                    
+                }
+            }
+
+            System.out.println(bestDiamond);
+        }
+
+        public void solve() {
+            readInput();
+            getResult();
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        new Task().solve();
+    }
+}
+
+
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}",statement_code_only,gpt-oss-20b,medium,Try a tiny test where the allowed moves would take you outside the grid. What happens when you try to read a cell that doesn’t exist? Have you checked that every coordinate stays inside the grid bounds?
+1314236321,1.79,java,GEOMETRIC_SCAN,low,1314236321.java,"import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public MyScanner() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
+ 
+    String next() {
+        while (st == null || !st.hasMoreElements()) {
+            try {
+                st = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return st.nextToken();
+    }
+ 
+    int nextInt() {
+        return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+        return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+        return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+        String str = """";
+        try {
+            str = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        MyScanner scan = new MyScanner();
+        int n = scan.nextInt();
+        int m = scan.nextInt();
+        int p = scan.nextInt();
+        int l = scan.nextInt();
+        int c = scan.nextInt();
+        int[][] mat = new int[n][m];
+        for(int i =0;i<n;i++){
+            for(int j =0;j<m;j++){
+                mat[i][j]=scan.nextInt();
+            }
+        }
+        int N = 0;
+        int V = 0;
+        int E = 0;
+        int S = 0;
+        int max = 0;
+        if(p == 0){
+            System.out.println(mat[l-1][c-1]);
+        } else {
+            int x=l-1;
+            int y=c-1;
+            for(int i = 0; i< p ;i++){
+                N = mat[x-p][y];
+                S = mat[x+p][y];
+                E = mat[x][y+p];
+                V = mat[x][y-p];
+                max = Math.max(max,N);
+                max = Math.max(max,S);
+                max = Math.max(max,E);
+                max = Math.max(max,V);
+            }
+            System.out.println(max);
+        }
+        
+    }
+}",statement_code_only,gpt-oss-20b,medium,"Try a tiny grid with P > 1. Does the program examine every cell you can reach within P steps, or only a few specific ones?"

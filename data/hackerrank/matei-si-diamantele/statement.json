@@ -1,0 +1,24 @@
+{
+  "id": "matei-si-diamantele",
+  "statement": "Matei se joaca cu o piesa pe un grid bidimensional cu N linii si M coloane. Piesa se afla initial pe linia L si coloana C. La un pas, piesa se poate muta pe o casuta vecina: Nord, Est, Sud sau Vest, fara sa iasa din grid. In fiecare casuta se afla un diamant cu o valoare cunoscuta. Matei are cel mult P mutari si trebuie sa gaseasca diamantul cu valoarea maxima la care poate ajunge.",
+  "input_format": "Pe prima linie se citesc N, M, P, L si C. Urmeaza N linii, fiecare cu M numere intregi, reprezentand valorile diamantelor din grid.",
+  "constraints": [
+    "1 <= N, M <= 1000",
+    "0 <= P <= 10^9",
+    "-10^9 <= F[i][j] <= 10^9",
+    "1 <= L <= N",
+    "1 <= C <= M",
+    "Timp: C++ 3s, Java 6s"
+  ],
+  "output_format": "Se afiseaza valoarea maxima a unui diamant la care Matei poate ajunge in cel mult P mutari.",
+  "samples": [
+    {
+      "input": "6 8 1 4 3\n9 9 9 9 9 9 9 9\n9 9 9 9 9 9 9 9\n9 9 3 9 9 9 9 9\n9 2 1 2 9 9 9 9\n9 9 2 9 9 9 9 9\n9 9 9 9 9 9 9 9",
+      "output": "3"
+    },
+    {
+      "input": "4 3 0 2 2\n11 11 11\n11 -1 11\n11 11 11\n11 11 11",
+      "output": "-1"
+    }
+  ]
+}

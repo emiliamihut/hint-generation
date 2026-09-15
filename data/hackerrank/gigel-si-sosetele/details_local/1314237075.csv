@@ -1,0 +1,367 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+gigel-si-sosetele,1314237075,0,0,0,passed,,3.0,passed,0.087466,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2
+","2
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,1,1,1,passed,,3.0,passed,0.085175,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"5
+","5
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,2,2,2,passed,,3.0,passed,0.089171,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"0
+","0
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,3,3,3,passed,,3.0,passed,0.088679,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"10
+","10
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,4,4,4,failed,,3.0,runtime_error,0.170760,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"90700
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:74)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,5,5,5,failed,,3.0,runtime_error,0.119378,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"63334
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,6,6,6,failed,,3.0,runtime_error,0.122778,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"194719
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,7,7,7,failed,,3.0,runtime_error,0.133097,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"70344
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,8,8,8,failed,,3.0,runtime_error,0.120496,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"85677
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,9,9,9,failed,,3.0,runtime_error,0.112281,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"89628
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,10,10,10,failed,,3.0,runtime_error,0.125538,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"75249
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,11,11,11,failed,,3.0,runtime_error,0.122525,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"92752
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,12,12,12,failed,,3.0,runtime_error,0.127825,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"93552
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,13,13,13,failed,,3.0,runtime_error,0.145696,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"65710
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,14,14,14,failed,,3.0,runtime_error,0.167896,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"157323
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,15,15,15,failed,,3.0,runtime_error,0.184075,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"33561
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,16,16,16,failed,,3.0,runtime_error,0.174347,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"69726
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,17,17,17,failed,,3.0,runtime_error,0.165420,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"114160
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,18,18,18,failed,,3.0,runtime_error,0.194943,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"107284
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,19,19,19,failed,,3.0,runtime_error,0.157625,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"29693
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,20,20,20,failed,,3.0,runtime_error,0.164598,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"98905
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,21,21,21,failed,,3.0,runtime_error,0.155717,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"104112
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,22,22,22,failed,,3.0,runtime_error,0.165591,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"85480
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,23,23,23,failed,,3.0,runtime_error,0.160336,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"16509
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,24,24,24,failed,,3.0,runtime_error,0.143454,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"75332
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,25,25,25,failed,,3.0,runtime_error,0.136048,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"141790
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,26,26,26,failed,,3.0,runtime_error,0.133947,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"78596
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,27,27,27,failed,,3.0,runtime_error,0.125124,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"56702
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,28,28,28,failed,,3.0,runtime_error,0.130371,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"72515
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,29,29,29,failed,,3.0,runtime_error,0.115266,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"21273
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,30,30,30,failed,,3.0,runtime_error,0.123249,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"50292
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,31,31,31,failed,,3.0,runtime_error,0.109374,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"17719
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,32,32,32,failed,,3.0,runtime_error,0.137634,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"178137
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,33,33,33,failed,,3.0,runtime_error,0.151546,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"94252
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,34,34,34,failed,,3.0,runtime_error,0.147068,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"130173
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,35,35,35,failed,,3.0,runtime_error,0.148878,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"41002
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,36,36,36,failed,,3.0,runtime_error,0.125528,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"9861
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,37,37,37,failed,,3.0,runtime_error,0.147731,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"20205
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,38,38,38,failed,,3.0,runtime_error,0.138677,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"15767
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,39,39,39,failed,,3.0,runtime_error,0.176584,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"54457
+","Exception in thread ""main"" java.lang.IllegalArgumentException: Comparison method violates its general contract!
+	at java.base/java.util.TimSort.mergeLo(TimSort.java:781)
+	at java.base/java.util.TimSort.mergeAt(TimSort.java:518)
+	at java.base/java.util.TimSort.mergeCollapse(TimSort.java:448)
+	at java.base/java.util.TimSort.sort(TimSort.java:245)
+	at java.base/java.util.Arrays.sort(Arrays.java:1230)
+	at Solution.main(Solution.java:73)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,40,40,40,passed,,3.0,passed,0.471953,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"30492
+","30492
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,41,41,41,passed,,3.0,passed,0.247022,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"40011
+","40011
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,42,42,42,passed,,3.0,passed,0.274788,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"39627
+","39627
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,43,43,43,passed,,3.0,passed,0.205615,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"31238
+","31238
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,44,44,44,passed,,3.0,passed,0.527185,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"123700
+","123700
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,45,45,45,passed,,3.0,passed,0.148012,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3344
+","3344
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,46,46,46,passed,,3.0,passed,0.190066,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"22037
+","22037
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,47,47,47,passed,,3.0,passed,0.554533,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"101593
+","101593
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,48,48,48,passed,,3.0,passed,0.319594,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"54688
+","54688
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv
+gigel-si-sosetele,1314237075,49,49,49,passed,,3.0,passed,0.406245,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"89742
+","89742
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-sosetele\1314237075.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-sosetele\1314237075.csv

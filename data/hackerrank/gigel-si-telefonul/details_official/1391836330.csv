@@ -1,0 +1,49 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1391836330,25.0,Wrong Answer,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp: In function 'int main()':
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:10:5: error: 'uint32_t' was not declared in this scope
+   10 |     uint32_t n, x;
+      |     ^~~~~~~~
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:6:1: note: 'uint32_t' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+    5 | #include <algorithm>
+  +++ |+#include <cstdint>
+    6 | using namespace std;
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:11:20: error: template argument 2 is invalid
+   11 |     vector<uint32_t> vec, dp;
+      |                    ^
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:12:8: error: request for member 'push_back' in 'dp', which is of non-class type 'int'
+   12 |     dp.push_back(0);
+      |        ^~~~~~~~~
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:14:21: error: 'n' was not declared in this scope
+   14 |     scanf(""%u %u"", &n, &x);
+      |                     ^
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:14:25: error: 'x' was not declared in this scope
+   14 |     scanf(""%u %u"", &n, &x);
+      |                         ^
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:15:18: error: expected ';' before 'i'
+   15 |     for (uint32_t i = 0; i < n; i++) {
+      |                  ^~
+      |                  ;
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:15:26: error: 'i' was not declared in this scope
+   15 |     for (uint32_t i = 0; i < n; i++) {
+      |                          ^
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:16:17: error: expected ';' before 'tmp'
+   16 |         uint32_t tmp;
+      |                 ^~~~
+      |                 ;
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:17:22: error: 'tmp' was not declared in this scope; did you mean 'tm'?
+   17 |         scanf(""%u"", &tmp);
+      |                      ^~~
+      |                      tm
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:18:13: error: request for member 'push_back' in 'vec', which is of non-class type 'int'
+   18 |         vec.push_back(tmp);
+      |             ^~~~~~~~~
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:19:12: error: request for member 'push_back' in 'dp', which is of non-class type 'int'
+   19 |         dp.push_back(-1);
+      |            ^~~~~~~~~
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:22:18: error: expected ';' before 'start'
+   22 |     for (uint32_t start = 0; start < n; start++) {
+      |                  ^~~~~~
+      |                  ;
+data\clean_solutions\submissions\gigel-si-telefonul\1391836330.cpp:22:30: error: 'start' was not declared in this scope
+   22 |     for (uint32_t start = 0; start < n; start++) {
+      |                              ^~"

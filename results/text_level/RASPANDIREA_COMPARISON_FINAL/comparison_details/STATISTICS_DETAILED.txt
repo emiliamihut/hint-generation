@@ -1,0 +1,68 @@
+RASPANDIREA - DETAILED TAXONOMY - CODE VS TEXT
+
+TOTAL: 729
+SAME: 609
+DIFFERENT: 120
+AGREEMENT: 83.54%
+
+CODE DISTRIBUTION:
+ 557 | BFS_DISTANCE_ARRAY
+  79 | UNKNOWN
+  41 | BFS_EXPLICIT_TIME_IN_QUEUE
+  21 | BFS_LEVEL_ORDER_TIMER
+  16 | DIJKSTRA_UNIT_WEIGHT
+  11 | DFS_DEPTH_TRAVERSAL
+   4 | FLOYD_WARSHALL
+
+TEXT DISTRIBUTION:
+ 549 | BFS_DISTANCE_ARRAY
+  69 | BFS_LEVEL_ORDER_TIMER
+  49 | BFS_EXPLICIT_TIME_IN_QUEUE
+  23 | DIJKSTRA_UNIT_WEIGHT
+  20 | DFS_DEPTH_TRAVERSAL
+  14 | UNKNOWN
+   5 | FLOYD_WARSHALL
+
+MOST COMMON DIFFERENCES:
+  35 | UNKNOWN                          -> BFS_DISTANCE_ARRAY
+  34 | BFS_DISTANCE_ARRAY               -> BFS_LEVEL_ORDER_TIMER
+  14 | UNKNOWN                          -> BFS_LEVEL_ORDER_TIMER
+  14 | BFS_DISTANCE_ARRAY               -> BFS_EXPLICIT_TIME_IN_QUEUE
+   8 | UNKNOWN                          -> DFS_DEPTH_TRAVERSAL
+   7 | UNKNOWN                          -> DIJKSTRA_UNIT_WEIGHT
+   6 | BFS_EXPLICIT_TIME_IN_QUEUE       -> BFS_DISTANCE_ARRAY
+   1 | BFS_DISTANCE_ARRAY               -> DFS_DEPTH_TRAVERSAL
+   1 | UNKNOWN                          -> FLOYD_WARSHALL
+
+SCORE DISTRIBUTION - DIFFERENT CASES:
+score=     50 |  34 submissions |  28.33%
+score=   42.5 |   1 submissions |   0.83%
+score=   32.5 |   1 submissions |   0.83%
+score=   27.5 |   1 submissions |   0.83%
+score=     25 |   1 submissions |   0.83%
+score=   22.5 |   4 submissions |   3.33%
+score=     20 |   2 submissions |   1.67%
+score=   17.5 |   1 submissions |   0.83%
+score=     15 |   4 submissions |   3.33%
+score=   12.5 |   2 submissions |   1.67%
+score=     10 |   5 submissions |   4.17%
+score=    7.5 |   6 submissions |   5.00%
+score=      5 |  14 submissions |  11.67%
+score=    2.5 |  44 submissions |  36.67%
+
+CODE NON-UNKNOWN ONLY:
+TOTAL: 650
+SAME: 595
+AGREEMENT: 91.54%
+
+CONFUSION MATRIX
+rows = CODE, columns = TEXT
+
+CODE \ TEXT                         BFS_DISTANCE_ARR  BFS_EXPLICIT_TIM  BFS_LEVEL_ORDER_  DFS_DEPTH_TRAVER  DIJKSTRA_UNIT_WE    FLOYD_WARSHALL           UNKNOWN
+BFS_DISTANCE_ARRAY                               508                14                34                 1                 0                 0                 0
+BFS_EXPLICIT_TIME_IN_QUEUE                         6                35                 0                 0                 0                 0                 0
+BFS_LEVEL_ORDER_TIMER                              0                 0                21                 0                 0                 0                 0
+DFS_DEPTH_TRAVERSAL                                0                 0                 0                11                 0                 0                 0
+DIJKSTRA_UNIT_WEIGHT                               0                 0                 0                 0                16                 0                 0
+FLOYD_WARSHALL                                     0                 0                 0                 0                 0                 4                 0
+UNKNOWN                                           35                 0                14                 8                 7                 1                14

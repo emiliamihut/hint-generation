@@ -1,0 +1,324 @@
+submission_id,user_id,score,language,gold,prediction,correct,model,raw_output
+1323450093,user_0315,50.0,java,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads two strings of length n each. It counts frequencies of letters 'a' to 'z' in freq1 and freq2 arrays. It also counts stars1 and stars2.
+
+Then getResult:
+
+- remaining1, remaining2, pairs = 0.
+
+- For each letter i from 'a' to 'z':
+    if freq1[i] < freq2[i]:
+        pairs += freq1[i];
+        remaining2 += (freq2[i] - freq1[i]);
+    else:
+        pairs += freq2[i];
+        remaining1 += (freq1[i] - freq2[i]);
+
+So pairs counts the min of each letter counts. remaining1 is the surplus of freq1 over freq2; remaining2 is surplus of freq2 over freq1.
+
+- Then pairs += Math.min(remaining1, stars2);
+- pairs += Math.min(remaining2, stars1);
+
+So use stars from opposite side to cover deficits.
+
+- stars2 -= Math.min(remaining1, stars2);
+- stars1 -= Math.min(remaining2, stars1);
+
+- pairs += Math.min(stars1, stars2);
+
+So final pairs from remaining stars.
+
+This is exactly the strategy described in FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays, matches identical letters, then explicitly matches deficits with opposite side wildcards, then remaining stars matched together.
+
+Thus label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Check other labels: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA would be if they just did exact matches + stars1 + stars2 capped by N. Not the case.
+
+SORT_* not used. DIRECT_NESTED_LOOP not used.
+
+Thus answer: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1391828014,user_0313,50.0,java,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code uses frequency arrays leftCount[27] and rightCount[27] to count letters and stars. Then it matches identical letters: for i 0..25, if both >0, min, add to max, subtract. Then it matches right side letters with left side stars: for i 0..25, if rightCount[i]>0 && leftCount[26]>0, min, add, subtract. Then matches left side letters with right side stars: similar. Then matches stars with stars: min of leftCount[26] and rightCount[26]. This is exactly the strategy described in FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays, matches identical letters, then explicitly matches deficits with opposite side wildcards, then remaining wildcards matched together. So label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Check if any other label fits: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA would be if they just sum exact matches + stars. But here they explicitly match deficits. So it's FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Thus answer: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1391858690,user_0320,50.0,java,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads N, strings a and b. It creates frequency arrays leftFreq[27], rightFreq[27] where index 26 is for '*'. It counts frequencies of each letter and stars.
+
+Then it calculates pairs:
+
+1. For each letter i 0-25, matches identical letters: pairs += min(leftFreq[i], rightFreq[i]); subtract.
+
+2. For each letter i 0-25, matches left stars with right letters: pairs += min(leftFreq[26], rightFreq[i]); subtract.
+
+3. For each letter i 0-25, matches right stars with left letters: pairs += min(leftFreq[i], rightFreq[26]); subtract.
+
+4. Finally matches left stars with right stars: pairs += min(leftFreq[26], rightFreq[26]).
+
+This is exactly the strategy described in FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays, matches identical letters, then explicitly matches unmatched/deficit letters against opposite side wildcards, then remaining wildcards matched together.
+
+Thus label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Check other labels: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA would be something like exact_matches + left_stars + right_stars capped by N. Not the case.
+
+SORT_* not used.
+
+DIRECT_NESTED_LOOP not used.
+
+Thus correct label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1314237442,user_0065,50.0,java,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,False,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The problem: two groups of N socks, each sock is a lowercase letter or '*'. Equal letters can form a pair. '*' acts as wildcard and can replace a needed letter. Compute maximum number of valid pairs.
+
+The code:
+
+- Reads n, then two strings stang and drept (left and right). They are of length n each.
+
+- It creates arrays aparitii_s[27], aparitii_d[27] for counts of letters a-z. Also counts nr_stele_s, nr_stele_d for stars.
+
+- For each i, if stang_c[i] == '*', increment nr_stele_s else increment aparitii_s[stang_c[i]-97]. Similarly for right.
+
+- Then int nr_perechi = 0.
+
+- For i from 0 to 26: if aparitii_s[i] != 0 && aparitii_d[i] != 0: nr_perechi += Math.min(aparitii_s[i], aparitii_d[i]); n -= Math.min(...). So they match exact letter pairs, subtract from n.
+
+- Then they handle stars:
+
+```
+if(nr_stele_s == 0){
+    nr_perechi += nr_stele_d;
+}
+if(nr_stele_d == 0){
+    nr_perechi += nr_stele_s;
+}else{
+    if(nr_stele_s + nr_stele_d >= n){
+        nr_perechi += n;
+    }else{
+        nr_perechi += (nr_stele_s + nr_stele_d);
+    }
+}
+```
+
+This logic: if no stars on left, add all stars on right as pairs (since they can pair with any unmatched socks on left). Similarly if no stars on right, add all stars on left. Else if both sides have stars, then if total stars >= remaining unmatched socks n, add n else add total stars.
+
+This is a frequency count approach: they count frequencies, match exact letters, then handle stars. They explicitly compute unmatched/deficit letters and consume wildcards from opposite side. They also consider remaining wildcards matched together. This matches the description of FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Let's confirm: The algorithm uses frequency arrays for letters on both sides. First matches identical letters. Then explicitly computes unmatched/deficit letters and consumes wildcards from the opposite side. Remaining wildcards may then be matched together. Yes.
+
+Thus label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1314237487,user_0065,50.0,java,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The problem: two groups of N socks, each sock represented by lowercase letter or '*'. Equal letters can form a pair. '*' acts as wildcard and can replace a needed letter. Compute maximum number of valid pairs.
+
+The code:
+
+- Reads n, then two strings stang and drept (left and right). They are of length n.
+
+- It creates arrays aparitii_s[27], aparitii_d[27] for counts of letters a-z. Also counts nr_stele_s, nr_stele_d for stars.
+
+- For each i, if stang_c[i] == '*', increment nr_stele_s else increment aparitii_s[char-97]. Similarly for right.
+
+- Then int nr_perechi = 0.
+
+- For i from 0 to 26: if aparitii_s[i] != 0 && aparitii_d[i] != 0: nr_perechi += min(aparitii_s[i], aparitii_d[i]); n -= min(...). So they match identical letters, subtract from n.
+
+- Then they handle stars: if nr_stele_s == 0: nr_perechi += nr_stele_d; else if nr_stele_d == 0: nr_perechi += nr_stele_s; else if nr_stele_s + nr_stele_d >= n: nr_perechi += n; else nr_perechi += (nr_stele_s + nr_stele_d).
+
+This logic: After matching identical letters, remaining unmatched socks count is n (original n minus matched pairs). They then consider stars. If one side has no stars, all stars on other side can pair with unmatched socks on that side? Wait: If nr_stele_s == 0, then stars only on right side. They add nr_stele_d to nr_perechi. But they don't consider that stars can pair with unmatched socks on left side. But if left side has no stars, stars on right can pair with unmatched socks on left side. But they just add all stars on right. But if left side has unmatched socks less than stars, they'd overcount. But they later handle case where both sides have stars: if sum >= n, add n else add sum. So they basically compute maximum pairs from stars: if both sides have stars, they can pair stars with each other or with unmatched socks. They compute min(n, sum). If only one side has stars, they add all stars. That might be wrong but classification wise.
+
+Now classification: The algorithm uses frequency arrays for letters, matches identical letters, then uses aggregate formula for stars. That matches FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA. Because they use frequency arrays for letters, but for stars they use aggregate arithmetic formula: they compute nr_stele_s + nr_stele_d and compare with n. They don't explicitly match each side's letter deficits against opposite-side wildcards. They just use aggregate formula. So label: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.
+
+Check other labels: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING would involve explicit matching of deficits. This code does not do that; it uses aggregate formula. So correct label: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA<|return|>"
+1314235546,user_0044,50.0,java,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, group_1, group_2. It uses arrays a[255], b[255] to count frequencies of characters in each group. Then it loops i from 97 to 122 (a-z). For each letter, it calculates minim = a[i]; unmatch_1 = 1; if(b[i] < minim) { minim = b[i]; unmatch_1 = 0; } sol += minim; if(unmatch_1 == 1) group_2_unmatched += (b[i] - a[i]); else group_1_unmatched += (a[i] - b[i]);
+
+So it counts exact matches for each letter, and calculates unmatched deficits for each side.
+
+Then it gets nr_stars_1 = a[42]; nr_stars_2 = b[42]; (ASCII 42 is '*').
+
+Then it uses stars to cover unmatched deficits: if nr_stars_1 > group_2_unmatched, sol += group_2_unmatched; else sol += nr_stars_1; etc. Then if both stars remain, it matches them together.
+
+This is exactly the strategy described in FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays, matches identical letters, then explicitly matches unmatched deficits with opposite side wildcards, then remaining wildcards matched together.
+
+Thus label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Check other labels: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA would be if they just did exact matches + left_stars + right_stars. But they explicitly compute deficits and match. So it's explicit wildcard matching.
+
+Thus answer: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1391906829,user_0087,50.0,cpp,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads N, two strings s1, s2. It creates frequency arrays ap1 and ap2 of size LETTERS_COUNT+1. It counts letters: for each char, if '*', increment ap1[LETTERS_COUNT] (the last index). Else increment ap1[char - 'a'].
+
+Similarly for s2.
+
+Then it calculates count = sum over i from 0 to LETTERS_COUNT-1 of min(ap1[i], ap2[i]) (i.e., matches of same letters). Then it calculates x, y, z:
+
+x = min(N - ap1[LETTERS_COUNT] - count, ap2[LETTERS_COUNT]);
+
+y = min(N - ap2[LETTERS_COUNT] - count, ap1[LETTERS_COUNT]);
+
+z = min(ap2[LETTERS_COUNT] - x, ap1[LETTERS_COUNT] - y);
+
+count += x + y + z;
+
+This is a known solution: first match exact letters, then match remaining letters with opposite side wildcards, then match remaining wildcards together. The formula uses counts of remaining letters and wildcards. This matches the description of FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays, first matches identical letters, then explicitly computes unmatched/deficit letters and consumes wildcards from opposite side. Remaining wildcards may then be matched together.
+
+Thus the label is FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Check if any other label fits: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA would be something like exact_matches + left_stars + right_stars capped by N. This code does more explicit matching. So it's not that.
+
+Thus answer: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1323450668,user_0053,50.0,cpp,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code.
+
+We have two groups of N socks. The code reads n, str1, str2. It uses map<char,int> s,d to count frequencies of each character in each string. Then it calculates nr = sum over all letters (excluding '*') of min(x.second, d[x.first]). That is exact matches. Then it sets nr = min(n, nr + s['*'] + d['*']). So it adds all wildcards from both sides to the exact matches, but does not consider deficits. It just adds all wildcards. This matches the description of FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA: uses frequency arrays/maps to count exact letter matches, but handles '*' mostly through an aggregate arithmetic formula, e.g., exact_matches + left_stars + right_stars, possibly capped by N. It does NOT explicitly match each side's letter deficits against opposite-side wildcards. So the correct label is FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.
+
+Check other labels: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING would explicitly match deficits. This code does not. So it's aggregate formula.
+
+Thus answer: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA<|return|>"
+1391863458,user_0235,50.0,cpp,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, s1, s2. It uses arrays f1[27], f2[27] to count frequencies of letters a-z and '*' as index 26. Then it loops over i=0..25 (letters). For each letter, it matches equal counts: if f1[i]==f2[i], t += f1[i], set both to 0. Else if f1[i] < f2[i], t += f1[i], reduce f2[i] by f1[i], set f1[i] to 0. Then it uses min(f2[i], f1[stea]) to match remaining f2[i] with wildcards from f1. Similarly for f2[i] < f1[i]. After loop, it matches remaining wildcards from both sides: val = min(f1[stea], f2[stea]); t += val.
+
+This is a frequency count approach with explicit wildcard matching. It matches exact letters, then uses wildcards to cover deficits. This matches the description of FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING. The code does not use aggregate formula; it explicitly matches deficits. So the correct label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Check other labels: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA would be something like t = exact + left_stars + right_stars capped by N. Not the case. So choose FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.
+
+Thus output that.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1332720240,user_0278,50.0,cpp,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, str1, str2. It uses vector<pair<int,int>> vec(27, {0,0}); index 0-25 for letters a-z, index 26 for '*'.
+
+It counts frequencies of each letter in str1 and str2, storing in vec[i].first for str1, vec[i].second for str2. For '*' it uses index 26.
+
+Then it calculates count of exact matches: for each letter i, count += min(vec[i].first, vec[i].second). Also calculates un_st (unmatched from str1?) and un_dr (unmatched from str2?) Actually un_st is difference when vec[i].first > vec[i].second, so un_st = sum of excess of str1 over str2 for each letter. un_dr = sum of excess of str2 over str1.
+
+Then it adds min(un_st, vec[26].second) + min(un_dr, vec[26].first). That matches excess from one side with wildcards from the other side.
+
+Then if both sides have more wildcards than needed, it adds min(vec[26].second - un_st, vec[26].first - un_dr). That matches remaining wildcards between each other.
+
+This is exactly the strategy described in FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays, matches identical letters, then explicitly matches deficits with opposite side wildcards, then remaining wildcards matched together.
+
+Thus label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1332720232,user_0278,50.0,cpp,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, str1, str2. It uses vector<pair<int,int>> vec(27, {0,0}); index 0-25 for letters a-z, index 26 for '*'.
+
+It counts frequencies of each letter in str1 and str2, storing in vec[i].first and vec[i].second respectively. For '*' it uses index 26.
+
+Then it calculates count: for each letter i 0-25, count += min(vec[i].first, vec[i].second). That matches identical letters.
+
+Then it calculates un_st and un_dr: un_st is the surplus of first string letters over second? Let's see: if vec[i].first < vec[i].second, un_dr += difference; else un_st += difference. So un_st is surplus of first string letters (left side) over second side; un_dr is surplus of second string letters over first side.
+
+Then count += min(un_st, vec[26].second) + min(un_dr, vec[26].first). That matches surplus letters with opposite side wildcards.
+
+Then if both sides have more wildcards than needed, count += min(vec[26].second - un_st, vec[26].first - un_dr). That matches remaining wildcards with each other.
+
+Finally count = min(n, count). Output.
+
+This is exactly the strategy described in FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays, matches identical letters, then explicitly matches deficits with opposite side wildcards, then remaining wildcards matched together.
+
+Thus label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1359946327,user_0003,50.0,cpp,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, s1, s2. It counts frequencies of letters in each string using maps lit_s1 and lit_s2. It also counts number of '*' in each string: nr_stel_s1, nr_stel_s2.
+
+Then it calculates ans: first, for each letter a-z, ans += mini(lit_s1[i], lit_s2[i]) (i.e., exact matches). Then it calculates deficits: nr_lipsa_s1 and nr_lipsa_s2. For each letter, if lit_s1[i] == maxi(lit_s1[i], lit_s2[i]) (i.e., lit_s1[i] >= lit_s2[i]), then nr_lipsa_s1 += difference. Similarly for lit_s2. So nr_lipsa_s1 is total deficit of letters in s1 relative to s2. nr_lipsa_s2 is deficit of letters in s2 relative to s1.
+
+Then ans += mini(nr_lipsa_s1, nr_stel_s2); ans += mini(nr_lipsa_s2, nr_stel_s1); So it matches deficits with opposite side wildcards.
+
+Then it reduces nr_stel_s1 and nr_stel_s2 by those used: nr_stel_s1 -= mini(nr_lipsa_s2, nr_stel_s1); nr_stel_s2 -= mini(nr_lipsa_s1, nr_stel_s2);
+
+Then ans += mini(nr_stel_s1, nr_stel_s2); // match remaining wildcards.
+
+This is exactly the strategy described in FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING: uses frequency arrays/maps for letters, matches identical letters, then explicitly computes unmatched/deficit letters and consumes wildcards from opposite side, remaining wildcards matched together.
+
+Thus label: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING<|return|>"
+1332737782,user_0253,50.0,cpp,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, then reads n characters for group1, counts frequencies in vector v1 of size 27: indices 0-25 for 'a'-'z', index 26 for '*'. Similarly for group2 into v2.
+
+Then it loops i=0..25: number_pairs += min(v1[i], v2[i]); So it counts exact matches.
+
+Then starred_pairs = v1[26] + v2[26]; So total wildcards across both groups.
+
+Then if starred_pairs + number_pairs > n: number_pairs = n; else number_pairs += starred_pairs;
+
+So it adds all wildcards to number_pairs, but caps at n.
+
+This matches the description of FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA: uses frequency arrays, counts exact matches, then handles '*' via aggregate formula: exact_matches + left_stars + right_stars, capped by N. It does not explicitly match deficits.
+
+Thus the label is FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.
+
+Check if any other label fits: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING would involve matching deficits explicitly. This code does not do that; it just adds all wildcards. So it's the aggregate formula.
+
+Thus answer: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA<|return|>"
+1344634312,user_0258,50.0,cpp,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, then two groups of socks. It uses vector<int> left(27,0) and right(27,0). Index 0 is for '*', indices 1-26 for letters a-z. It counts frequencies.
+
+Then it calculates:
+
+int l=0, r=0, total=0;
+
+for i=1..26:
+    int pair = left[i] - right[i];
+    if pair==0: total += left[i];
+    else if pair<0: total += left[i]; r += (0 - pair);
+    else: total += right[i]; l += pair;
+
+After loop, total += left[0]; total += right[0];
+
+Then output min(total, n).
+
+Let's interpret: For each letter, if left and right counts equal, all socks of that letter can be paired: total += left[i] (which equals right[i]). If left has fewer than right, then all left socks can be paired with right socks of same letter: total += left[i]; the deficit on right side (right[i] - left[i]) is stored in r. Similarly if left has more, total += right[i]; deficit on left side stored in l.
+
+After that, they add all wildcards from both sides to total. But they don't use deficits l and r? They compute l and r but never use them. So they just add all wildcards. Then min(total, n). So they basically count all exact matches plus all wildcards, but they don't match deficits with opposite side wildcards. That is similar to FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA: uses frequency arrays to count exact letter matches, but handles '*' mostly through an aggregate arithmetic formula, e.g., exact_matches + left_stars + right_stars, possibly capped by N. It does NOT explicitly match each side's letter deficits against opposite-side wildcards.
+
+Yes, this matches FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA. The code uses frequency arrays, counts exact matches, but then just adds all stars. It doesn't match deficits. So label: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.
+
+Check if any other label fits: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING would explicitly match deficits. This code does not. So not that.
+
+Thus answer: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA<|return|>"
+1332753477,user_0104,50.0,cpp,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, then two groups of n socks each. It counts frequencies of letters in fr1 and fr2 arrays of size 30. It counts number of '*' in nrst1 and nrst2. Then it calculates nrp = sum over i of min(fr1[i], fr2[i]) (exact matches). Then adds nrst1 + nrst2. Then caps at n. This is exactly the FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA strategy: uses frequency arrays for letters, counts exact matches, then adds all stars from both sides, but does not explicitly match deficits. It just adds all stars and caps at n. So classification: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA.
+
+Check labels: FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA. Yes.
+
+Thus output that.<|end|><|start|>assistant<|channel|>final<|message|>FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA<|return|>"
+1314237479,user_0164,27.08,cpp,SORT_BINARY_SEARCH_MATCHING,SORT_BINARY_SEARCH_MATCHING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze the code.
+
+We have n, cnt, cnts, etc. They read 2*n characters. They check if c - '0' == -6. That seems to be checking if c is '*', because '*' ASCII 42, '0' ASCII 48, difference -6. So they treat '*' as -6. They push into v1 and v2 arrays as integers (c - '0'). So '*' becomes -6, digits become 0-9? Actually 'a' etc? But they treat lowercase letters? But anyway.
+
+They sort v1 and v2. Then they count c1 = number of -6 in v1, c2 = number of -6 in v2. Then for i from c1 to n-1, they binary_search in v2 from index c2 to end for v1[i]. So they skip the wildcard positions at front? Actually sorted, so all -6 will be at front. So c1 is count of -6 in v1, c2 count of -6 in v2. Then they binary search for each non-wildcard in v1 among non-wildcard in v2. If found, cnt++.
+
+Finally output e+cnt. e is total number of '*' across both sides. They add e to cnt. That seems wrong but classification wise.
+
+So algorithm: They use sorting and binary search to match letters. They also count wildcards separately. This matches the strategy ""SORT_BINARY_SEARCH_MATCHING"" or ""SORT_ADJACENT_PAIRING""? They sort and then binary search. They don't pair adjacent equal elements; they binary search. So it's SORT_BINARY_SEARCH_MATCHING.
+
+Thus label: SORT_BINARY_SEARCH_MATCHING.<|end|><|start|>assistant<|channel|>final<|message|>SORT_BINARY_SEARCH_MATCHING<|return|>"
+1323425291,user_0043,2.08,cpp,SORT_ADJACENT_PAIRING,SORT_ADJACENT_PAIRING,True,openai/gpt-oss-20b,"<|channel|>analysis<|message|>We need to classify the algorithmic strategy used in the code. Let's analyze.
+
+The code reads n, then reads 2*n characters into vector<int> sosete. Actually vector<int> but reading char x; push_back(x). So vector of char values.
+
+Then compute_solution:
+
+int x=0,y=0;
+sort(sosete.begin(),sosete.end());
+for i from 0 to 2*n-2:
+ if sosete[i]==sosete[i+1]:
+   i+=1; perechi++;
+ else:
+   if sosete[i]==42 (ASCII '*') x++;
+   else y++;
+
+After loop, if x>y: perechi = perechi + y + (x-y)/2; else perechi = perechi + x;
+
+So algorithm: sorts socks, pairs adjacent equal socks. For unmatched socks, counts wildcards (x) and non-wildcards (y). Then uses formula: if more wildcards than non-wildcards, add y + (x-y)/2 else add x. This is essentially the aggregate formula: counts exact matches via adjacent pairing, then uses formula to compute additional pairs from wildcards. This matches FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA? Wait, the algorithm uses sorting, not frequency arrays. But the classification categories: FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING, FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA, SORT_BINARY_SEARCH_MATCHING, SORT_ADJACENT_PAIRING, DIRECT_NESTED_LOOP_MATCHING, UNKNOWN.
+
+The code uses sorting and adjacent pairing. That matches SORT_ADJACENT_PAIRING. But also uses aggregate formula for wildcards. But classification categories are exclusive? We need to choose one. The algorithm uses sorting and adjacent pairing, not frequency counting. So the best label is SORT_ADJACENT_PAIRING. The wildcard handling is separate but still part of algorithm. So label: SORT_ADJACENT_PAIRING.<|end|><|start|>assistant<|channel|>final<|message|>SORT_ADJACENT_PAIRING<|return|>"

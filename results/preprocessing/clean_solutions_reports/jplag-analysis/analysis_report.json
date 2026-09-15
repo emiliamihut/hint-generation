@@ -1,0 +1,17 @@
+{
+  "report_files_processed": 12,
+  "report_files_with_errors": 0,
+  "total_comparisons": 28203,
+  "exact_avg_100_pairs": 1568,
+  "exact_max_100_pairs": 2227,
+  "avg_at_least_95_pairs": 2438,
+  "distribution": {
+    "avg_100": 1568,
+    "max_100": 2227,
+    "avg_99_to_100": 227,
+    "avg_95_to_99": 643,
+    "avg_90_to_95": 1101,
+    "avg_below_90": 24664
+  },
+  "deduplication_recommendation": "Pentru deduplicare stricta foloseste exact_avg_100_percent.csv. MAX 100% arata ca o submisie este complet inclusa in cealalta, dar nu garanteaza ca ambele submisii sunt integral identice."
+}

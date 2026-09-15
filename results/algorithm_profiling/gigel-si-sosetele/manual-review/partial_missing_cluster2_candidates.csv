@@ -1,0 +1,4 @@
+file,user_id,attempt_number,submission_id,language,original_language,result,score,timestamp,code_length,code_lines,source_path,language_group,cluster,centroid_similarity
+1314237549.cpp,user_0164,26,1314237549,cpp,cpp,Wrong Answer,27.08,169,1035,57,gigel-si-sosetele/submissions/1314237549.cpp,cpp_c,2,0.98484874
+1314237479.cpp,user_0164,25,1314237479,cpp,cpp,Wrong Answer,27.08,166,999,55,gigel-si-sosetele/submissions/1314237479.cpp,cpp_c,2,0.9826773
+1314237586.cpp,user_0164,27,1314237586,cpp,cpp,Wrong Answer,27.08,171,1049,57,gigel-si-sosetele/submissions/1314237586.cpp,cpp_c,2,0.98194146

@@ -1,0 +1,3 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1391962165,5.36,Segmentation Fault,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\matei-si-diamantele\1391962165.c:1: No include path in which to find stdio.h
+data\clean_solutions\submissions\matei-si-diamantele\1391962165.c:2: No include path in which to find stdlib.h"

@@ -1,0 +1,77 @@
+﻿problem,submission_id,test_index,test_case_local,test_case_official,official_status,official_message,exact_time_limit_seconds,attempt1_status,attempt1_runtime_seconds,attempt1_returncode,attempt2_status,attempt2_runtime_seconds,attempt2_returncode,grace_status,grace_runtime_seconds,grace_returncode,grace_time_limit_seconds,final_local_status,final_local_coarse,relation,validation_ok,retry_used,environment_grace,unstable,review_required,review_reason,actual_preview,expected_preview,stderr_preview,source_path,reuse_from
+gigel-si-raspandirea-vestilor,1344637470,0,0,0,passed,,4.0,passed,0.080713,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"2
+","2
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,1,1,1,passed,,4.0,passed,0.077805,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,2,2,2,passed,,4.0,passed,0.072564,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"3
+","3
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,3,3,3,failed,,4.0,wrong_answer,0.080046,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"6
+","4
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,4,4,4,passed,,4.0,passed,0.072632,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"8
+","8
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,5,5,5,failed,,4.0,wrong_answer,0.072988,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"4
+","5
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,6,6,6,passed,,4.0,passed,0.065543,0,,,,,,,,passed,passed,MATCH,True,False,False,False,False,,"131
+","131
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,7,7,7,failed,,4.0,wrong_answer,0.066859,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"12
+","10
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,8,8,8,failed,,4.0,wrong_answer,0.083156,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"7
+","6
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,9,9,9,failed,,4.0,wrong_answer,0.114619,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"21
+","15
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,10,10,10,failed,,4.0,wrong_answer,0.242675,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"27
+","16
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,11,11,11,failed,,4.0,wrong_answer,0.528074,0,,,,,,,,wrong_answer,failed,MATCH,True,False,False,False,False,,"11
+","7
+",,D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,12,12,12,failed,,4.0,runtime_error,0.457195,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"10
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,13,13,13,failed,,4.0,runtime_error,0.385054,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"13
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,14,14,14,failed,,4.0,runtime_error,0.339487,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"70
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,15,15,15,failed,,4.0,runtime_error,0.331587,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"11
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,16,16,16,failed,,4.0,runtime_error,0.369252,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"294
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,17,17,17,failed,,4.0,runtime_error,0.314262,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"38
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,18,18,18,failed,,4.0,runtime_error,0.298529,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"47
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,19,19,19,failed,,4.0,runtime_error,0.295628,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"17
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,20,20,20,failed,,4.0,runtime_error,0.269912,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"14
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv
+gigel-si-raspandirea-vestilor,1344637470,21,21,21,failed,,4.0,runtime_error,0.321978,1,,,,,,,,runtime_error,failed,MATCH,True,False,False,False,False,,,"83
+","Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at Solution.main(Solution.java:93)
+",D:\Hint-generation\hackerrank_scraper\data\execution_sources\gigel-si-raspandirea-vestilor\1344637470.java,D:\Hint-generation\HackerRank\04_FULL_FINAL_VALIDATION\details\gigel-si-raspandirea-vestilor\1344637470.csv

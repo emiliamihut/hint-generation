@@ -1,0 +1,20 @@
+{
+  "source_dataset": "D:\\Hint-generation\\hackerrank_scraper\\data\\analysis_dataset_no_comments",
+  "output_dataset": "D:\\Hint-generation\\hackerrank_scraper\\data\\analysis_dataset_no_unused_functions",
+  "target_issue_ids": [
+    "unusedFunction",
+    "unusedPrivateFunction"
+  ],
+  "cppcheck_executable": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+  "candidates": 65,
+  "functions_removed": 62,
+  "functions_skipped": 3,
+  "modified_source_files": 48,
+  "updated_jplag_files": 46,
+  "updated_json_records": 48,
+  "updated_json_files": 6,
+  "skipped_by_reason": {
+    "declaration_without_body": 3
+  },
+  "other_cppcheck_issue_types_removed": false
+}

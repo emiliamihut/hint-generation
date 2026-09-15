@@ -1,0 +1,15 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1344623170,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1344623170.cpp:9:37: error: 'INT32_MAX' was not declared in this scope
+    9 | int bfs(int source, vector<int> adj[INT32_MAX], int n)
+      |                                     ^~~~~~~~~
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1344623170.cpp:7:1: note: 'INT32_MAX' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+    6 | #include <algorithm>
+  +++ |+#include <cstdint>
+    7 | using namespace std;
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1344623170.cpp:9:47: error: expected ')' before ',' token
+    9 | int bfs(int source, vector<int> adj[INT32_MAX], int n)
+      |        ~                                      ^
+      |                                               )
+data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1344623170.cpp:9:49: error: expected unqualified-id before 'int'
+    9 | int bfs(int source, vector<int> adj[INT32_MAX], int n)
+      |                                                 ^~~"

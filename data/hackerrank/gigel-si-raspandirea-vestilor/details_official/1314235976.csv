@@ -1,0 +1,7 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314235976,50.0,Accepted,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1314235976.java:9: error: class P1Gigel is public, should be declared in a file named P1Gigel.java
+    public class P1Gigel {
+           ^
+Note: data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1314235976.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 error"

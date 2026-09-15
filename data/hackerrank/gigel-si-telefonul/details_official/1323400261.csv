@@ -1,0 +1,9 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1323400261,7.5,Wrong Answer,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-telefonul\1323400261.cpp: In function 'int main()':
+data\clean_solutions\submissions\gigel-si-telefonul\1323400261.cpp:17:48: error: 'INT16_MAX' was not declared in this scope
+   17 |     vector<vector<int>> dp(n, vector<int>(x+1, INT16_MAX));
+      |                                                ^~~~~~~~~
+data\clean_solutions\submissions\gigel-si-telefonul\1323400261.cpp:6:1: note: 'INT16_MAX' is defined in header '<cstdint>'; this is probably fixable by adding '#include <cstdint>'
+    5 | #include <algorithm>
+  +++ |+#include <cstdint>
+    6 | using namespace std;"

@@ -1,0 +1,7 @@
+﻿submission_id,score_site,site_result,test,local_status,message,ok_local,local_time_seconds,error_detail
+1314237386,7.5,Wrong Answer,,compile_error,Eroare de compilare locala,NO,0,"data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1314237386.java:49: error: class NewClass is public, should be declared in a file named NewClass.java
+public class NewClass {
+       ^
+Note: data\clean_solutions\submissions\gigel-si-raspandirea-vestilor\1314237386.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 error"

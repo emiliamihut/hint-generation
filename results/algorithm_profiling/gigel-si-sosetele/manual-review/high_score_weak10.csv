@@ -1,0 +1,11 @@
+submission_id,user_id,attempt_number,score,language,result,algorithm,label_type,extraction_source,model,reasoning_effort
+1314235723,user_0285,3,50.0,java,Accepted,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314236678,user_0214,6,50.0,java,Accepted,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1314237403,user_0117,9,50.0,java,Accepted,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323072718,user_0159,1,50.0,cpp,Accepted,FREQUENCY_COUNT_EXPLICIT_WILDCARD_MATCHING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1323446183,user_0172,27,47.92,cpp,Wrong Answer,SORT_ADJACENT_PAIRING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1314236512,user_0018,2,46.88,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high
+1323425285,user_0017,1,46.88,cpp,Wrong Answer,SORT_ADJACENT_PAIRING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1323446057,user_0172,25,46.88,cpp,Wrong Answer,FREQUENCY_COUNT_AGGREGATE_STAR_FORMULA,gpt-oss-high,analysis-explicit,openai/gpt-oss-20b,high
+1332392159,user_0190,1,46.88,java,Wrong Answer,DIRECT_NESTED_LOOP_MATCHING,gpt-oss-high,analysis-last-label,openai/gpt-oss-20b,high
+1314237379,user_0030,1,29.17,cpp,Wrong Answer,UNKNOWN,gpt-oss-high,final,openai/gpt-oss-20b,high

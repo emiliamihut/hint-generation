@@ -1,0 +1,21 @@
+{
+  "id": "gigel-si-sosetele",
+  "statement": "Gigel are N sosete pentru piciorul stang si N sosete pentru piciorul drept. Fiecare soseta are o eticheta: o litera mica sau caracterul *. O pereche este valida daca etichetele sunt egale sau cel putin una dintre ele este *. Trebuie calculat numarul maxim de perechi valide.",
+  "input_format": "Pe prima linie se citeste N. Pe a doua linie se citeste sirul sosetelor stangi, iar pe a treia linie sirul sosetelor drepte.",
+  "constraints": [
+    "1 <= N <= 2 * 10^5",
+    "Eticheta este * sau o litera mica",
+    "Timp: C++ 1s, Java 3s"
+  ],
+  "output_format": "Se afiseaza numarul maxim de perechi valide.",
+  "samples": [
+    {
+      "input": "3\nabc\nbcd",
+      "output": "2"
+    },
+    {
+      "input": "5\nab*xy\nbcaxy",
+      "output": "5"
+    }
+  ]
+}

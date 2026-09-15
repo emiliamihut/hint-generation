@@ -1,0 +1,93 @@
+MATEI - DETAILED TAXONOMY - CODE VS TEXT
+
+TOTAL: 625
+SAME: 502
+DIFFERENT: 123
+AGREEMENT: 80.32%
+
+CODE DISTRIBUTION:
+ 179 | MANHATTAN_SCAN
+ 150 | BFS_RADIUS
+  77 | DFS_RADIUS
+  55 | RING_SCAN
+  52 | GREEDY_NEIGHBOR_WALK
+  42 | UNKNOWN
+  38 | BOUNDING_BOX_SCAN
+  19 | ROW_BOUNDS_SCAN
+   9 | DP_RADIUS
+   4 | SORTED_MANHATTAN
+
+TEXT DISTRIBUTION:
+ 153 | MANHATTAN_SCAN
+ 149 | BFS_RADIUS
+  89 | DFS_RADIUS
+  72 | RING_SCAN
+  70 | GREEDY_NEIGHBOR_WALK
+  38 | BOUNDING_BOX_SCAN
+  29 | UNKNOWN
+  12 | SORTED_MANHATTAN
+  11 | ROW_BOUNDS_SCAN
+   2 | DP_RADIUS
+
+MOST COMMON DIFFERENCES:
+  14 | MANHATTAN_SCAN               -> GREEDY_NEIGHBOR_WALK
+  11 | MANHATTAN_SCAN               -> RING_SCAN
+  10 | UNKNOWN                      -> RING_SCAN
+   8 | ROW_BOUNDS_SCAN              -> RING_SCAN
+   8 | MANHATTAN_SCAN               -> SORTED_MANHATTAN
+   8 | UNKNOWN                      -> GREEDY_NEIGHBOR_WALK
+   7 | BOUNDING_BOX_SCAN            -> MANHATTAN_SCAN
+   6 | DP_RADIUS                    -> DFS_RADIUS
+   6 | MANHATTAN_SCAN               -> BOUNDING_BOX_SCAN
+   5 | GREEDY_NEIGHBOR_WALK         -> UNKNOWN
+   4 | RING_SCAN                    -> MANHATTAN_SCAN
+   3 | RING_SCAN                    -> ROW_BOUNDS_SCAN
+   3 | RING_SCAN                    -> DFS_RADIUS
+   3 | BFS_RADIUS                   -> DFS_RADIUS
+   2 | RING_SCAN                    -> BOUNDING_BOX_SCAN
+   2 | BOUNDING_BOX_SCAN            -> RING_SCAN
+   2 | BOUNDING_BOX_SCAN            -> UNKNOWN
+   2 | UNKNOWN                      -> MANHATTAN_SCAN
+   2 | MANHATTAN_SCAN               -> UNKNOWN
+   2 | ROW_BOUNDS_SCAN              -> BOUNDING_BOX_SCAN
+   2 | RING_SCAN                    -> BFS_RADIUS
+   2 | UNKNOWN                      -> DFS_RADIUS
+   1 | RING_SCAN                    -> GREEDY_NEIGHBOR_WALK
+   1 | DFS_RADIUS                   -> GREEDY_NEIGHBOR_WALK
+   1 | DFS_RADIUS                   -> UNKNOWN
+   1 | GREEDY_NEIGHBOR_WALK         -> RING_SCAN
+   1 | GREEDY_NEIGHBOR_WALK         -> MANHATTAN_SCAN
+   1 | UNKNOWN                      -> BOUNDING_BOX_SCAN
+   1 | UNKNOWN                      -> BFS_RADIUS
+   1 | BFS_RADIUS                   -> GREEDY_NEIGHBOR_WALK
+   1 | BFS_RADIUS                   -> UNKNOWN
+   1 | DP_RADIUS                    -> BFS_RADIUS
+   1 | ROW_BOUNDS_SCAN              -> MANHATTAN_SCAN
+
+SCORE DISTRIBUTION - DIFFERENT CASES:
+score=     50 |  19 submissions |  15.45%
+score=  48.21 |   1 submissions |   0.81%
+score=  46.43 |   2 submissions |   1.63%
+score=  44.64 |   2 submissions |   1.63%
+score=  42.86 |   2 submissions |   1.63%
+score=  41.07 |  12 submissions |   9.76%
+score=  39.29 |   1 submissions |   0.81%
+score=   37.5 |   2 submissions |   1.63%
+score=  35.71 |   3 submissions |   2.44%
+score=  30.36 |   2 submissions |   1.63%
+score=  28.57 |   1 submissions |   0.81%
+score=  23.21 |   1 submissions |   0.81%
+score=  16.07 |   2 submissions |   1.63%
+score=  14.29 |   2 submissions |   1.63%
+score=   12.5 |   1 submissions |   0.81%
+score=  10.71 |   3 submissions |   2.44%
+score=   8.93 |   7 submissions |   5.69%
+score=   7.14 |   5 submissions |   4.07%
+score=   5.36 |  15 submissions |  12.20%
+score=   3.57 |  10 submissions |   8.13%
+score=   1.79 |  30 submissions |  24.39%
+
+CODE NON-UNKNOWN ONLY:
+TOTAL: 583
+SAME: 484
+AGREEMENT: 83.02%
